@@ -10,7 +10,7 @@ import java.util.List;
 public interface HotelManagementDao {
 
     public List<Customer> showCustomerList();
-
+//
     public boolean addCustomer(Customer customer);
 
     public List<Hotel> showHotelList();
