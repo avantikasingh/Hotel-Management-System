@@ -1,30 +1,57 @@
 package com.cg.hotelmanagement.service;
 
-import com.cg.hotelmanagement.dto.Admin;
-import com.cg.hotelmanagement.dto.Booking;
-import com.cg.hotelmanagement.dto.Customer;
-import com.cg.hotelmanagement.dto.Hotel;
+import com.cg.hotelmanagement.dao.HotelManagementDao;
+import com.cg.hotelmanagement.dao.IHotelManagementDao;
+import com.cg.hotelmanagement.dto.*;
 
 import java.util.List;
 
-public interface HotelManagementService {
+public class HotelManagementService implements IHotelManagementService {
 
-    public List<Customer> showCustomerList();
+    IHotelManagementDao hotelManagementDao = new HotelManagementDao();
 
-    public boolean addCustomer(Customer customer);
+    @Override
+    public List<Customer> showCustomerList() {
+        return hotelManagementDao.showCustomerList();
+    }
 
-    public List<Hotel> showHotelList();
+    @Override
+    public boolean addCustomer(Customer customer) {
+        return hotelManagementDao.addCustomer(customer);
+    }
 
-    public boolean addHotel(Hotel hotel);
+    @Override
+    public List<City> showCityList() {
+        return hotelManagementDao.showCityList();
+    }
 
-    public boolean removeHotel(Hotel hotel);
+    @Override
+    public boolean addHotel(Hotel hotel, City city) {
+        return hotelManagementDao.addHotel(hotel,city,hotelManagementDao);
+    }
 
-    public Hotel updateHotel(Hotel hotel);
+    @Override
+    public boolean removeHotel(Hotel hotel, City city) {
+        return hotelManagementDao.removeHotel(hotel, city, hotelManagementDao);
+    }
 
-    public List<Admin> showAdminList();
+    @Override
+    public Hotel updateHotel(Hotel hotelOld, Hotel hotelUpdated, City city) {
+        return hotelManagementDao.updateHotel(hotelOld, hotelUpdated, city, hotelManagementDao);
+    }
 
-    public List<Booking> showBookingList();
+    @Override
+    public List<Admin> showAdminList() {
+        return hotelManagementDao.showAdminList();
+    }
 
-    public boolean addBooking(Booking booking);
+    @Override
+    public List<Booking> showBookingList() {
+        return hotelManagementDao.showBookingList();
+    }
 
+    @Override
+    public boolean addBooking(Booking booking) {
+        return hotelManagementDao.addBooking(booking);
+    }
 }

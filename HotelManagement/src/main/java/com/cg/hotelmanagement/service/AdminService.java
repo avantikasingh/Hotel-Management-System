@@ -1,25 +1,51 @@
 package com.cg.hotelmanagement.service;
 
-import com.cg.hotelmanagement.dao.HotelManagementDao;
+import com.cg.hotelmanagement.dao.AdminDao;
+import com.cg.hotelmanagement.dao.IAdminDao;
+import com.cg.hotelmanagement.dao.IHotelManagementDao;
+import com.cg.hotelmanagement.dto.City;
 import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
 
 import java.time.LocalDate;
 
-public interface AdminService {
+public class AdminService implements IAdminService {
 
-    public boolean addHotel(Hotel hotel, HotelManagementDao hotelManagement);
+    IAdminDao adminDao = new AdminDao();
 
-    public boolean removeHotel(Hotel hotel, HotelManagementDao hotelManagement);
 
-    public Hotel updateHotel(Hotel hotel, HotelManagementDao hotelManagement);
+    @Override
+    public boolean addHotel(Hotel hotel, City city, IHotelManagementDao hotelManagement) {
+        return adminDao.addHotel(hotel, city, hotelManagement);
+    }
 
-    public Room updateRoom(Room room, HotelManagementDao hotelManagement);
+    @Override
+    public boolean removeHotel(Hotel hotel, City city, IHotelManagementDao hotelManagement) {
+        return adminDao.removeHotel(hotel, city, hotelManagement);
+    }
 
-    public boolean removeRoom(Room room, HotelManagementDao hotelManagement);
+    @Override
+    public Hotel updateHotel(Hotel hotelOld, Hotel hotelUpdated, City city, IHotelManagementDao hotelManagement) {
+        return adminDao.updateHotel(hotelOld, hotelUpdated, city, hotelManagement);
+    }
 
-    public boolean addRoom(Room room, HotelManagementDao hotelManagement);
+    @Override
+    public Room updateRoom(Room roomOld, Room roomUpdated, Hotel hotel, City city, IHotelManagementDao hotelManagement) {
+        return adminDao.updateRoom(roomOld,roomUpdated,hotel,city,hotelManagement);
+    }
 
-    public boolean approveBooking(Hotel hotel, LocalDate checkIn, LocalDate checkOut, boolean sortByPrice);
+    @Override
+    public boolean removeRoom(Room room, Hotel hotel, City city, IHotelManagementDao hotelManagement) {
+        return adminDao.removeRoom(room, hotel, city, hotelManagement);
+    }
 
+    @Override
+    public boolean addRoom(Room room, Hotel hotel, City city, IHotelManagementDao hotelManagement) {
+        return adminDao.addRoom(room, hotel, city, hotelManagement);
+    }
+
+    @Override
+    public boolean approveBooking(Room room, City city, Hotel hotel, LocalDate checkIn, LocalDate checkOut, boolean sortByPrice) {
+        return false;
+    }
 }

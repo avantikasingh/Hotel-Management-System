@@ -1,6 +1,7 @@
 package com.cg.hotelmanagement.dto;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -8,15 +9,25 @@ public class Booking {
 	private String bookingId;
 	private String bookingStatus;
 	private Date bookingDate;
-	private LocalDateTime checkIn;
-	private LocalDateTime checkOut;
+	private Date checkIn;
+	private Date checkOut;
 	private BigDecimal BookingCost;
+
 	public Booking() {
 	}
-	
-	public Booking(String bookingId, String bookingStatus, Date bookingDate, LocalDateTime checkIn,
-			LocalDateTime checkOut, BigDecimal bookingCost) {
+
+	/*public Booking(String bookingId, String bookingStatus, LocalDate bookingDate, LocalDate checkIn,
+				   LocalDate checkOut, BigDecimal bookingCost) {
 		super();
+		this.bookingId = bookingId;
+		this.bookingStatus = bookingStatus;
+		this.bookingDate = bookingDate;
+		this.checkIn = checkIn;
+		this.checkOut = checkOut;
+		BookingCost = bookingCost;
+	}*/
+
+	public Booking(String bookingId, String bookingStatus, Date bookingDate, Date checkIn, Date checkOut, BigDecimal bookingCost) {
 		this.bookingId = bookingId;
 		this.bookingStatus = bookingStatus;
 		this.bookingDate = bookingDate;
@@ -49,19 +60,19 @@ public class Booking {
 		this.bookingDate = bookingDate;
 	}
 
-	public LocalDateTime getCheckIn() {
+	public Date getCheckIn() {
 		return checkIn;
 	}
 
-	public void setCheckIn(LocalDateTime checkIn) {
+	public void setCheckIn(Date checkIn) {
 		this.checkIn = checkIn;
 	}
 
-	public LocalDateTime getCheckOut() {
+	public Date getCheckOut() {
 		return checkOut;
 	}
 
-	public void setCheckOut(LocalDateTime checkOut) {
+	public void setCheckOut(Date checkOut) {
 		this.checkOut = checkOut;
 	}
 

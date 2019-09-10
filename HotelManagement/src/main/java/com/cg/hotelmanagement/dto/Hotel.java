@@ -1,19 +1,19 @@
 package com.cg.hotelmanagement.dto;
 
 import java.math.BigInteger;
-import java.util.Map;
+import java.util.List;
 
 public class Hotel {
 	private String hotelId;
 	private String hotelName;
 	private String hotelAddress;
 	private String hotelDescription;
-	private Map<?, ?> roomList;
+	private List<Room> roomList;
 	private BigInteger hotelPhoneNumber;
 	private Float hotelRating;
 	public Hotel() {
 	}
-	public Hotel(String hotelId, String hotelName, String hotelAddress, String hotelDescription, Map<?, ?> roomList,
+	public Hotel(String hotelId, String hotelName, String hotelAddress, String hotelDescription, List<Room> roomList,
 			BigInteger hotelPhoneNumber, Float hotelRating) {
 		super();
 		this.hotelId = hotelId;
@@ -48,11 +48,8 @@ public class Hotel {
 	public void setHotelDescription(String hotelDescription) {
 		this.hotelDescription = hotelDescription;
 	}
-	public Map<?, ?> getRoomList() {
+	public List<Room> getRoomList() {
 		return roomList;
-	}
-	public void setRoomList(Map<?, ?> roomList) {
-		this.roomList = roomList;
 	}
 	public BigInteger getHotelPhoneNumber() {
 		return hotelPhoneNumber;
@@ -65,6 +62,15 @@ public class Hotel {
 	}
 	public void setHotelRating(Float hotelRating) {
 		this.hotelRating = hotelRating;
+	}
+	public void addRoom(Room room) {
+		this.roomList.add(room);
+	}
+	public void removeRoom(Room room) {
+		this.roomList.remove(room);
+	}
+	public void setRoomList(List<Room> roomList){
+		this.roomList = roomList;
 	}
 	@Override
 	public int hashCode() {
