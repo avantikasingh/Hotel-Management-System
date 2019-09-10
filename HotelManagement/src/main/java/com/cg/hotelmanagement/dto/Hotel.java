@@ -2,32 +2,33 @@ package com.cg.hotelmanagement.dto;
 
 import java.math.BigInteger;
 import java.util.List;
+import java.util.Map;
 
 public class Hotel {
-	private String hotelId;
+	private Integer hotelId;
 	private String hotelName;
 	private String hotelAddress;
-	private String hotelDescription;
-	private List<Room> roomList;
+	
+	private Map<Integer,Room> roomList;
 	private BigInteger hotelPhoneNumber;
 	private Float hotelRating;
 	public Hotel() {
 	}
-	public Hotel(String hotelId, String hotelName, String hotelAddress, String hotelDescription, List<Room> roomList,
+	public Hotel(int hotelId, String hotelName, String hotelAddress, Map<Integer,Room> roomList,
 			BigInteger hotelPhoneNumber, Float hotelRating) {
 		super();
 		this.hotelId = hotelId;
 		this.hotelName = hotelName;
 		this.hotelAddress = hotelAddress;
-		this.hotelDescription = hotelDescription;
+		
 		this.roomList = roomList;
 		this.hotelPhoneNumber = hotelPhoneNumber;
 		this.hotelRating = hotelRating;
 	}
-	public String getHotelId() {
+	public int getHotelId() {
 		return hotelId;
 	}
-	public void setHotelId(String hotelId) {
+	public void setHotelId(int hotelId) {
 		this.hotelId = hotelId;
 	}
 	public String getHotelName() {
@@ -42,14 +43,12 @@ public class Hotel {
 	public void setHotelAddress(String hotelAddress) {
 		this.hotelAddress = hotelAddress;
 	}
-	public String getHotelDescription() {
-		return hotelDescription;
+	public void setRoomList(Map<Integer,Room> roomList) {
+		this.roomList = roomList;
 	}
-	public void setHotelDescription(String hotelDescription) {
-		this.hotelDescription = hotelDescription;
-	}
-	public List<Room> getRoomList() {
-		return roomList;
+	
+	public Map<Integer,Room> getRoomList() {
+		return this.roomList;
 	}
 	public BigInteger getHotelPhoneNumber() {
 		return hotelPhoneNumber;
@@ -63,21 +62,14 @@ public class Hotel {
 	public void setHotelRating(Float hotelRating) {
 		this.hotelRating = hotelRating;
 	}
-	public void addRoom(Room room) {
-		this.roomList.add(room);
-	}
-	public void removeRoom(Room room) {
-		this.roomList.remove(room);
-	}
-	public void setRoomList(List<Room> roomList){
-		this.roomList = roomList;
-	}
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((hotelAddress == null) ? 0 : hotelAddress.hashCode());
-		result = prime * result + ((hotelDescription == null) ? 0 : hotelDescription.hashCode());
+		
 		result = prime * result + ((hotelId == null) ? 0 : hotelId.hashCode());
 		result = prime * result + ((hotelName == null) ? 0 : hotelName.hashCode());
 		result = prime * result + ((hotelPhoneNumber == null) ? 0 : hotelPhoneNumber.hashCode());
@@ -99,11 +91,7 @@ public class Hotel {
 				return false;
 		} else if (!hotelAddress.equals(other.hotelAddress))
 			return false;
-		if (hotelDescription == null) {
-			if (other.hotelDescription != null)
-				return false;
-		} else if (!hotelDescription.equals(other.hotelDescription))
-			return false;
+		
 		if (hotelId == null) {
 			if (other.hotelId != null)
 				return false;
@@ -134,7 +122,7 @@ public class Hotel {
 	@Override
 	public String toString() {
 		return "Hotel [hotelId=" + hotelId + ", hotelName=" + hotelName + ", hotelAddress=" + hotelAddress
-				+ ", hotelDescription=" + hotelDescription + ", roomList=" + roomList + ", hotelPhoneNumber="
+				+ ", roomList=" + roomList + ", hotelPhoneNumber="
 				+ hotelPhoneNumber + ", hotelRating=" + hotelRating + "]";
 	}
 	

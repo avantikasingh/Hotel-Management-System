@@ -1,12 +1,13 @@
 package com.cg.hotelmanagement.dto;
 
 import java.util.List;
+import java.util.Map;
 
 public class City {
 
     private String cityName;
     private int cityId;
-    private List<Hotel> hotelList;
+    private Map<Integer,Hotel> hotelList;
 
     public int getCityId() {
         return cityId;
@@ -16,7 +17,7 @@ public class City {
         this.cityId = cityId;
     }
 
-    public City(String cityName, int cityId, List<Hotel> hotelList) {
+    public City(String cityName, int cityId, Map<Integer,Hotel> hotelList) {
         this.cityName = cityName;
         this.cityId = cityId;
         this.hotelList = hotelList;
@@ -29,20 +30,15 @@ public class City {
         return cityName;
     }
 
-    public List<Hotel> getHotelList() {
+    public Map<Integer,Hotel> getHotelList() {
         return hotelList;
     }
 
-    public void addHotel(Hotel hotel){
-        hotelList.add(hotel);
-    }
-
-    public void removeHotel(Hotel hotel){
-        hotelList.remove(hotel);
-    }
+   
+    
 
     public void setHotelList(List<Hotel> hotelList) {
-        this.hotelList = hotelList;
+        this.hotelList = (Map<Integer, Hotel>) hotelList;
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.cg.hotelmanagement.dao;
 import com.cg.hotelmanagement.dto.*;
 
 import java.util.List;
+import java.util.Map;
 
 public interface IHotelManagementDao {
 
@@ -10,19 +11,21 @@ public interface IHotelManagementDao {
 
     public boolean addCustomer(Customer customer);
 
-    public List<City> showCityList();
+    public Map<Integer,City> showCityList();
 
     public boolean addCity(City city);
+    
+    public boolean removeCity(int cityId);
 
-    public boolean addHotel(Hotel hotel, City city, IHotelManagementDao hotelManagementDao);
+    public boolean addHotel(int cityId,Hotel hotel);
 
-    public boolean removeHotel(Hotel hotel, City city, IHotelManagementDao hotelManagementDao);
+    public boolean removeHotel(int cityId,int hotelId);
 
     public Hotel updateHotel(Hotel hotelOld, Hotel hotelUpdated, City city, IHotelManagementDao hotelManagementDao);
 
-    public boolean addRoom(Room room, Hotel hotel, City city, IHotelManagementDao hotelManagementDao);
+    public boolean addRoom(int cityId,int hotelId,Room newRoom);
 
-    public boolean removeRoom(Room room, Hotel hotel, City city, IHotelManagementDao hotelManagementDao);
+    public boolean removeRoom(int cityId, int hotelId,int roomId);
 
     public Room updateRoom(Room roomOld, Room roomUpdated, Hotel hotel, City city, IHotelManagementDao hotelManagementDao);
 

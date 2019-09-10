@@ -4,7 +4,11 @@ import com.cg.hotelmanagement.dao.HotelManagementDao;
 import com.cg.hotelmanagement.dao.IHotelManagementDao;
 import com.cg.hotelmanagement.dto.*;
 
+import java.math.BigInteger;
+import java.util.HashMap;
+
 import java.util.List;
+import java.util.Map;
 
 public class HotelManagementService implements IHotelManagementService {
 
@@ -21,18 +25,33 @@ public class HotelManagementService implements IHotelManagementService {
     }
 
     @Override
-    public List<City> showCityList() {
+    public Map<Integer,City> showCityList() {
         return hotelManagementDao.showCityList();
     }
-
+    
     @Override
-    public boolean addHotel(Hotel hotel, City city) {
-        return hotelManagementDao.addHotel(hotel,city,hotelManagementDao);
+    public boolean addCity(int cityId, String cityName) {
+    	City city=new City(cityName,cityId,new HashMap<Integer,Hotel>());
+        return hotelManagementDao.addCity(city);
+    }
+    
+    public boolean removeCity(int cityId) {
+        return hotelManagementDao.removeCity(cityId);
     }
 
     @Override
-    public boolean removeHotel(Hotel hotel, City city) {
-        return hotelManagementDao.removeHotel(hotel, city, hotelManagementDao);
+    public boolean addHotel(int cityId1,int hotelId,String hotelName,String hotelAddress,int hotelPhoneNumber,float hotelRating) {
+        
+    	HashMap<Integer, Room> roomList=new HashMap<Integer,Room>();
+    	
+    	Hotel newHotel=new Hotel(hotelId,hotelName, hotelAddress,roomList,
+			BigInteger.valueOf(hotelPhoneNumber), hotelRating);		//create Hotel object
+    	return hotelManagementDao.addHotel(cityId1,newHotel);	//add new hotel in the hotelList of the city
+    }
+
+    @Override
+    public boolean removeHotel(int cityId,int hotelId) {
+        return hotelManagementDao.removeHotel(cityId, hotelId);
     }
 
     @Override
@@ -40,6 +59,19 @@ public class HotelManagementService implements IHotelManagementService {
         return hotelManagementDao.updateHotel(hotelOld, hotelUpdated, city, hotelManagementDao);
     }
 
+    public boolean addRoom(int cityId,int hotelId,int roomId,String roomType,double roomRent,String roomNumber) {
+        
+    	Room newRoom=new Room(roomId,roomType,roomRent,roomNumber);		//create Hotel object
+    	return hotelManagementDao.addRoom(cityId,hotelId,newRoom);	//add new room in the roomList of the hotel
+    }
+    
+    public boolean removeRoom(int cityId,int hotelId,int roomId){
+    	
+    	return hotelManagementDao.removeRoom(cityId, hotelId, roomId);
+    	
+    }
+    
+    
     @Override
     public List<Admin> showAdminList() {
         return hotelManagementDao.showAdminList();
