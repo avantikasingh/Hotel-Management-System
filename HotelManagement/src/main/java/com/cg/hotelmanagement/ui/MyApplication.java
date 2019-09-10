@@ -31,7 +31,7 @@ public class MyApplication {
             bookingList.add(new Booking("1","2",dateFormat.parse("2017-01-10"),dateFormat.parse("2017-01-1"),dateFormat.parse("2017-01-10"),new BigDecimal(200)));
             bookingList.add(new Booking("1","2",dateFormat.parse("2017-01-10"),dateFormat.parse("2017-01-17"),dateFormat.parse("2017-01-10"),new BigDecimal(200)));
         } catch (ParseException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage()); 
         }
 
         Collections.sort(bookingList, new CompareByDate());
