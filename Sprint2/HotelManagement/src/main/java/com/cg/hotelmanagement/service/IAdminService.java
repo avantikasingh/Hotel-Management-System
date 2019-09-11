@@ -7,7 +7,9 @@ import java.util.Date;
 import java.util.Map;
 
 import com.cg.hotelmanagement.dto.Booking;
+import com.cg.hotelmanagement.dto.City;
 import com.cg.hotelmanagement.dto.Hotel;
+import com.cg.hotelmanagement.dto.Room;
 
 
 public interface IAdminService {
@@ -17,7 +19,7 @@ public interface IAdminService {
     
     public boolean removeCity(BigInteger cityId);
 
-    public boolean addHotel(BigInteger cityId1,BigInteger hotelId,String hotelName,String hotelAddress,int hotelPhoneNumber,float hotelRating);
+    public boolean addHotel(BigInteger cityId1,BigInteger hotelId,String hotelName,String hotelAddress,String hotelPhone,float hotelRating);
 
     public boolean removeHotel(BigInteger cityId,BigInteger hotelId);
     
@@ -29,11 +31,17 @@ public interface IAdminService {
     
     public Map<BigInteger, Hotel> viewHotels(Date checkIn, Date checkOut,
 			BigInteger cityId, boolean sortByRating);
+    
+    public Map<BigInteger,City> showCity();
+    
+    public Map<BigInteger,Hotel> showHotel(BigInteger cityId);
+    
+    public Map<BigInteger, Room> showRoom(BigInteger cityId,BigInteger hotelId);
 
-	public boolean addRoom();
-
-	public boolean addCity();
-
-	public boolean addHotel();
+//	public boolean addRoom();
+//
+//	public boolean addCity();
+//
+//	public boolean addHotel();
     
 }

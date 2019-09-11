@@ -33,11 +33,13 @@ public interface IAdminDao {
 	public boolean addBooking(BigInteger cityId, BigInteger hotelId,
 			BigInteger roomId, Booking booking);
 
-	public boolean addCity();
+	public Map<BigInteger, City> getCityList();
 
-	public boolean addRoom();
-
-	public boolean addHotel();
+//	public boolean addCity();
+//
+//	public boolean addRoom();
+//
+//	public boolean addHotel();
 
 	
 

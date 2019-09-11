@@ -2,6 +2,7 @@ package com.cg.hotelmanagement.dto;
 
 
 import java.math.BigInteger;
+import java.util.HashMap;
 import java.util.Map;
 
 public class City {
@@ -52,8 +53,10 @@ public class City {
         return super.equals(obj);
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
+	@Override
+	public String toString() {
+		return "City [cityName=" + cityName + ", cityId=" + cityId + ", hotelList=" + hotelList + "]";
+	}
+
+    
 }

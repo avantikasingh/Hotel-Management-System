@@ -21,18 +21,18 @@ public class AdminDao implements IAdminDao {
 
    
     
-    public boolean addCity(){
-		City city1 = new City("Mumbai",BigInteger.valueOf(1),new HashMap<BigInteger,Hotel>());
-		City city2 = new City("Pune",BigInteger.valueOf(2),new HashMap<BigInteger,Hotel>());
-		City city3 = new City("Delhi",BigInteger.valueOf(3),new HashMap<BigInteger,Hotel>());
-		City city4 = new City("Banglore",BigInteger.valueOf(4),new HashMap<BigInteger,Hotel>());
-		cityList.put(city1.getCityId(), city1);
-		cityList.put(city2.getCityId(), city2);
-		cityList.put(city3.getCityId(), city3);
-		cityList.put(city4.getCityId(), city4);
-    	return true;
-    	
-    }
+//    public boolean addCity(){
+//		City city1 = new City("Mumbai",BigInteger.valueOf(1),new HashMap<BigInteger,Hotel>());
+//		City city2 = new City("Pune",BigInteger.valueOf(2),new HashMap<BigInteger,Hotel>());
+//		City city3 = new City("Delhi",BigInteger.valueOf(3),new HashMap<BigInteger,Hotel>());
+//		City city4 = new City("Banglore",BigInteger.valueOf(4),new HashMap<BigInteger,Hotel>());
+//		cityList.put(city1.getCityId(), city1);
+//		cityList.put(city2.getCityId(), city2);
+//		cityList.put(city3.getCityId(), city3);
+//		cityList.put(city4.getCityId(), city4);
+//    	return true;
+//    	
+//    }
   
 
     public boolean addCity(City city){
@@ -49,21 +49,21 @@ public class AdminDao implements IAdminDao {
     }
 
    
-    public boolean addHotel(){
-    	Hotel hotel1 = new Hotel(BigInteger.valueOf(1),"Taj","Mumbai",new HashMap<BigInteger,Room>(),BigInteger.valueOf(100),4.9f);
-    	Hotel hotel2 = new Hotel(BigInteger.valueOf(2),"Taj","Mumbai",new HashMap<BigInteger,Room>(),BigInteger.valueOf(100),4.9f);
-    	Hotel hotel3 = new Hotel(BigInteger.valueOf(3),"ITC","Pune",new HashMap<BigInteger,Room>(),BigInteger.valueOf(100),4.9f);
-    	Hotel hotel4 = new Hotel(BigInteger.valueOf(4),"ITC","Pune",new HashMap<BigInteger,Room>(),BigInteger.valueOf(100),4.9f);
-    	Hotel hotel5 = new Hotel(BigInteger.valueOf(5),"JW","Banglore",new HashMap<BigInteger,Room>(),BigInteger.valueOf(100),4.9f);
-    	Hotel hotel6 = new Hotel(BigInteger.valueOf(6),"JW","Banglore",new HashMap<BigInteger,Room>(),BigInteger.valueOf(100),4.9f);
-    	addHotel(BigInteger.valueOf(1),hotel1);
-    	addHotel(BigInteger.valueOf(1),hotel2);
-    	addHotel(BigInteger.valueOf(2),hotel3);
-    	addHotel(BigInteger.valueOf(2),hotel4);
-    	addHotel(BigInteger.valueOf(3),hotel5);
-    	addHotel(BigInteger.valueOf(3),hotel6);
-    	return true;
-    }
+//    public boolean addHotel(){
+//    	Hotel hotel1 = new Hotel(BigInteger.valueOf(1),"Taj","Mumbai",new HashMap<BigInteger,Room>(),BigInteger.valueOf(100),4.9f);
+//    	Hotel hotel2 = new Hotel(BigInteger.valueOf(2),"Taj","Mumbai",new HashMap<BigInteger,Room>(),BigInteger.valueOf(100),4.9f);
+//    	Hotel hotel3 = new Hotel(BigInteger.valueOf(3),"ITC","Pune",new HashMap<BigInteger,Room>(),BigInteger.valueOf(100),4.9f);
+//    	Hotel hotel4 = new Hotel(BigInteger.valueOf(4),"ITC","Pune",new HashMap<BigInteger,Room>(),BigInteger.valueOf(100),4.9f);
+//    	Hotel hotel5 = new Hotel(BigInteger.valueOf(5),"JW","Banglore",new HashMap<BigInteger,Room>(),BigInteger.valueOf(100),4.9f);
+//    	Hotel hotel6 = new Hotel(BigInteger.valueOf(6),"JW","Banglore",new HashMap<BigInteger,Room>(),BigInteger.valueOf(100),4.9f);
+//    	addHotel(BigInteger.valueOf(1),hotel1);
+//    	addHotel(BigInteger.valueOf(1),hotel2);
+//    	addHotel(BigInteger.valueOf(2),hotel3);
+//    	addHotel(BigInteger.valueOf(2),hotel4);
+//    	addHotel(BigInteger.valueOf(3),hotel5);
+//    	addHotel(BigInteger.valueOf(3),hotel6);
+//    	return true;
+//    }
     
 
     public boolean addHotel(BigInteger cityId,Hotel hotel){
@@ -85,30 +85,30 @@ public class AdminDao implements IAdminDao {
     }
 
    
-    public boolean addRoom(){
-    	//BigInteger roomId, String roomType, Double roomRent, String roomNumber, List<Booking> bookingList
-    	Room room1 = new Room(BigInteger.valueOf(1),"Deluxe",10000.0d,"101",new LinkedList<>());
-    	Room room2 = new Room(BigInteger.valueOf(2),"Premium",1000.0d,"102",new LinkedList<>());
-    	Room room3 = new Room(BigInteger.valueOf(3),"Standard",100.0d,"103",new LinkedList<>());
-    	Room room4 = new Room(BigInteger.valueOf(4),"Deluxe",10000.0d,"101",new LinkedList<>());
-    	Room room5 = new Room(BigInteger.valueOf(5),"Premium",1000.0d,"102",new LinkedList<>());
-    	Room room6 = new Room(BigInteger.valueOf(6),"Standard",100.0d,"103",new LinkedList<>());
-    	Room room7 = new Room(BigInteger.valueOf(7),"Deluxe",10000.0d,"101",new LinkedList<>());
-    	Room room8 = new Room(BigInteger.valueOf(8),"Premium",1000.0d,"102",new LinkedList<>());
-    	Room room9 = new Room(BigInteger.valueOf(9),"Standard",100.0d,"103",new LinkedList<>());
-    	Room room10 = new Room(BigInteger.valueOf(10),"Deluxe",10000.0d,"104",new LinkedList<>());
-    	addRoom(BigInteger.valueOf(1),BigInteger.valueOf(1),room1);
-    	addRoom(BigInteger.valueOf(1),BigInteger.valueOf(1),room1);
-    	addRoom(BigInteger.valueOf(1),BigInteger.valueOf(1),room1);
-    	addRoom(BigInteger.valueOf(2),BigInteger.valueOf(1),room1);
-    	addRoom(BigInteger.valueOf(2),BigInteger.valueOf(1),room1);
-    	addRoom(BigInteger.valueOf(2),BigInteger.valueOf(1),room1);
-    	addRoom(BigInteger.valueOf(2),BigInteger.valueOf(2),room1);
-    	addRoom(BigInteger.valueOf(2),BigInteger.valueOf(2),room1);
-    	addRoom(BigInteger.valueOf(3),BigInteger.valueOf(1),room1);
-    	addRoom(BigInteger.valueOf(4),BigInteger.valueOf(1),room1);
-    	return true;
-    }
+//    public boolean addRoom(){
+//    	//BigInteger roomId, String roomType, Double roomRent, String roomNumber, List<Booking> bookingList
+//    	Room room1 = new Room(BigInteger.valueOf(1),"Deluxe",10000.0d,"101",new LinkedList<>());
+//    	Room room2 = new Room(BigInteger.valueOf(2),"Premium",1000.0d,"102",new LinkedList<>());
+//    	Room room3 = new Room(BigInteger.valueOf(3),"Standard",100.0d,"103",new LinkedList<>());
+//    	Room room4 = new Room(BigInteger.valueOf(4),"Deluxe",10000.0d,"101",new LinkedList<>());
+//    	Room room5 = new Room(BigInteger.valueOf(5),"Premium",1000.0d,"102",new LinkedList<>());
+//    	Room room6 = new Room(BigInteger.valueOf(6),"Standard",100.0d,"103",new LinkedList<>());
+//    	Room room7 = new Room(BigInteger.valueOf(7),"Deluxe",10000.0d,"101",new LinkedList<>());
+//    	Room room8 = new Room(BigInteger.valueOf(8),"Premium",1000.0d,"102",new LinkedList<>());
+//    	Room room9 = new Room(BigInteger.valueOf(9),"Standard",100.0d,"103",new LinkedList<>());
+//    	Room room10 = new Room(BigInteger.valueOf(10),"Deluxe",10000.0d,"104",new LinkedList<>());
+//    	addRoom(BigInteger.valueOf(1),BigInteger.valueOf(1),room1);
+//    	addRoom(BigInteger.valueOf(1),BigInteger.valueOf(1),room1);
+//    	addRoom(BigInteger.valueOf(1),BigInteger.valueOf(1),room1);
+//    	addRoom(BigInteger.valueOf(2),BigInteger.valueOf(1),room1);
+//    	addRoom(BigInteger.valueOf(2),BigInteger.valueOf(1),room1);
+//    	addRoom(BigInteger.valueOf(2),BigInteger.valueOf(1),room1);
+//    	addRoom(BigInteger.valueOf(2),BigInteger.valueOf(2),room1);
+//    	addRoom(BigInteger.valueOf(2),BigInteger.valueOf(2),room1);
+//    	addRoom(BigInteger.valueOf(3),BigInteger.valueOf(1),room1);
+//    	addRoom(BigInteger.valueOf(4),BigInteger.valueOf(1),room1);
+//    	return true;
+//    }
     
     
     @Override
@@ -230,6 +230,41 @@ public class AdminDao implements IAdminDao {
             System.out.println("City does not exist");
         return true;
     }
+
+	public Map<BigInteger, Customer> getCustomerList() {
+		return customerList;
+	}
+
+	public void setCustomerList(Map<BigInteger, Customer> customerList) {
+		this.customerList = customerList;
+	}
+
+	public Map<BigInteger, City> getCityList() {
+		return cityList;
+	}
+
+	public void setCityList(Map<BigInteger, City> cityList) {
+		this.cityList = cityList;
+	}
+
+	public Map<BigInteger, Admin> getAdminList() {
+		return adminList;
+	}
+
+	public void setAdminList(Map<BigInteger, Admin> adminList) {
+		this.adminList = adminList;
+	}
+
+	public Map<BigInteger, Booking> getBookingList() {
+		return bookingList;
+	}
+
+	public void setBookingList(Map<BigInteger, Booking> bookingList) {
+		this.bookingList = bookingList;
+	}
+	
+	
+
 
 
   

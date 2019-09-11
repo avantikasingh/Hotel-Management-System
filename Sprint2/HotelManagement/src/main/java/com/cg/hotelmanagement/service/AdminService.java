@@ -21,21 +21,21 @@ public class AdminService implements IAdminService {
         return adminDao.addCity(city);
     }
     
-    public boolean addCity(){
-    	return adminDao.addCity();
-    }
+//    public boolean addCity(){
+//    	return adminDao.addCity();
+//    }
     
     public boolean removeCity(BigInteger cityId) {
         return adminDao.removeCity(cityId);
     }
 
     @Override
-    public boolean addHotel(BigInteger cityId1,BigInteger hotelId,String hotelName,String hotelAddress,int hotelPhoneNumber,float hotelRating) {
+    public boolean addHotel(BigInteger cityId1,BigInteger hotelId,String hotelName,String hotelAddress,String hotelPhoneNumber,float hotelRating) {
         
     	HashMap<BigInteger, Room> roomList=new HashMap<BigInteger,Room>();
     	
     	Hotel newHotel=new Hotel(hotelId,hotelName, hotelAddress,roomList,
-			BigInteger.valueOf(hotelPhoneNumber), hotelRating);		//create Hotel object
+			new BigInteger(hotelPhoneNumber), hotelRating);		//create Hotel object
     	return adminDao.addHotel(cityId1,newHotel);	//add new hotel in the hotelList of the city
     }
 
@@ -69,14 +69,32 @@ public class AdminService implements IAdminService {
 				return adminDao.viewHotels(checkIn, checkOut, cityId, sortByRating);
 			}
 
-	@Override
-	public boolean addRoom() {
-		return adminDao.addRoom();
+//	@Override
+//	public boolean addRoom() {
+//		return adminDao.addRoom();
+//	}
+//
+//	@Override
+//	public boolean addHotel() {
+//		return adminDao.addHotel();
+//	}
+	
+	public Map<BigInteger,City> showCity(){
+		return adminDao.getCityList();
 	}
-
-	@Override
-	public boolean addHotel() {
-		return adminDao.addHotel();
+	
+	public Map<BigInteger, Hotel> showHotel(BigInteger cityId){
+		Map<BigInteger,City> cityMap = adminDao.getCityList();
+		City city = cityMap.get(cityId);
+		return city.getHotelList();
+	}
+	
+	public Map<BigInteger, Room> showRoom(BigInteger cityId,BigInteger hotelId){
+		Map<BigInteger,City> cityMap = adminDao.getCityList();
+		City city = cityMap.get(cityId);
+		Map<BigInteger,Hotel> hotelMap = city.getHotelList();
+		Hotel hotel = hotelMap.get(hotelId);
+		return hotel.getRoomList();
 	}
     
 }
