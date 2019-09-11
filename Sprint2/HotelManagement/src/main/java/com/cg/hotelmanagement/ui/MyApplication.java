@@ -90,13 +90,15 @@ public class MyApplication {
 	    		//////////////////////////
 	    		case 3:{
 	    			System.out.println("Enter Hotel Id to be updated :");
-	    			
+	    			BigInteger hotelId;
 	    			while(true) {
 	    				input=sc.next();
-	    				if(Validate.isNumeric(input))
-	    					break;
+	    				if(Validate.isNumeric(input)){
+	    					hotelId=new BigInteger(input);
+							break;
+						}
 	    			}
-	    			BigInteger hotelId=new BigInteger(input);
+	    			
 	    			
 	    			break;
 	    		}
@@ -150,7 +152,14 @@ public class MyApplication {
 	    			break;
 	    			
 	    		case 6:
-	    			//updateHotel
+	    			String hotelName,hotelAddress,hotelPhone;
+	    			System.out.println("City id");
+	    			BigInteger cityId = sc.nextBigInteger();
+	    			System.out.println("Enter hotel id");
+	    			BigInteger hotelId = sc.nextBigInteger();
+	    			System.out.println("Enter new Hotel name");
+	    			hotelName=sc.next();
+	    			adminService.updateHotel(cityId,hotelId,hotelName);
 	    			break;
 	    			
 	    		case 7:{
@@ -197,38 +206,38 @@ public class MyApplication {
 	    	    	}
 	    		
 	    		case 11:{
-	    			BigInteger cityId;
+	    			BigInteger cityId1;
 	    			while(true) {
 	    				input = sc.next();
 	        			if(Validate.isNumeric(input)) {
-	        				cityId =new BigInteger(input);
+	        				cityId1 =new BigInteger(input);
 	        				break;
 	        			}
 	    			}
-	    			Map<BigInteger,Hotel> hotelMap = adminService.showHotel(cityId);
+	    			Map<BigInteger,Hotel> hotelMap = adminService.showHotel(cityId1);
 	    			for (Entry<BigInteger, Hotel> entry : hotelMap.entrySet()) {  
 	    	            System.out.println(entry.getValue().toString()); 
 	    	    	}
 	    		}
 	    		
 	    		case 12:{
-	    			BigInteger cityId;
+	    			BigInteger cityId1;
 	    			while(true) {
 	    				input = sc.next();
 	        			if(Validate.isNumeric(input)) {
-	        				cityId =new BigInteger(input);
+	        				cityId1 =new BigInteger(input);
 	        				break;
 	        			}
 	    			}
-	    			BigInteger hotelId;
+	    			BigInteger hotelId11;
 	    			while(true) {
 	    				input = sc.next();
 	        			if(Validate.isNumeric(input)) {
-	        				hotelId =new BigInteger(input);
+	        				hotelId11 =new BigInteger(input);
 	        				break;
 	        			}
 	    			}
-	    			Map<BigInteger,Room> roomMap = adminService.showRoom(cityId,hotelId);
+	    			Map<BigInteger,Room> roomMap = adminService.showRoom(cityId1,hotelId11);
 	    			for (Entry<BigInteger, Room> entry : roomMap.entrySet()) {  
 	    	            System.out.println(entry.getValue().toString()); 
 	    	    	}
@@ -441,16 +450,16 @@ public class MyApplication {
     {
     	System.out.println("Enter 1 to Add a City");
     	System.out.println("Enter 2 to Remove a City");
-    	System.out.println("Enter 3 to Update a City");
+    	//System.out.println("Enter 3 to Update a City");
     	System.out.println("Enter 4 to Add a Hotel");
-    	System.out.println("Enter 5 to Remove a Hotel");
-    	System.out.println("Enter 6 to Update a Hotel");
-    	System.out.println("Enter 7 to Add a Room");
-    	System.out.println("Enter 8 to Remove a Room");
-    	System.out.println("Enter 9 to Update a Room");
-    	System.out.println("Enter 10 to Show a City");
-    	System.out.println("Enter 11 to Show a Hotel");
-    	System.out.println("Enter 12 to Show a Room");
+    	System.out.println("Enter 4 to Remove a Hotel");
+    	System.out.println("Enter 5 to Update a Hotel");
+    	System.out.println("Enter 6 to Add a Room");
+    	System.out.println("Enter 7 to Remove a Room");
+    	System.out.println("Enter 8 to Update a Room");
+    	System.out.println("Enter 9 to Show a City");
+    	System.out.println("Enter 10 to Show a Hotel");
+    	System.out.println("Enter 11 to Show a Room");
     }
     
     public static void printHotelUpdateOptions()

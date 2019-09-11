@@ -35,6 +35,10 @@ public interface IAdminDao {
 	public void viewHotels(BigInteger cityId, BigInteger hotelId);
 
 	public Map<BigInteger, Hotel> viewHotels(Date checkIn, Date checkOut, BigInteger cityId, boolean sortByRating);
+
+	void updateHotel(BigInteger cityId, BigInteger hotelId, String hotelName);
+
+	void updateRoom(BigInteger cityId, BigInteger hotelId, BigInteger roomId, String roomType);
 	
 
 }

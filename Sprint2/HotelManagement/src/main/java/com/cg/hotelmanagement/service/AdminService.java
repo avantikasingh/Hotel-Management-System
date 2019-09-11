@@ -96,5 +96,15 @@ public class AdminService implements IAdminService {
 		Hotel hotel = hotelMap.get(hotelId);
 		return hotel.getRoomList();
 	}
+	
+	public void updateHotel(BigInteger cityId, BigInteger hotelId, String hotelName) {
+		adminDao.updateHotel(cityId, hotelId, hotelName);
+	}
+
+	@Override
+	public void updateRoom(BigInteger cityId, BigInteger hotelId, BigInteger roomId, String roomType) {
+		adminDao.updateRoom(cityId, hotelId, roomId, roomType);
+		
+	}
     
 }

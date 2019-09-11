@@ -21,7 +21,8 @@ public class AdminDao implements IAdminDao {
     private Map<BigInteger,Admin> adminList = new HashMap<>();
     private Map<BigInteger,Booking> bookingList = new HashMap<>();  
 
-    static int bookingId=3000;
+    static long sysId;
+    static BigInteger bookingId=BigInteger.valueOf(sysId);
     
     public boolean addCity(City city){
         if(this.cityList==null)
@@ -236,6 +237,7 @@ public class AdminDao implements IAdminDao {
 
 	@Override
 	public void makeBooking(BigInteger cityId, BigInteger hotelId, Date checkIn, Date checkOut, BigInteger roomId) {
+		
 		if(cityList.containsKey(cityId)) {
 			City city = cityList.get(cityId);
 			Map<BigInteger,Hotel> hotMap = city.getHotelList();
@@ -246,11 +248,43 @@ public class AdminDao implements IAdminDao {
 					Room room = rMap.get(roomId);
 					Date date = new Date();
 					Booking booking = new Booking("23","Approved",date,checkIn,checkOut,BigDecimal.valueOf(12d));
+					bookingList.put(BigInteger.valueOf(sysId), booking);
+					room.getBookingList().add(booking);
+					sysId++;
 				}
 			}
 		}
 		
 	}
+
+	@Override
+	public void updateHotel(BigInteger cityId, BigInteger hotelId,String hotelName) {
+		if(cityList.containsKey(cityId)) {
+			City city = cityList.get(cityId);
+			Map<BigInteger,Hotel> hotMap = city.getHotelList();
+			if(hotMap.containsKey(hotelId)) {
+				Hotel hotel = hotMap.get(hotelId);
+				hotel.setHotelName(hotelName);
+			}
+		}
+	}
+	
+	@Override
+	public void updateRoom(BigInteger cityId, BigInteger hotelId,BigInteger roomId,String roomType) {
+		if(cityList.containsKey(cityId)) {
+			City city = cityList.get(cityId);
+			Map<BigInteger,Hotel> hotMap = city.getHotelList();
+			if(hotMap.containsKey(hotelId)) {
+				Hotel hotel = hotMap.get(hotelId);
+				Map<BigInteger,Room> rMap = hotel.getRoomList();
+				if(rMap.containsKey(roomId)) {
+					Room room = rMap.get(roomId);
+					room.setRoomType(roomType);
+				}
+			}
+		}
+	}
+	
 	
 
 

@@ -38,6 +38,11 @@ public interface IAdminService {
     
     public Map<BigInteger, Room> showRoom(BigInteger cityId,BigInteger hotelId);
 
+    public void updateHotel(BigInteger cityId, BigInteger hotelId, String hotelName);
+    
+    public void updateRoom(BigInteger cityId, BigInteger hotelId,BigInteger roomId,String roomType);
+
+    
 //	public boolean addRoom();
 //
 //	public boolean addCity();
