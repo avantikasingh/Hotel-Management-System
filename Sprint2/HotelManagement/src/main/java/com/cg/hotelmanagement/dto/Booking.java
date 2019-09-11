@@ -13,8 +13,6 @@ public class Booking {
 	private Date checkOut;
 	private BigDecimal BookingCost;
 
-	public Booking() {
-	}
 
 	/*public Booking(String bookingId, String bookingStatus, LocalDate bookingDate, LocalDate checkIn,
 				   LocalDate checkOut, BigDecimal bookingCost) {

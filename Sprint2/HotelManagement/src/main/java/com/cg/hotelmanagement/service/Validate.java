@@ -52,6 +52,23 @@ public class Validate {
 		return true;
 	}
 	
+	public static boolean aadhar(String input) {
+		if(input.length()!=12) {
+			System.out.println("Length should be 12");
+			return false;
+		}
+		try
+		{ 
+			new BigInteger(input);
+		} 
+		catch (NumberFormatException e) 
+		{ 
+			System.out.println("Enter a valid integer");
+			return false; 
+		}
+		return true;
+	}
+	
 	public static boolean isDouble(String input) {
 		 try 
 	        {
@@ -74,6 +91,13 @@ public class Validate {
 	    	return input;
 	    else
 	    	throw new HotelException("Name can contain only alphabets");
+	}
+	
+	public static String isUsernameValid(String input) throws HotelException{
+		if(input.length()>5 && input.length()<=10)
+			return input;
+		else
+			throw new HotelException("Username should be of minimum 6 digits and maximum 10 digits");
 	}
 	
 

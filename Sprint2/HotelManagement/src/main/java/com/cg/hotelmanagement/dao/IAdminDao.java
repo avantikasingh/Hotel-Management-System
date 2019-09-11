@@ -22,25 +22,19 @@ public interface IAdminDao {
 
     public boolean removeRoom(BigInteger cityId, BigInteger hotelId,BigInteger roomId);
 
-	public Map<BigInteger, Hotel> viewHotels(Date checkIn, Date checkOut,
-			BigInteger cityId, boolean sortByRating);
-
-	public Booking makeBooking(BigInteger hotelId, Date checkIn, Date checkOut,
+	public void makeBooking(BigInteger hotelId, BigInteger hotelId2, Date checkIn, Date checkOut,
 			BigInteger roomId);
 
-	public boolean register();
+	public boolean register(Customer customer);
 
 	public boolean addBooking(BigInteger cityId, BigInteger hotelId,
 			BigInteger roomId, Booking booking);
 
 	public Map<BigInteger, City> getCityList();
 
-//	public boolean addCity();
-//
-//	public boolean addRoom();
-//
-//	public boolean addHotel();
+	public void viewHotels(BigInteger cityId, BigInteger hotelId);
 
+	public Map<BigInteger, Hotel> viewHotels(Date checkIn, Date checkOut, BigInteger cityId, boolean sortByRating);
 	
 
 }

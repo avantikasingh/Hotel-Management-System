@@ -2,6 +2,7 @@ package com.cg.hotelmanagement.ui;
 
 import com.cg.hotelmanagement.dto.Booking;
 import com.cg.hotelmanagement.dto.City;
+import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.exception.HotelException;
@@ -11,6 +12,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
@@ -27,11 +29,13 @@ public class MyApplication {
     	
     	IAdminService adminService=new AdminService();
     	
-    	System.out.println("Specify Role :\n1 for Admin\n2 for Customer\n3 For customer");
+    	ICustomerService customerService = new CustomerService();
+    	
+    	System.out.println("Specify Role :\n1 for Admin\n2 for Customer\n3 For LoggedInUser");
     	
     	int role=sc.nextInt();
     	
-//		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 //
 //		try {
 //			Booking booking = new Booking("1", "1", dateFormat.parse("2017-03-10"), dateFormat.parse("2017-03-17"),dateFormat.parse("2017-03-19"),BigDecimal.valueOf(10));
@@ -235,12 +239,199 @@ public class MyApplication {
     		}while(adminChoice!=13);
     		
     		break;
-    	case 2:
-    		//printCustomerDetails();
-    		//int customerChoice=sc.nextInt();
-    		
+    	case 2:{
+    		input=sc.next();
+    		Date checkIn,checkOut;
+    		System.out.println("Enter checkIn date");
+    		while(true) {
+	    		try {
+					checkIn = dateFormat.parse(input);
+					break;
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					System.out.println("Enter date in correct format");
+					continue;
+				}
+    		}
+    		input = sc.next();
+    		System.out.println("Enter check out date");
+    		while(true) {
+	    		try {
+					checkOut = dateFormat.parse(input);
+					break;
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					System.out.println("Enter date in correct format");
+					continue;
+				}
+    		}
+    		BigInteger cityId;
+    		BigInteger hotelId;
+    		BigInteger roomId;
+    		System.out.println("Enter city id");
+			while(true) {
+				input = sc.next();
+    			if(Validate.isNumeric(input)) {
+    				cityId =new BigInteger(input);
+    				break;
+    			}
+			}
+    		System.out.println("Enter hotel id");
+    		while(true) {
+				input = sc.next();
+    			if(Validate.isNumeric(input)) {
+    				hotelId =new BigInteger(input);
+    				break;
+    			}
+			}
+    		System.out.println("Enter room id");
+    		while(true) {
+				input = sc.next();
+    			if(Validate.isNumeric(input)) {
+    				roomId =new BigInteger(input);
+    				break;
+    			}
+			}
+    		customerService.makeBooking(cityId,hotelId, checkIn, checkOut, roomId);
     		break;
     	}
+    	
+    	
+    	case 3:{
+    		int choiceForUser;
+			do {
+    		printLoggedInUserDetails();
+    		choiceForUser = sc.nextInt();
+    		switch(choiceForUser) {
+    		case 1:{
+    			BigInteger userId;
+    			System.out.println("Enter userId");
+    			while(true) {
+    				input = sc.next();
+        			if(Validate.isNumeric(input)) {
+        				userId =new BigInteger(input);
+        				break;
+        			}
+    			}
+    			String username;
+    			System.out.println("Enter username");
+    			while(true) {
+    				input=sc.next();
+    				try {
+    					username = Validate.isUsernameValid(input);
+    					break;
+    				}
+    				catch(HotelException e) {
+    					System.out.println(e.getMessage());
+    					continue;
+    				}
+    			}
+    			String emailId;
+    			System.out.println("Enter emailId");
+    			while(true) {
+    				input=sc.next();
+	    			try {
+	    				emailId = Validate.validateEmail(input);
+						break;
+					}
+					catch(HotelException e) {
+						System.out.println(e.getMessage());
+						continue;
+					}
+    			}
+    			Date dateOfBirth;
+    			System.out.println("Enter dateOfBirth");
+    			while(true) {
+    				input=sc.next();
+    				try {
+						Date date = dateFormat.parse(input);
+						break;
+						
+					} catch (ParseException e) {
+						System.out.println("Enter date in proper format");
+						continue;
+					}
+    			}
+    			String userMobileNo;
+    			System.out.println("Enter mobile number");
+    			while(true) {
+    				input=sc.next();
+    				try {
+    					userMobileNo = Validate.validateMobileNumber(input);
+						break;
+						
+					} catch (HotelException e) {
+						System.out.println(e.getMessage());
+						continue;
+					}
+    			}
+    			String firstName;
+    			System.out.println("Enter First name");
+    			while(true) {
+    				input=sc.next();
+    				try {
+    					firstName = Validate.isStringOnlyAlphabet(input);
+						break;
+						
+					} catch (HotelException e) {
+						System.out.println(e.getMessage());
+						continue;
+					}
+    			}
+    			String lastName = null;
+    			System.out.println("Enter Last Name");
+    			while(true) {
+    				input=sc.next();
+    				try {
+    					firstName = Validate.isStringOnlyAlphabet(input);
+						break;
+						
+					} catch (HotelException e) {
+						System.out.println(e.getMessage());
+						continue;
+					}
+    			}
+    			BigInteger aadharNumber;
+    			System.out.println("Enter aadhar number");
+    			while(true) {
+    				input = sc.next();
+        			if(Validate.aadhar(input)) {
+        				aadharNumber =new BigInteger(input);
+        				break;
+        			}
+    			}
+    			
+    			customerService.register(BigInteger.valueOf(userIdSys++),null,firstName,lastName,aadharNumber);
+    			
+    			//customerService.register(userId,username,emailId,dateOfBirth,userMobileNo);
+			break;
+    		}
+    		case 2:{
+    			System.out.println("Enter city Id");
+    			BigInteger cityId;
+    			while(true) {
+    				input = sc.next();
+        			if(Validate.isNumeric(input)) {
+        				cityId =new BigInteger(input);
+        				break;
+        			}
+    			}
+    			BigInteger hotelId = null;
+    			while(true) {
+    				input = sc.next();
+        			if(Validate.isNumeric(input)) {
+        				cityId =new BigInteger(input);
+        				break;
+        			}
+    			}
+    			customerService.viewHotels(cityId,hotelId);
+    		}
+    		}
+    			
+    		}while(choiceForUser!=3);
+    	}
+    }
+    	
     	
     	sc.close();
     	
@@ -268,6 +459,15 @@ public class MyApplication {
     	System.out.println("Enter 2 to Update Hotel Address :");
     	System.out.println("Enter 3 to Update Hotel Contact No :");
     	System.out.println("Enter 4 to Update Hotel Rating :");
+    }
+    
+    public static void printLoggedInUserDetails() {
+    	System.out.println("Enter 1 to Register");
+    	System.out.println("Enter 2 to view hotels");
+    }
+    
+    public static void printCustomerDetails() {
+    	System.out.println("Make booking");
     }
 
 }

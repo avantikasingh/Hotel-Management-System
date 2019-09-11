@@ -9,10 +9,17 @@ public class Customer{
 	private Booking booking;
 	private String firstName;
 	private String lastName;
-	private Date dateOfBirth;
-	private BigInteger customerMobileNo;
 	private String gender;
-	private String panNumber;
+	private String aadharNumber;
+	
+	public Customer(BigInteger customerId, Booking booking, String firstName, String lastName, String aadharNumber) {
+		super();
+		this.customerId = customerId;
+		this.booking = booking;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.aadharNumber = aadharNumber;
+	}
 	public BigInteger getCustomerId() {
 		return customerId;
 	}
@@ -37,18 +44,6 @@ public class Customer{
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public Date getDateOfBirth() {
-		return dateOfBirth;
-	}
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}
-	public BigInteger getCustomerMobileNo() {
-		return customerMobileNo;
-	}
-	public void setCustomerMobileNo(BigInteger customerMobileNo) {
-		this.customerMobileNo = customerMobileNo;
-	}
 	public String getGender() {
 		return gender;
 	}
@@ -56,22 +51,19 @@ public class Customer{
 		this.gender = gender;
 	}
 	public String getPanNumber() {
-		return panNumber;
+		return aadharNumber;
 	}
 	public void setPanNumber(String panNumber) {
-		this.panNumber = panNumber;
+		this.aadharNumber = panNumber;
 	}
 	public Customer(BigInteger customerId, Booking booking, String firstName,
-			String lastName, Date dateOfBirth, BigInteger customerMobileNo,
-			String gender, String panNumber) {
+			String lastName,String gender, String panNumber) {
 		this.customerId = customerId;
 		this.booking = booking;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.dateOfBirth = dateOfBirth;
-		this.customerMobileNo = customerMobileNo;
 		this.gender = gender;
-		this.panNumber = panNumber;
+		this.aadharNumber = panNumber;
 	}
 	public Customer() {
 	
@@ -81,20 +73,11 @@ public class Customer{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((booking == null) ? 0 : booking.hashCode());
-		result = prime * result
-				+ ((customerId == null) ? 0 : customerId.hashCode());
-		result = prime
-				* result
-				+ ((customerMobileNo == null) ? 0 : customerMobileNo.hashCode());
-		result = prime * result
-				+ ((dateOfBirth == null) ? 0 : dateOfBirth.hashCode());
-		result = prime * result
-				+ ((firstName == null) ? 0 : firstName.hashCode());
+		result = prime * result + ((customerId == null) ? 0 : customerId.hashCode());
+		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
-		result = prime * result
-				+ ((lastName == null) ? 0 : lastName.hashCode());
-		result = prime * result
-				+ ((panNumber == null) ? 0 : panNumber.hashCode());
+		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+		result = prime * result + ((aadharNumber == null) ? 0 : aadharNumber.hashCode());
 		return result;
 	}
 	@Override
@@ -116,16 +99,6 @@ public class Customer{
 				return false;
 		} else if (!customerId.equals(other.customerId))
 			return false;
-		if (customerMobileNo == null) {
-			if (other.customerMobileNo != null)
-				return false;
-		} else if (!customerMobileNo.equals(other.customerMobileNo))
-			return false;
-		if (dateOfBirth == null) {
-			if (other.dateOfBirth != null)
-				return false;
-		} else if (!dateOfBirth.equals(other.dateOfBirth))
-			return false;
 		if (firstName == null) {
 			if (other.firstName != null)
 				return false;
@@ -141,21 +114,19 @@ public class Customer{
 				return false;
 		} else if (!lastName.equals(other.lastName))
 			return false;
-		if (panNumber == null) {
-			if (other.panNumber != null)
+		if (aadharNumber == null) {
+			if (other.aadharNumber != null)
 				return false;
-		} else if (!panNumber.equals(other.panNumber))
+		} else if (!aadharNumber.equals(other.aadharNumber))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Customer [customerId=" + customerId + ", booking=" + booking
-				+ ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", dateOfBirth=" + dateOfBirth + ", customerMobileNo="
-				+ customerMobileNo + ", gender=" + gender + ", panNumber="
-				+ panNumber + "]";
+		return "Customer [customerId=" + customerId + ", booking=" + booking + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", gender=" + gender + ", panNumber=" + aadharNumber + "]";
 	}
+	
 	
 	
 	

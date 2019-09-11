@@ -9,10 +9,10 @@ import com.cg.hotelmanagement.dto.Hotel;
 
 public interface ICustomerService {
 	
-	public Map<BigInteger,Hotel> viewHotels(Date checkIn, Date checkOut, BigInteger cityId, boolean sortByRating);
-	
-	public Booking makeBooking(BigInteger hotelId, Date checkIn, Date checkOut, BigInteger roomId);
-	
-	public boolean register();
-	
+	public boolean register(BigInteger customerId, Booking booking, String firstName, String lastName, BigInteger aadharNumber);
+
+	public void viewHotels(BigInteger cityId, BigInteger hotelId);
+
+	public void makeBooking(BigInteger cityId, BigInteger hotelId, Date checkIn, Date checkOut, BigInteger roomId);
+;
 }

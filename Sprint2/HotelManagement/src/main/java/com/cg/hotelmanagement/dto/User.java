@@ -4,23 +4,13 @@ import java.util.Date;
 
 public class User {
 	protected String userId;
-	protected String userName;
+	protected String username;
 	protected String emailId;
 	protected Date dob;
-	protected String userPhone;
+	protected String userMobile;
 	
 	
 	public User() {
-	}
-
-
-	public User(String userId, String userName, String emailId, Date dob, String userPhone) {
-		super();
-		this.userId = userId;
-		this.userName = userName;
-		this.emailId = emailId;
-		this.dob = dob;
-		this.userPhone = userPhone;
 	}
 
 
@@ -34,13 +24,13 @@ public class User {
 	}
 
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 
@@ -64,13 +54,13 @@ public class User {
 	}
 
 
-	public String getUserPhone() {
-		return userPhone;
+	public String getUserMobile() {
+		return userMobile;
 	}
 
 
-	public void setUserPhone(String userPhone) {
-		this.userPhone = userPhone;
+	public void setUserMobile(String userMobile) {
+		this.userMobile = userMobile;
 	}
 
 
@@ -81,8 +71,8 @@ public class User {
 		result = prime * result + ((dob == null) ? 0 : dob.hashCode());
 		result = prime * result + ((emailId == null) ? 0 : emailId.hashCode());
 		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
-		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
-		result = prime * result + ((userPhone == null) ? 0 : userPhone.hashCode());
+		result = prime * result + ((userMobile == null) ? 0 : userMobile.hashCode());
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
 
@@ -111,15 +101,15 @@ public class User {
 				return false;
 		} else if (!userId.equals(other.userId))
 			return false;
-		if (userName == null) {
-			if (other.userName != null)
+		if (userMobile == null) {
+			if (other.userMobile != null)
 				return false;
-		} else if (!userName.equals(other.userName))
+		} else if (!userMobile.equals(other.userMobile))
 			return false;
-		if (userPhone == null) {
-			if (other.userPhone != null)
+		if (username == null) {
+			if (other.username != null)
 				return false;
-		} else if (!userPhone.equals(other.userPhone))
+		} else if (!username.equals(other.username))
 			return false;
 		return true;
 	}
@@ -127,9 +117,22 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", userName=" + userName + ", emailId=" + emailId + ", dob=" + dob
-				+ ", userPhone=" + userPhone + "]";
+		return "User [userId=" + userId + ", username=" + username + ", emailId=" + emailId + ", dob=" + dob
+				+ ", userMobile=" + userMobile + "]";
 	}
+
+
+	public User(String userId, String username, String emailId, Date dob, String userMobile) {
+		super();
+		this.userId = userId;
+		this.username = username;
+		this.emailId = emailId;
+		this.dob = dob;
+		this.userMobile = userMobile;
+	}
+
+
+	
 	
 	
 	
