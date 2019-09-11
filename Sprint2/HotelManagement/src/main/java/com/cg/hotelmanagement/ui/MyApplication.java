@@ -5,6 +5,7 @@ import com.cg.hotelmanagement.service.HotelManagementService;
 import com.cg.hotelmanagement.service.IHotelManagementService;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
@@ -90,19 +91,31 @@ public class MyApplication {
     			
     			System.out.println("Enter new City Name");
     			String cityName=sc.next();
-    			hotelService.addCity(cityId++,cityName);
+    			try {
+    				hotelService.addCity(cityId++,cityName);
+					
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+					
+				}
+    			
     			break;
     			
     		case 2:
     			System.out.println("Enter City Id to be Removed :");
-    			int id=sc.nextInt();
-    			boolean b=hotelService.removeCity(id);
+    			BigInteger id=sc.nextBigInteger();
+    			try {
+					boolean b=hotelService.removeCity(id);
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
+    			
     			break;
     			
     		case 3:
     			System.out.println("Enter Hotel Id to be updated :");
     			
-    			int hId=sc.nextInt();
+    			BigInteger hId=sc.nextBigInteger();
     			
     			printHotelUpdateOptions();
     			
@@ -117,7 +130,7 @@ public class MyApplication {
     			
     		case 4:
     			System.out.println("Enter City Id in which Hotel is to be added :");
-    			int cityId1=sc.nextInt();
+    			BigInteger cityId1=sc.nextBigInteger();
     			
     			System.out.println("Enter new Hotel Details");
     			
@@ -126,23 +139,34 @@ public class MyApplication {
     			System.out.println("Hotel Address:");
     			String hotelAddress=sc.next();
     			System.out.println("Hotel Contact No:");
-    			int hotelPhoneNo=sc.nextInt();
+    			BigInteger hotelPhoneNo=sc.nextBigInteger();
     			System.out.println("Hotel Rating:");
     			float hotelRating=sc.nextFloat();
+    			try {
+    				hotelService.addHotel(cityId1,hotelId++,hotelName,hotelAddress,hotelPhoneNo,hotelRating);
+					
+				} catch (Exception e) {
+					// TODO: handle exception
+					System.out.println(e.getMessage());
+				}
     			
-    			hotelService.addHotel(cityId1,hotelId++,hotelName,hotelAddress,hotelPhoneNo,hotelRating);
     			
     			break;
     			
     		case 5:
     			
     			System.out.println("Enter City Id in which Hotel is to be removed :");
-    			int cityId2=sc.nextInt();
+    			BigInteger cityId2=sc.nextBigInteger();
     			
     			System.out.println("Enter Hotel Id to be removed:");
-    			int hotelId1=sc.nextInt();
+    			BigInteger hotelId1=sc.nextBigInteger();
+    			try {
+    				hotelService.removeHotel(cityId2,hotelId1);
+				} catch (Exception e) {
+					// TODO: handle exception
+					System.out.println(e.getMessage());
+				}
     			
-    			hotelService.removeHotel(cityId2,hotelId1);
     			
     			break;
     			
@@ -153,13 +177,13 @@ public class MyApplication {
     		case 7:
     			
     			System.out.println("Enter City Id in which Room is to be added :");
-    			int cityId3=sc.nextInt();
+    			BigInteger cityId3=sc.nextBigInteger();
+ 
     			
     			System.out.println("Enter Hotel Id in which Room is to be added:");
-    			int hotelId2=sc.nextInt();
+    			BigInteger hotelId2=sc.nextBigInteger();
     			
     			System.out.println("Enter new Room Details");
-    			
     			System.out.println("Room Type:");
     			String roomType=sc.next();
     			System.out.println("Room Rent:");
@@ -167,8 +191,13 @@ public class MyApplication {
     			System.out.println("Room No:");
     			String roomNumber=sc.next();
     			
+    			try {
+					hotelService.addRoom(cityId,hotelId,roomId++,roomType,roomRent,roomNumber);
+				} catch (Exception e) {
+					// TODO: handle exception
+					System.out.println(e.getMessage());
+				}
     			
-    			hotelService.addRoom(cityId,hotelId,roomId++,roomType,roomRent,roomNumber);
     			
     			
     			
@@ -179,15 +208,34 @@ public class MyApplication {
     		case 8:
     			
     			System.out.println("Enter City Id in which Room is to be removed :");
-    			int cityId4=sc.nextInt();
+    			BigInteger cityId4=sc.nextBigInteger();
+    			try {
+    				hotelService.removeCity(cityId4);
+    			
+					
+				} catch (Exception e) {
+					// TODO: handle exception
+					System.out.println(e.getMessage());
+				}
     			
     			System.out.println("Enter Hotel Id in which Room is to be removed:");
-    			int hotelId3=sc.nextInt();
+    			BigInteger hotelId3=sc.nextBigInteger();
+    			try {
+					hotelService.removeHotel(cityId4, hotelId3);
+				} catch (Exception e) {
+					// TODO: handle exception
+					System.out.println(e.getMessage());
+				}
     			
     			System.out.println("Enter Room Id to be removed :");
-    			int roomId1=sc.nextInt();
+    			BigInteger roomId1=sc.nextBigInteger();
+    			try {
+    				hotelService.removeRoom(cityId,hotelId,roomId);
+					
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+				}System.out.println();
     			
-    			hotelService.removeRoom(cityId,hotelId,roomId);
     			
     		break;
     			
@@ -197,7 +245,6 @@ public class MyApplication {
     		break;
     	case 2:
     		//printCustomerDetails();
-    		int customerChoice=sc.nextInt();
     		
     		break;
     	}
