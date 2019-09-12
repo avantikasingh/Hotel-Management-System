@@ -1,7 +1,9 @@
 package com.cg.hotelmanagement.dao;
 
 import com.cg.hotelmanagement.dto.*;
+import com.cg.hotelmanagement.exception.HotelException;
 import com.cg.hotelmanagement.service.CompareByDate;
+import com.cg.hotelmanagement.service.Validate;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -25,9 +27,7 @@ public class AdminDao implements IAdminDao {
     static BigInteger bookingId=BigInteger.valueOf(sysId);
     
     public boolean addCity(City city){
-        if(this.cityList==null)
-            cityList = new HashMap<BigInteger,City>();
-        
+       
         cityList.put(city.getCityId(),city);
         System.out.println("Added city with Id "+city.getCityId());
         return true;
@@ -230,7 +230,7 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public void viewHotels(BigInteger cityId, BigInteger hotelId) {
+	public void viewHotels(BigInteger cityId) {
 		if(cityList.containsKey(cityId)) {
 			City city = cityList.get(cityId);
 			System.out.println(city);
@@ -249,29 +249,39 @@ public class AdminDao implements IAdminDao {
 	@Override
 	public void makeBooking(BigInteger cityId, BigInteger hotelId, Date checkIn, Date checkOut, BigInteger roomId) {
 		
-		if(cityList.containsKey(cityId)) {
-			City city = cityList.get(cityId);
-			Map<BigInteger,Hotel> hotMap = city.getHotelList();
-			if(hotMap.containsKey(hotelId)) {
-				Hotel hotel = hotMap.get(hotelId);
-				Map<BigInteger,Room> rMap = hotel.getRoomList();
-				if(rMap.containsKey(roomId)) {
-					Room room = rMap.get(roomId);
-					Date date = new Date();
-					Booking booking = new Booking("23","Approved",date,checkIn,checkOut,BigDecimal.valueOf(12d));
-					bookingList.put(BigInteger.valueOf(sysId), booking);
-					room.getBookingList().add(booking);
-					sysId++;
-					System.out.println("Booking successful with Id "+booking.getBookingId());
+		try {
+			if(Validate.validateCheckInCheckOutDate(checkIn, checkOut)){
+			
+				if(cityList.containsKey(cityId)) {
+					
+					City city = cityList.get(cityId);
+					Map<BigInteger,Hotel> hotMap = city.getHotelList();
+					
+					if(hotMap.containsKey(hotelId)) {
+					
+						Hotel hotel = hotMap.get(hotelId);
+						Map<BigInteger,Room> rMap = hotel.getRoomList();
+						if(rMap.containsKey(roomId)) {
+							Room room = rMap.get(roomId);
+							Date date = new Date();
+							Booking booking = new Booking("23","Approved",date,checkIn,checkOut,BigDecimal.valueOf(12d));
+							bookingList.put(BigInteger.valueOf(sysId), booking);
+							room.getBookingList().add(booking);
+							sysId++;
+							System.out.println("Booking successful with Id "+booking.getBookingId());
+						}
+						else
+							System.out.println("Room does not exist");
+					}
+					else
+						System.out.println("Hotel does not exist");
 				}
 				else
-					System.out.println("Room does not exist");
+					System.out.println("City does not exist");
 			}
-			else
-				System.out.println("Hotel does not exist");
+		} catch (HotelException e) {
+			System.out.println("Check In date should be less than checkout date");
 		}
-		else
-			System.out.println("City does not exist");
 	}
 
 	@Override

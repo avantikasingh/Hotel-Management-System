@@ -13,6 +13,7 @@ import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
@@ -27,13 +28,9 @@ public class MyApplication {
     	Scanner sc = new Scanner(System.in);
     	
     	
-    	IAdminService adminService=new AdminService();
+    	AdminService adminService=new AdminService();
     	
     	ICustomerService customerService = new CustomerService();
-    	
-    	System.out.println("Specify Role :\n1 for Admin\n2 for Customer\n3 For LoggedInUser");
-    	
-    	int role=sc.nextInt();
     	
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 //
@@ -50,15 +47,29 @@ public class MyApplication {
 		
 		adminService.addRoom(BigInteger.valueOf(cityIdSys), BigInteger.valueOf(hotelIdSys), BigInteger.valueOf(roomIdSys), "Standard", 2000d, "101");
 		
-		cityIdSys++;
-		hotelIdSys++;
-		roomIdSys++;
 		
     	String input;
     	
+    	System.out.println("Specify Role :\n1 for Admin\n2 for Customer\n3 For LoggedInUser");
+    	int role = 0;
+    	
+    	while(true){
+	    	try{
+	    		role=sc.nextInt();
+	    		break;
+	    	}
+	    	catch(Exception e){
+	    		System.out.println(e);
+	    	}
+    	}
+    	
+    	
     	int adminChoice;
+    	do
+    	{
     	switch(role)
     	{
+    	
     	case 1:
     		do {
     		printAdminDetails();
@@ -80,7 +91,7 @@ public class MyApplication {
 		    				continue;
 		    			}
 		    		}
-	    			adminService.addCity(BigInteger.valueOf(cityIdSys++),cityName);
+	    			adminService.addCity(BigInteger.valueOf(++cityIdSys),cityName);
 	    			break;
 	    		}
 	    			
@@ -98,20 +109,20 @@ public class MyApplication {
 	    		}
 	    		
 	    		//////////////////////////
-	    		case 3:{
-	    			System.out.println("Enter Hotel Id to be updated :");
-	    			BigInteger hotelId;
-	    			while(true) {
-	    				input=sc.next();
-	    				if(Validate.isNumeric(input)){
-	    					hotelId=new BigInteger(input);
-							break;
-						}
-	    			}
-	    			
-	    			
-	    			break;
-	    		}
+//	    		case 3:{
+//	    			System.out.println("Enter Hotel Id to be updated :");
+//	    			BigInteger hotelId;
+//	    			while(true) {
+//	    				input=sc.next();
+//	    				if(Validate.isNumeric(input)){
+//	    					hotelId=new BigInteger(input);
+//							break;
+//						}
+//	    			}
+//	    			
+//	    			
+//	    			break;
+//	    		}
 	    			
 	    		case 4:{
 	    			BigInteger cityId1;
@@ -124,10 +135,10 @@ public class MyApplication {
 	        			}
 	    			}
 	    			String hotelName,hotelAddress,hotelPhone;
-	    			System.out.println("Enter new Hotel Details");
-	    			System.out.println("Hotel Name:");
+	    			System.out.println("Enter new Hotel Details"); 
+	    			System.out.println("Hotel Name:");  //can have alphanumeric
 	    			hotelName=sc.next();
-	    			System.out.println("Hotel Address:");
+	    			System.out.println("Hotel Address:");  //can have alphanumeric
 	    			hotelAddress=sc.next();
 	    			System.out.println("Hotel Contact No:");
 	    			while(true) {
@@ -144,7 +155,7 @@ public class MyApplication {
 	    			System.out.println("Hotel Rating:");
 	    			float hotelRating=sc.nextFloat();
 	    			
-	    			adminService.addHotel(cityId1,BigInteger.valueOf(hotelIdSys++),hotelName,hotelAddress,hotelPhone,hotelRating);
+	    			adminService.addHotel(cityId1,BigInteger.valueOf(++hotelIdSys),hotelName,hotelAddress,hotelPhone,hotelRating);
 	    			
 	    			break;
 	    		}
@@ -152,7 +163,15 @@ public class MyApplication {
 	    		case 5:
 	    			
 	    			System.out.println("Enter City Id in which Hotel is to be removed :");
-	    			BigInteger cityId2=sc.nextBigInteger();
+	    			BigInteger cityId2;
+	    			while(true) {
+	    				input = sc.next();
+	        			if(Validate.isNumeric(input)) {
+	        				cityId2 =new BigInteger(input);
+	        				break;
+	        			}
+	    			}
+	    			//BigInteger cityId2=sc.nextBigInteger();
 	    			
 	    			System.out.println("Enter Hotel Id to be removed:");
 	    			BigInteger hotelId1=sc.nextBigInteger();
@@ -188,7 +207,7 @@ public class MyApplication {
 	    			double roomRent=sc.nextDouble();
 	    			System.out.println("Room No:");
 	    			String roomNumber=sc.next();   			
-	    			adminService.addRoom(cityId3,hotelId2,BigInteger.valueOf(roomIdSys++),roomType,roomRent,roomNumber);    			
+	    			adminService.addRoom(cityId3,hotelId2,BigInteger.valueOf(++roomIdSys),roomType,roomRent,roomNumber);    			
 	    			break;
 	    		}
 	    			
@@ -347,7 +366,7 @@ public class MyApplication {
     				break;
     			}
 			}
-    		customerService.makeBooking(cityId,hotelId, checkIn, checkOut, roomId);
+    		customerService.makeBooking(cityId,hotelId, checkIn, checkOut, roomId,adminService);
     		break;
     	}
     	
@@ -471,15 +490,15 @@ public class MyApplication {
         				break;
         			}
     			}
-    			BigInteger hotelId = null;
-    			while(true) {
-    				input = sc.next();
-        			if(Validate.isNumeric(input)) {
-        				cityId =new BigInteger(input);
-        				break;
-        			}
-    			}
-    			customerService.viewHotels(cityId,hotelId);
+//    			BigInteger hotelId = null;
+//    			while(true) {
+//    				input = sc.next();
+//        			if(Validate.isNumeric(input)) {
+//        				hotelId =new BigInteger(input);
+//        				break;
+//        			}
+//    			}
+    			customerService.viewHotels(cityId,adminService);
     		}
     		break;
     		}
@@ -487,7 +506,7 @@ public class MyApplication {
     		}while(choiceForUser!=3);
     	}
     }
-    	
+    	}while(role!=1 || role!=2 || role!=3);
     	
     	sc.close();
     	
@@ -497,7 +516,7 @@ public class MyApplication {
     {
     	System.out.println("Enter 1 to Add a City");
     	System.out.println("Enter 2 to Remove a City");
-    	System.out.println("Enter 3 to Update a City");
+    	//System.out.println("Enter 3 to Update a City");
     	System.out.println("Enter 4 to Add a Hotel");
     	System.out.println("Enter 5 to Remove a Hotel");
     	System.out.println("Enter 6 to Update a Hotel");

@@ -23,15 +23,15 @@ public class CustomerService implements ICustomerService{
 	}
 
 	@Override
-	public void viewHotels(BigInteger cityId, BigInteger hotelId) {
-		adminDao.viewHotels(cityId,hotelId);
+	public void viewHotels(BigInteger cityId,AdminService adminService) {
+		adminService.adminDao.viewHotels(cityId);
 		
 	}
 
 	@Override
-	public void makeBooking(BigInteger hotelId, BigInteger hotelId2, Date checkIn, Date checkOut,
-			BigInteger roomId) {
-		adminDao.makeBooking(hotelId,hotelId, checkIn, checkOut, roomId);
+	public void makeBooking(BigInteger cityId, BigInteger hotelId, Date checkIn, Date checkOut,
+			BigInteger roomId,AdminService adminService) {
+		adminService.adminDao.makeBooking(cityId,hotelId, checkIn, checkOut, roomId);
 	}
 
 	}

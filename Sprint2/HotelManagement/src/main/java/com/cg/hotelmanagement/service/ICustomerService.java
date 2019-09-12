@@ -11,8 +11,8 @@ public interface ICustomerService {
 	
 	public boolean register(BigInteger customerId, Booking booking, String firstName, String lastName, BigInteger aadharNumber);
 
-	public void viewHotels(BigInteger cityId, BigInteger hotelId);
+	public void viewHotels(BigInteger cityId,AdminService adminService);
 
-	public void makeBooking(BigInteger cityId, BigInteger hotelId, Date checkIn, Date checkOut, BigInteger roomId);
+	public void makeBooking(BigInteger cityId, BigInteger hotelId, Date checkIn, Date checkOut, BigInteger roomId,AdminService adminService);
 ;
 }

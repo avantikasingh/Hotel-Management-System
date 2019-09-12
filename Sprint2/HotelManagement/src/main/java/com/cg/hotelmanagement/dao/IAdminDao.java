@@ -32,7 +32,7 @@ public interface IAdminDao {
 
 	public Map<BigInteger, City> getCityList();
 
-	public void viewHotels(BigInteger cityId, BigInteger hotelId);
+	public void viewHotels(BigInteger cityId);
 
 	public Map<BigInteger, Hotel> viewHotels(Date checkIn, Date checkOut, BigInteger cityId, boolean sortByRating);
 
