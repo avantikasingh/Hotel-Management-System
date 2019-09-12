@@ -23,7 +23,7 @@ public class AdminDao implements IAdminDao {
 
 	private Map<BigInteger, Booking> bookingList = new HashMap<>();
 
-	static long sysId;
+	static long sysId=5000l;
 	static BigInteger bookingId = BigInteger.valueOf(sysId);
 
 	public boolean addCity(City city) {
@@ -245,10 +245,11 @@ public class AdminDao implements IAdminDao {
 						Map<BigInteger, Room> rMap = hotel.getRoomList();
 						if (rMap.containsKey(roomId)) {
 							Room room = rMap.get(roomId);
+							BigDecimal roomRent = BigDecimal.valueOf(room.getRoomRent());
 							Date date = new Date();
-							Booking booking = new Booking("23", "Approved",
+							Booking booking = new Booking(bookingId.toString(), "Approved",
 									date, checkIn, checkOut,
-									BigDecimal.valueOf(12d));
+									roomRent);
 							bookingList.put(BigInteger.valueOf(sysId), booking);
 							room.getBookingList().add(booking);
 							sysId++;

@@ -29,6 +29,7 @@ public class CustomerService implements ICustomerService {
 
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void makeBooking(BigInteger cityId, BigInteger hotelId,
 			Date checkIn, Date checkOut, BigInteger roomId,
