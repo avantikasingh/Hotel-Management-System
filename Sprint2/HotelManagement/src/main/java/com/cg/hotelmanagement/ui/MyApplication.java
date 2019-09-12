@@ -44,6 +44,16 @@ public class MyApplication {
 //			e.printStackTrace();
 //		}
 		
+		adminService.addCity(BigInteger.valueOf(cityIdSys),"Pune");
+		
+		adminService.addHotel(BigInteger.valueOf(cityIdSys), BigInteger.valueOf(hotelIdSys), "Taj", "Pune", "8108734667", 4.9f);
+		
+		adminService.addRoom(BigInteger.valueOf(cityIdSys), BigInteger.valueOf(hotelIdSys), BigInteger.valueOf(roomIdSys), "Standard", 2000d, "101");
+		
+		cityIdSys++;
+		hotelIdSys++;
+		roomIdSys++;
+		
     	String input;
     	
     	int adminChoice;
@@ -198,14 +208,45 @@ public class MyApplication {
 	    			break;
 	    		}
 	    		
+	    		case 9:{
+	    			System.out.println("Enter City Id in which Room is to be updated :");
+	    			BigInteger cityId4=sc.nextBigInteger();
+	    			
+	    			System.out.println("Enter Hotel Id in which Room is to be updated:");
+	    			BigInteger hotelId3=sc.nextBigInteger();
+	    			
+	    			System.out.println("Enter Room Id to be updated :");
+	    			BigInteger roomId1=sc.nextBigInteger();
+	    			
+	    			String roomType;
+	    			System.out.println("Enter new room type");
+	    			while(true) {
+		    			input=sc.next();
+		    			try {
+		    				roomType=Validate.isStringOnlyAlphabet(input);
+		    				break;
+		    			}
+		    			catch(HotelException e) {
+		    				System.out.println(e.getMessage());
+		    				continue;
+		    			}
+		    		}
+	    			adminService.updateRoom(cityId4, hotelId3, roomId1, roomType);
+	    			break;
+	    			
+	    		}
+	    		
 	    		case 10:{
 	    			Map<BigInteger,City> cityMap = adminService.showCity();
-	    			for (Entry<BigInteger, City> entry : cityMap.entrySet())  
+	    			for (Entry<BigInteger, City> entry : cityMap.entrySet()) {  
 	    	            System.out.println("City Id = " + entry.getKey() + 
 	    	                             ", City Name = " + entry.getValue()); 
+	    			}
+	    			break;
 	    	    	}
 	    		
 	    		case 11:{
+	    			System.out.println("Enter city Id");
 	    			BigInteger cityId1;
 	    			while(true) {
 	    				input = sc.next();
@@ -218,9 +259,11 @@ public class MyApplication {
 	    			for (Entry<BigInteger, Hotel> entry : hotelMap.entrySet()) {  
 	    	            System.out.println(entry.getValue().toString()); 
 	    	    	}
+	    			break;
 	    		}
 	    		
 	    		case 12:{
+	    			System.out.println("Enter city Id");
 	    			BigInteger cityId1;
 	    			while(true) {
 	    				input = sc.next();
@@ -229,6 +272,7 @@ public class MyApplication {
 	        				break;
 	        			}
 	    			}
+	    			System.out.println("Enter hotel Id");
 	    			BigInteger hotelId11;
 	    			while(true) {
 	    				input = sc.next();
@@ -241,6 +285,7 @@ public class MyApplication {
 	    			for (Entry<BigInteger, Room> entry : roomMap.entrySet()) {  
 	    	            System.out.println(entry.getValue().toString()); 
 	    	    	}
+	    			break;
 	    		}
     			
     			
@@ -249,9 +294,10 @@ public class MyApplication {
     		
     		break;
     	case 2:{
+    		System.out.println("Enter details to Make Booking");
+    		System.out.println("Enter checkIn date in yyyy-MM-dd format");
     		input=sc.next();
     		Date checkIn,checkOut;
-    		System.out.println("Enter checkIn date");
     		while(true) {
 	    		try {
 					checkIn = dateFormat.parse(input);
@@ -262,8 +308,8 @@ public class MyApplication {
 					continue;
 				}
     		}
+    		System.out.println("Enter check out date in yyyy-MM-dd");
     		input = sc.next();
-    		System.out.println("Enter check out date");
     		while(true) {
 	    		try {
 					checkOut = dateFormat.parse(input);
@@ -435,6 +481,7 @@ public class MyApplication {
     			}
     			customerService.viewHotels(cityId,hotelId);
     		}
+    		break;
     		}
     			
     		}while(choiceForUser!=3);
@@ -450,16 +497,16 @@ public class MyApplication {
     {
     	System.out.println("Enter 1 to Add a City");
     	System.out.println("Enter 2 to Remove a City");
-    	//System.out.println("Enter 3 to Update a City");
+    	System.out.println("Enter 3 to Update a City");
     	System.out.println("Enter 4 to Add a Hotel");
-    	System.out.println("Enter 4 to Remove a Hotel");
-    	System.out.println("Enter 5 to Update a Hotel");
-    	System.out.println("Enter 6 to Add a Room");
-    	System.out.println("Enter 7 to Remove a Room");
-    	System.out.println("Enter 8 to Update a Room");
-    	System.out.println("Enter 9 to Show a City");
-    	System.out.println("Enter 10 to Show a Hotel");
-    	System.out.println("Enter 11 to Show a Room");
+    	System.out.println("Enter 5 to Remove a Hotel");
+    	System.out.println("Enter 6 to Update a Hotel");
+    	System.out.println("Enter 7 to Add a Room");
+    	System.out.println("Enter 8 to Remove a Room");
+    	System.out.println("Enter 9 to Update a Room");
+    	System.out.println("Enter 10 to Show a City");
+    	System.out.println("Enter 11 to Show a Hotel");
+    	System.out.println("Enter 12 to Show a Room");
     }
     
     public static void printHotelUpdateOptions()

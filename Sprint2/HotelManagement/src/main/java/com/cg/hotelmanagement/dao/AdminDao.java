@@ -29,12 +29,15 @@ public class AdminDao implements IAdminDao {
             cityList = new HashMap<BigInteger,City>();
         
         cityList.put(city.getCityId(),city);
+        System.out.println("Added city with Id "+city.getCityId());
         return true;
     }
     
     public boolean removeCity(BigInteger cityId){
-    	if(cityList.containsKey(cityId))
+    	if(cityList.containsKey(cityId)) {
     		cityList.remove(cityId);
+    		System.out.println("Removed successfully");
+    	}
     	else
     		System.out.println("City does not exist");
         return true;
@@ -44,6 +47,7 @@ public class AdminDao implements IAdminDao {
     	
     	City city=cityList.get(cityId);
     	city.getHotelList().put(hotel.getHotelId(),hotel);
+    	System.out.println("Added hotel with Id "+hotel.getHotelId());
     	
         return true;
     }
@@ -53,8 +57,10 @@ public class AdminDao implements IAdminDao {
     	
     	if(cityList.containsKey(cityId)) {
     		City city=cityList.get(cityId);
-    		if(city.getHotelList().containsKey(hotelId))
+    		if(city.getHotelList().containsKey(hotelId)) {
     			city.getHotelList().remove(hotelId);
+    			System.out.println("Removed successfully");
+    		}
     		else
     			System.out.println("Hotel does not exist");
     	}
@@ -74,6 +80,7 @@ public class AdminDao implements IAdminDao {
     	Hotel hotel=city.getHotelList().get(hotelId);
     	
     	hotel.getRoomList().put(newRoom.getRoomId(),newRoom);
+    	System.out.println("Added room with Id "+newRoom.getRoomId());
     	
     	return true;
     }
@@ -85,8 +92,10 @@ public class AdminDao implements IAdminDao {
     		City city = cityList.get(cityId);
     		if(city.getHotelList().containsKey(hotelId)) {
     			Hotel hotel=city.getHotelList().get(hotelId);
-    			if(hotel.getRoomList().containsKey(roomId))
+    			if(hotel.getRoomList().containsKey(roomId)) {
     				hotel.getRoomList().remove(roomId);
+    				System.out.println("Removed successfully");
+    			}
     			else
     				System.out.println("Room does not exist");
     		}
@@ -167,6 +176,7 @@ public class AdminDao implements IAdminDao {
 	@Override
 	public boolean register(Customer customer) {
 		customerList.put(customer.getCustomerId(), customer);
+		System.out.println("Registered successfully with Id "+customer.getCustomerId());
 		return true;
 	}
 	
@@ -180,6 +190,7 @@ public class AdminDao implements IAdminDao {
             list.add(booking);
             room.setBookingList(list);
             System.out.println(room.getBookingList());
+            System.out.println("Booking Id "+booking.getBookingId());
         }
         else
             System.out.println("City does not exist");
@@ -251,10 +262,16 @@ public class AdminDao implements IAdminDao {
 					bookingList.put(BigInteger.valueOf(sysId), booking);
 					room.getBookingList().add(booking);
 					sysId++;
+					System.out.println("Booking successful with Id "+booking.getBookingId());
 				}
+				else
+					System.out.println("Room does not exist");
 			}
+			else
+				System.out.println("Hotel does not exist");
 		}
-		
+		else
+			System.out.println("City does not exist");
 	}
 
 	@Override
