@@ -33,15 +33,6 @@ public class MyApplication {
 		ICustomerService customerService = new CustomerService();
 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		//
-		// try {
-		// Booking booking = new Booking("1", "1",
-		// dateFormat.parse("2017-03-10"),
-		// dateFormat.parse("2017-03-17"),dateFormat.parse("2017-03-19"),BigDecimal.valueOf(10));
-		// hotelService.addBooking(BigInteger.valueOf(1),BigInteger.valueOf(1),BigInteger.valueOf(1),booking);
-		// } catch (ParseException e) {
-		// e.printStackTrace();
-		// }
 
 		adminService.addCity(BigInteger.valueOf(cityIdSys), "Pune");
 
@@ -55,9 +46,10 @@ public class MyApplication {
 
 		String input;
 
-		System.out
-				.println("Specify Role :\n1 for Admin\n2 for Customer\n3 For LoggedInUser");
+		System.out.println("Specify Role :\n1 for Admin\n2 for Customer\n3 For LoggedInUser");
 		int role = 0;
+		BigInteger cityId,hotelId,roomId;
+		String hotelName, hotelAddress, hotelPhone;
 
 		while (true) {
 			String s=sc.next();
@@ -76,7 +68,15 @@ public class MyApplication {
 			case 1:
 				do {
 					printAdminDetails();
-					adminChoice = sc.nextInt();
+					while (true) {
+						String s=sc.next();
+						try {
+							adminChoice = Integer.parseInt(s);
+							break;
+						} catch (Exception e) {
+							System.out.println("Enter valid choice");
+						}
+					}
 
 					switch (adminChoice) {
 					case 1: {
@@ -105,7 +105,7 @@ public class MyApplication {
 							if (Validate.isNumeric(input))
 								break;
 						}
-						BigInteger cityId = new BigInteger(input);
+						cityId = new BigInteger(input);
 						adminService.removeCity(cityId);
 						break;
 					}
@@ -127,29 +127,25 @@ public class MyApplication {
 					// }
 
 					case 4: {
-						BigInteger cityId1;
+						//BigInteger cityId1;
 						System.out.println("Enter city Id");
 						while (true) {
 							input = sc.next();
 							if (Validate.isNumeric(input)) {
-								cityId1 = new BigInteger(input);
+								cityId = new BigInteger(input);
 								break;
 							}
 						}
-						String hotelName, hotelAddress, hotelPhone;
 						System.out.println("Enter new Hotel Details");
-						System.out.println("Hotel Name:"); // can have
-															// alphanumeric
+						System.out.println("Hotel Name:"); // can have alphanumeric
 						hotelName = sc.next();
-						System.out.println("Hotel Address:"); // can have
-																// alphanumeric
+						System.out.println("Hotel Address:"); // can have alphanumeric
 						hotelAddress = sc.next();
 						System.out.println("Hotel Contact No:");
 						while (true) {
 							input = sc.next();
 							try {
-								hotelPhone = Validate
-										.validateMobileNumber(input);
+								hotelPhone = Validate.validateMobileNumber(input);
 								break;
 							} catch (HotelException e) {
 								System.out.println(e.getMessage());
@@ -166,13 +162,11 @@ public class MyApplication {
 								hotelRating = Float.parseFloat(s);
 								break;
 							} catch (Exception e) {
-								System.out.println("Enter Rating in valid format.");
+								System.out.println("Enter Rating in valid format");
 							}
 						}
 						
-						
-
-						adminService.addHotel(cityId1,
+						adminService.addHotel(cityId,
 								BigInteger.valueOf(++hotelIdSys), hotelName,
 								hotelAddress, hotelPhone, hotelRating);
 
@@ -181,35 +175,47 @@ public class MyApplication {
 
 					case 5:
 
-						System.out
-								.println("Enter City Id in which Hotel is to be removed :");
-						BigInteger cityId2;
+						System.out.println("Enter City Id in which Hotel is to be removed :");
 						while (true) {
 							input = sc.next();
 							if (Validate.isNumeric(input)) {
-								cityId2 = new BigInteger(input);
+								cityId = new BigInteger(input);
 								break;
 							}
 						}
-						// BigInteger cityId2=sc.nextBigInteger();
 
 						System.out.println("Enter Hotel Id to be removed:");
-						BigInteger hotelId1 = sc.nextBigInteger();
+						while (true) {
+							input = sc.next();
+							if (Validate.isNumeric(input)) {
+								hotelId = new BigInteger(input);
+								break;
+							}
+						}
 
-						adminService.removeHotel(cityId2, hotelId1);
+						adminService.removeHotel(cityId, hotelId);
 
 						break;
 
 					case 6:
-						String hotelName,
-						hotelAddress,
-						hotelPhone;
 						System.out.println("City id");
-						BigInteger cityId = sc.nextBigInteger();
+						while (true) {
+							input = sc.next();
+							if (Validate.isNumeric(input)) {
+								cityId = new BigInteger(input);
+								break;
+							}
+						}
 						System.out.println("Enter hotel id");
-						BigInteger hotelId = sc.nextBigInteger();
+						while (true) {
+							input = sc.next();
+							if (Validate.isNumeric(input)) {
+								hotelId = new BigInteger(input);
+								break;
+							}
+						}
 						System.out.println("Enter new Hotel name");
-						hotelName = sc.next();
+						hotelName = sc.next();  //can have alphanumeric
 						adminService.updateHotel(cityId, hotelId, hotelName);
 						break;
 
@@ -217,21 +223,39 @@ public class MyApplication {
 
 						System.out
 								.println("Enter City Id in which Room is to be added :");
-						BigInteger cityId3 = sc.nextBigInteger();
-
+						while (true) {
+							input = sc.next();
+							if (Validate.isNumeric(input)) {
+								cityId = new BigInteger(input);
+								break;
+							}
+						}
 						System.out
 								.println("Enter Hotel Id in which Room is to be added:");
-						BigInteger hotelId2 = sc.nextBigInteger();
-
+						while (true) {
+							input = sc.next();
+							if (Validate.isNumeric(input)) {
+								hotelId = new BigInteger(input);
+								break;
+							}
+						}
 						System.out.println("Enter new Room Details");
-
 						System.out.println("Room Type:");
 						String roomType = sc.next();
 						System.out.println("Room Rent:");
-						double roomRent = sc.nextDouble();
+						double roomRent;
+						while (true) {
+							String s=sc.next();
+							try {
+								roomRent = Double.parseDouble(s);
+								break;
+							} catch (Exception e) {
+								System.out.println("Enter valid choice");
+							}
+						}
 						System.out.println("Room No:");
-						String roomNumber = sc.next();
-						adminService.addRoom(cityId3, hotelId2,
+						String roomNumber = sc.next();  //Room no can be alphanumeric
+						adminService.addRoom(cityId, hotelId,
 								BigInteger.valueOf(++roomIdSys), roomType,
 								roomRent, roomNumber);
 						break;
@@ -371,9 +395,6 @@ public class MyApplication {
 						continue;
 					}
 				}
-				BigInteger cityId;
-				BigInteger hotelId;
-				BigInteger roomId;
 				System.out.println("Enter city id");
 				while (true) {
 					input = sc.next();
@@ -518,7 +539,6 @@ public class MyApplication {
 					}
 					case 2: {
 						System.out.println("Enter city Id");
-						BigInteger cityId;
 						while (true) {
 							input = sc.next();
 							if (Validate.isNumeric(input)) {
