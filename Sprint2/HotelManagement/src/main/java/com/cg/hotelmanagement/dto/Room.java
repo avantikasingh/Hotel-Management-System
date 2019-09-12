@@ -3,26 +3,25 @@ package com.cg.hotelmanagement.dto;
 import java.math.BigInteger;
 import java.util.List;
 
-
 public class Room {
 	private BigInteger roomId;
 	private String roomType;
 	private Double roomRent;
 	private String roomNumber;
 	private List<Booking> bookingList;
-	
-	
+
 	public Room() {
 	}
-	
-	public Room(BigInteger roomId, String roomType, Double roomRent, String roomNumber, List<Booking> bookingList) {
+
+	public Room(BigInteger roomId, String roomType, Double roomRent,
+			String roomNumber, List<Booking> bookingList) {
 		super();
 		this.roomId = roomId;
 		this.roomType = roomType;
 		this.roomRent = roomRent;
 		this.roomNumber = roomNumber;
 		this.bookingList = bookingList;
-		
+
 	}
 
 	public BigInteger getRoomId() {
@@ -67,13 +66,8 @@ public class Room {
 
 	@Override
 	public String toString() {
-		return "Room [roomId=" + roomId + ", roomType=" + roomType + ", roomRent=" + roomRent + ", roomNumber="
-				+ roomNumber+ "]";
+		return "Room [roomId=" + roomId + ", roomType=" + roomType
+				+ ", roomRent=" + roomRent + ", roomNumber=" + roomNumber + "]";
 	}
-	
-	
-	
-	
-	
 
 }

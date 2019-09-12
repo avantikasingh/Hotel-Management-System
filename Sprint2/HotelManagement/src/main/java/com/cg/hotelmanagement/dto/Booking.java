@@ -1,7 +1,5 @@
 package com.cg.hotelmanagement.dto;
 
-
-
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -13,19 +11,16 @@ public class Booking {
 	private Date checkOut;
 	private BigDecimal BookingCost;
 
+	/*
+	 * public Booking(String bookingId, String bookingStatus, LocalDate
+	 * bookingDate, LocalDate checkIn, LocalDate checkOut, BigDecimal
+	 * bookingCost) { super(); this.bookingId = bookingId; this.bookingStatus =
+	 * bookingStatus; this.bookingDate = bookingDate; this.checkIn = checkIn;
+	 * this.checkOut = checkOut; BookingCost = bookingCost; }
+	 */
 
-	/*public Booking(String bookingId, String bookingStatus, LocalDate bookingDate, LocalDate checkIn,
-				   LocalDate checkOut, BigDecimal bookingCost) {
-		super();
-		this.bookingId = bookingId;
-		this.bookingStatus = bookingStatus;
-		this.bookingDate = bookingDate;
-		this.checkIn = checkIn;
-		this.checkOut = checkOut;
-		BookingCost = bookingCost;
-	}*/
-
-	public Booking(String bookingId, String bookingStatus, Date bookingDate, Date checkIn, Date checkOut, BigDecimal bookingCost) {
+	public Booking(String bookingId, String bookingStatus, Date bookingDate,
+			Date checkIn, Date checkOut, BigDecimal bookingCost) {
 		this.bookingId = bookingId;
 		this.bookingStatus = bookingStatus;
 		this.bookingDate = bookingDate;
@@ -86,12 +81,17 @@ public class Booking {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((BookingCost == null) ? 0 : BookingCost.hashCode());
-		result = prime * result + ((bookingDate == null) ? 0 : bookingDate.hashCode());
-		result = prime * result + ((bookingId == null) ? 0 : bookingId.hashCode());
-		result = prime * result + ((bookingStatus == null) ? 0 : bookingStatus.hashCode());
+		result = prime * result
+				+ ((BookingCost == null) ? 0 : BookingCost.hashCode());
+		result = prime * result
+				+ ((bookingDate == null) ? 0 : bookingDate.hashCode());
+		result = prime * result
+				+ ((bookingId == null) ? 0 : bookingId.hashCode());
+		result = prime * result
+				+ ((bookingStatus == null) ? 0 : bookingStatus.hashCode());
 		result = prime * result + ((checkIn == null) ? 0 : checkIn.hashCode());
-		result = prime * result + ((checkOut == null) ? 0 : checkOut.hashCode());
+		result = prime * result
+				+ ((checkOut == null) ? 0 : checkOut.hashCode());
 		return result;
 	}
 
@@ -139,15 +139,10 @@ public class Booking {
 
 	@Override
 	public String toString() {
-		return "BookingManagement [bookingId=" + bookingId + ", bookingStatus=" + bookingStatus + ", bookingDate="
-				+ bookingDate + ", checkIn=" + checkIn + ", checkOut=" + checkOut + ", BookingCost=" + BookingCost
-				+ "]";
+		return "BookingManagement [bookingId=" + bookingId + ", bookingStatus="
+				+ bookingStatus + ", bookingDate=" + bookingDate + ", checkIn="
+				+ checkIn + ", checkOut=" + checkOut + ", BookingCost="
+				+ BookingCost + "]";
 	}
-	
-	
-	
-	
-	
-	
 
 }

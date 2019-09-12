@@ -10,28 +10,31 @@ import com.cg.hotelmanagement.dto.Booking;
 import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.dto.Hotel;
 
-public class CustomerService implements ICustomerService{
+public class CustomerService implements ICustomerService {
 
 	IAdminDao adminDao = new AdminDao();
 
 	@Override
-	public boolean register(BigInteger customerId, Booking booking, String firstName, String lastName,
-			BigInteger aadharNumber) {
-		Customer customer = new Customer(customerId,booking,firstName,lastName,aadharNumber.toString());
+	public boolean register(BigInteger customerId, Booking booking,
+			String firstName, String lastName, BigInteger aadharNumber) {
+		Customer customer = new Customer(customerId, booking, firstName,
+				lastName, aadharNumber.toString());
 		return adminDao.register(customer);
-		
+
 	}
 
 	@Override
-	public void viewHotels(BigInteger cityId,AdminService adminService) {
+	public void viewHotels(BigInteger cityId, AdminService adminService) {
 		adminService.adminDao.viewHotels(cityId);
-		
+
 	}
 
 	@Override
-	public void makeBooking(BigInteger cityId, BigInteger hotelId, Date checkIn, Date checkOut,
-			BigInteger roomId,AdminService adminService) {
-		adminService.adminDao.makeBooking(cityId,hotelId, checkIn, checkOut, roomId);
+	public void makeBooking(BigInteger cityId, BigInteger hotelId,
+			Date checkIn, Date checkOut, BigInteger roomId,
+			AdminService adminService) {
+		adminService.adminDao.makeBooking(cityId, hotelId, checkIn, checkOut,
+				roomId);
 	}
 
-	}
+}
