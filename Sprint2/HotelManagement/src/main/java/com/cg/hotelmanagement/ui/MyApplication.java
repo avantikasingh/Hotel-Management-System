@@ -44,24 +44,23 @@ public class MyApplication {
 
 		String input;
 
-		System.out.println("Specify Role :\n1 for Admin\n2 for Customer\n3 For LoggedInUser");
-		int role = 0;
-		BigInteger cityId, hotelId, roomId = null;
-		String hotelName, hotelAddress, hotelPhone;
-
-		role = 0;
-		int adminChoice = 0;
-		while (true) {
-			String s = sc.next();
-			try {
-				role = Integer.parseInt(s);
-				break;
-			} catch (Exception e) {
-				System.out.println("Enter valid choice");
-			}
-		}
-
+		
+		int role = 0;int adminChoice = 0;
 		do {
+			System.out.println("Specify Role :\n1 for Admin\n2 for Customer\n3 For LoggedInUser\n4 Exit");
+			BigInteger cityId, hotelId, roomId = null;
+			String hotelName, hotelAddress, hotelPhone;
+			role = 0;adminChoice = 0;
+			while (true) {
+				String s = sc.next();
+				try {
+					role = Integer.parseInt(s);
+					break;
+				} catch (Exception e) {
+					System.out.println("Enter valid choice");
+				}
+			}
+			
 			switch (role) {
 
 			case 1:
@@ -361,7 +360,11 @@ public class MyApplication {
 						}
 						break;
 					}
-
+					case 13:
+						break;
+					default :
+						System.out.println("Enter a valid choice");
+					
 					}
 				} while (adminChoice != 13);
 				break;
@@ -548,14 +551,25 @@ public class MyApplication {
 						// }
 						// }
 						customerService.viewHotels(cityId, adminService);
-					}
 						break;
+					}
+					case 3:
+						break;
+					default:
+					System.out.println("Enter a proper choice");
+					break;
 					}
 
 				} while (choiceForUser != 3);
 			}
+			case 4:
+				break;
+			default:
+				System.out.println("Enter a valid choice");
+				break;
 			}
-		} while (role != 1 || role != 2 || role != 3);
+		}while(role!=4);
+		// while (role != 1 || role != 2 || role != 3);
 
 		sc.close();
 
@@ -574,18 +588,18 @@ public class MyApplication {
 		System.out.println("Enter 10 to Show a City");
 		System.out.println("Enter 11 to Show a Hotel");
 		System.out.println("Enter 12 to Show a Room");
-		// System.out.println("Enter 13 to exit");
+		System.out.println("Enter 13 to exit");
 	}
 
 	public static void printLoggedInUserDetails() {
 		System.out.println("Enter 1 to Register");
 		System.out.println("Enter 2 to view hotels");
-		// System.out.println("Enter 3 to exit");
+		System.out.println("Enter 3 to exit");
 	}
 
 	public static void printCustomerDetails() {
 		System.out.println("Enter 1 to make booking");
-		// System.out.println("Enter 2 to exit");
+		System.out.println("Enter 2 to exit");
 	}
 
 }
