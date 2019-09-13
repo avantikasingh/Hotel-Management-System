@@ -41,5 +41,8 @@ public interface IAdminDao {
 
 	void updateRoom(BigInteger cityId, BigInteger hotelId, BigInteger roomId,
 			String roomType);
+	void showBooking(Booking booking);
+	void updateBooking(Booking booking);
+	
 
 }
