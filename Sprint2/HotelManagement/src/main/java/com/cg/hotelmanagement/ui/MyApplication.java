@@ -1,19 +1,15 @@
 package com.cg.hotelmanagement.ui;
 
-import com.cg.hotelmanagement.dto.Booking;
 import com.cg.hotelmanagement.dto.City;
-import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.exception.HotelException;
 import com.cg.hotelmanagement.service.*;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
@@ -372,26 +368,32 @@ public class MyApplication {
 			case 2: {
 				System.out.println("Enter details to Make Booking");
 				System.out.println("Enter checkIn date in yyyy-MM-dd format");
-				input = sc.next();
 				Date checkIn, checkOut;
 				while (true) {
+					input = sc.next();
 					try {
 						checkIn = dateFormat.parse(input);
-						break;
+						String[] checkInStr = input.split("-");
+						if(Integer.parseInt(checkInStr[1])<13 && Integer.parseInt(checkInStr[1])<32)
+							break;
+						else
+							throw new HotelException("Enter date in correct format");
 					} catch (Exception e) {
-						// TODO Auto-generated catch block
 						System.out.println("Enter date in correct format");
 						continue;
 					}
 				}
 				System.out.println("Enter check out date in yyyy-MM-dd");
-				input = sc.next();
 				while (true) {
+					input = sc.next();
 					try {
 						checkOut = dateFormat.parse(input);
-						break;
+						String[] checkOutStr = input.split("-");
+						if(Integer.parseInt(checkOutStr[1])<13 && Integer.parseInt(checkOutStr[1])<32)
+							break;
+						else
+							throw new HotelException("Enter date in correct format");
 					} catch (Exception e) {
-						// TODO Auto-generated catch block
 						System.out.println("Enter date in correct format");
 						continue;
 					}
