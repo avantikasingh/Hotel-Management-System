@@ -92,7 +92,7 @@ public class Validate {
 	}
 
 	public boolean isValidChoice(String str) {
-		str = str.trim(); // trims the white spaces.
+		str = str.trim();
 
 		if (str.length() == 0)
 			return false;
