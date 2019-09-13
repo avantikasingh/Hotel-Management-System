@@ -1,6 +1,7 @@
 package com.cg.hotelmanagement.dao;
 
 import com.cg.hotelmanagement.dto.*;
+import com.cg.hotelmanagement.exception.HotelException;
 
 import java.math.BigInteger;
 import java.util.Date;
@@ -9,7 +10,7 @@ import java.util.Map;
 
 public interface IAdminDao {
 
-	public boolean addCity(City city);
+	public boolean addCity(City city) throws HotelException;
 
 	public boolean removeCity(BigInteger cityId);
 

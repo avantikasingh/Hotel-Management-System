@@ -52,7 +52,7 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean addCity(City city) {
+	public boolean addCity(City city) throws HotelException {
 		// TODO Auto-generated method stub
 		int noOfRec = 0;
 		String sql = "insert into hotel(city_name) values(?)";
@@ -62,7 +62,7 @@ public class AdminDao implements IAdminDao {
 			// step 2: set the ps placeholder values
 			ps.setString(1, city.getCityName());
 			// step 3: execute Query (for DML we have executeUpdate method )
-			int noOfRec = ps.executeUpdate();
+			noOfRec = ps.executeUpdate();
 		} catch (SQLException e) {
 			myLogger.error(" Error at addauthor Dao method : " + e);
 			throw new HotelException(" Error at addauthor Dao method : " + e);
