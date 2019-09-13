@@ -434,15 +434,15 @@ public class MyApplication {
 					choiceForUser = sc.nextInt();
 					switch (choiceForUser) {
 					case 1: {
-						BigInteger userId;
-						System.out.println("Enter userId");
-						while (true) {
-							input = sc.next();
-							if (Validate.isNumeric(input)) {
-								userId = new BigInteger(input);
-								break;
-							}
-						}
+//						BigInteger userId;
+//						System.out.println("Enter userId");
+//						while (true) {
+//							input = sc.next();
+//							if (Validate.isNumeric(input)) {
+//								userId = new BigInteger(input);
+//								break;
+//							}
+//						}
 						String username;
 						System.out.println("Enter username");
 						while (true) {
