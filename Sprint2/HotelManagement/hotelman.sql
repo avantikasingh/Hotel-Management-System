@@ -17,6 +17,15 @@ CREATE TABLE IF NOT EXISTS loggedin_user
 		delete_flag bit,
 		CONSTRAINT PRIMARY KEY(user_id)
 	);
+CREATE TABLE IF NOT EXISTS city
+	(
+		city_id bigint AUTO_INCREMENT,
+		city_name varchar(50) NOT NULL ,
+		delete_flag bit,
+		CONSTRAINT PRIMARY KEY(city_id)
+	);
+	
+insert into city(city_name, delete_flag) values('test', 0)
 	
 
 CREATE TABLE IF NOT EXISTS booking 

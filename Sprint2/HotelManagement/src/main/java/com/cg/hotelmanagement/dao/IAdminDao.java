@@ -12,20 +12,23 @@ public interface IAdminDao {
 
 	public boolean addCity(City city) throws HotelException;
 
-	public boolean removeCity(BigInteger cityId);
+//	public boolean removeCity(BigInteger cityId); old version
+	public boolean removeCity(City city); // new version
 
 //	public boolean addHotel(BigInteger cityId, Hotel hotel);;
 	// old version used in colections
 //	city id depreciated
 	public boolean addHotel(Hotel hotel) throws HotelException;
 
-	public boolean removeHotel(BigInteger cityId, BigInteger hotelId);
+//	public boolean removeHotel(BigInteger cityId, BigInteger hotelId); // old version
+	public boolean removeHotel(Hotel hotel); // new version
 
 //	public boolean addRoom(BigInteger cityId, BigInteger hotelId, Room newRoom);
 	// old version used in colections
 	public boolean addRoom(Room room) throws HotelException;// new verion used in jdbc
 
-	public boolean removeRoom(BigInteger cityId, BigInteger hotelId, BigInteger roomId);
+//	public boolean removeRoom(BigInteger cityId, BigInteger hotelId, BigInteger roomId);
+	public boolean removeRoom(Room room); //new version
 
 	public void makeBooking(BigInteger hotelId, BigInteger hotelId2, Date checkIn, Date checkOut, BigInteger roomId);
 
@@ -33,18 +36,19 @@ public interface IAdminDao {
 
 	public boolean addBooking(BigInteger cityId, BigInteger hotelId, BigInteger roomId, Booking booking) throws HotelException;
 
-	public Map<BigInteger, City> getCityList();
+	public Map<BigInteger, City> getCityList();// old version
+//	public Map<Long, String> getCityList(); //new version returns a map with list and String
 
 	public void viewHotels(BigInteger cityId);
 
 	public Map<BigInteger, Hotel> viewHotels(Date checkIn, Date checkOut, BigInteger cityId, boolean sortByRating);
 
-	void updateHotel(BigInteger cityId, BigInteger hotelId, String hotelName);
-
-	void updateRoom(BigInteger cityId, BigInteger hotelId, BigInteger roomId, String roomType);
+//	void updateHotel(BigInteger cityId, BigInteger hotelId, String hotelName);
+//
+//	void updateRoom(BigInteger cityId, BigInteger hotelId, BigInteger roomId, String roomType);
 
 	void showBooking(Booking booking);
 
-	void updateBooking(Booking booking);
+//	void updateBooking(Booking booking);
 
 }

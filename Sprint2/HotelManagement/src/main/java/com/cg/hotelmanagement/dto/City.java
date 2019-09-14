@@ -17,6 +17,11 @@ public class City {
 	public void setCityId(BigInteger cityId) {
 		this.cityId = cityId;
 	}
+	
+
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
+	}
 
 	public City(String cityName, BigInteger cityId,
 			Map<BigInteger, Hotel> hotelList) {
