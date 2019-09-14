@@ -207,6 +207,7 @@ public class AdminDao implements IAdminDao {
 		// TODO Auto-generated method stub
 		String sql ="insert into booking(booking_status ,author_mname, author_lname, author_phone) values(?,?,?,?)";		
 		try {
+			
 		//step1 : obtain psz
 			ps= connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 		//step 2: set the ps placeholder values
