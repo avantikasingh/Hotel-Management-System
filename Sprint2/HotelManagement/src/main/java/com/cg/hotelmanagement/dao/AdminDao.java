@@ -374,6 +374,7 @@ public class AdminDao implements IAdminDao {
 				hotel.setHotelId(BigInteger.valueOf(rs.getLong("hotel_id")));
 				hotel.setHotelName(rs.getString("hotel_name"));
 				hotel.setHotelAddress(rs.getString("hotel_address"));
+				
 				hotel.setHotelPhoneNumber(BigInteger.valueOf(rs.getLong("hotel_phone_number")));
 				hotel.setHotelRating(rs.getFloat("hotel_rating"));
 				hotelMap.put(BigInteger.valueOf(rs.getLong("hotel_id")),hotel);
