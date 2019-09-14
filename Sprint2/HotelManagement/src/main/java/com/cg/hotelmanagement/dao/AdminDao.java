@@ -91,9 +91,46 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean addHotel(BigInteger cityId, Hotel hotel) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean addHotel(Hotel hotel) {
+		/*
+		 This function has been changed and now accepts an object of room that contains hotelid as well
+		 public boolean addHotel(BigInteger cityId, Hotel hotel)  old 
+		 public boolean addHotel(Hotel hotel) new
+		 the hotel object also contains the city name 
+		 */
+		
+		int noOfRec = 0;
+		String sql = "insert into hotel(city_name,hotel_name, hotel_address, hotel_phone_number, hotel_rating, delete_flag) values(?,?,?,?,?,?)";
+		try {
+			// step1 : obtain psz
+			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			// step 2: set the ps placeholder values
+//			ps.setString(1, hotel.getCityName()); get city name and insert in the hotel table
+			ps.setString(2, hotel.getHotelName());
+			ps.setString(3, hotel.getHotelAddress());
+			ps.setString(4, hotel.getHotelAddress());
+			ps.setDouble(5, hotel.getHotelRating());
+			ps.setBoolean(6,false);
+			// step 3: execute Query (for DML we have executeUpdate method )
+			noOfRec = ps.executeUpdate();
+		} catch (SQLException e) {
+			myLogger.error(" Error at addauthor Dao method : " + e);
+			throw new HotelException(" Error at addauthor Dao method : " + e);
+		} finally {
+			if (ps != null) {
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					myLogger.error(" Error at addauthor Dao method : " + e);
+				}
+			}
+		}
+		if (noOfRec > 0) {
+			return true;
+
+		} else {
+			return false;
+		}
 	}
 
 	@Override
@@ -103,9 +140,43 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean addRoom(BigInteger cityId, BigInteger hotelId, Room newRoom) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean addRoom(Room room) {
+		/*
+		 This function has been changed and now accepts an object of room that contains hotelid as well
+		 public boolean addRoom(BigInteger cityId, BigInteger hotelId, Room newRoom)  old 
+		 public boolean addRoom(Room room) new
+		 */
+		int noOfRec = 0;
+		String sql = "insert into room(room_type, room_rent, room_number, hotel_id, delete_flag) values(?,?,?,?,?)";
+		try {
+			// step1 : obtain psz
+			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			// step 2: set the ps placeholder values
+			ps.setString(1, room.getRoomType());
+			ps.setDouble(2, room.getRoomRent());
+			ps.setString(3, room.getRoomNumber());
+//			ps.setString(4, room.());room get hotelid
+			ps.setBoolean(5, false);
+			// step 3: execute Query (for DML w	e have executeUpdate method )
+			noOfRec = ps.executeUpdate();
+		} catch (SQLException e) {
+			myLogger.error(" Error at addauthor Dao method : " + e);
+			throw new HotelException(" Error at addauthor Dao method : " + e);
+		} finally {
+			if (ps != null) {
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					myLogger.error(" Error at addauthor Dao method : " + e);
+				}
+			}
+		}
+		if (noOfRec > 0) {
+			return true;
+
+		} else {
+			return false;
+		}
 	}
 
 	@Override
@@ -128,8 +199,48 @@ public class AdminDao implements IAdminDao {
 
 	@Override
 	public boolean addBooking(BigInteger cityId, BigInteger hotelId, BigInteger roomId, Booking booking) {
+		/*
+		 This function has been changed and now accepts an object of room that contains hotelid as well
+		 public boolean addRoom(BigInteger cityId, BigInteger hotelId, Room newRoom)  old 
+		 public boolean addRoom(Room room) new
+		 */
 		// TODO Auto-generated method stub
-		return false;
+		String sql ="insert into booking(booking_status ,author_mname, author_lname, author_phone) values(?,?,?,?)";		
+		try {
+		//step1 : obtain psz
+			ps= connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+		//step 2: set the ps placeholder values
+			ps.setString(1, author.getFirstName());
+			ps.setString(2, author.getMiddleName());	
+			ps.setString(3, author.getLastName());
+			ps.setLong(4, author.getPhoneNo().longValue());
+		//step 3: execute Query (for DML we have executeUpdate method )
+			int noOfRec = ps.executeUpdate();
+		//gett
+			ing the auto-generated value
+			BigInteger generatedId = BigInteger.valueOf(0L);
+			rs = ps.getGeneratedKeys();
+			if (rs.next()) {
+				generatedId = BigInteger.valueOf(rs.getLong(1));
+				myLogger.info("Auto generated Id " + generatedId);
+			}
+		//setting the auto-generated Id to current emp obj
+			author.setAuthorId(generatedId);
+		} catch (SQLException e) {
+			myLogger.error(" Error at addauthor Dao method : "+e);
+			throw new AuthorException(" Error at addauthor Dao method : "+e);
+		}finally {
+			if(ps!=null) {
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					System.out.println(" Error at addauthor Dao method : "+e);
+				}
+			}
+		}
+		return author;;
+	}
+
 	}
 
 	@Override

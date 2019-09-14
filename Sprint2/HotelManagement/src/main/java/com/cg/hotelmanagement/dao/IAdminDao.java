@@ -14,36 +14,37 @@ public interface IAdminDao {
 
 	public boolean removeCity(BigInteger cityId);
 
-	public boolean addHotel(BigInteger cityId, Hotel hotel);
+//	public boolean addHotel(BigInteger cityId, Hotel hotel);;
+	// old version used in colections
+//	city id depreciated
+	public boolean addHotel(Hotel hotel);
 
 	public boolean removeHotel(BigInteger cityId, BigInteger hotelId);
 
-	public boolean addRoom(BigInteger cityId, BigInteger hotelId, Room newRoom);
+//	public boolean addRoom(BigInteger cityId, BigInteger hotelId, Room newRoom);
+	// old version used in colections
+	public boolean addRoom(Room room);// new verion used in jdbc
 
-	public boolean removeRoom(BigInteger cityId, BigInteger hotelId,
-			BigInteger roomId);
+	public boolean removeRoom(BigInteger cityId, BigInteger hotelId, BigInteger roomId);
 
-	public void makeBooking(BigInteger hotelId, BigInteger hotelId2,
-			Date checkIn, Date checkOut, BigInteger roomId);
+	public void makeBooking(BigInteger hotelId, BigInteger hotelId2, Date checkIn, Date checkOut, BigInteger roomId);
 
 	public boolean register(Customer customer);
 
-	public boolean addBooking(BigInteger cityId, BigInteger hotelId,
-			BigInteger roomId, Booking booking);
+	public boolean addBooking(BigInteger cityId, BigInteger hotelId, BigInteger roomId, Booking booking);
 
 	public Map<BigInteger, City> getCityList();
 
 	public void viewHotels(BigInteger cityId);
 
-	public Map<BigInteger, Hotel> viewHotels(Date checkIn, Date checkOut,
-			BigInteger cityId, boolean sortByRating);
+	public Map<BigInteger, Hotel> viewHotels(Date checkIn, Date checkOut, BigInteger cityId, boolean sortByRating);
 
 	void updateHotel(BigInteger cityId, BigInteger hotelId, String hotelName);
 
-	void updateRoom(BigInteger cityId, BigInteger hotelId, BigInteger roomId,
-			String roomType);
+	void updateRoom(BigInteger cityId, BigInteger hotelId, BigInteger roomId, String roomType);
+
 	void showBooking(Booking booking);
+
 	void updateBooking(Booking booking);
-	
 
 }
