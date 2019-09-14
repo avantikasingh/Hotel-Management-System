@@ -27,7 +27,6 @@ CREATE TABLE IF NOT EXISTS city
 	
 insert into city(city_name, delete_flag) values('test', 0)
 	
-
 CREATE TABLE IF NOT EXISTS booking 
 	(
 		booking_id bigint AUTO_INCREMENT,
@@ -53,8 +52,10 @@ CREATE TABLE IF NOT EXISTS booking
 		hotel_address double NOT NULL ,
 		hotel_phone_number bigint not null,
 		hotel_rating double,
+		city_id bigint
 		delete_flag bit,
 		CONSTRAINT PRIMARY KEY(hotel_id)
+		FOREIGN KEY (city_id) REFERENCES city(city_id)
 	);
 	
 
@@ -71,14 +72,3 @@ CREATE TABLE IF NOT EXISTS booking
 		FOREIGN KEY (hotel_id) REFERENCES hotel(hotel_id)
 	);
 
-	CREATE TABLE IF NOT EXISTS room 
-	(
-		room_id bigint AUTO_INCREMENT,
-		room_type varchar(50) NOT NULL ,
-		room_rent double NOT NULL ,
-		room_number bigint,
-		hotel_id bigint,
-		delete_flag bit,
-		CONSTRAINT PRIMARY KEY(room_id),
-		FOREIGN KEY (hotel_id) REFERENCES hotel(hotel_id)
-	);
