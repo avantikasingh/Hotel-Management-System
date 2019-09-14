@@ -6,7 +6,6 @@ import com.cg.hotelmanagement.service.CompareByDate;
 import com.cg.hotelmanagement.service.Validate;
 import com.cg.hotelmanagement.exception.HotelException;
 import com.cg.hotelmanagement.util.DBUtil;
-import com.cg.lab3.exception.AuthorException;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -42,6 +41,7 @@ public class AdminDao implements IAdminDao {
 		PropertyConfigurator.configure(userDir + "log4j.properties");
 		myLogger = Logger.getLogger("AdminDao.class");
 	}
+	
 	static {
 		try {
 			connection = DBUtil.getConnection();
@@ -64,14 +64,14 @@ public class AdminDao implements IAdminDao {
 			// step 3: execute Query (for DML we have executeUpdate method )
 			noOfRec = ps.executeUpdate();
 		} catch (SQLException e) {
-			myLogger.error(" Error at addauthor Dao method : " + e);
-			throw new HotelException(" Error at addauthor Dao method : " + e);
+			myLogger.error(" Error at addCity Dao method : " + e);
+			throw new HotelException(" Error at addCity Dao method : " + e);
 		} finally {
 			if (ps != null) {
 				try {
 					ps.close();
 				} catch (SQLException e) {
-					myLogger.error(" Error at addauthor Dao method : " + e);
+					myLogger.error(" Error at addCity Dao method : " + e);
 				}
 			}
 		}
@@ -91,7 +91,7 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean addHotel(Hotel hotel) {
+	public boolean addHotel(Hotel hotel) throws HotelException {
 		/*
 		 This function has been changed and now accepts an object of room that contains hotelid as well
 		 public boolean addHotel(BigInteger cityId, Hotel hotel)  old 
@@ -114,14 +114,14 @@ public class AdminDao implements IAdminDao {
 			// step 3: execute Query (for DML we have executeUpdate method )
 			noOfRec = ps.executeUpdate();
 		} catch (SQLException e) {
-			myLogger.error(" Error at addauthor Dao method : " + e);
-			throw new HotelException(" Error at addauthor Dao method : " + e);
+			myLogger.error(" Error at addHotel Dao method : " + e);
+			throw new HotelException(" Error at addHotel Dao method : " + e);
 		} finally {
 			if (ps != null) {
 				try {
 					ps.close();
 				} catch (SQLException e) {
-					myLogger.error(" Error at addauthor Dao method : " + e);
+					myLogger.error(" Error at addHotel Dao method : " + e);
 				}
 			}
 		}
@@ -140,7 +140,7 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean addRoom(Room room) {
+	public boolean addRoom(Room room) throws HotelException {
 		/*
 		 This function has been changed and now accepts an object of room that contains hotelid as well
 		 public boolean addRoom(BigInteger cityId, BigInteger hotelId, Room newRoom)  old 
@@ -160,14 +160,14 @@ public class AdminDao implements IAdminDao {
 			// step 3: execute Query (for DML w	e have executeUpdate method )
 			noOfRec = ps.executeUpdate();
 		} catch (SQLException e) {
-			myLogger.error(" Error at addauthor Dao method : " + e);
-			throw new HotelException(" Error at addauthor Dao method : " + e);
+			myLogger.error(" Error at addRoom Dao method : " + e);
+			throw new HotelException(" Error at addRoom Dao method : " + e);
 		} finally {
 			if (ps != null) {
 				try {
 					ps.close();
 				} catch (SQLException e) {
-					myLogger.error(" Error at addauthor Dao method : " + e);
+					myLogger.error(" Error at addRoom Dao method : " + e);
 				}
 			}
 		}
@@ -198,27 +198,31 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean addBooking(BigInteger cityId, BigInteger hotelId, BigInteger roomId, Booking booking) {
+	public boolean addBooking(BigInteger cityId, BigInteger hotelId, BigInteger roomId, Booking booking) throws HotelException {
 		/*
 		 This function has been changed and now accepts an object of room that contains hotelid as well
 		 public boolean addRoom(BigInteger cityId, BigInteger hotelId, Room newRoom)  old 
 		 public boolean addRoom(Room room) new
 		 */
 		// TODO Auto-generated method stub
-		String sql ="insert into booking(booking_status ,author_mname, author_lname, author_phone) values(?,?,?,?)";		
+		int noOfRec;
+		String sql ="insert into booking(booking_status ,booking_date, checkin_date,checkout_date, booking_cost, hotel_id, user_id, delete_flag ) values(?,?,?,?,?,?,?,?)";		
 		try {
 			
 		//step1 : obtain psz
 			ps= connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 		//step 2: set the ps placeholder values
-			ps.setString(1, author.getFirstName());
-			ps.setString(2, author.getMiddleName());	
-			ps.setString(3, author.getLastName());
-			ps.setLong(4, author.getPhoneNo().longValue());
+			ps.setString(1, booking.getBookingStatus());
+			ps.setDate(2, (java.sql.Date) booking.getBookingDate());
+			ps.setDate(3, (java.sql.Date) booking.getCheckIn());	
+			ps.setDate(4, (java.sql.Date) booking.getCheckOut());
+			ps.setDouble(5, booking.getBookingCost().doubleValue());
+			ps.setLong(6, hotelId.longValue());
+//			ps.setString(7, booking.get);	edit this for the userid
+			ps.setBoolean(8, false);
 		//step 3: execute Query (for DML we have executeUpdate method )
-			int noOfRec = ps.executeUpdate();
-		//gett
-			ing the auto-generated value
+			noOfRec = ps.executeUpdate();
+		//getting the auto-generated value
 			BigInteger generatedId = BigInteger.valueOf(0L);
 			rs = ps.getGeneratedKeys();
 			if (rs.next()) {
@@ -226,22 +230,25 @@ public class AdminDao implements IAdminDao {
 				myLogger.info("Auto generated Id " + generatedId);
 			}
 		//setting the auto-generated Id to current emp obj
-			author.setAuthorId(generatedId);
+//			booking.setBookingId(generatedId); //set booking id takes string while in database that is set is bigint
 		} catch (SQLException e) {
-			myLogger.error(" Error at addauthor Dao method : "+e);
-			throw new AuthorException(" Error at addauthor Dao method : "+e);
+			myLogger.error(" Error at addBooking Dao method : "+e);
+			throw new HotelException(" Error at addBooking Dao method : "+e);
 		}finally {
 			if(ps!=null) {
 				try {
 					ps.close();
 				} catch (SQLException e) {
-					System.out.println(" Error at addauthor Dao method : "+e);
+					System.out.println(" Error at addBooking Dao method : "+e);
 				}
 			}
 		}
-		return author;;
-	}
+		if (noOfRec > 0) {
+			return true;
 
+		} else {
+			return false;
+		}
 	}
 
 	@Override

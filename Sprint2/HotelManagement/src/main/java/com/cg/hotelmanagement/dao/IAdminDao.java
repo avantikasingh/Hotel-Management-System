@@ -17,13 +17,13 @@ public interface IAdminDao {
 //	public boolean addHotel(BigInteger cityId, Hotel hotel);;
 	// old version used in colections
 //	city id depreciated
-	public boolean addHotel(Hotel hotel);
+	public boolean addHotel(Hotel hotel) throws HotelException;
 
 	public boolean removeHotel(BigInteger cityId, BigInteger hotelId);
 
 //	public boolean addRoom(BigInteger cityId, BigInteger hotelId, Room newRoom);
 	// old version used in colections
-	public boolean addRoom(Room room);// new verion used in jdbc
+	public boolean addRoom(Room room) throws HotelException;// new verion used in jdbc
 
 	public boolean removeRoom(BigInteger cityId, BigInteger hotelId, BigInteger roomId);
 
@@ -31,7 +31,7 @@ public interface IAdminDao {
 
 	public boolean register(Customer customer);
 
-	public boolean addBooking(BigInteger cityId, BigInteger hotelId, BigInteger roomId, Booking booking);
+	public boolean addBooking(BigInteger cityId, BigInteger hotelId, BigInteger roomId, Booking booking) throws HotelException;
 
 	public Map<BigInteger, City> getCityList();
 
