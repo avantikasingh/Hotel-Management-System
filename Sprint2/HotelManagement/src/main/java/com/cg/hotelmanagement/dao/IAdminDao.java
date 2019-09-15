@@ -13,22 +13,22 @@ public interface IAdminDao {
 	public boolean addCity(City city) throws HotelException;
 
 //	public boolean removeCity(BigInteger cityId); old version
-	public boolean removeCity(City city); // new version
+	public boolean removeCity(BigInteger cityId); // new version
 
 //	public boolean addHotel(BigInteger cityId, Hotel hotel);;
 	// old version used in colections
 //	city id depreciated
-	public boolean addHotel(Hotel hotel) throws HotelException;
+	public boolean addHotel(BigInteger cityId,Hotel hotel) throws HotelException;
 
 //	public boolean removeHotel(BigInteger cityId, BigInteger hotelId); // old version
-	public boolean removeHotel(Hotel hotel); // new version
+	public boolean removeHotel(BigInteger cityId, BigInteger hotelId); // new version
 
 //	public boolean addRoom(BigInteger cityId, BigInteger hotelId, Room newRoom);
 	// old version used in colections
-	public boolean addRoom(Room room) throws HotelException;// new verion used in jdbc
+	public boolean addRoom(BigInteger hotelId,Room room) throws HotelException;// new verion used in jdbc
 
 //	public boolean removeRoom(BigInteger cityId, BigInteger hotelId, BigInteger roomId);
-	public boolean removeRoom(Room room); //new version
+	public boolean removeRoom(BigInteger hotelId, BigInteger roomId); //new version
 
 	public void makeBooking(BigInteger hotelId, BigInteger hotelId2, Date checkIn, Date checkOut, BigInteger roomId);
 

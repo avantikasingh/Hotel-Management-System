@@ -20,7 +20,7 @@ public class MyApplication {
 	static long roomIdSys = 4000;
 	static long cityIdSys = 3000;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws HotelException {
 
 		Scanner sc = new Scanner(System.in);
 
@@ -212,7 +212,7 @@ public class MyApplication {
 						else {
 							System.out.println("Enter new Hotel name");
 							hotelName = sc.next(); // can have alphanumeric
-							adminService.updateHotel(cityId, hotelId, hotelName);
+							//adminService.updateHotel(cityId, hotelId, hotelName);
 						}
 						break;
 
@@ -298,7 +298,7 @@ public class MyApplication {
 										continue;
 									}
 								}
-								adminService.updateRoom(cityId, hotelId, roomId, roomType);
+								//adminService.updateRoom(cityId, hotelId, roomId, roomType);
 							}
 						} catch (Exception e) {
 							System.out.println("Does not exist");

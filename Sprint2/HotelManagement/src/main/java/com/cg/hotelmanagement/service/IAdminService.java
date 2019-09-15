@@ -8,28 +8,29 @@ import com.cg.hotelmanagement.dto.Booking;
 import com.cg.hotelmanagement.dto.City;
 import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
+import com.cg.hotelmanagement.exception.HotelException;
 
 public interface IAdminService {
 
-	public boolean addCity(BigInteger cityId, String cityName);
+	public boolean addCity(BigInteger cityId, String cityName) throws HotelException;
 
 	public boolean removeCity(BigInteger cityId);
 
 	public boolean addHotel(BigInteger cityId1, BigInteger hotelId,
 			String hotelName, String hotelAddress, String hotelPhone,
-			float hotelRating);
+			float hotelRating) throws HotelException;
 
 	public boolean removeHotel(BigInteger cityId, BigInteger hotelId);
 
 	public boolean addRoom(BigInteger cityId, BigInteger hotelId,
 			BigInteger roomId, String roomType, double roomRent,
-			String roomNumber);
+			String roomNumber) throws HotelException;
 
-	public boolean removeRoom(BigInteger cityId, BigInteger hotelId,
+	public boolean removeRoom(BigInteger cityId,BigInteger hotelId,
 			BigInteger roomId);
 
 	public boolean addBooking(BigInteger cityId, BigInteger hotelId,
-			BigInteger roomId, Booking booking);
+			BigInteger roomId, Booking booking) throws HotelException;
 
 	public Map<BigInteger, Hotel> viewHotels(Date checkIn, Date checkOut,
 			BigInteger cityId, boolean sortByRating);
@@ -40,11 +41,11 @@ public interface IAdminService {
 
 	public Map<BigInteger, Room> showRoom(BigInteger cityId, BigInteger hotelId);
 
-	public void updateHotel(BigInteger cityId, BigInteger hotelId,
-			String hotelName);
-
-	public void updateRoom(BigInteger cityId, BigInteger hotelId,
-			BigInteger roomId, String roomType);
+//	public void updateHotel(BigInteger cityId, BigInteger hotelId,
+//			String hotelName);
+//
+//	public void updateRoom(BigInteger cityId, BigInteger hotelId,
+//			BigInteger roomId, String roomType);
 
 	// public boolean addRoom();
 	//

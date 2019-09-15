@@ -6,7 +6,7 @@ import com.cg.hotelmanagement.service.CompareByDate;
 import com.cg.hotelmanagement.service.Validate;
 import com.cg.hotelmanagement.exception.HotelException;
 import com.cg.hotelmanagement.util.DBUtil;
-import com.cg.jdbc.ems.model.Employee;
+//import com.cg.jdbc.ems.model.Employee;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -87,14 +87,14 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean removeCity(City city) {
+	public boolean removeCity(BigInteger cityId) {
 
 		// TODO Auto-generated method stub
 		String sql = "update  city set delete_flag = 1 where city_id=";
 		int noOfRec = 0;
 		try {
 			ps = connection.prepareStatement(sql);
-			ps.setLong(1, city.getCityId().longValue());
+			ps.setLong(1, cityId.longValue());
 
 			noOfRec = ps.executeUpdate();
 		} catch (SQLException e) {
@@ -118,7 +118,7 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean addHotel(Hotel hotel) throws HotelException {
+	public boolean addHotel(BigInteger cityId,Hotel hotel) throws HotelException {
 		/*
 		 * This function has been changed and now accepts an object of room that
 		 * contains hotelid as well public boolean addHotel(BigInteger cityId, Hotel
@@ -127,12 +127,12 @@ public class AdminDao implements IAdminDao {
 		 */
 
 		int noOfRec = 0;
-		String sql = "insert into hotel(city_name,hotel_name, hotel_address, hotel_phone_number, hotel_rating, delete_flag) values(?,?,?,?,?,?)";
+		String sql = "insert into hotel(city_Id,hotel_name, hotel_address, hotel_phone_number, hotel_rating, delete_flag) values(?,?,?,?,?,?)";
 		try {
 			// step1 : obtain psz
 			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			// step 2: set the ps placeholder values
-//			ps.setString(1, hotel.getCityName()); get city name and insert in the hotel table
+			ps.setLong(1, cityId.longValue()); 
 			ps.setString(2, hotel.getHotelName());
 			ps.setString(3, hotel.getHotelAddress());
 			ps.setString(4, hotel.getHotelAddress());
@@ -161,13 +161,14 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean removeHotel(Hotel hotel) {
-		String sql = "update  hotel set delete_flag = 1 where hotel_id=";
+	public boolean removeHotel(BigInteger cityId, BigInteger hotelId) {
+		String sql = "update  hotel set delete_flag = 1 where city_id=cityId AND hotel_id=";
 
 		int noOfRec = 0;
 		try {
 			ps = connection.prepareStatement(sql);
-			ps.setLong(1, hotel.getHotelId().longValue());
+			ps.setLong(1, cityId.longValue());
+			ps.setLong(2, hotelId.longValue());
 
 			noOfRec = ps.executeUpdate();
 		} catch (SQLException e) {
@@ -190,14 +191,14 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean addRoom(Room room) throws HotelException {
+	public boolean addRoom(BigInteger hotelId,Room room) throws HotelException {
 		/*
 		 * This function has been changed and now accepts an object of room that
 		 * contains hotelid as well public boolean addRoom(BigInteger cityId, BigInteger
 		 * hotelId, Room newRoom) old public boolean addRoom(Room room) new
 		 */
 		int noOfRec = 0;
-		String sql = "insert into room(room_type, room_rent, room_number, hotel_id, delete_flag) values(?,?,?,?,?)";
+		String sql = "insert into room(room_type, room_rent, room_number, hotel_id, delete_flag) values(?,?,?,?,?) where hotel_id=?";
 		try {
 			// step1 : obtain psz
 			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -205,7 +206,7 @@ public class AdminDao implements IAdminDao {
 			ps.setString(1, room.getRoomType());
 			ps.setDouble(2, room.getRoomRent());
 			ps.setString(3, room.getRoomNumber());
-//			ps.setString(4, room.());room get hotelid
+			ps.setLong(4, hotelId.longValue());
 			ps.setBoolean(5, false);
 			// step 3: execute Query (for DML w e have executeUpdate method )
 			noOfRec = ps.executeUpdate();
@@ -230,13 +231,14 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean removeRoom(Room room) {
+	public boolean removeRoom(BigInteger hotelId, BigInteger roomId) {
 		// TODO Auto-generated method stub
-		String sql = "update  room set delete_flag = 1 where room_id=";
+		String sql = "update  room set delete_flag = 1 where hotel_id=? AND room_id=?";
 		int noOfRec = 0;
 		try {
 			ps = connection.prepareStatement(sql);
-			ps.setLong(1, room.getRoomId().longValue());
+			ps.setLong(1, hotelId.longValue());
+			ps.setLong(2, roomId.longValue());
 
 			noOfRec = ps.executeUpdate();
 		} catch (SQLException e) {

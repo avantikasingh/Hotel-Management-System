@@ -46,16 +46,14 @@ CREATE TABLE IF NOT EXISTS booking
 	
 	CREATE TABLE IF NOT EXISTS hotel 
 	(
-		city_name varchar(50) not null,
-		hotel_id bigint AUTO_INCREMENT,
+		
+		hotel_id bigint PRIMARY KEY AUTO_INCREMENT,
 		hotel_name varchar(50) NOT NULL ,
 		hotel_address double NOT NULL ,
 		hotel_phone_number bigint not null,
 		hotel_rating double,
-		city_id bigint
 		delete_flag bit,
-		CONSTRAINT PRIMARY KEY(hotel_id)
-		FOREIGN KEY (city_id) REFERENCES city(city_id)
+		city_id bigint(100), FOREIGN KEY(city_id) REFERENCES city(city_id)
 	);
 	
 
