@@ -16,10 +16,6 @@ public interface IAdminService {
 
 	public boolean removeCity(BigInteger cityId);
 
-	public boolean addHotel(BigInteger cityId1, BigInteger hotelId,
-			String hotelName, String hotelAddress, String hotelPhone,
-			float hotelRating) throws HotelException;
-
 	public boolean removeHotel(BigInteger cityId, BigInteger hotelId);
 
 	public boolean addRoom(BigInteger cityId, BigInteger hotelId,
@@ -40,6 +36,9 @@ public interface IAdminService {
 	public Map<BigInteger, Hotel> showHotel(BigInteger cityId);
 
 	public Map<BigInteger, Room> showRoom(BigInteger cityId, BigInteger hotelId);
+
+	public boolean addHotel(BigInteger cityId, String hotelName, String hotelAddress,
+			String hotelPhoneNumber, float hotelRating) throws HotelException;
 
 //	public void updateHotel(BigInteger cityId, BigInteger hotelId,
 //			String hotelName);

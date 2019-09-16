@@ -17,7 +17,7 @@ public class AdminService implements IAdminService {
 
 	@Override
 	public boolean addCity(BigInteger cityId, String cityName) throws Exception {
-		City city = new City(cityName, cityId);
+		City city = new City(cityName, cityId, new HashMap<BigInteger, Hotel>());
 		return adminDao.addCity(city);
 	}
 
@@ -27,20 +27,6 @@ public class AdminService implements IAdminService {
 
 	public boolean removeCity(BigInteger cityId) {
 		return adminDao.removeCity(cityId);
-	}
-
-	@Override
-	public boolean addHotel(BigInteger cityId1, BigInteger hotelId,
-			String hotelName, String hotelAddress, String hotelPhoneNumber,
-			float hotelRating) throws HotelException {
-
-		HashMap<BigInteger, Room> roomList = new HashMap<BigInteger, Room>();
-
-		Hotel newHotel = new Hotel(hotelId, hotelName, hotelAddress, roomList,
-				new BigInteger(hotelPhoneNumber), hotelRating); // create Hotel
-																// object
-		return adminDao.addHotel(cityId1, newHotel); // add new hotel in the
-														// hotelList of the city
 	}
 
 	@Override
@@ -103,6 +89,15 @@ public class AdminService implements IAdminService {
 		Map<BigInteger, Hotel> hotelMap = city.getHotelList();
 		Hotel hotel = hotelMap.get(hotelId);
 		return hotel.getRoomList();
+	}
+
+	@Override
+	public boolean addHotel(BigInteger cityId,String hotelName,
+			String hotelAddress, String hotelPhoneNumber, float hotelRating)
+			throws HotelException {
+		Hotel hotel = new Hotel();
+		adminDao.addHotel(cityId,hotel);
+		return true;
 	}
 
 	/*public void updateHotel(BigInteger cityId, BigInteger hotelId,
