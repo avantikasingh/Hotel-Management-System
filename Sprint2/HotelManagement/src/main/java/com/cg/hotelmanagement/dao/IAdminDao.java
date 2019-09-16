@@ -32,7 +32,7 @@ public interface IAdminDao {
 
 	public void makeBooking(BigInteger hotelId, BigInteger hotelId2, Date checkIn, Date checkOut, BigInteger roomId);
 
-	public boolean register(Customer customer);
+
 
 	public boolean addBooking(BigInteger cityId, BigInteger hotelId, BigInteger roomId, Booking booking) throws HotelException;
 
@@ -51,6 +51,12 @@ public interface IAdminDao {
 	
 	public boolean register(User user)throws HotelException;
 	public boolean register(Customer customer, BigInteger userId) throws HotelException;
+	
+	
+	public boolean updateHotel(BigInteger cityId, BigInteger hotelId,
+			String hotelName) throws HotelException ;
+	public boolean updateRoom(BigInteger cityId, BigInteger hotelId,
+			BigInteger roomId, String roomType) throws HotelException;
 
 //	void updateBooking(Booking booking);
 

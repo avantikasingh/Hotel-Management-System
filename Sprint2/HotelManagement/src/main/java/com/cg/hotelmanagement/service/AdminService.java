@@ -103,14 +103,14 @@ public class AdminService implements IAdminService {
 		return true;
 	}
 
-	/*public void updateHotel(BigInteger cityId, BigInteger hotelId,
+	public boolean updateHotel(BigInteger cityId, BigInteger hotelId,
 			String hotelName) {
-		adminDao.updateHotel(cityId, hotelId, hotelName);
+		return adminDao.updateHotel(cityId, hotelId, hotelName);
 	}
 	@Override
-	public void updateRoom(BigInteger cityId, BigInteger hotelId,
+	public boolean updateRoom(BigInteger cityId, BigInteger hotelId,
 			BigInteger roomId, String roomType) {
-		adminDao.updateRoom(cityId, hotelId, roomId, roomType);
-	}*/
+		return adminDao.updateRoom(cityId, hotelId, roomId, roomType);
+	}
 
 }

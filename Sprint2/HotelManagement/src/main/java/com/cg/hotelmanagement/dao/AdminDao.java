@@ -63,7 +63,7 @@ public class AdminDao implements IAdminDao {
 			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			// step 2: set the ps placeholder values
 			ps.setString(1, city.getCityName());
-			
+
 			// step 3: execute Query (for DML we have executeUpdate method )
 			noOfRec = ps.executeUpdate();
 		} catch (SQLException e) {
@@ -119,7 +119,7 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean addHotel(BigInteger cityId,Hotel hotel) throws HotelException {
+	public boolean addHotel(BigInteger cityId, Hotel hotel) throws HotelException {
 		/*
 		 * This function has been changed and now accepts an object of room that
 		 * contains hotelid as well public boolean addHotel(BigInteger cityId, Hotel
@@ -135,12 +135,12 @@ public class AdminDao implements IAdminDao {
 			// step1 : obtain psz
 			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			// step 2: set the ps placeholder values
-			ps.setLong(1, cityId.longValue()); 
+			ps.setLong(1, cityId.longValue());
 			ps.setString(2, hotel.getHotelName());
 			ps.setString(3, hotel.getHotelAddress());
 			ps.setLong(4, hotel.getHotelPhoneNumber().longValue());
 			ps.setDouble(5, hotel.getHotelRating());
-			
+
 			// step 3: execute Query (for DML we have executeUpdate method )
 			noOfRec = ps.executeUpdate();
 		} catch (SQLException e) {
@@ -194,7 +194,7 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean addRoom(BigInteger hotelId,Room room) throws HotelException {
+	public boolean addRoom(BigInteger hotelId, Room room) throws HotelException {
 		/*
 		 * This function has been changed and now accepts an object of room that
 		 * contains hotelid as well public boolean addRoom(BigInteger cityId, BigInteger
@@ -212,7 +212,7 @@ public class AdminDao implements IAdminDao {
 			ps.setDouble(2, room.getRoomRent());
 			ps.setString(3, room.getRoomNumber());
 			ps.setLong(4, hotelId.longValue());
-			
+
 			// step 3: execute Query (for DML w e have executeUpdate method )
 			noOfRec = ps.executeUpdate();
 		} catch (SQLException e) {
@@ -270,14 +270,7 @@ public class AdminDao implements IAdminDao {
 		// TODO Auto-generated method stub
 //same as add booking
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 	@Override
 	public boolean register(User user) throws HotelException {
 
@@ -287,12 +280,11 @@ public class AdminDao implements IAdminDao {
 			// step1 : obtain ps
 			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			// step 2: set the ps placeholder values
-			ps.setString(1, user.getUsername()); 
+			ps.setString(1, user.getUsername());
 			ps.setString(2, user.getEmailId());
 			ps.setDate(3, (java.sql.Date) user.getDob());
 			ps.setLong(4, Long.parseLong(user.getUserMobile()));
-			
-			
+
 			// step 3: execute Query (for DML we have executeUpdate method )
 			noOfRec = ps.executeUpdate();
 		} catch (SQLException e) {
@@ -314,26 +306,6 @@ public class AdminDao implements IAdminDao {
 			return false;
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 	@Override
 	public boolean register(Customer customer, BigInteger userId) throws HotelException {
@@ -344,10 +316,9 @@ public class AdminDao implements IAdminDao {
 			// step1 : obtain ps
 			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			// step 2: set the ps placeholder values
-			ps.setLong(1, Long.parseLong(customer.getPanNumber())); 
+			ps.setLong(1, Long.parseLong(customer.getPanNumber()));
 			ps.setLong(2, userId.longValue());
 
-			
 			// step 3: execute Query (for DML we have executeUpdate method )
 			noOfRec = ps.executeUpdate();
 		} catch (SQLException e) {
@@ -393,7 +364,7 @@ public class AdminDao implements IAdminDao {
 			ps.setDouble(5, booking.getBookingCost().doubleValue());
 			ps.setLong(6, hotelId.longValue());
 //			ps.setString(7, booking.get);	edit this for the userid
-			
+
 			// step 3: execute Query (for DML we have executeUpdate method )
 			noOfRec = ps.executeUpdate();
 			// getting the auto-generated value
@@ -428,26 +399,26 @@ public class AdminDao implements IAdminDao {
 	@Override
 	public Map<BigInteger, City> getCityList() {
 		// TODO Auto-generated method stub
-		String sql ="select * from city where delete_flag = 0";
-		Map<BigInteger, City> cityMap = new HashMap<BigInteger, City>();	
+		String sql = "select * from city where delete_flag = 0";
+		Map<BigInteger, City> cityMap = new HashMap<BigInteger, City>();
 		try {
-			ps= connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
-			//for select queries we have executeQuery method which returns ResultSet
-			rs= ps.executeQuery();
+			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			// for select queries we have executeQuery method which returns ResultSet
+			rs = ps.executeQuery();
 			City city = new City();
 			while (rs.next()) {
 				city.setCityId(BigInteger.valueOf(rs.getLong("city_id")));
 				city.setCityName(rs.getString("city_name"));
-				cityMap.put(BigInteger.valueOf(rs.getLong("city_id")),city);
+				cityMap.put(BigInteger.valueOf(rs.getLong("city_id")), city);
 			}
 		} catch (SQLException e) {
-			System.out.println(" Error at getCityList Dao method : "+e);
-		}finally {
-			if(ps!=null) {
+			System.out.println(" Error at getCityList Dao method : " + e);
+		} finally {
+			if (ps != null) {
 				try {
 					ps.close();
 				} catch (SQLException e) {
-					System.out.println(" Error at getCityList  Dao method : "+e);
+					System.out.println(" Error at getCityList  Dao method : " + e);
 				}
 			}
 		}
@@ -463,30 +434,30 @@ public class AdminDao implements IAdminDao {
 	@Override
 	public Map<BigInteger, Hotel> viewHotels(Date checkIn, Date checkOut, BigInteger cityId, boolean sortByRating) {
 		// TODO Auto-generated method stub
-		String sql ="select * from hotel where city_id =?  and delete_flag = 0";
-		Map<BigInteger, Hotel> hotelMap = new HashMap<BigInteger, Hotel>();	
+		String sql = "select * from hotel where city_id =?  and delete_flag = 0";
+		Map<BigInteger, Hotel> hotelMap = new HashMap<BigInteger, Hotel>();
 		try {
-			ps= connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
-			//for select queries we have executeQuery method which returns ResultSet
-			rs= ps.executeQuery();
+			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			// for select queries we have executeQuery method which returns ResultSet
+			rs = ps.executeQuery();
 			Hotel hotel = new Hotel();
 			while (rs.next()) {
 				hotel.setHotelId(BigInteger.valueOf(rs.getLong("hotel_id")));
 				hotel.setHotelName(rs.getString("hotel_name"));
 				hotel.setHotelAddress(rs.getString("hotel_address"));
-				
+
 				hotel.setHotelPhoneNumber(BigInteger.valueOf(rs.getLong("hotel_phone_number")));
 				hotel.setHotelRating(rs.getFloat("hotel_rating"));
-				hotelMap.put(BigInteger.valueOf(rs.getLong("hotel_id")),hotel);
+				hotelMap.put(BigInteger.valueOf(rs.getLong("hotel_id")), hotel);
 			}
 		} catch (SQLException e) {
-			System.out.println(" Error at getCityList Dao method : "+e);
-		}finally {
-			if(ps!=null) {
+			System.out.println(" Error at getCityList Dao method : " + e);
+		} finally {
+			if (ps != null) {
 				try {
 					ps.close();
 				} catch (SQLException e) {
-					System.out.println(" Error at getCityList  Dao method : "+e);
+					System.out.println(" Error at getCityList  Dao method : " + e);
 				}
 			}
 		}
@@ -496,6 +467,79 @@ public class AdminDao implements IAdminDao {
 	@Override
 	public void showBooking(Booking booking) {
 		// TODO Auto-generated method stub
+
+	}
+
+	public boolean updateHotel(BigInteger cityId, BigInteger hotelId, String hotelName) throws HotelException {
+
+		String sql = "update  hotel set hotel_name = ? where city_id=?  and hotel_id = ? ";
+
+		int noOfRec = 0;
+		try {
+			// step1 : obtain psz
+			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			// step 2: set the ps placeholder values
+			ps.setString(1, hotelName);
+			ps.setLong(2, cityId.longValue());
+			ps.setLong(3, hotelId.longValue());
+
+			// step 3: execute Query (for DML w e have executeUpdate method )
+			noOfRec = ps.executeUpdate();
+		} catch (SQLException e) {
+			myLogger.error(" Error at updateHotel Dao method : " + e);
+			throw new HotelException(" Error at updateHotel Dao method : " + e);
+		} finally {
+			if (ps != null) {
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					myLogger.error(" Error at updateRoom  Dao method : " + e);
+				}
+			}
+		}
+		if (noOfRec > 0) {
+			return true;
+
+		} else {
+			return false;
+		}
+
+	}
+
+	public boolean updateRoom(BigInteger cityId, BigInteger hotelId, BigInteger roomId, String roomType)
+			throws HotelException {
+		String sql = "update  room set room_type = ? where city_id=?  and hotel_id = ? and room_id = ?";
+
+		int noOfRec = 0;
+		try {
+			// step1 : obtain psz
+			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			// step 2: set the ps placeholder values
+			ps.setString(1, roomType);
+			ps.setLong(2, cityId.longValue());
+			ps.setLong(3, hotelId.longValue());
+			ps.setLong(4, roomId.longValue());
+
+			// step 3: execute Query (for DML w e have executeUpdate method )
+			noOfRec = ps.executeUpdate();
+		} catch (SQLException e) {
+			myLogger.error(" Error at updateRoom Dao method : " + e);
+			throw new HotelException(" Error at updateRoom Dao method : " + e);
+		} finally {
+			if (ps != null) {
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					myLogger.error(" Error at updateRoom  Dao method : " + e);
+				}
+			}
+		}
+		if (noOfRec > 0) {
+			return true;
+
+		} else {
+			return false;
+		}
 
 	}
 
