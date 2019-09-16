@@ -8,21 +8,21 @@ public class Room {
 	private String roomType;
 	private Double roomRent;
 	private String roomNumber;
-	private List<Booking> bookingList;
-
+	
 	public Room() {
 	}
 
-	public Room(BigInteger roomId, String roomType, Double roomRent,
-			String roomNumber, List<Booking> bookingList) {
+	
+
+	public Room(BigInteger roomId, String roomType, Double roomRent, String roomNumber) {
 		super();
 		this.roomId = roomId;
 		this.roomType = roomType;
 		this.roomRent = roomRent;
 		this.roomNumber = roomNumber;
-		this.bookingList = bookingList;
-
 	}
+
+
 
 	public BigInteger getRoomId() {
 		return roomId;
@@ -56,13 +56,6 @@ public class Room {
 		this.roomNumber = roomNumber;
 	}
 
-	public List<Booking> getBookingList() {
-		return bookingList;
-	}
-
-	public void setBookingList(List<Booking> bookingList) {
-		this.bookingList = bookingList;
-	}
 
 	@Override
 	public String toString() {

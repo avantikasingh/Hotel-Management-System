@@ -17,7 +17,7 @@ public class AdminService implements IAdminService {
 
 	@Override
 	public boolean addCity(BigInteger cityId, String cityName) throws Exception {
-		City city = new City(cityName, cityId, new HashMap<BigInteger, Hotel>());
+		City city = new City(cityName, cityId);
 		return adminDao.addCity(city);
 	}
 
