@@ -11,6 +11,16 @@ import org.apache.log4j.PropertyConfigurator;
 import com.cg.hotelmanagement.exception.HotelException;
 
 
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.util.Properties;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
+
+
 public class DBUtil {
 	  private static Logger myLogger;
       private static Connection connection;
@@ -18,35 +28,26 @@ public class DBUtil {
     	
     	  Properties props = System.getProperties();
     	  String userDir= props.getProperty("user.dir")+"/src/main/resources/";
-    	  System.out.println("Current working directory is " +userDir);
+    	  myLogger.info("Current working directory is " +userDir);
     	  PropertyConfigurator.configure(userDir+"log4j.properties");
   		myLogger=Logger.getLogger("DBUtil.class");
   		}
-      public static Connection getConnection() throws HotelException {
+      private DBUtil() {
     	  
-    	  String driver,url,username, password;
+      }
+      public static Connection getConnection() throws HotelException {
     	  try {
     		//creating properties and load the properties
     			Properties prop=DBUtil.loadProp();
     		
-    		  //get properties from file
-    		  //driver = prop.getProperty("driver");
-    		  url = prop.getProperty("url");
-    		  username = prop.getProperty("user");
-    		  password = prop.getProperty("password");
-    		  
-    		  //loading and registering the driver
-    		 // Class.forName(driver);
-    		  
+    			String url = prop.getProperty("url");
+    			String username = prop.getProperty("user");
+    			String password = prop.getProperty("password");
     		  //getConnection
     		  connection=DriverManager.getConnection(url, username, password);
-    		  if(connection!=null)
-    			  myLogger.info("connection Obtained! : "+connection);				
-    			//  System.out.println("connection Obtained!");
-    		  else
-    			  throw new HotelException("sorry!!! Something went wrong"
-      			  		+ " with the connection");
+    		  myLogger.info("connection Obtained! : "+connection);	
     	  }catch(Exception e) {
+    		  myLogger.error("connection Not Obtained!"+e);	
     		  throw new HotelException(e.getMessage());
     	  }
     	   return connection;  
@@ -61,7 +62,7 @@ public class DBUtil {
   			myLogger.info("Property File loaded : ");	
   		} 
   		catch (Exception e){
-  			myLogger.error("Property File Not loaded");	
+  			myLogger.error("Property File Not loaded : "+e);	
   			throw new HotelException(e.getMessage());
   		}
   		return myProp;
@@ -76,7 +77,7 @@ public class DBUtil {
     		  else
     			  myLogger.error("Connection already closed");
     	  } catch (Exception e) {
-    		  myLogger.error("Connection already closed");	
+    		  myLogger.error("Connection already closed : "+e);	
     		  throw new HotelException(e.getMessage());
     	  }
       }
