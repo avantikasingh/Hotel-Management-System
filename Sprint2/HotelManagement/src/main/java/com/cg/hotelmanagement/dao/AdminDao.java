@@ -56,6 +56,7 @@ public class AdminDao implements IAdminDao {
 	public boolean addCity(City city) throws Exception {
 		// TODO Auto-generated method stub
 		int noOfRec = 0;
+		System.out.println(city);
 		String sql = "insert into city(city_name, delete_flag) values(?,?)";
 		try {
 			// step1 : obtain psz
@@ -125,6 +126,8 @@ public class AdminDao implements IAdminDao {
 		 * hotel) old public boolean addHotel(Hotel hotel) new the hotel object also
 		 * contains the city name
 		 */
+		System.out.println(cityId);
+		System.out.println(hotel);
 
 		int noOfRec = 0;
 		String sql = "insert into hotel(city_Id,hotel_name, hotel_address, hotel_phone_number, hotel_rating, delete_flag) values(?,?,?,?,?,?)";
@@ -135,7 +138,7 @@ public class AdminDao implements IAdminDao {
 			ps.setLong(1, cityId.longValue()); 
 			ps.setString(2, hotel.getHotelName());
 			ps.setString(3, hotel.getHotelAddress());
-			ps.setString(4, hotel.getHotelAddress());
+			ps.setLong(4, hotel.getHotelPhoneNumber().longValue());
 			ps.setDouble(5, hotel.getHotelRating());
 			ps.setBoolean(6, false);
 			// step 3: execute Query (for DML we have executeUpdate method )

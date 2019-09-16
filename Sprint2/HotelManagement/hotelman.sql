@@ -1,8 +1,10 @@
 drop table room;
-drop table hotel;
 drop table booking;
+drop table hotel;
 drop table loggedin_user;
 drop table city;
+
+create database hotel_management
 
 
 
@@ -24,6 +26,7 @@ CREATE TABLE IF NOT EXISTS city
 		city_name varchar(50) NOT NULL ,
 		delete_flag bit,
 		CONSTRAINT PRIMARY KEY(city_id)
+		CONSTRAINT UNIQUE (city_name)
 	);
 	
 	
@@ -32,7 +35,7 @@ CREATE TABLE IF NOT EXISTS city
 		
 		hotel_id bigint PRIMARY KEY AUTO_INCREMENT,
 		hotel_name varchar(50) NOT NULL ,
-		hotel_address double NOT NULL ,
+		hotel_address varchar(50) NOT NULL ,
 		hotel_phone_number bigint not null,
 		hotel_rating double,
 		delete_flag bit,
