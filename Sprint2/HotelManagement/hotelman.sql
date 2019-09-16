@@ -11,7 +11,6 @@ CREATE TABLE IF NOT EXISTS loggedin_user
 		email_id varchar(50) NOT NULL ,
 		dob datetime,
 		user_mobile bigint,
-		gender VARCHAR(1),
 		aadhar_number varchar(12),
 		delete_flag bit default 0,
 		CONSTRAINT PRIMARY KEY(user_id)

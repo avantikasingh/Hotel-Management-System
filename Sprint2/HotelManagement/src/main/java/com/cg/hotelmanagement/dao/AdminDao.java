@@ -270,11 +270,104 @@ public class AdminDao implements IAdminDao {
 		// TODO Auto-generated method stub
 //same as add booking
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	@Override
+	public boolean register(User user) throws HotelException {
+
+		int noOfRec = 0;
+		String sql = "insert into loggedin_user(user_name, email_id, dob, user_mobile) values(?,?,?,?)";
+		try {
+			// step1 : obtain ps
+			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			// step 2: set the ps placeholder values
+			ps.setString(1, user.getUsername()); 
+			ps.setString(2, user.getEmailId());
+			ps.setDate(3, (java.sql.Date) user.getDob());
+			ps.setLong(4, Long.parseLong(user.getUserMobile()));
+			
+			
+			// step 3: execute Query (for DML we have executeUpdate method )
+			noOfRec = ps.executeUpdate();
+		} catch (SQLException e) {
+			myLogger.error(" Error at user register Dao method : " + e);
+			throw new HotelException(" Error at user register Dao method : " + e);
+		} finally {
+			if (ps != null) {
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					myLogger.error(" Error at user register Dao method : " + e);
+				}
+			}
+		}
+		if (noOfRec > 0) {
+			return true;
+
+		} else {
+			return false;
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@Override
-	public boolean register(Customer customer) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean register(Customer customer, BigInteger userId) throws HotelException {
+
+		int noOfRec = 0;
+		String sql = "update  loggedin_user set aadhar_number = ? where user_id=? ";
+		try {
+			// step1 : obtain ps
+			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			// step 2: set the ps placeholder values
+			ps.setLong(1, Long.parseLong(customer.getPanNumber())); 
+			ps.setLong(2, userId.longValue());
+
+			
+			// step 3: execute Query (for DML we have executeUpdate method )
+			noOfRec = ps.executeUpdate();
+		} catch (SQLException e) {
+			myLogger.error(" Error at customer register method : " + e);
+			throw new HotelException(" Error at customer register method : " + e);
+		} finally {
+			if (ps != null) {
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					myLogger.error(" Error at customer register method : " + e);
+				}
+			}
+		}
+		if (noOfRec > 0) {
+			return true;
+
+		} else {
+			return false;
+		}
 	}
 
 	@Override

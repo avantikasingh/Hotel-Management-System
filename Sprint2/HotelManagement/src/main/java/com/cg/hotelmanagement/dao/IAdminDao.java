@@ -48,6 +48,9 @@ public interface IAdminDao {
 //	void updateRoom(BigInteger cityId, BigInteger hotelId, BigInteger roomId, String roomType);
 
 	void showBooking(Booking booking);
+	
+	public boolean register(User user)throws HotelException;
+	public boolean register(Customer customer, BigInteger userId) throws HotelException;
 
 //	void updateBooking(Booking booking);
 
