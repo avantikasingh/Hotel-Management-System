@@ -2,6 +2,7 @@ drop table room;
 drop table hotel;
 drop table booking;
 drop table loggedin_user;
+drop table city;
 
 
 
@@ -25,7 +26,18 @@ CREATE TABLE IF NOT EXISTS city
 		CONSTRAINT PRIMARY KEY(city_id)
 	);
 	
-
+	
+	CREATE TABLE IF NOT EXISTS hotel 
+	(
+		
+		hotel_id bigint PRIMARY KEY AUTO_INCREMENT,
+		hotel_name varchar(50) NOT NULL ,
+		hotel_address double NOT NULL ,
+		hotel_phone_number bigint not null,
+		hotel_rating double,
+		delete_flag bit,
+		city_id bigint(100), FOREIGN KEY(city_id) REFERENCES city(city_id)
+	);
 	
 CREATE TABLE IF NOT EXISTS booking 
 	(
@@ -45,18 +57,7 @@ CREATE TABLE IF NOT EXISTS booking
 
 
 	
-	
-	CREATE TABLE IF NOT EXISTS hotel 
-	(
-		
-		hotel_id bigint PRIMARY KEY AUTO_INCREMENT,
-		hotel_name varchar(50) NOT NULL ,
-		hotel_address double NOT NULL ,
-		hotel_phone_number bigint not null,
-		hotel_rating double,
-		delete_flag bit,
-		city_id bigint(100), FOREIGN KEY(city_id) REFERENCES city(city_id)
-	);
+
 	
 
 
