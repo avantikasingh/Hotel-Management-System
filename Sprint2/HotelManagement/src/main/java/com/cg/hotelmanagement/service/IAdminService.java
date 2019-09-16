@@ -12,7 +12,7 @@ import com.cg.hotelmanagement.exception.HotelException;
 
 public interface IAdminService {
 
-	public boolean addCity(BigInteger cityId, String cityName) throws HotelException;
+	public boolean addCity(BigInteger cityId, String cityName) throws Exception;
 
 	public boolean removeCity(BigInteger cityId);
 

@@ -53,7 +53,7 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean addCity(City city) throws HotelException {
+	public boolean addCity(City city) throws Exception {
 		// TODO Auto-generated method stub
 		int noOfRec = 0;
 		String sql = "insert into city(city_name, delete_flag) values(?,?)";

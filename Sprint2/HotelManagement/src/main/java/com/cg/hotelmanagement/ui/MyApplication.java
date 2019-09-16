@@ -20,7 +20,7 @@ public class MyApplication {
 	static long roomIdSys = 4000;
 	static long cityIdSys = 3000;
 
-	public static void main(String[] args) throws HotelException {
+	public static void main(String[] args) throws Exception {
 
 		Scanner sc = new Scanner(System.in);
 
@@ -30,7 +30,12 @@ public class MyApplication {
 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-		adminService.addCity(BigInteger.valueOf(cityIdSys), "Pune");
+		try {
+			adminService.addCity(BigInteger.valueOf(cityIdSys), "Pune");
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
 		adminService.addHotel(BigInteger.valueOf(cityIdSys), BigInteger.valueOf(hotelIdSys), "Taj", "Pune",
 				"8108734667", 4.9f);

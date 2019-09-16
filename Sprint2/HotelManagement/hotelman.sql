@@ -25,11 +25,11 @@ CREATE TABLE IF NOT EXISTS city
 		CONSTRAINT PRIMARY KEY(city_id)
 	);
 	
-insert into city(city_name, delete_flag) values('test', 0)
+
 	
 CREATE TABLE IF NOT EXISTS booking 
 	(
-		booking_id bigint AUTO_INCREMENT,
+		booking_id bigint PRIMARY KEY AUTO_INCREMENT,
 		booking_status varchar(50),
 		booking_date date,
 		checkin_date date,
@@ -37,12 +37,14 @@ CREATE TABLE IF NOT EXISTS booking
 		booking_cost double, 
 		hotel_id bigint,
 		user_id bigint,
-		CONSTRAINT PRIMARY KEY(booking_id) ,
 		delete_flag bit,
+		CONSTRAINT
+		FOREIGN KEY (hotel_id) REFERENCES hotel(hotel_id),
 		FOREIGN KEY (user_id) REFERENCES loggedin_user(user_id)
 	);
 
 
+	
 	
 	CREATE TABLE IF NOT EXISTS hotel 
 	(

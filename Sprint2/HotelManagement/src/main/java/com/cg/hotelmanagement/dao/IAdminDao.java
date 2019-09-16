@@ -10,7 +10,7 @@ import java.util.Map;
 
 public interface IAdminDao {
 
-	public boolean addCity(City city) throws HotelException;
+	public boolean addCity(City city) throws Exception;
 
 //	public boolean removeCity(BigInteger cityId); old version
 	public boolean removeCity(BigInteger cityId); // new version
