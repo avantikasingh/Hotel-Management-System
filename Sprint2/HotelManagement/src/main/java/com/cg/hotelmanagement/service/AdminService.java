@@ -1,5 +1,4 @@
 package com.cg.hotelmanagement.service;
-
 import com.cg.hotelmanagement.dao.AdminDao;
 import com.cg.hotelmanagement.dao.IAdminDao;
 import com.cg.hotelmanagement.dto.*;
@@ -96,6 +95,10 @@ public class AdminService implements IAdminService {
 			String hotelAddress, String hotelPhoneNumber, float hotelRating)
 			throws HotelException {
 		Hotel hotel = new Hotel();
+		hotel.setHotelName(hotelName);
+		hotel.setHotelAddress(hotelAddress);
+		hotel.setHotelPhoneNumber(BigInteger.valueOf(Long.parseLong(hotelPhoneNumber)));
+		hotel.setHotelRating(hotelRating);
 		adminDao.addHotel(cityId,hotel);
 		return true;
 	}
@@ -104,12 +107,10 @@ public class AdminService implements IAdminService {
 			String hotelName) {
 		adminDao.updateHotel(cityId, hotelId, hotelName);
 	}
-
 	@Override
 	public void updateRoom(BigInteger cityId, BigInteger hotelId,
 			BigInteger roomId, String roomType) {
 		adminDao.updateRoom(cityId, hotelId, roomId, roomType);
-
 	}*/
 
 }

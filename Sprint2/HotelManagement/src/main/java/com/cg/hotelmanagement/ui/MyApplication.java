@@ -16,9 +16,9 @@ import java.util.Scanner;
 
 public class MyApplication {
 	static long userIdSys = 1000;
-	static long hotelIdSys = 2000;
+	static long hotelIdSys = 1;
 	static long roomIdSys = 4000;
-	static long cityIdSys = 3000;
+	static long cityIdSys = 1;
 
 	public static void main(String[] args) throws Exception {
 
@@ -37,7 +37,7 @@ public class MyApplication {
 			e1.printStackTrace();
 		}
 
-		adminService.addHotel(BigInteger.valueOf(cityIdSys), BigInteger.valueOf(hotelIdSys), "Taj", "Pune",
+		adminService.addHotel(BigInteger.valueOf(cityIdSys), "Taj", "Pune",
 				"8108734667", 4.9f);
 
 		adminService.addRoom(BigInteger.valueOf(cityIdSys), BigInteger.valueOf(hotelIdSys),
@@ -164,7 +164,7 @@ public class MyApplication {
 							}
 						}
 
-						adminService.addHotel(cityId, BigInteger.valueOf(++hotelIdSys), hotelName, hotelAddress,
+						adminService.addHotel(cityId, hotelName, hotelAddress,
 								hotelPhone, hotelRating);
 
 						break;

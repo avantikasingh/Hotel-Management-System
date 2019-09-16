@@ -57,13 +57,13 @@ public class AdminDao implements IAdminDao {
 		// TODO Auto-generated method stub
 		int noOfRec = 0;
 		System.out.println(city);
-		String sql = "insert into city(city_name, delete_flag) values(?,?)";
+		String sql = "insert into city(city_name) values(?)";
 		try {
 			// step1 : obtain psz
 			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			// step 2: set the ps placeholder values
 			ps.setString(1, city.getCityName());
-			ps.setBoolean(2, false);
+			
 			// step 3: execute Query (for DML we have executeUpdate method )
 			noOfRec = ps.executeUpdate();
 		} catch (SQLException e) {
@@ -91,7 +91,7 @@ public class AdminDao implements IAdminDao {
 	public boolean removeCity(BigInteger cityId) {
 
 		// TODO Auto-generated method stub
-		String sql = "update  city set delete_flag = 1 where city_id=";
+		String sql = "update  city set delete_flag = 1 where city_id=?";
 		int noOfRec = 0;
 		try {
 			ps = connection.prepareStatement(sql);
@@ -130,7 +130,7 @@ public class AdminDao implements IAdminDao {
 		System.out.println(hotel);
 
 		int noOfRec = 0;
-		String sql = "insert into hotel(city_Id,hotel_name, hotel_address, hotel_phone_number, hotel_rating, delete_flag) values(?,?,?,?,?,?)";
+		String sql = "insert into hotel(city_Id,hotel_name, hotel_address, hotel_phone_number, hotel_rating) values(?,?,?,?,?)";
 		try {
 			// step1 : obtain psz
 			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -140,7 +140,7 @@ public class AdminDao implements IAdminDao {
 			ps.setString(3, hotel.getHotelAddress());
 			ps.setLong(4, hotel.getHotelPhoneNumber().longValue());
 			ps.setDouble(5, hotel.getHotelRating());
-			ps.setBoolean(6, false);
+			
 			// step 3: execute Query (for DML we have executeUpdate method )
 			noOfRec = ps.executeUpdate();
 		} catch (SQLException e) {
@@ -165,7 +165,7 @@ public class AdminDao implements IAdminDao {
 
 	@Override
 	public boolean removeHotel(BigInteger cityId, BigInteger hotelId) {
-		String sql = "update  hotel set delete_flag = 1 where city_id=cityId AND hotel_id=";
+		String sql = "update  hotel set delete_flag = 1 where city_id=? AND hotel_id=?";
 
 		int noOfRec = 0;
 		try {
@@ -201,7 +201,9 @@ public class AdminDao implements IAdminDao {
 		 * hotelId, Room newRoom) old public boolean addRoom(Room room) new
 		 */
 		int noOfRec = 0;
-		String sql = "insert into room(room_type, room_rent, room_number, hotel_id, delete_flag) values(?,?,?,?,?) where hotel_id=?";
+		System.out.println(hotelId);
+		System.out.println(room);
+		String sql = "insert into room(room_type, room_rent, room_number, hotel_id) values(?,?,?,?)";
 		try {
 			// step1 : obtain psz
 			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -210,7 +212,7 @@ public class AdminDao implements IAdminDao {
 			ps.setDouble(2, room.getRoomRent());
 			ps.setString(3, room.getRoomNumber());
 			ps.setLong(4, hotelId.longValue());
-			ps.setBoolean(5, false);
+			
 			// step 3: execute Query (for DML w e have executeUpdate method )
 			noOfRec = ps.executeUpdate();
 		} catch (SQLException e) {
@@ -266,7 +268,7 @@ public class AdminDao implements IAdminDao {
 	@Override
 	public void makeBooking(BigInteger hotelId, BigInteger hotelId2, Date checkIn, Date checkOut, BigInteger roomId) {
 		// TODO Auto-generated method stub
-
+//same as add booking
 	}
 
 	@Override
@@ -285,7 +287,7 @@ public class AdminDao implements IAdminDao {
 		 */
 		// TODO Auto-generated method stub
 		int noOfRec;
-		String sql = "insert into booking(booking_status ,booking_date, checkin_date,checkout_date, booking_cost, hotel_id, user_id, delete_flag ) values(?,?,?,?,?,?,?,?)";
+		String sql = "insert into booking(booking_status ,booking_date, checkin_date,checkout_date, booking_cost, hotel_id, user_id) values(?,?,?,?,?,?,?)";
 		try {
 
 			// step1 : obtain psz
@@ -298,7 +300,7 @@ public class AdminDao implements IAdminDao {
 			ps.setDouble(5, booking.getBookingCost().doubleValue());
 			ps.setLong(6, hotelId.longValue());
 //			ps.setString(7, booking.get);	edit this for the userid
-			ps.setBoolean(8, false);
+			
 			// step 3: execute Query (for DML we have executeUpdate method )
 			noOfRec = ps.executeUpdate();
 			// getting the auto-generated value
