@@ -8,25 +8,25 @@ public class Hotel {
 	private String hotelName;
 	private String hotelAddress;
 
-	
+	private Map<BigInteger, Room> roomList;
 	private BigInteger hotelPhoneNumber;
 	private Float hotelRating;
 
 	public Hotel() {
 	}
-	
-	public Hotel(BigInteger hotelId, String hotelName, String hotelAddress, BigInteger hotelPhoneNumber,
+
+	public Hotel(BigInteger hotelId, String hotelName, String hotelAddress,
+			Map<BigInteger, Room> roomList, BigInteger hotelPhoneNumber,
 			Float hotelRating) {
 		super();
 		this.hotelId = hotelId;
 		this.hotelName = hotelName;
 		this.hotelAddress = hotelAddress;
+
+		this.roomList = roomList;
 		this.hotelPhoneNumber = hotelPhoneNumber;
 		this.hotelRating = hotelRating;
 	}
-
-
-	
 
 	public BigInteger getHotelId() {
 		return hotelId;
@@ -52,7 +52,13 @@ public class Hotel {
 		this.hotelAddress = hotelAddress;
 	}
 
+	public void setRoomList(Map<BigInteger, Room> roomList) {
+		this.roomList = roomList;
+	}
 
+	public Map<BigInteger, Room> getRoomList() {
+		return this.roomList;
+	}
 
 	public BigInteger getHotelPhoneNumber() {
 		return hotelPhoneNumber;
@@ -70,21 +76,25 @@ public class Hotel {
 		this.hotelRating = hotelRating;
 	}
 
-
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((hotelAddress == null) ? 0 : hotelAddress.hashCode());
+		result = prime * result
+				+ ((hotelAddress == null) ? 0 : hotelAddress.hashCode());
+
 		result = prime * result + ((hotelId == null) ? 0 : hotelId.hashCode());
-		result = prime * result + ((hotelName == null) ? 0 : hotelName.hashCode());
-		result = prime * result + ((hotelPhoneNumber == null) ? 0 : hotelPhoneNumber.hashCode());
-		result = prime * result + ((hotelRating == null) ? 0 : hotelRating.hashCode());
+		result = prime * result
+				+ ((hotelName == null) ? 0 : hotelName.hashCode());
+		result = prime
+				* result
+				+ ((hotelPhoneNumber == null) ? 0 : hotelPhoneNumber.hashCode());
+		result = prime * result
+				+ ((hotelRating == null) ? 0 : hotelRating.hashCode());
+		result = prime * result
+				+ ((roomList == null) ? 0 : roomList.hashCode());
 		return result;
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -100,6 +110,7 @@ public class Hotel {
 				return false;
 		} else if (!hotelAddress.equals(other.hotelAddress))
 			return false;
+
 		if (hotelId == null) {
 			if (other.hotelId != null)
 				return false;
@@ -120,20 +131,20 @@ public class Hotel {
 				return false;
 		} else if (!hotelRating.equals(other.hotelRating))
 			return false;
+		if (roomList == null) {
+			if (other.roomList != null)
+				return false;
+		} else if (!roomList.equals(other.roomList))
+			return false;
 		return true;
 	}
 
-
-
 	@Override
 	public String toString() {
-		return "Hotel [hotelId=" + hotelId + ", hotelName=" + hotelName + ", hotelAddress=" + hotelAddress
-				+ ", hotelPhoneNumber=" + hotelPhoneNumber + ", hotelRating=" + hotelRating + "]";
+		return "Hotel [hotelId=" + hotelId + ", hotelName=" + hotelName
+				+ ", hotelAddress=" + hotelAddress + ", roomList=" + roomList
+				+ ", hotelPhoneNumber=" + hotelPhoneNumber + ", hotelRating="
+				+ hotelRating + "]";
 	}
-
-
-
-
-	
 
 }

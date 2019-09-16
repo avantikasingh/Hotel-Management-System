@@ -8,6 +8,7 @@ public class City {
 
 	private String cityName;
 	private BigInteger cityId;
+	private Map<BigInteger, Hotel> hotelList;
 
 	public BigInteger getCityId() {
 		return cityId;
@@ -22,12 +23,11 @@ public class City {
 		this.cityName = cityName;
 	}
 
-
-
-	public City(String cityName, BigInteger cityId) {
-		super();
+	public City(String cityName, BigInteger cityId,
+			Map<BigInteger, Hotel> hotelList) {
 		this.cityName = cityName;
 		this.cityId = cityId;
+		this.hotelList = hotelList;
 	}
 
 	public City() {
@@ -37,6 +37,13 @@ public class City {
 		return cityName;
 	}
 
+	public Map<BigInteger, Hotel> getHotelList() {
+		return hotelList;
+	}
+
+	public void setHotelList(Map<BigInteger, Hotel> hotelList) {
+		this.hotelList = hotelList;
+	}
 
 	@Override
 	public int hashCode() {
@@ -50,8 +57,8 @@ public class City {
 
 	@Override
 	public String toString() {
-		return "City [cityName=" + cityName + ", cityId=" + cityId + "]";
+		return "City [cityName=" + cityName + ", cityId=" + cityId
+				+ ", hotelList=" + hotelList + "]";
 	}
-
 
 }

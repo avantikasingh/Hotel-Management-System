@@ -143,7 +143,6 @@ public class Booking {
 				+ bookingStatus + ", bookingDate=" + bookingDate + ", checkIn="
 				+ checkIn + ", checkOut=" + checkOut + ", BookingCost="
 				+ BookingCost + "]";
-		
 	}
 
 }
