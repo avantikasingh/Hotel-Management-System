@@ -1,0 +1,118 @@
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-ERROR-AdminDao.class:Connection Not Obtained at authorDao : com.cg.hotelmanagement.exception.HotelException: Access denied for user 'root'@'localhost' (using password: YES)
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-ERROR-AdminDao.class:Connection Not Obtained at authorDao : com.cg.hotelmanagement.exception.HotelException: Access denied for user 'root'@'localhost' (using password: YES)
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-ERROR-AdminDao.class:Connection Not Obtained at authorDao : com.cg.hotelmanagement.exception.HotelException: Access denied for user 'root'@'localhost' (using password: YES)
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-ERROR-AdminDao.class:Connection Not Obtained at authorDao : com.cg.hotelmanagement.exception.HotelException: Access denied for user 'root'@'localhost' (using password: YES)
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-ERROR-AdminDao.class:Connection Not Obtained at authorDao : com.cg.hotelmanagement.exception.HotelException: Access denied for user 'root'@'localhost' (using password: YES)
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addHotel Dao method : java.sql.SQLException: Data truncated for column 'hotel_address' at row 1
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addHotel Dao method : java.sql.SQLException: Data truncated for column 'hotel_address' at row 1
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addHotel Dao method : java.sql.SQLException: Incorrect integer value: 'Pune' for column 'hotel_phone_number' at row 1
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addHotel Dao method : java.sql.SQLException: Incorrect integer value: 'Pune' for column 'hotel_phone_number' at row 1
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addHotel Dao method : java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`hotel_management`.`hotel`, CONSTRAINT `hotel_ibfk_1` FOREIGN KEY (`city_id`) REFERENCES `city` (`city_id`))
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addHotel Dao method : java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`hotel_management`.`hotel`, CONSTRAINT `hotel_ibfk_1` FOREIGN KEY (`city_id`) REFERENCES `city` (`city_id`))
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-16-main-ERROR-AdminDao.class: Error at addHotel Dao method : java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`hotel_management`.`hotel`, CONSTRAINT `hotel_ibfk_1` FOREIGN KEY (`city_id`) REFERENCES `city` (`city_id`))
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-16-main-ERROR-AdminDao.class: Error at addHotel Dao method : java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`hotel_management`.`hotel`, CONSTRAINT `hotel_ibfk_1` FOREIGN KEY (`city_id`) REFERENCES `city` (`city_id`))
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-16-main-ERROR-AdminDao.class: Error at addHotel Dao method : java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`hotel_management`.`hotel`, CONSTRAINT `hotel_ibfk_1` FOREIGN KEY (`city_id`) REFERENCES `city` (`city_id`))
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-16-main-ERROR-AdminDao.class: Error at addRoom Dao method : java.sql.SQLException: No value specified for parameter 6
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-16-main-ERROR-AdminDao.class: Error at addRoom Dao method : java.sql.SQLException: No value specified for parameter 6
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addRoom Dao method : java.sql.SQLException: No value specified for parameter 5
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-16-main-ERROR-AdminDao.class: Error at addRoom Dao method : java.sql.SQLException: No value specified for parameter 5
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-16-main-ERROR-AdminDao.class: Error at addRoom Dao method : java.sql.SQLException: No value specified for parameter 5
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-16-main-ERROR-AdminDao.class: Error at addRoom Dao method : java.sql.SQLException: Incorrect integer value: 'asd' for column 'room_number' at row 1
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-16-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-16-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-16-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-16-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
