@@ -15,7 +15,7 @@ public class ConnectionUtil {
 	public static Connection getConnection() throws HotelException {
 		String url="jdbc:mysql://localhost:3306/hotel_management";
 		String user="root";
-		String password="toor";
+		String password="root";
 		try {
 			
 			connection=DriverManager.getConnection(url,user,password);

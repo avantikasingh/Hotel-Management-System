@@ -424,75 +424,22 @@ public class AdminDao implements IAdminDao {
 	}
 
 	
-	
-	
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-//	    SELECT hotel_id, room_id, room_type, room_rent
-//	     from room
-//	     WHERE room_id NOT IN
-//	     (
-//	     SELECT B.room_id FROM room B
-//	     RIGHT JOIN room_booking RB
-//	     ON B.room_id = RB.room_id
-//	    		 WHERE  (RB.checkin_date >= '2019-10-20' AND  RB.checkout_date <= '2019-10-20') 
-//	    	        OR (RB.checkin_date >= '2019-10-25' AND  RB.checkout_date <= '2019-10-25' )
-//	    	        OR ('2019-10-20' >= RB.checkin_date AND '2019-10-25' <= RB.checkin_date)
-//	    	        OR ('2019-10-20' >= RB.checkin_date AND '2019-10-25' >= RB.checkin_date))
-//	    AND hotel_id IN(select hotel_id from hotel where city_id=1);
-//	    
-//	    
-//	    
-//	    SELECT (hotel_id, room_id, room_type, room_rent)
-//	     from room
-//	     WHERE room_id IN
-//	     (
-//	     SELECT B.room_id FROM room B
-//	     RIGHT JOIN room_booking RB
-//	     ON B.room_id = RB.room_id
-//	    		 WHERE  (RB.checkin_date > '2019-10-20' AND  RB.checkout_date < '2019-10-20') 
-//	    	        OR (RB.checkin_date >= '2019-10-25' AND  RB.checkout_date < '2019-10-25' )
-//	    	        OR ('2019-10-20' > RB.checkin_date AND '2019-10-25' < RB.checkin_date))
-//	    AND hotel_id IN(select hotel_id from hotel where city_id=1);
-//	    
-//	    
-//	    WHERE  (RB.checkin_date <= '2019-10-20' AND  RB.checkout_date >= '2019-10-20') -- cases 3,5,7
-//        OR (RB.checkin_date < '2019-10-25' AND  RB.checkout_date >= '2019-10-25' ) --cases 6,6
-//        OR ('2019-10-20' <= RB.checkin_date AND '2019-10-25' >= RB.checkin_date)
-//	
-	
+
 	@Override
-	public List viewHotels(Date checkIn, Date checkOut, BigInteger cityId, boolean sortByRating, BigInteger hotelId,
-			BigInteger roomId, String roomType, double roomRent) {
+	public List viewHotels(Date checkIn, Date checkOut, BigInteger cityId, boolean sortByRating) {
 		// TODO Auto-generated method stub
 		
-		String sql="SELECT ?, ?, ?, ? "
+		String sql="SELECT hotel_id, room_id, room_type, room_rent "
 				+ "from room"
-				+ "WHERE ? NOT IN "
+				+ "WHERE room_id NOT IN "
 				+ "("
-				+ "SELECT B.RoomID"
+				+ "SELECT RoomID"
 				+ "FROM   room B"
-				+ "RIGHT JOIN room_booking RB"
+				+ "JOIN room_booking RB"
 				+ "ON B.room_id = RB.room_id"
-				+ "WHERE  (? <= RB.checkIn AND ?  >= RB.checkIn)"
-				+ " OR (? < RB.checkOut AND ? >= RB.checkOut ) "
-				+ "OR (RB.checkIn <= ? AND RB.checkout >= ?)"
-				+ "OR (? >= RB.checkin_date AND ? >= RB.checkin_date))"
-				+ "AND ? IN(select ? from hotel where city_id=1); ";
+				+ "WHERE  (checkIn <= RB.checkIn AND checkOut  >= RB.checkIn)"
+				+ " OR (checkIn < RB.checkOut AND checkOut >= RB.checkOut ) "
+				+ "OR (RB.checkIn <= checkIn AND RB.checkout >= checkIn)); ";
 						    
 					
 		//String sql = "select * from hotel where city_id =?  and delete_flag = 0";
@@ -500,29 +447,8 @@ public class AdminDao implements IAdminDao {
 		try {
 			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			// for select queries we have executeQuery method which returns ResultSet
-			
-			
-			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-			// step 2: set the ps placeholder values
-			ps.setLong(1, hotelId.longValue());
-			ps.setLong(2, roomId.longValue());
-			ps.setString(3, roomType);
-			ps.setDouble(4, roomRent);
-			ps.setLong(5, roomId.longValue());
-			ps.setDate(6, (java.sql.Date) checkIn );
-			ps.setDate(7, (java.sql.Date) checkOut );
-			ps.setDate(8, (java.sql.Date) checkIn );
-			ps.setDate(9, (java.sql.Date) checkOut );
-			ps.setDate(10, (java.sql.Date) checkIn );
-			ps.setDate(11, (java.sql.Date) checkIn );
-			ps.setDate(12, (java.sql.Date) checkIn );
-			ps.setDate(13, (java.sql.Date) checkOut );
-			ps.setLong(14, hotelId.longValue());
-			ps.setLong(15, hotelId.longValue());
-			
-			
 			rs = ps.executeQuery();
-		
+			
 			while (rs.next()) {
 				availableRoomList.add(BigInteger.valueOf(rs.getLong("hotel_id")));
 				availableRoomList.add(BigInteger.valueOf(rs.getLong("room_id")));
@@ -638,6 +564,7 @@ public class AdminDao implements IAdminDao {
 			rs = ps.executeQuery();
 			Hotel hotel = new Hotel();
 			while (rs.next()) {
+				
 				hotel.setHotelId(BigInteger.valueOf(rs.getLong("hotel_id")));
 				hotel.setHotelName(rs.getString("hotel_name"));
 				hotel.setHotelAddress(rs.getString("hotel_address"));
