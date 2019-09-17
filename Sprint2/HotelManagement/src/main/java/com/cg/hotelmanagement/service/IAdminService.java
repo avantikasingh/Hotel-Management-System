@@ -28,8 +28,7 @@ public interface IAdminService {
 	public boolean addBooking(BigInteger cityId, BigInteger hotelId,
 			BigInteger roomId, Booking booking) throws HotelException;
 
-	public Map<BigInteger, Hotel> viewHotels(Date checkIn, Date checkOut,
-			BigInteger cityId, boolean sortByRating);
+	
 
 	public Map<BigInteger, City> showCity();
 
@@ -42,10 +41,10 @@ public interface IAdminService {
 	
 	
 	
-	public boolean updateHotel(BigInteger cityId, BigInteger hotelId,
-			String hotelName);
-	public boolean updateRoom(BigInteger cityId, BigInteger hotelId,
-			BigInteger roomId, String roomType);
+//	public boolean updateHotel(BigInteger cityId, BigInteger hotelId,
+//			String hotelName);
+//	public boolean updateRoom(BigInteger cityId, BigInteger hotelId,
+//			BigInteger roomId, String roomType);
 
 //	public void updateHotel(BigInteger cityId, BigInteger hotelId,
 //			String hotelName);

@@ -2,6 +2,7 @@ package com.cg.hotelmanagement.service;
 
 import java.math.BigInteger;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 import com.cg.hotelmanagement.dao.AdminDao;
@@ -19,13 +20,14 @@ public class CustomerService implements ICustomerService {
 			String firstName, String lastName, BigInteger aadharNumber) {
 		Customer customer = new Customer(customerId, booking, firstName,
 				lastName, aadharNumber.toString());
-		return adminDao.register(customer);
+		return true;
+		//return adminDao.register(customer);
 
 	}
 
 	@Override
-	public void viewHotels(BigInteger cityId, AdminService adminService) {
-		adminService.adminDao.viewHotels(cityId);
+	public List viewHotels(Date checkIn, Date checkOut, BigInteger cityId, boolean sortByRating) {
+		return adminDao.viewHotels(checkIn, checkOut, cityId,sortByRating);
 
 	}
 

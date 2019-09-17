@@ -557,7 +557,7 @@ public class MyApplication {
 						// break;
 						// }
 						// }
-						customerService.viewHotels(cityId, adminService);
+						//customerService.viewHotels(cityId, adminService);
 						break;
 					}
 					case 3:

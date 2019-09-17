@@ -39,9 +39,8 @@ public interface IAdminDao {
 	public Map<BigInteger, City> getCityList();// old version
 //	public Map<Long, String> getCityList(); //new version returns a map with list and String
 
-	public void viewHotels(BigInteger cityId);
-
-	public Map<BigInteger, Hotel> viewHotels(Date checkIn, Date checkOut, BigInteger cityId, boolean sortByRating);
+	
+	public List viewHotels(Date checkIn, Date checkOut, BigInteger cityId, boolean sortByRating);
 
 //	void updateHotel(BigInteger cityId, BigInteger hotelId, String hotelName);
 //

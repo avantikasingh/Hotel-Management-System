@@ -13,9 +13,9 @@ import com.cg.hotelmanagement.exception.HotelException;
 public class ConnectionUtil {
 	private static Connection connection;
 	public static Connection getConnection() throws HotelException {
-		String url="jdbc:mysql://localhost:3306/capgemini";
+		String url="jdbc:mysql://localhost:3306/hotel_management";
 		String user="root";
-		String password="serendipity";
+		String password="root";
 		try {
 			
 			connection=DriverManager.getConnection(url,user,password);

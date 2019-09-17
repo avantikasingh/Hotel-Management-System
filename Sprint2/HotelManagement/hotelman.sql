@@ -71,3 +71,11 @@ CREATE TABLE IF NOT EXISTS booking
 		FOREIGN KEY (hotel_id) REFERENCES hotel(hotel_id)
 	);
 
+	CREATE TABLE IF NOT EXISTS room_booking 
+	(
+		room_id bigint,
+		checkin_date date,
+		checkout_date date,
+		FOREIGN KEY (room_id) REFERENCES room(room_id)
+	);
+	

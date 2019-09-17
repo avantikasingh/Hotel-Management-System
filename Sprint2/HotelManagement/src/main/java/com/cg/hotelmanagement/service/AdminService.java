@@ -8,6 +8,7 @@ import java.math.BigInteger;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 public class AdminService implements IAdminService {
@@ -57,10 +58,7 @@ public class AdminService implements IAdminService {
 		return adminDao.addBooking(cityId, hotelId, roomId, booking);
 	}
 
-	public Map<BigInteger, Hotel> viewHotels(Date checkIn, Date checkOut,
-			BigInteger cityId, boolean sortByRating) {
-		return adminDao.viewHotels(checkIn, checkOut, cityId, sortByRating);
-	}
+	
 
 	// @Override
 	// public boolean addRoom() {
@@ -103,14 +101,14 @@ public class AdminService implements IAdminService {
 		return true;
 	}
 
-	public boolean updateHotel(BigInteger cityId, BigInteger hotelId,
-			String hotelName) {
-		return adminDao.updateHotel(cityId, hotelId, hotelName);
-	}
-	@Override
-	public boolean updateRoom(BigInteger cityId, BigInteger hotelId,
-			BigInteger roomId, String roomType) {
-		return adminDao.updateRoom(cityId, hotelId, roomId, roomType);
-	}
+//	public boolean updateHotel(BigInteger cityId, BigInteger hotelId,
+//			String hotelName) {
+//		return adminDao.updateHotel(cityId, hotelId, hotelName);
+//	}
+//	@Override
+//	public boolean updateRoom(BigInteger cityId, BigInteger hotelId,
+//			BigInteger roomId, String roomType) {
+//		return adminDao.updateRoom(cityId, hotelId, roomId, roomType);
+//	}
 
 }

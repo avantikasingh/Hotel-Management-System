@@ -425,30 +425,38 @@ public class AdminDao implements IAdminDao {
 		return cityMap;
 	}
 
-	@Override
-	public void viewHotels(BigInteger cityId) {
-		// TODO Auto-generated method stub
-
-	}
+	
 
 	@Override
-	public Map<BigInteger, Hotel> viewHotels(Date checkIn, Date checkOut, BigInteger cityId, boolean sortByRating) {
+	public List viewHotels(Date checkIn, Date checkOut, BigInteger cityId, boolean sortByRating) {
 		// TODO Auto-generated method stub
-		String sql = "select * from hotel where city_id =?  and delete_flag = 0";
-		Map<BigInteger, Hotel> hotelMap = new HashMap<BigInteger, Hotel>();
+		
+		String sql="SELECT hotel_id, room_id, room_type, room_rent "
+				+ "from room"
+				+ "WHERE room_id NOT IN "
+				+ "("
+				+ "SELECT RoomID"
+				+ "FROM   room B"
+				+ "JOIN room_booking RB"
+				+ "ON B.room_id = RB.room_id"
+				+ "WHERE  (checkIn <= RB.checkIn AND checkOut  >= RB.checkIn)"
+				+ " OR (checkIn < RB.checkOut AND checkOut >= RB.checkOut ) "
+				+ "OR (RB.checkIn <= checkIn AND RB.checkout >= checkIn)); ";
+						    
+					
+		//String sql = "select * from hotel where city_id =?  and delete_flag = 0";
+		List availableRoomList = new LinkedList();
 		try {
 			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			// for select queries we have executeQuery method which returns ResultSet
 			rs = ps.executeQuery();
-			Hotel hotel = new Hotel();
+			
 			while (rs.next()) {
-				hotel.setHotelId(BigInteger.valueOf(rs.getLong("hotel_id")));
-				hotel.setHotelName(rs.getString("hotel_name"));
-				hotel.setHotelAddress(rs.getString("hotel_address"));
-
-				hotel.setHotelPhoneNumber(BigInteger.valueOf(rs.getLong("hotel_phone_number")));
-				hotel.setHotelRating(rs.getFloat("hotel_rating"));
-				hotelMap.put(BigInteger.valueOf(rs.getLong("hotel_id")), hotel);
+				availableRoomList.add(BigInteger.valueOf(rs.getLong("hotel_id")));
+				availableRoomList.add(BigInteger.valueOf(rs.getLong("room_id")));
+				availableRoomList.add(rs.getString("room_type"));
+				availableRoomList.add(rs.getDouble("room_rent"));
+				
 			}
 		} catch (SQLException e) {
 			System.out.println(" Error at getCityList Dao method : " + e);
@@ -461,7 +469,7 @@ public class AdminDao implements IAdminDao {
 				}
 			}
 		}
-		return hotelMap;
+		return availableRoomList;
 	}
 
 	@Override
