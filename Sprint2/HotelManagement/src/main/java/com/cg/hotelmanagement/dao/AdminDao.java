@@ -68,7 +68,7 @@ public class AdminDao implements IAdminDao {
 			noOfRec = ps.executeUpdate();
 		} catch (SQLException e) {
 			myLogger.error(" Error at addCity Dao method : " + e);
-			throw new HotelException(" Error at addCity Dao method : " + e);
+			//throw new HotelException(" Error at addCity Dao method : " + e);
 		} finally {
 			if (ps != null) {
 				try {

@@ -39,6 +39,11 @@ public interface IAdminService {
 	public boolean addHotel(BigInteger cityId, String hotelName, String hotelAddress,
 			String hotelPhoneNumber, float hotelRating) throws HotelException;
 	
+	public boolean updateHotel(BigInteger cityId, BigInteger hotelId,
+			String hotelName) throws HotelException ;
+	public boolean updateRoom(BigInteger cityId, BigInteger hotelId,
+			BigInteger roomId, String roomType) throws HotelException;
+	
 	
 	
 //	public boolean updateHotel(BigInteger cityId, BigInteger hotelId,
