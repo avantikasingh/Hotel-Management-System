@@ -426,7 +426,57 @@ public class AdminDao implements IAdminDao {
 	}
 
 	
-
+	
+	
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+//	    SELECT hotel_id, room_id, room_type, room_rent
+//	     from room
+//	     WHERE room_id NOT IN
+//	     (
+//	     SELECT B.room_id FROM room B
+//	     RIGHT JOIN room_booking RB
+//	     ON B.room_id = RB.room_id
+//	    		 WHERE  (RB.checkin_date >= '2019-10-20' AND  RB.checkout_date <= '2019-10-20') 
+//	    	        OR (RB.checkin_date >= '2019-10-25' AND  RB.checkout_date <= '2019-10-25' )
+//	    	        OR ('2019-10-20' >= RB.checkin_date AND '2019-10-25' <= RB.checkin_date)
+//	    	        OR ('2019-10-20' >= RB.checkin_date AND '2019-10-25' >= RB.checkin_date))
+//	    AND hotel_id IN(select hotel_id from hotel where city_id=1);
+//	    
+//	    
+//	    
+//	    SELECT (hotel_id, room_id, room_type, room_rent)
+//	     from room
+//	     WHERE room_id IN
+//	     (
+//	     SELECT B.room_id FROM room B
+//	     RIGHT JOIN room_booking RB
+//	     ON B.room_id = RB.room_id
+//	    		 WHERE  (RB.checkin_date > '2019-10-20' AND  RB.checkout_date < '2019-10-20') 
+//	    	        OR (RB.checkin_date >= '2019-10-25' AND  RB.checkout_date < '2019-10-25' )
+//	    	        OR ('2019-10-20' > RB.checkin_date AND '2019-10-25' < RB.checkin_date))
+//	    AND hotel_id IN(select hotel_id from hotel where city_id=1);
+//	    
+//	    
+//	    WHERE  (RB.checkin_date <= '2019-10-20' AND  RB.checkout_date >= '2019-10-20') -- cases 3,5,7
+//        OR (RB.checkin_date < '2019-10-25' AND  RB.checkout_date >= '2019-10-25' ) --cases 6,6
+//        OR ('2019-10-20' <= RB.checkin_date AND '2019-10-25' >= RB.checkin_date)
+//	
+	
 	@Override
 	public List viewHotels(Date checkIn, Date checkOut, BigInteger cityId, boolean sortByRating) {
 		// TODO Auto-generated method stub
@@ -435,13 +485,15 @@ public class AdminDao implements IAdminDao {
 				+ "from room"
 				+ "WHERE room_id NOT IN "
 				+ "("
-				+ "SELECT RoomID"
+				+ "SELECT B.RoomID"
 				+ "FROM   room B"
-				+ "JOIN room_booking RB"
+				+ "RIGHT JOIN room_booking RB"
 				+ "ON B.room_id = RB.room_id"
 				+ "WHERE  (checkIn <= RB.checkIn AND checkOut  >= RB.checkIn)"
 				+ " OR (checkIn < RB.checkOut AND checkOut >= RB.checkOut ) "
-				+ "OR (RB.checkIn <= checkIn AND RB.checkout >= checkIn)); ";
+				+ "OR (RB.checkIn <= checkIn AND RB.checkout >= checkIn)"
+				+ "OR (checkIn >= RB.checkin_date AND checkOut >= RB.checkin_date))"
+				+ "AND hotel_id IN(select hotel_id from hotel where city_id=1); ";
 						    
 					
 		//String sql = "select * from hotel where city_id =?  and delete_flag = 0";
