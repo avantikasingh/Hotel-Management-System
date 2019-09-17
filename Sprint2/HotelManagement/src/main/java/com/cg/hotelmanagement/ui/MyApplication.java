@@ -48,7 +48,7 @@ public class MyApplication {
 		
 		int role = 0;int adminChoice = 0;
 		do {
-			System.out.println("Specify Role :\n1 for Admin\n2 for Customer\n3 For LoggedInUser\n4 Exit");
+			System.out.println("Specify Role :\n1 for Admin\n2 for Customer\n3 For GuestUser\n4 Exit");
 			BigInteger cityId, hotelId, roomId = null;
 			String hotelName, hotelAddress, hotelPhone;
 			role = 0;adminChoice = 0;
@@ -91,7 +91,12 @@ public class MyApplication {
 								continue;
 							}
 						}
-						adminService.addCity(BigInteger.valueOf(++cityIdSys), cityName);
+						try{
+						    adminService.addCity(BigInteger.valueOf(++cityIdSys), cityName);
+						}
+						catch(Exception e){
+							System.out.println("City already exists");
+						}
 						break;
 					}
 
@@ -331,9 +336,13 @@ public class MyApplication {
 							}
 						}
 						Map<BigInteger, Hotel> hotelMap = adminService.showHotel(cityId1);
-						for (Entry<BigInteger, Hotel> entry : hotelMap.entrySet()) {
-							System.out.println(entry.getValue().toString());
+						if(hotelMap!=null){
+							for (Entry<BigInteger, Hotel> entry : hotelMap.entrySet()) {
+								System.out.println(entry.getValue().toString());
+							}
 						}
+						else
+							System.out.println("Does not exist");
 						break;
 					}
 
