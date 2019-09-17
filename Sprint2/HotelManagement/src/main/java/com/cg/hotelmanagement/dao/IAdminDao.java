@@ -56,6 +56,9 @@ public interface IAdminDao {
 			String hotelName) throws HotelException ;
 	public boolean updateRoom(BigInteger cityId, BigInteger hotelId,
 			BigInteger roomId, String roomType) throws HotelException;
+	
+	public Map<BigInteger,Hotel> showHotel(BigInteger cityId)
+			throws HotelException;
 
 //	void updateBooking(Booking booking);
 

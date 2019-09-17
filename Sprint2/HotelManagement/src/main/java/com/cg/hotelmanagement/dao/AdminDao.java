@@ -56,7 +56,7 @@ public class AdminDao implements IAdminDao {
 	public boolean addCity(City city) throws Exception {
 		// TODO Auto-generated method stub
 		int noOfRec = 0;
-		System.out.println(city);
+		
 		String sql = "insert into city(city_name) values(?)";
 		try {
 			// step1 : obtain psz
@@ -126,8 +126,7 @@ public class AdminDao implements IAdminDao {
 		 * hotel) old public boolean addHotel(Hotel hotel) new the hotel object also
 		 * contains the city name
 		 */
-		System.out.println(cityId);
-		System.out.println(hotel);
+		
 
 		int noOfRec = 0;
 		String sql = "insert into hotel(city_Id,hotel_name, hotel_address, hotel_phone_number, hotel_rating) values(?,?,?,?,?)";
@@ -201,8 +200,7 @@ public class AdminDao implements IAdminDao {
 		 * hotelId, Room newRoom) old public boolean addRoom(Room room) new
 		 */
 		int noOfRec = 0;
-		System.out.println(hotelId);
-		System.out.println(room);
+		
 		String sql = "insert into room(room_type, room_rent, room_number, hotel_id) values(?,?,?,?)";
 		try {
 			// step1 : obtain psz
@@ -548,6 +546,44 @@ public class AdminDao implements IAdminDao {
 		} else {
 			return false;
 		}
+
+	}
+	
+	public Map<BigInteger,Hotel> showHotel(BigInteger cityId)
+			throws HotelException {
+		String sql = "select * from hotel where city_id=?";
+		Map<BigInteger,Hotel> hotelMap = new HashMap<>();
+		int noOfRec = 0;
+		try {
+			// step1 : obtain psz
+			ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			// step 2: set the ps placeholder values
+			ps.setLong(1, cityId.longValue());
+
+			// step 3: execute Query (for DML w e have executeUpdate method )
+			rs = ps.executeQuery();
+			Hotel hotel = new Hotel();
+			while (rs.next()) {
+				hotel.setHotelId(BigInteger.valueOf(rs.getLong("hotel_id")));
+				hotel.setHotelName(rs.getString("hotel_name"));
+				hotel.setHotelAddress(rs.getString("hotel_address"));
+				hotel.setHotelPhoneNumber(BigInteger.valueOf(rs.getLong("hotel_phone_number")));
+				hotel.setHotelRating((float) rs.getDouble("hotel_rating"));
+				hotelMap.put(hotel.getHotelId(), hotel);
+			}
+		} catch (SQLException e) {
+			myLogger.error(" Error at showHotel Dao method : " + e);
+			throw new HotelException(" Error at updateHotel Dao method : " + e);
+		} finally {
+			if (ps != null) {
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					myLogger.error(" Error at showHotel  Dao method : " + e);
+				}
+			}
+		}
+		return hotelMap;
 
 	}
 

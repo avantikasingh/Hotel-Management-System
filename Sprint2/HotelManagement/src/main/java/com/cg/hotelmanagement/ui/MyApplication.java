@@ -339,6 +339,12 @@ public class MyApplication {
 						if(hotelMap!=null){
 							for (Entry<BigInteger, Hotel> entry : hotelMap.entrySet()) {
 								System.out.println(entry.getValue().toString());
+								System.out.println("Hotel Id: "+entry.getValue().getHotelId());
+								System.out.println("Hotel name: "+entry.getValue().getHotelName());
+								System.out.println("Hotel address: "+entry.getValue().getHotelAddress());
+								System.out.println("Hotel phone number: "+entry.getValue().getHotelPhoneNumber());
+								System.out.println("Hotel rating: "+entry.getValue().getHotelRating());
+								
 							}
 						}
 						else

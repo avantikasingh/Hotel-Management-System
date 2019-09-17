@@ -76,10 +76,10 @@ public class AdminService implements IAdminService {
 		return adminDao.getCityList();
 	}
 
-	public Map<BigInteger, Hotel> showHotel(BigInteger cityId) {
+	public Map<BigInteger, Hotel> showHotel(BigInteger cityId) throws HotelException {
 		Map<BigInteger, City> cityMap = adminDao.getCityList();
 		City city = cityMap.get(cityId);
-		return city.getHotelList();
+		return adminDao.showHotel(cityId);
 	}
 
 	public Map<BigInteger, Room> showRoom(BigInteger cityId, BigInteger hotelId) {

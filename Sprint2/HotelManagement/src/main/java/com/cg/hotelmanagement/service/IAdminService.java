@@ -32,7 +32,7 @@ public interface IAdminService {
 
 	public Map<BigInteger, City> showCity();
 
-	public Map<BigInteger, Hotel> showHotel(BigInteger cityId);
+	public Map<BigInteger, Hotel> showHotel(BigInteger cityId) throws HotelException;
 
 	public Map<BigInteger, Room> showRoom(BigInteger cityId, BigInteger hotelId);
 

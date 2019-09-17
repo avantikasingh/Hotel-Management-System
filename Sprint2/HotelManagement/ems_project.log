@@ -180,3 +180,19 @@
 2019-09-17-main-INFO -AdminDao.class:connection Obtained!!
 2019-09-17-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
 2019-09-17-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-17-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-17-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-17-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-17-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-17-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-17-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-17-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-17-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-17-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-17-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-17-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-17-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
+2019-09-17-main-INFO -DBUtil.class:Property File loaded : 
+2019-09-17-main-INFO -DBUtil.class:connection Obtained! : com.mysql.cj.jdbc.ConnectionImpl@56f4468b
+2019-09-17-main-INFO -AdminDao.class:connection Obtained!!
+2019-09-17-main-ERROR-AdminDao.class: Error at addCity Dao method : java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Pune' for key 'city_name'
