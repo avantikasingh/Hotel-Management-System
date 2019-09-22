@@ -12,38 +12,38 @@ public interface IAdminDao {
 
 	public boolean addCity(City city) throws Exception;
 
-	public boolean removeCity(BigInteger cityId); // new version
+	public boolean removeCity(Long cityId); // new version
 
-	public boolean addHotel(BigInteger cityId,Hotel hotel) throws HotelException;
+	public boolean addHotel(Long cityId,Hotel hotel) throws HotelException;
 
-	public boolean removeHotel(BigInteger cityId, BigInteger hotelId); // new version
+	public boolean removeHotel(Long cityId, Long hotelId); // new version
 
-	public boolean addRoom(BigInteger hotelId,Room room) throws HotelException;// new verion used in jdbc
+	public boolean addRoom(Long hotelId,Room room) throws HotelException;// new verion used in jdbc
 
-	public boolean removeRoom(BigInteger hotelId, BigInteger roomId); //new version
+	public boolean removeRoom(Long hotelId, Long roomId); //new version
 
-	public void makeBooking(BigInteger hotelId, BigInteger hotelId2, Date checkIn, Date checkOut, BigInteger roomId);
+	public void makeBooking(Long hotelId, Long hotelId2, Date checkIn, Date checkOut, Long roomId);
 
-	public boolean addBooking(BigInteger cityId, BigInteger hotelId, BigInteger roomId, Booking booking) throws HotelException;
+	public boolean addBooking(Long cityId, Long hotelId, Long roomId, Booking booking) throws HotelException;
 
-	public Map<BigInteger, City> getCityList();// old version
+	public Map<Long, City> getCityList();// old version
 
-	public List viewHotels(Date checkIn, Date checkOut, BigInteger cityId, boolean sortByRating);
+	public List viewHotels(Date checkIn, Date checkOut, Long cityId, boolean sortByRating);
 
 	void showBooking(Booking booking);
 	
 	public boolean register(User user)throws HotelException;
 
-	//public boolean register(Customer customer, BigInteger userId) throws HotelException;
+	//public boolean register(Customer customer, Long userId) throws HotelException;
 		
-	public boolean updateHotel(BigInteger cityId, BigInteger hotelId,
+	public boolean updateHotel(Long cityId, Long hotelId,
 			String hotelName) throws HotelException ;
 	
-	public boolean updateRoom(BigInteger cityId, BigInteger hotelId,
-			BigInteger roomId, String roomType) throws HotelException;
+	public boolean updateRoom(Long cityId, Long hotelId,
+			Long roomId, String roomType) throws HotelException;
 	
 	
-	public Map<BigInteger,Hotel> showHotel(BigInteger cityId)
+	public Map<Long,Hotel> showHotel(Long cityId)
 			throws HotelException;
 
 //	void updateBooking(Booking booking);

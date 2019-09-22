@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @Table(name="room")
 public class Room {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	private BigInteger roomId;
+	private Long roomId;
 	@Column(name="room_type")
 	private String roomType;
 	@Column(name="room_rent")
@@ -37,22 +37,21 @@ public class Room {
 	public Room() {
 	}
 
-	public Room(BigInteger roomId, String roomType, Double roomRent,
-			String roomNumber) {
+	public Room(Long roomId, String roomType, Double roomRent, String roomNumber, Bookings bookingDates, Hotel hotel) {
 		super();
 		this.roomId = roomId;
 		this.roomType = roomType;
 		this.roomRent = roomRent;
 		this.roomNumber = roomNumber;
-		//this.booking = booking;
-
+		this.bookingDates = bookingDates;
+		this.hotel = hotel;
 	}
 
-	public BigInteger getRoomId() {
+	public Long getRoomId() {
 		return roomId;
 	}
 
-	public void setRoomId(BigInteger roomId) {
+	public void setRoomId(Long roomId) {
 		this.roomId = roomId;
 	}
 
@@ -80,7 +79,13 @@ public class Room {
 		this.roomNumber = roomNumber;
 	}
 
-	
+	public Bookings getBookingDates() {
+		return bookingDates;
+	}
+
+	public void setBookingDates(Bookings bookingDates) {
+		this.bookingDates = bookingDates;
+	}
 
 	public Hotel getHotel() {
 		return hotel;
@@ -93,7 +98,8 @@ public class Room {
 	@Override
 	public String toString() {
 		return "Room [roomId=" + roomId + ", roomType=" + roomType + ", roomRent=" + roomRent + ", roomNumber="
-				+ roomNumber  + ", hotel=" + hotel + "]";
+				+ roomNumber + ", bookingDates=" + bookingDates + ", hotel=" + hotel + "]";
 	}
 
+	
 }

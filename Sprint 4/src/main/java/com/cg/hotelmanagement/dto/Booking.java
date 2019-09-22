@@ -1,6 +1,6 @@
 package com.cg.hotelmanagement.dto;
 
-import java.math.BigDecimal;
+
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
 @Entity
 public class Booking {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	private String bookingId;
+	private Long bookingId;
 	@Temporal(TemporalType.DATE)
 	@Column(name="check_in")
 	private Date checkIn;
@@ -26,7 +26,7 @@ public class Booking {
 	private Date checkOut;
 	@OneToOne(cascade = CascadeType.ALL)
 	private User user;
-	public Booking(String bookingId, Date checkIn, Date checkOut) {
+	public Booking(Long bookingId, Date checkIn, Date checkOut) {
 		super();
 		this.bookingId = bookingId;
 		this.checkIn = checkIn;
@@ -35,10 +35,10 @@ public class Booking {
 	public Booking() {
 		super();
 	}
-	public String getBookingId() {
+	public Long getBookingId() {
 		return bookingId;
 	}
-	public void setBookingId(String bookingId) {
+	public void setBookingId(Long bookingId) {
 		this.bookingId = bookingId;
 	}
 	public Date getCheckIn() {

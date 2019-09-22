@@ -19,18 +19,18 @@ import javax.persistence.Table;
 public class Hotel {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="hotel_id")
-	private BigInteger hotelId;
+	private Long hotelId;
 	@Column(name="hotel_name")
 	private String hotelName;
 	@Column(name="hotel_address")
 	private String hotelAddress;
 	@Column(name="hotel_phone_number")
-	private BigInteger hotelPhoneNumber;
+	private Long hotelPhoneNumber;
 	@Column(name="hotel_rating")
 	private Float hotelRating;
 	
 	@OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL)
-	private Map<BigInteger, Room> roomList = new HashMap<>();
+	private Map<Long, Room> roomList = new HashMap<>();
 
 	@ManyToOne
 	private City city;
@@ -38,24 +38,23 @@ public class Hotel {
 	public Hotel() {
 	}
 
-	public Hotel(BigInteger hotelId, String hotelName, String hotelAddress,
-			Map<BigInteger, Room> roomList, BigInteger hotelPhoneNumber,
-			Float hotelRating) {
+	public Hotel(Long hotelId, String hotelName, String hotelAddress, Long hotelPhoneNumber, Float hotelRating,
+			Map<Long, Room> roomList, City city) {
 		super();
 		this.hotelId = hotelId;
 		this.hotelName = hotelName;
 		this.hotelAddress = hotelAddress;
-
-		this.roomList = roomList;
 		this.hotelPhoneNumber = hotelPhoneNumber;
 		this.hotelRating = hotelRating;
+		this.roomList = roomList;
+		this.city = city;
 	}
 
-	public BigInteger getHotelId() {
+	public Long getHotelId() {
 		return hotelId;
 	}
 
-	public void setHotelId(BigInteger hotelId) {
+	public void setHotelId(Long hotelId) {
 		this.hotelId = hotelId;
 	}
 
@@ -75,19 +74,11 @@ public class Hotel {
 		this.hotelAddress = hotelAddress;
 	}
 
-	public void setRoomList(Map<BigInteger, Room> roomList) {
-		this.roomList = roomList;
-	}
-
-	public Map<BigInteger, Room> getRoomList() {
-		return this.roomList;
-	}
-
-	public BigInteger getHotelPhoneNumber() {
+	public Long getHotelPhoneNumber() {
 		return hotelPhoneNumber;
 	}
 
-	public void setHotelPhoneNumber(BigInteger hotelPhoneNumber) {
+	public void setHotelPhoneNumber(Long hotelPhoneNumber) {
 		this.hotelPhoneNumber = hotelPhoneNumber;
 	}
 
@@ -99,75 +90,28 @@ public class Hotel {
 		this.hotelRating = hotelRating;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result
-				+ ((hotelAddress == null) ? 0 : hotelAddress.hashCode());
-
-		result = prime * result + ((hotelId == null) ? 0 : hotelId.hashCode());
-		result = prime * result
-				+ ((hotelName == null) ? 0 : hotelName.hashCode());
-		result = prime
-				* result
-				+ ((hotelPhoneNumber == null) ? 0 : hotelPhoneNumber.hashCode());
-		result = prime * result
-				+ ((hotelRating == null) ? 0 : hotelRating.hashCode());
-		result = prime * result
-				+ ((roomList == null) ? 0 : roomList.hashCode());
-		return result;
+	public Map<Long, Room> getRoomList() {
+		return roomList;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Hotel other = (Hotel) obj;
-		if (hotelAddress == null) {
-			if (other.hotelAddress != null)
-				return false;
-		} else if (!hotelAddress.equals(other.hotelAddress))
-			return false;
+	public void setRoomList(Map<Long, Room> roomList) {
+		this.roomList = roomList;
+	}
 
-		if (hotelId == null) {
-			if (other.hotelId != null)
-				return false;
-		} else if (!hotelId.equals(other.hotelId))
-			return false;
-		if (hotelName == null) {
-			if (other.hotelName != null)
-				return false;
-		} else if (!hotelName.equals(other.hotelName))
-			return false;
-		if (hotelPhoneNumber == null) {
-			if (other.hotelPhoneNumber != null)
-				return false;
-		} else if (!hotelPhoneNumber.equals(other.hotelPhoneNumber))
-			return false;
-		if (hotelRating == null) {
-			if (other.hotelRating != null)
-				return false;
-		} else if (!hotelRating.equals(other.hotelRating))
-			return false;
-		if (roomList == null) {
-			if (other.roomList != null)
-				return false;
-		} else if (!roomList.equals(other.roomList))
-			return false;
-		return true;
+	public City getCity() {
+		return city;
+	}
+
+	public void setCity(City city) {
+		this.city = city;
 	}
 
 	@Override
 	public String toString() {
-		return "Hotel [hotelId=" + hotelId + ", hotelName=" + hotelName
-				+ ", hotelAddress=" + hotelAddress + ", roomList=" + roomList
-				+ ", hotelPhoneNumber=" + hotelPhoneNumber + ", hotelRating="
-				+ hotelRating + "]";
+		return "Hotel [hotelId=" + hotelId + ", hotelName=" + hotelName + ", hotelAddress=" + hotelAddress
+				+ ", hotelPhoneNumber=" + hotelPhoneNumber + ", hotelRating=" + hotelRating + ", roomList=" + roomList
+				+ ", city=" + city + "]";
 	}
 
+	
 }

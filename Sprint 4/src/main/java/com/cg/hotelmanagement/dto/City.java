@@ -16,61 +16,53 @@ import javax.persistence.OneToMany;
 public class City {
 
 	@Id 
-	private BigInteger cityId;
+	private Long cityId;
 	@Column(name="city_name")
 	private String cityName;
 	@OneToMany(mappedBy="city",cascade=CascadeType.ALL)
-	private Map<BigInteger, Hotel> hotelList=new HashMap<BigInteger,Hotel>();
+	private Map<Long, Hotel> hotelList=new HashMap<Long,Hotel>();
 
-	public BigInteger getCityId() {
-		return cityId;
+	public City()
+	{
+		
 	}
 
-	public void setCityId(BigInteger cityId) {
+	public City(Long cityId, String cityName, Map<Long, Hotel> hotelList) {
+		super();
 		this.cityId = cityId;
-	}
-	
-
-	public void setCityName(String cityName) {
 		this.cityName = cityName;
-	}
-
-	public City(String cityName, BigInteger cityId,
-			Map<BigInteger, Hotel> hotelList) {
-		this.cityName = cityName;
-		this.cityId = cityId;
 		this.hotelList = hotelList;
 	}
 
-	public City() {
+	public Long getCityId() {
+		return cityId;
+	}
+
+	public void setCityId(Long cityId) {
+		this.cityId = cityId;
 	}
 
 	public String getCityName() {
 		return cityName;
 	}
 
-	public Map<BigInteger, Hotel> getHotelList() {
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
+	}
+
+	public Map<Long, Hotel> getHotelList() {
 		return hotelList;
 	}
 
-	public void setHotelList(Map<BigInteger, Hotel> hotelList) {
+	public void setHotelList(Map<Long, Hotel> hotelList) {
 		this.hotelList = hotelList;
 	}
 
 	@Override
-	public int hashCode() {
-		return super.hashCode();
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		return super.equals(obj);
-	}
-
-	@Override
 	public String toString() {
-		return "City [cityName=" + cityName + ", cityId=" + cityId
-				+ ", hotelList=" + hotelList + "]";
+		return "City [cityId=" + cityId + ", cityName=" + cityName + ", hotelList=" + hotelList + "]";
 	}
+	
+	
 
 }

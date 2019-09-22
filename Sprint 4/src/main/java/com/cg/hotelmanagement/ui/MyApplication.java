@@ -49,7 +49,8 @@ public class MyApplication {
 		int role = 0;int adminChoice = 0;
 		do {
 			System.out.println("Specify Role :\n1 for Admin\n2 for Customer\n3 For GuestUser\n4 Exit");
-			BigInteger cityId, hotelId, roomId = null;
+			Long cityId;
+			Long hotelId, roomId = null;
 			String hotelName, hotelAddress, hotelPhone;
 			role = 0;adminChoice = 0;
 			while (true) {
@@ -92,7 +93,7 @@ public class MyApplication {
 							}
 						}
 						
-						    adminService.addCity(BigInteger.valueOf(++cityIdSys), cityName);
+						    adminService.addCity(++cityIdSys, cityName);
 						
 //						catch(Exception e){
 //							System.out.println("City already exists");
@@ -108,7 +109,7 @@ public class MyApplication {
 							if (Validate.isNumeric(input))
 								break;
 						}
-						cityId = new BigInteger(input);
+						cityId = Long.parseLong(input);
 						adminService.removeCity(cityId);
 						break;
 					}
@@ -130,12 +131,12 @@ public class MyApplication {
 					// }
 
 					case 4: {
-						// BigInteger cityId1;
+						// Long cityId1;
 						System.out.println("Enter city Id");
 						while (true) {
 							input = sc.next();
 							if (Validate.isNumeric(input)) {
-								cityId = new BigInteger(input);
+								cityId = new Long(input);
 								break;
 							}
 						}
@@ -181,7 +182,7 @@ public class MyApplication {
 						while (true) {
 							input = sc.next();
 							if (Validate.isNumeric(input)) {
-								cityId = new BigInteger(input);
+								cityId = Long.parseLong(input);
 								break;
 							}
 						}
@@ -190,7 +191,7 @@ public class MyApplication {
 						while (true) {
 							input = sc.next();
 							if (Validate.isNumeric(input)) {
-								hotelId = new BigInteger(input);
+								hotelId = new Long(input);
 								break;
 							}
 						}
@@ -204,7 +205,7 @@ public class MyApplication {
 						while (true) {
 							input = sc.next();
 							if (Validate.isNumeric(input)) {
-								cityId = new BigInteger(input);
+								cityId = Long.parseLong(input);
 								break;
 							}
 						}
@@ -212,7 +213,7 @@ public class MyApplication {
 						while (true) {
 							input = sc.next();
 							if (Validate.isNumeric(input)) {
-								hotelId = new BigInteger(input);
+								hotelId = Long.parseLong(input);
 								break;
 							}
 						}
@@ -232,7 +233,7 @@ public class MyApplication {
 						while (true) {
 							input = sc.next();
 							if (Validate.isNumeric(input)) {
-								cityId = new BigInteger(input);
+								cityId = Long.parseLong(input);
 								break;
 							}
 						}
@@ -240,7 +241,7 @@ public class MyApplication {
 						while (true) {
 							input = sc.next();
 							if (Validate.isNumeric(input)) {
-								hotelId = new BigInteger(input);
+								hotelId = Long.parseLong(input);
 								break;
 							}
 						}
@@ -260,7 +261,7 @@ public class MyApplication {
 						}
 						System.out.println("Room No:");
 						String roomNumber = sc.next(); // Room no can be alphanumeric
-						adminService.addRoom(cityId, hotelId, BigInteger.valueOf(++roomIdSys), roomType, roomRent,
+						adminService.addRoom(cityId, hotelId, ++roomIdSys, roomType, roomRent,
 								roomNumber);
 						break;
 					}
@@ -268,13 +269,13 @@ public class MyApplication {
 					case 8: {
 
 						System.out.println("Enter City Id in which Room is to be removed :");
-						BigInteger cityId4 = sc.nextBigInteger();
+						Long cityId4 = sc.nextLong();
 
 						System.out.println("Enter Hotel Id in which Room is to be removed:");
-						BigInteger hotelId3 = sc.nextBigInteger();
+						Long hotelId3 = sc.nextLong();
 
 						System.out.println("Enter Room Id to be removed :");
-						BigInteger roomId1 = sc.nextBigInteger();
+						Long roomId1 = sc.nextLong();
 
 						adminService.removeRoom(cityId4, hotelId3, roomId1);
 
@@ -283,13 +284,13 @@ public class MyApplication {
 
 					case 9: {
 						System.out.println("Enter City Id in which Room is to be updated :");
-						cityId = sc.nextBigInteger();
+						cityId = sc.nextLong();
 
 						System.out.println("Enter Hotel Id in which Room is to be updated:");
-						hotelId = sc.nextBigInteger();
+						hotelId = sc.nextLong();
 
 						System.out.println("Enter Room Id to be updated :");
-						roomId = sc.nextBigInteger();
+						roomId = sc.nextLong();
 						try {
 							Room room = adminService.showCity().get(cityId).getHotelList().get(hotelId).getRoomList()
 									.get(roomId);
@@ -318,8 +319,8 @@ public class MyApplication {
 					}
 
 					case 10: {
-						Map<BigInteger, City> cityMap = adminService.showCity();
-						for (Entry<BigInteger, City> entry : cityMap.entrySet()) {
+						Map<Long, City> cityMap = adminService.showCity();
+						for (Entry<Long, City> entry : cityMap.entrySet()) {
 							System.out.println("City Id = " + entry.getKey() + ", City Name = " + entry.getValue());
 						}
 						break;
@@ -327,17 +328,17 @@ public class MyApplication {
 
 					case 11: {
 						System.out.println("Enter city Id");
-						BigInteger cityId1;
+						Long cityId1;
 						while (true) {
 							input = sc.next();
 							if (Validate.isNumeric(input)) {
-								cityId1 = new BigInteger(input);
+								cityId1 = Long.parseLong(input);
 								break;
 							}
 						}
-						Map<BigInteger, Hotel> hotelMap = adminService.showHotel(cityId1);
+						Map<Long, Hotel> hotelMap = adminService.showHotel(cityId1);
 						if(hotelMap!=null){
-							for (Entry<BigInteger, Hotel> entry : hotelMap.entrySet()) {
+							for (Entry<Long, Hotel> entry : hotelMap.entrySet()) {
 								System.out.println(entry.getValue().toString());
 								System.out.println("Hotel Id: "+entry.getValue().getHotelId());
 								System.out.println("Hotel name: "+entry.getValue().getHotelName());
@@ -354,11 +355,11 @@ public class MyApplication {
 
 					case 12: {
 						System.out.println("Enter city Id");
-						BigInteger cityId1;
+						Long cityId1;
 						while (true) {
 							input = sc.next();
 							if (Validate.isNumeric(input)) {
-								cityId1 = new BigInteger(input);
+								cityId1 = Long.parseLong(input);
 								break;
 							}
 						}
@@ -366,12 +367,12 @@ public class MyApplication {
 						while (true) {
 							input = sc.next();
 							if (Validate.isNumeric(input)) {
-								hotelId = new BigInteger(input);
+								hotelId = Long.parseLong(input);
 								break;
 							}
 						}
-						Map<BigInteger, Room> roomMap = adminService.showRoom(cityId1, hotelId);
-						for (Entry<BigInteger, Room> entry : roomMap.entrySet()) {
+						Map<Long, Room> roomMap = adminService.showRoom(cityId1, hotelId);
+						for (Entry<Long, Room> entry : roomMap.entrySet()) {
 							System.out.println(entry.getValue().toString());
 						}
 						break;
@@ -422,7 +423,7 @@ public class MyApplication {
 				while (true) {
 					input = sc.next();
 					if (Validate.isNumeric(input)) {
-						cityId = new BigInteger(input);
+						cityId = Long.parseLong(input);
 						break;
 					}
 				}
@@ -430,7 +431,7 @@ public class MyApplication {
 				while (true) {
 					input = sc.next();
 					if (Validate.isNumeric(input)) {
-						hotelId = new BigInteger(input);
+						hotelId = Long.parseLong(input);
 						break;
 					}
 				}
@@ -438,7 +439,7 @@ public class MyApplication {
 				while (true) {
 					input = sc.next();
 					if (Validate.isNumeric(input)) {
-						roomId = new BigInteger(input);
+						roomId = Long.parseLong(input);
 						break;
 					}
 				}
@@ -454,12 +455,12 @@ public class MyApplication {
 					choiceForUser = sc.nextInt();
 					switch (choiceForUser) {
 					case 1: {
-//						BigInteger userId;
+//						Long userId;
 //						System.out.println("Enter userId");
 //						while (true) {
 //							input = sc.next();
 //							if (Validate.isNumeric(input)) {
-//								userId = new BigInteger(input);
+//								userId = new Long(input);
 //								break;
 //							}
 //						}
@@ -560,7 +561,7 @@ public class MyApplication {
 						while (true) {
 							input = sc.next();
 							if (Validate.isNumeric(input)) {
-								cityId = new BigInteger(input);
+								cityId = Long.parseLong(input);
 								break;
 							}
 						}

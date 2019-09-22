@@ -14,7 +14,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class User {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	protected String userId;
+	private Long userId;
 	@Column(name="username")
 	protected String username;
 	@Column(name="email_id")
@@ -37,11 +37,26 @@ public class User {
 	public User() {
 	}
 
-	public String getUserId() {
+	public User(Long userId, String username, String emailId, Date dob, String userMobile, String firstName,
+			String lastName, String gender, String aadharNumber, Booking booking) {
+		super();
+		this.userId = userId;
+		this.username = username;
+		this.emailId = emailId;
+		this.dob = dob;
+		this.userMobile = userMobile;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.aadharNumber = aadharNumber;
+		this.booking = booking;
+	}
+
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 
@@ -77,72 +92,52 @@ public class User {
 		this.userMobile = userMobile;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((dob == null) ? 0 : dob.hashCode());
-		result = prime * result + ((emailId == null) ? 0 : emailId.hashCode());
-		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
-		result = prime * result
-				+ ((userMobile == null) ? 0 : userMobile.hashCode());
-		result = prime * result
-				+ ((username == null) ? 0 : username.hashCode());
-		return result;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		if (dob == null) {
-			if (other.dob != null)
-				return false;
-		} else if (!dob.equals(other.dob))
-			return false;
-		if (emailId == null) {
-			if (other.emailId != null)
-				return false;
-		} else if (!emailId.equals(other.emailId))
-			return false;
-		if (userId == null) {
-			if (other.userId != null)
-				return false;
-		} else if (!userId.equals(other.userId))
-			return false;
-		if (userMobile == null) {
-			if (other.userMobile != null)
-				return false;
-		} else if (!userMobile.equals(other.userMobile))
-			return false;
-		if (username == null) {
-			if (other.username != null)
-				return false;
-		} else if (!username.equals(other.username))
-			return false;
-		return true;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getAadharNumber() {
+		return aadharNumber;
+	}
+
+	public void setAadharNumber(String aadharNumber) {
+		this.aadharNumber = aadharNumber;
+	}
+
+	public Booking getBooking() {
+		return booking;
+	}
+
+	public void setBooking(Booking booking) {
+		this.booking = booking;
 	}
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", username=" + username
-				+ ", emailId=" + emailId + ", dob=" + dob + ", userMobile="
-				+ userMobile + "]";
+		return "User [userId=" + userId + ", username=" + username + ", emailId=" + emailId + ", dob=" + dob
+				+ ", userMobile=" + userMobile + ", firstName=" + firstName + ", lastName=" + lastName + ", gender="
+				+ gender + ", aadharNumber=" + aadharNumber + ", booking=" + booking + "]";
 	}
 
-	public User(String userId, String username, String emailId, Date dob,
-			String userMobile) {
-		super();
-		this.userId = userId;
-		this.username = username;
-		this.emailId = emailId;
-		this.dob = dob;
-		this.userMobile = userMobile;
-	}
-
+	
 }

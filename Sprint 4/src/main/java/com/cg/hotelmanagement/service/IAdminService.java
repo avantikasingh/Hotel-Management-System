@@ -12,38 +12,38 @@ import com.cg.hotelmanagement.exception.HotelException;
 
 public interface IAdminService {
 
-	public boolean addCity(BigInteger cityId, String cityName) throws Exception;
+	public boolean addCity(Long cityId, String cityName) throws Exception;
 
-	public boolean removeCity(BigInteger cityId);
+	public boolean removeCity(Long cityId);
 
-	public boolean removeHotel(BigInteger cityId, BigInteger hotelId);
+	public boolean removeHotel(Long cityId, Long hotelId);
 
-	public boolean addRoom(BigInteger cityId, BigInteger hotelId,
-			BigInteger roomId, String roomType, double roomRent,
+	public boolean addRoom(Long cityId, Long hotelId,
+			Long roomId, String roomType, double roomRent,
 			String roomNumber) throws HotelException;
 
-	public boolean removeRoom(BigInteger cityId,BigInteger hotelId,
-			BigInteger roomId);
+	public boolean removeRoom(Long cityId,Long hotelId,
+			Long roomId);
 
-	public boolean addBooking(BigInteger cityId, BigInteger hotelId,
-			BigInteger roomId, Booking booking) throws HotelException;
+	public boolean addBooking(Long cityId, Long hotelId,
+			Long roomId, Booking booking) throws HotelException;
 
 	
 
-	public Map<BigInteger, City> showCity();
+	public Map<Long, City> showCity();
 
-	public Map<BigInteger, Hotel> showHotel(BigInteger cityId) throws HotelException;
+	public Map<Long, Hotel> showHotel(Long cityId) throws HotelException;
 
-	public Map<BigInteger, Room> showRoom(BigInteger cityId, BigInteger hotelId);
+	public Map<Long, Room> showRoom(Long cityId, Long hotelId);
 
-	public boolean addHotel(BigInteger cityId, String hotelName, String hotelAddress,
+	public boolean addHotel(Long cityId, String hotelName, String hotelAddress,
 			String hotelPhoneNumber, float hotelRating) throws HotelException;
 	
-	public boolean updateHotel(BigInteger cityId, BigInteger hotelId,
+	public boolean updateHotel(Long cityId, Long hotelId,
 			String hotelName) throws HotelException ;
 	
-	public boolean updateRoom(BigInteger cityId, BigInteger hotelId,
-			BigInteger roomId, String roomType) throws HotelException;
+	public boolean updateRoom(Long cityId, Long hotelId,
+			Long roomId, String roomType) throws HotelException;
 	
 	
 	

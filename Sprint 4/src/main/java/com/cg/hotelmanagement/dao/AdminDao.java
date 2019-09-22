@@ -1,6 +1,5 @@
 package com.cg.hotelmanagement.dao;
 
-import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -41,7 +40,7 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean removeCity(BigInteger cityId) {
+	public boolean removeCity(Long cityId) {
 		// TODO Auto-generated method stub
 		City city = entityManager.find(City.class, cityId);
 		System.out.println(city);
@@ -61,7 +60,7 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean addHotel(BigInteger cityId, Hotel hotel) throws HotelException {
+	public boolean addHotel(Long cityId, Hotel hotel) throws HotelException {
 		// TODO Auto-generated method stub
 		// Add Hotel object in the hotelList of City class
 		City city=entityManager.find(City.class,cityId);
@@ -77,44 +76,44 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean removeHotel(BigInteger cityId, BigInteger hotelId) {
+	public boolean removeHotel(Long cityId, Long hotelId) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean addRoom(BigInteger hotelId, Room room) throws HotelException {
+	public boolean addRoom(Long hotelId, Room room) throws HotelException {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean removeRoom(BigInteger hotelId, BigInteger roomId) {
+	public boolean removeRoom(Long hotelId, Long roomId) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public void makeBooking(BigInteger hotelId, BigInteger hotelId2, Date checkIn, Date checkOut, BigInteger roomId) {
+	public void makeBooking(Long hotelId, Long hotelId2, Date checkIn, Date checkOut, Long roomId) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public boolean addBooking(BigInteger cityId, BigInteger hotelId, BigInteger roomId, Booking booking)
+	public boolean addBooking(Long cityId, Long hotelId, Long roomId, Booking booking)
 			throws HotelException {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public Map<BigInteger, City> getCityList() {
+	public Map<Long, City> getCityList() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List viewHotels(Date checkIn, Date checkOut, BigInteger cityId, boolean sortByRating) {
+	public List viewHotels(Date checkIn, Date checkOut, Long cityId, boolean sortByRating) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -132,20 +131,20 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean updateHotel(BigInteger cityId, BigInteger hotelId, String hotelName) throws HotelException {
+	public boolean updateHotel(Long cityId, Long hotelId, String hotelName) throws HotelException {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean updateRoom(BigInteger cityId, BigInteger hotelId, BigInteger roomId, String roomType)
+	public boolean updateRoom(Long cityId, Long hotelId, Long roomId, String roomType)
 			throws HotelException {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public Map<BigInteger, Hotel> showHotel(BigInteger cityId) throws HotelException {
+	public Map<Long, Hotel> showHotel(Long cityId) throws HotelException {
 		// TODO Auto-generated method stub
 		return null;
 	}
