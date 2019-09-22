@@ -27,7 +27,6 @@ public class Room {
 	@Column(name="room_number")
 	private String roomNumber;
 	
-	@Embedded
 	private Booking booking;
 	
 	@ManyToOne(fetch = FetchType.LAZY)

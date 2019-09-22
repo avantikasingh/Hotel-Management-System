@@ -35,11 +35,8 @@ public class AdminService implements IAdminService {
 			BigInteger roomId, String roomType, double roomRent,
 			String roomNumber) throws HotelException {
 
-		Room newRoom = new Room(roomId, roomType, roomRent, roomNumber,
-				new LinkedList<Booking>()); // create Hotel object
-		return adminDao.addRoom(hotelId, newRoom); // add new room in
-															// the roomList of
-															// the hotel
+		Room newRoom = new Room(); // create Hotel object
+		return adminDao.addRoom(hotelId, newRoom); // add new room in the roomList of the hotel
 	}
 
 	public boolean removeRoom(BigInteger cityId,BigInteger hotelId,
@@ -54,18 +51,6 @@ public class AdminService implements IAdminService {
 			BigInteger roomId, Booking booking) throws HotelException {
 		return adminDao.addBooking(cityId, hotelId, roomId, booking);
 	}
-
-	
-
-	// @Override
-	// public boolean addRoom() {
-	// return adminDao.addRoom();
-	// }
-	//
-	// @Override
-	// public boolean addHotel() {
-	// return adminDao.addHotel();
-	// }
 
 	public Map<BigInteger, City> showCity() {
 		return adminDao.getCityList();

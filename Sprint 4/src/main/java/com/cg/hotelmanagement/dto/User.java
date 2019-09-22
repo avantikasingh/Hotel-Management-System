@@ -4,11 +4,14 @@ import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+@Entity
 public class User {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	protected String userId;
@@ -28,7 +31,7 @@ public class User {
 	private String gender;
 	@Column(name="aadhar_number")
 	private String aadharNumber;
-	@OneToOne(mappedBy = "bookingId")
+	@OneToOne
 	private Booking booking;
 
 	public User() {

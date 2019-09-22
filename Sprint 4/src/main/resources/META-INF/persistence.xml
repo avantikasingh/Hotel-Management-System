@@ -5,11 +5,10 @@
 
         <!-- Entity classes -->
         
-        <class>com.cg.demojpa.dto.User</class>
-        <class>com.cg.demojpa.dto.City</class>
-        <class>com.cg.demojpa.dto.Hotel</class>
-        <class>com.cg.demojpa.dto.Room</class>
-        <class>com.cg.demojpa.dto.Booking</class>
+        <class>com.cg.hotelmanagement.dto.User</class>
+        <class>com.cg.hotelmanagement.dto.Hotel</class>
+        <class>com.cg.hotelmanagement.dto.Room</class>
+        <class>com.cg.hotelmanagement.dto.Booking</class>
         
         <properties>
             <!-- The JDBC URL to the database instance -->

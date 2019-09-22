@@ -4,10 +4,22 @@ import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class City {
 
-	private String cityName;
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private BigInteger cityId;
+	@Column(name="city_name")
+	private String cityName;
+	@OneToMany(mappedBy="city",cascade=CascadeType.ALL)
 	private Map<BigInteger, Hotel> hotelList;
 
 	public BigInteger getCityId() {
