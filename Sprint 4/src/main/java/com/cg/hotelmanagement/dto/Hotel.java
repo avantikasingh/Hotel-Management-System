@@ -10,16 +10,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="T_Hotel")
+@Table(name="Hotel")
 public class Hotel {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="hotel_id")
-	private Long hotelId;
+	private Long hotelId=Long.valueOf(999);
 	@Column(name="hotel_name")
 	private String hotelName;
 	@Column(name="hotel_address")
@@ -33,6 +34,7 @@ public class Hotel {
 	private Map<Long, Room> roomList = new HashMap<>();
 
 	@ManyToOne
+	@JoinColumn(name="city_id")
 	private City city;
 	
 	public Hotel() {

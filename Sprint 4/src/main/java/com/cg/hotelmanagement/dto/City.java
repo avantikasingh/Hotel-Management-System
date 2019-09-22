@@ -15,8 +15,8 @@ import javax.persistence.OneToMany;
 @Entity
 public class City {
 
-	@Id 
-	private Long cityId;
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long cityId=Long.valueOf(999);
 	@Column(name="city_name")
 	private String cityName;
 	@OneToMany(mappedBy="city",cascade=CascadeType.ALL)

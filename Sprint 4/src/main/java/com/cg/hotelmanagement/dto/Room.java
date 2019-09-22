@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @Table(name="room")
 public class Room {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	private Long roomId;
+	private Long roomId=Long.valueOf(999);
 	@Column(name="room_type")
 	private String roomType;
 	@Column(name="room_rent")
@@ -29,6 +29,7 @@ public class Room {
 	
 	@Embedded
 	private Bookings bookingDates;
+
 	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "hotelId")

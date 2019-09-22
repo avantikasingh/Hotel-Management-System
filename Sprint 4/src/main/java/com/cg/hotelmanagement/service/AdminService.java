@@ -18,7 +18,7 @@ public class AdminService implements IAdminService {
 	@Override
 	public boolean addCity(Long cityId, String cityName) throws Exception {
 		City city = new City();
-		city.setCityId(cityId);
+		//city.setCityId(cityId);
 		city.setCityName(cityName);
 		return adminDao.addCity(city);
 	}
@@ -37,6 +37,9 @@ public class AdminService implements IAdminService {
 			String roomNumber) throws HotelException {
 
 		Room newRoom = new Room(); // create Hotel object
+		newRoom.setRoomNumber(roomNumber);
+		newRoom.setRoomRent(roomRent);
+		newRoom.setRoomType(roomType);
 		return adminDao.addRoom(hotelId, newRoom); // add new room in the roomList of the hotel
 	}
 

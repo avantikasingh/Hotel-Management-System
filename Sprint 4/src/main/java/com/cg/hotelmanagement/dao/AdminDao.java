@@ -33,7 +33,8 @@ public class AdminDao implements IAdminDao {
 		tx.begin();
 		
 		entityManager.persist(city);
-
+		Long cityId=city.getCityId();
+		city.setCityId(cityId);
 		tx.commit();
 		
 		return true;
@@ -43,7 +44,7 @@ public class AdminDao implements IAdminDao {
 	public boolean removeCity(Long cityId) {
 		// TODO Auto-generated method stub
 		City city = entityManager.find(City.class, cityId);
-		System.out.println(city);
+		
 		if (city!= null) {
 			try{
 				tx.begin();
@@ -56,41 +57,86 @@ public class AdminDao implements IAdminDao {
 				e.printStackTrace();
 			}
 		}
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean addHotel(Long cityId, Hotel hotel) throws HotelException {
 		// TODO Auto-generated method stub
-		// Add Hotel object in the hotelList of City class
-		City city=entityManager.find(City.class,cityId);
-		System.out.println(city);
 		
-		city.getHotelList().put(hotel.getHotelId(),hotel);
-		
+		hotel.setCity(entityManager.find(City.class, cityId));
 		//add hotel to database
 		tx.begin();
 		entityManager.persist(hotel);
+		Long hotelId=hotel.getHotelId();
+		hotel.setHotelId(hotelId);
 		tx.commit();
-		return false;
+		
+		// Add Hotel object in the hotelList of City class
+		City city=entityManager.find(City.class,cityId);	
+		city.getHotelList().put(hotel.getHotelId(),hotel);
+		return true;
 	}
 
 	@Override
 	public boolean removeHotel(Long cityId, Long hotelId) {
 		// TODO Auto-generated method stub
-		return false;
+		Hotel hotel = entityManager.find(Hotel.class, hotelId);
+		
+		if (hotel!= null) {
+			try{
+				tx.begin();
+			
+			
+			entityManager.remove(hotel);
+			tx.commit();
+		
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return true;
 	}
 
 	@Override
 	public boolean addRoom(Long hotelId, Room room) throws HotelException {
 		// TODO Auto-generated method stub
-		return false;
+		System.out.println(room);
+		room.setHotel(entityManager.find(Hotel.class,hotelId));
+		//add room to database
+		tx.begin();
+		entityManager.persist(room);
+		Long roomId=room.getRoomId();
+		room.setRoomId(roomId);
+		tx.commit();
+
+		//add Room in the roomList of Hotel class
+		Hotel hotel=entityManager.find(Hotel.class,hotelId);
+		
+		hotel.getRoomList().put(room.getRoomId(),room);
+		
+		
+		return true;
 	}
 
 	@Override
 	public boolean removeRoom(Long hotelId, Long roomId) {
 		// TODO Auto-generated method stub
-		return false;
+		Room room = entityManager.find(Room.class, roomId);
+		
+		if (room!= null) {
+			try{
+				tx.begin();
+			
+			
+			entityManager.remove(room);
+			tx.commit();
+		
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return true;
 	}
 
 	@Override
