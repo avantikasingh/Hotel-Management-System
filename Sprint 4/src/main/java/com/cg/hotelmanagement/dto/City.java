@@ -15,12 +15,12 @@ import javax.persistence.OneToMany;
 @Entity
 public class City {
 
-	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Id 
 	private BigInteger cityId;
 	@Column(name="city_name")
 	private String cityName;
 	@OneToMany(mappedBy="city",cascade=CascadeType.ALL)
-	private Map<BigInteger, Hotel> hotelList;
+	private Map<BigInteger, Hotel> hotelList=new HashMap<BigInteger,Hotel>();
 
 	public BigInteger getCityId() {
 		return cityId;

@@ -27,7 +27,8 @@ public class Room {
 	@Column(name="room_number")
 	private String roomNumber;
 	
-	private Booking booking;
+	@Embedded
+	private Bookings bookingDates;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "hotelId")
@@ -37,13 +38,13 @@ public class Room {
 	}
 
 	public Room(BigInteger roomId, String roomType, Double roomRent,
-			String roomNumber, Booking booking) {
+			String roomNumber) {
 		super();
 		this.roomId = roomId;
 		this.roomType = roomType;
 		this.roomRent = roomRent;
 		this.roomNumber = roomNumber;
-		this.booking = booking;
+		//this.booking = booking;
 
 	}
 
@@ -79,13 +80,7 @@ public class Room {
 		this.roomNumber = roomNumber;
 	}
 
-	public Booking getBooking() {
-		return booking;
-	}
-
-	public void setBooking(Booking booking) {
-		this.booking = booking;
-	}
+	
 
 	public Hotel getHotel() {
 		return hotel;
@@ -98,7 +93,7 @@ public class Room {
 	@Override
 	public String toString() {
 		return "Room [roomId=" + roomId + ", roomType=" + roomType + ", roomRent=" + roomRent + ", roomNumber="
-				+ roomNumber + ", booking=" + booking + ", hotel=" + hotel + "]";
+				+ roomNumber  + ", hotel=" + hotel + "]";
 	}
 
 }
