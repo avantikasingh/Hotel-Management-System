@@ -12,17 +12,16 @@ import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.dto.User;
 import com.cg.hotelmanagement.exception.HotelException;
+import com.cg.hotelmanagement.util.JPAUtil;
 
 public class AdminDao implements IAdminDao {
 	
-	private static EntityManagerFactory entityManagerFactory;
-	private static EntityManager entityManager;
 	private static EntityTransaction tx;
+	private static EntityManager entityManager;
 
 	static {
-		entityManagerFactory = Persistence.createEntityManagerFactory("HotelBookingManagement");
-		entityManager = entityManagerFactory.createEntityManager();
-		tx = entityManager.getTransaction();
+		entityManager = JPAUtil.getEntityManager();
+		tx  = JPAUtil.getEntityManager().getTransaction();
 	}
 	
 
