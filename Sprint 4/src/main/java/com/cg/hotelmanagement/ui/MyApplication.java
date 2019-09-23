@@ -487,7 +487,7 @@ public class MyApplication {
 							}
 						}
 						Date dateOfBirth = null;
-						System.out.println("Enter dateOfBirth");
+						System.out.println("Enter dateOfBirth in yyyy-mm-dd");
 						while (true) {
 							input = sc.next();
 							try {
