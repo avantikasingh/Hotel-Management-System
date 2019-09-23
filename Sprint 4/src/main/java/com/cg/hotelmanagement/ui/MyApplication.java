@@ -34,7 +34,11 @@ public class MyApplication {
 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-		adminService.makeBooking(2l, 1l, dateFormat.parse("2019-04-07"), dateFormat.parse("2019-05-08"), 1l, 1l);
+		//adminService.makeBooking(2l, 1l, dateFormat.parse("2019-04-07"), dateFormat.parse("2019-05-08"), 1l, 1l);
+		
+		adminService.updateHotel(2l, 1l, "Trident");
+		
+		adminService.updateRoom(2l, 1l, 1l, "Premium");
 		
 //		try {
 //			adminService.addCity(BigInteger.valueOf(cityIdSys), "Pune");
@@ -206,23 +210,23 @@ public class MyApplication {
 
 						break;
 
-//					case 6:
-//						System.out.println("City id");
-//						while (true) {
-//							input = sc.next();
-//							if (Validate.isNumeric(input)) {
-//								cityId = Long.parseLong(input);
-//								break;
-//							}
-//						}
-//						System.out.println("Enter hotel id");
-//						while (true) {
-//							input = sc.next();
-//							if (Validate.isNumeric(input)) {
-//								hotelId = Long.parseLong(input);
-//								break;
-//							}
-//						}
+					case 6:
+						System.out.println("City id");
+						while (true) {
+							input = sc.next();
+							if (Validate.isNumeric(input)) {
+								cityId = Long.parseLong(input);
+								break;
+							}
+						}
+						System.out.println("Enter hotel id");
+						while (true) {
+							input = sc.next();
+							if (Validate.isNumeric(input)) {
+								hotelId = Long.parseLong(input);
+								break;
+							}
+						}
 //						Hotel hotel = adminService.showHotel(cityId).get(hotelId);
 //						if (hotel == null)
 //							System.out.println("Hotel does not exist");
@@ -231,7 +235,14 @@ public class MyApplication {
 //							hotelName = sc.next(); // can have alphanumeric
 //							//adminService.updateHotel(cityId, hotelId, hotelName);
 //						}
-//						break;
+						hotelName = sc.next();
+						if(adminService.updateHotel(cityId, hotelId, hotelName)) {
+							System.out.println("Updated successfully");
+						}
+						else {
+							System.out.println("City/Hotel does not exist");
+						}
+						break;
 
 					case 7: {
 
@@ -288,15 +299,31 @@ public class MyApplication {
 						break;
 					}
 
-//					case 9: {
-//						System.out.println("Enter City Id in which Room is to be updated :");
-//						cityId = sc.nextLong();
-//
-//						System.out.println("Enter Hotel Id in which Room is to be updated:");
-//						hotelId = sc.nextLong();
-//
-//						System.out.println("Enter Room Id to be updated :");
-//						roomId = sc.nextLong();
+					case 9: {
+						System.out.println("Enter City Id in which Room is to be updated :");
+						cityId = sc.nextLong();
+
+						System.out.println("Enter Hotel Id in which Room is to be updated:");
+						hotelId = sc.nextLong();
+
+						System.out.println("Enter Room Id to be updated :");
+						roomId = sc.nextLong();
+						String roomType;
+						System.out.println("Enter new room type");
+						while (true) {
+							input = sc.next();
+							try {
+								roomType = Validate.isStringOnlyAlphabet(input);
+								break;
+							} catch (HotelException e) {
+								System.out.println(e.getMessage());
+								continue;
+							}
+						}
+						if(adminService.updateRoom(cityId, hotelId, roomId, roomType))
+							System.out.println("Room updated successfully");
+						else
+							System.out.println("City/Hotel does not exist");
 //						try {
 //							Room room = adminService.showCity().get(cityId).getHotelList().get(hotelId).getRoomList()
 //									.get(roomId);
@@ -320,10 +347,10 @@ public class MyApplication {
 //						} catch (Exception e) {
 //							System.out.println("Does not exist");
 //						}
-//						break;
-//
-//					}
-//
+						break;
+
+					}
+
 					case 10: {
 						List<City> cityList = adminService.showCity();
 						for(City city:cityList)

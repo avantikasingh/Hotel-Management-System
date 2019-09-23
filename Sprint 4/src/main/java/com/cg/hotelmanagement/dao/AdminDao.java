@@ -191,14 +191,40 @@ public class AdminDao implements IAdminDao {
 
 	@Override
 	public boolean updateHotel(Long cityId, Long hotelId, String hotelName) throws HotelException {
-		// TODO Auto-generated method stub
+		City city = entityManager.find(City.class, cityId);
+		List<Hotel> hotelList = city.getHotelList();
+		for(Hotel hotel:hotelList) {
+			if(hotel.getHotelId()==hotelId) {
+				tx.begin();
+				hotel.setHotelName(hotelName);
+				entityManager.merge(hotel);
+				tx.commit();
+				return true;
+			}
+		}
 		return false;
 	}
 
 	@Override
 	public boolean updateRoom(Long cityId, Long hotelId, Long roomId, String roomType)
 			throws HotelException {
-		// TODO Auto-generated method stub
+		City city = entityManager.find(City.class, cityId);
+		List<Hotel> hotelList = city.getHotelList();
+		List<Room> roomList;
+		for(Hotel hotel:hotelList) {
+			if(hotel.getHotelId()==hotelId) {
+				roomList = hotel.getRoomList();
+				for(Room room:roomList) {
+					if(room.getRoomId()==roomId) {
+						tx.begin();
+						room.setRoomType(roomType);
+						entityManager.merge(room);
+						tx.commit();
+						return true;
+					}
+				}
+			}
+		}
 		return false;
 	}
 
