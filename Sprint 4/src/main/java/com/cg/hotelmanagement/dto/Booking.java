@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -26,6 +28,11 @@ public class Booking {
 	private Date checkOut;
 	@OneToOne(cascade = CascadeType.ALL)
 	private User user;
+	
+	@ManyToOne
+	@JoinColumn(name="room_id")
+	private Room room;
+	
 	public Booking(Long bookingId, Date checkIn, Date checkOut) {
 		super();
 		this.bookingId = bookingId;

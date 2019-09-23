@@ -4,6 +4,7 @@ import java.math.BigInteger;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -12,7 +13,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -28,10 +31,11 @@ public class Room {
 	@Column(name="room_number")
 	private String roomNumber;
 	
-	private List<Long> bookingDetails=new LinkedList<>();
+	@OneToMany(mappedBy = "room",cascade = CascadeType.ALL )	
+	private List<Booking> bookingDetails=new LinkedList<>();
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "hotelId")
+    @JoinColumn(name = "hotel_Id")
 	private Hotel hotel;
 
 	public Room() {
@@ -39,7 +43,7 @@ public class Room {
 
 
 	
-	public Room(Long roomId, String roomType, Double roomRent, String roomNumber, List<Long> bookingDetails,
+	public Room(Long roomId, String roomType, Double roomRent, String roomNumber, List<Booking> bookingDetails,
 			Hotel hotel) {
 		super();
 		this.roomId = roomId;
@@ -84,11 +88,11 @@ public class Room {
 		this.roomNumber = roomNumber;
 	}
 
-	public List<Long> getBookingDetails() {
+	public List<Booking> getBookingDetails() {
 		return bookingDetails;
 	}
 
-	public void setBookingDetails(List<Long> bookingDetails) {
+	public void setBookingDetails(List<Booking> bookingDetails) {
 		this.bookingDetails = bookingDetails;
 	}
 

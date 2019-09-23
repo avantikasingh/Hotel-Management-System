@@ -200,32 +200,32 @@ public class MyApplication {
 
 						break;
 
-					case 6:
-						System.out.println("City id");
-						while (true) {
-							input = sc.next();
-							if (Validate.isNumeric(input)) {
-								cityId = Long.parseLong(input);
-								break;
-							}
-						}
-						System.out.println("Enter hotel id");
-						while (true) {
-							input = sc.next();
-							if (Validate.isNumeric(input)) {
-								hotelId = Long.parseLong(input);
-								break;
-							}
-						}
-						Hotel hotel = adminService.showHotel(cityId).get(hotelId);
-						if (hotel == null)
-							System.out.println("Hotel does not exist");
-						else {
-							System.out.println("Enter new Hotel name");
-							hotelName = sc.next(); // can have alphanumeric
-							//adminService.updateHotel(cityId, hotelId, hotelName);
-						}
-						break;
+//					case 6:
+//						System.out.println("City id");
+//						while (true) {
+//							input = sc.next();
+//							if (Validate.isNumeric(input)) {
+//								cityId = Long.parseLong(input);
+//								break;
+//							}
+//						}
+//						System.out.println("Enter hotel id");
+//						while (true) {
+//							input = sc.next();
+//							if (Validate.isNumeric(input)) {
+//								hotelId = Long.parseLong(input);
+//								break;
+//							}
+//						}
+//						Hotel hotel = adminService.showHotel(cityId).get(hotelId);
+//						if (hotel == null)
+//							System.out.println("Hotel does not exist");
+//						else {
+//							System.out.println("Enter new Hotel name");
+//							hotelName = sc.next(); // can have alphanumeric
+//							//adminService.updateHotel(cityId, hotelId, hotelName);
+//						}
+//						break;
 
 					case 7: {
 
@@ -282,101 +282,101 @@ public class MyApplication {
 						break;
 					}
 
-					case 9: {
-						System.out.println("Enter City Id in which Room is to be updated :");
-						cityId = sc.nextLong();
-
-						System.out.println("Enter Hotel Id in which Room is to be updated:");
-						hotelId = sc.nextLong();
-
-						System.out.println("Enter Room Id to be updated :");
-						roomId = sc.nextLong();
-						try {
-							Room room = adminService.showCity().get(cityId).getHotelList().get(hotelId).getRoomList()
-									.get(roomId);
-							if (room == null)
-								System.out.println("Room does not exist");
-							else {
-								String roomType;
-								System.out.println("Enter new room type");
-								while (true) {
-									input = sc.next();
-									try {
-										roomType = Validate.isStringOnlyAlphabet(input);
-										break;
-									} catch (HotelException e) {
-										System.out.println(e.getMessage());
-										continue;
-									}
-								}
-								//adminService.updateRoom(cityId, hotelId, roomId, roomType);
-							}
-						} catch (Exception e) {
-							System.out.println("Does not exist");
-						}
-						break;
-
-					}
-
-					case 10: {
-						Map<Long, City> cityMap = adminService.showCity();
-						for (Entry<Long, City> entry : cityMap.entrySet()) {
-							System.out.println("City Id = " + entry.getKey() + ", City Name = " + entry.getValue());
-						}
-						break;
-					}
-
-					case 11: {
-						System.out.println("Enter city Id");
-						Long cityId1;
-						while (true) {
-							input = sc.next();
-							if (Validate.isNumeric(input)) {
-								cityId1 = Long.parseLong(input);
-								break;
-							}
-						}
-						Map<Long, Hotel> hotelMap = adminService.showHotel(cityId1);
-						if(hotelMap!=null){
-							for (Entry<Long, Hotel> entry : hotelMap.entrySet()) {
-								System.out.println(entry.getValue().toString());
-								System.out.println("Hotel Id: "+entry.getValue().getHotelId());
-								System.out.println("Hotel name: "+entry.getValue().getHotelName());
-								System.out.println("Hotel address: "+entry.getValue().getHotelAddress());
-								System.out.println("Hotel phone number: "+entry.getValue().getHotelPhoneNumber());
-								System.out.println("Hotel rating: "+entry.getValue().getHotelRating());
-								
-							}
-						}
-						else
-							System.out.println("Does not exist");
-						break;
-					}
-
-					case 12: {
-						System.out.println("Enter city Id");
-						Long cityId1;
-						while (true) {
-							input = sc.next();
-							if (Validate.isNumeric(input)) {
-								cityId1 = Long.parseLong(input);
-								break;
-							}
-						}
-						System.out.println("Enter hotel Id");
-						while (true) {
-							input = sc.next();
-							if (Validate.isNumeric(input)) {
-								hotelId = Long.parseLong(input);
-								break;
-							}
-						}
-						Map<Long, Room> roomMap = adminService.showRoom(cityId1, hotelId);
-						for (Entry<Long, Room> entry : roomMap.entrySet()) {
-							System.out.println(entry.getValue().toString());
-						}
-						break;
-					}
+//					case 9: {
+//						System.out.println("Enter City Id in which Room is to be updated :");
+//						cityId = sc.nextLong();
+//
+//						System.out.println("Enter Hotel Id in which Room is to be updated:");
+//						hotelId = sc.nextLong();
+//
+//						System.out.println("Enter Room Id to be updated :");
+//						roomId = sc.nextLong();
+//						try {
+//							Room room = adminService.showCity().get(cityId).getHotelList().get(hotelId).getRoomList()
+//									.get(roomId);
+//							if (room == null)
+//								System.out.println("Room does not exist");
+//							else {
+//								String roomType;
+//								System.out.println("Enter new room type");
+//								while (true) {
+//									input = sc.next();
+//									try {
+//										roomType = Validate.isStringOnlyAlphabet(input);
+//										break;
+//									} catch (HotelException e) {
+//										System.out.println(e.getMessage());
+//										continue;
+//									}
+//								}
+//								//adminService.updateRoom(cityId, hotelId, roomId, roomType);
+//							}
+//						} catch (Exception e) {
+//							System.out.println("Does not exist");
+//						}
+//						break;
+//
+//					}
+//
+//					case 10: {
+//						Map<Long, City> cityMap = adminService.showCity();
+//						for (Entry<Long, City> entry : cityMap.entrySet()) {
+//							System.out.println("City Id = " + entry.getKey() + ", City Name = " + entry.getValue());
+//						}
+//						break;
+//					}
+//
+//					case 11: {
+//						System.out.println("Enter city Id");
+//						Long cityId1;
+//						while (true) {
+//							input = sc.next();
+//							if (Validate.isNumeric(input)) {
+//								cityId1 = Long.parseLong(input);
+//								break;
+//							}
+//						}
+//						Map<Long, Hotel> hotelMap = adminService.showHotel(cityId1);
+//						if(hotelMap!=null){
+//							for (Entry<Long, Hotel> entry : hotelMap.entrySet()) {
+//								System.out.println(entry.getValue().toString());
+//								System.out.println("Hotel Id: "+entry.getValue().getHotelId());
+//								System.out.println("Hotel name: "+entry.getValue().getHotelName());
+//								System.out.println("Hotel address: "+entry.getValue().getHotelAddress());
+//								System.out.println("Hotel phone number: "+entry.getValue().getHotelPhoneNumber());
+//								System.out.println("Hotel rating: "+entry.getValue().getHotelRating());
+//								
+//							}
+//						}
+//						else
+//							System.out.println("Does not exist");
+//						break;
+//					}
+//
+//					case 12: {
+//						System.out.println("Enter city Id");
+//						Long cityId1;
+//						while (true) {
+//							input = sc.next();
+//							if (Validate.isNumeric(input)) {
+//								cityId1 = Long.parseLong(input);
+//								break;
+//							}
+//						}
+//						System.out.println("Enter hotel Id");
+//						while (true) {
+//							input = sc.next();
+//							if (Validate.isNumeric(input)) {
+//								hotelId = Long.parseLong(input);
+//								break;
+//							}
+//						}
+//						Map<Long, Room> roomMap = adminService.showRoom(cityId1, hotelId);
+//						for (Entry<Long, Room> entry : roomMap.entrySet()) {
+//							System.out.println(entry.getValue().toString());
+//						}
+//						break;
+//					}
 					case 13:
 						break;
 					default :
