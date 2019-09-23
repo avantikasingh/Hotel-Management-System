@@ -26,6 +26,7 @@ public class Booking {
 	@Temporal(TemporalType.DATE)
 	@Column(name="check_out")
 	private Date checkOut;
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	private User user;
 	

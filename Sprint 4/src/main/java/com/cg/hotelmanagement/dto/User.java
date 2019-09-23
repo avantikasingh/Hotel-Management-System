@@ -31,6 +31,7 @@ public class User {
 	private String gender;
 	@Column(name="aadhar_number")
 	private String aadharNumber;
+	
 	@OneToOne
 	private Booking booking;
 

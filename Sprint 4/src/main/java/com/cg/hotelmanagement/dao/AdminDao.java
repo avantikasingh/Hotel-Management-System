@@ -63,19 +63,16 @@ public class AdminDao implements IAdminDao {
 	@Override
 	public boolean addHotel(Long cityId, Hotel hotel) throws HotelException {
 		// TODO Auto-generated method stub
-		
-		//hotel.setCity(entityManager.find(City.class, cityId));
-		//add hotel to database
-		tx.begin();
-		entityManager.persist(hotel);
-		Long hotelId=hotel.getHotelId();
-		hotel.setHotelId(hotelId);
-		tx.commit();
-		
-		// Add Hotel object in the hotelList of City class
 		City city=entityManager.find(City.class,cityId);	
-		city.getHotelList().add(hotel);
-		return true;
+		if(city!=null)
+		{
+			tx.begin();
+			city.getHotelList().add(hotel);
+			entityManager.merge(city);
+			tx.commit();
+			return true;
+		}	
+		return false;
 	}
 
 	@Override
@@ -101,22 +98,16 @@ public class AdminDao implements IAdminDao {
 	@Override
 	public boolean addRoom(Long hotelId, Room room) throws HotelException {
 		// TODO Auto-generated method stub
-		System.out.println(room);
-		//room.setHotel(entityManager.find(Hotel.class,hotelId));
-		//add room to database
-		tx.begin();
-		entityManager.persist(room);
-		Long roomId=room.getRoomId();
-		room.setRoomId(roomId);
-		tx.commit();
-
-		//add Room in the roomList of Hotel class
-		Hotel hotel=entityManager.find(Hotel.class,hotelId);
-		
-		hotel.getRoomList().add(room);
-		
-		
-		return true;
+		Hotel hotel=entityManager.find(Hotel.class,hotelId);	
+		if(hotel!=null)
+		{
+			tx.begin();
+			hotel.getRoomList().add(room);
+			entityManager.merge(hotel);
+			tx.commit();
+			return true;
+		}	
+		return false;
 	}
 
 	@Override
