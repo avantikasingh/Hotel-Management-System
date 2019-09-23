@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Test;
 import com.cg.hotelmanagement.dao.AdminDao;
 import com.cg.hotelmanagement.dao.IAdminDao;
 import com.cg.hotelmanagement.dto.City;
+import com.cg.hotelmanagement.dto.Hotel;
+import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.exception.HotelException;
 
 class HotelTest {
@@ -21,13 +23,18 @@ class HotelTest {
 	}
 
 	@Test
-	void assignTestUnitTest() throws Exception{		
+	void addCityUnitTest() throws Exception{		
 		Assertions.assertEquals(true, adminDao.addCity(new City()));
 	}
-
+	
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void addHotelUnitTest() throws Exception{		
+		Assertions.assertEquals(true, adminDao.addHotel(2l, new Hotel()));
+	}
+	
+	@Test
+	void addRoomUnitTest() throws Exception{		
+		Assertions.assertEquals(true, adminDao.addRoom(1l, new Room()));
 	}
 
 }

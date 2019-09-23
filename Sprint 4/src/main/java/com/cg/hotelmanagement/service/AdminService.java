@@ -119,6 +119,11 @@ public class AdminService implements IAdminService {
 		return adminDao.updateRoom(cityId, hotelId, roomId, roomType);
 	}
 
+	@Override
+	public void makeBooking(Long cityId, Long hotelId, Date checkIn, Date checkOut, Long roomId, Long userId) {
+		adminDao.makeBooking(cityId, hotelId, checkIn, checkOut, roomId, userId);
+	}
+
 //	public boolean updateHotel(Long cityId, Long hotelId,
 //			String hotelName) {
 //		return adminDao.updateHotel(cityId, hotelId, hotelName);

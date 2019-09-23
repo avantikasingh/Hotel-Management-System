@@ -27,16 +27,15 @@ public class MyApplication {
 
 		IAdminService adminService = new AdminService();
 		
+		
 		IUserService userService = new UserService();
-		
-		System.out.println(adminService.showHotel(2l));
-		
-		System.out.println(adminService.showRoom(2l, 1l));
 
 		//ICustomerService customerService = new CustomerService();
 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
+		adminService.makeBooking(2l, 1l, dateFormat.parse("2019-04-07"), dateFormat.parse("2019-05-08"), 1l, 1l);
+		
 //		try {
 //			adminService.addCity(BigInteger.valueOf(cityIdSys), "Pune");
 //		} catch (Exception e1) {

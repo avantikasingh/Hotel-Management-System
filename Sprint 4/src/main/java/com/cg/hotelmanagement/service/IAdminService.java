@@ -46,6 +46,8 @@ public interface IAdminService {
 	public boolean updateRoom(Long cityId, Long hotelId,
 			Long roomId, String roomType) throws HotelException;
 	
+	public void makeBooking(Long cityId, Long hotelId, Date checkIn, Date checkOut, Long roomId, Long userId);
+	
 	
 	
 

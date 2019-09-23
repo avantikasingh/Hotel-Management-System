@@ -79,7 +79,7 @@ public class AdminDao implements IAdminDao {
 	public boolean removeHotel(Long cityId, Long hotelId) {
 		// TODO Auto-generated method stub
 		Hotel hotel = entityManager.find(Hotel.class, hotelId);
-		
+		System.out.println(hotel);
 		if (hotel!= null) {
 			try{
 				tx.begin();
@@ -133,9 +133,28 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public void makeBooking(Long hotelId, Long hotelId2, Date checkIn, Date checkOut, Long roomId) {
-		// TODO Auto-generated method stub
-
+	public void makeBooking(Long cityId, Long hotelId, Date checkIn, Date checkOut, Long roomId, Long userId) {
+		Booking booking = new Booking(1l, checkIn, checkOut);
+		User user = entityManager.find(User.class, userId);
+		City city = entityManager.find(City.class, cityId);
+		List<Hotel> hotelList = city.getHotelList();
+		List<Room> roomList;
+		for(Hotel hotel:hotelList) {
+			if(hotel.getHotelId()==hotelId) {
+				roomList = hotel.getRoomList();
+				for(Room room:roomList) {
+					if(room.getRoomId()==roomId) {
+						tx.begin();
+						user.setBooking(booking);
+						room.getBookingDetails().add(booking);
+						entityManager.merge(room);
+						tx.commit();
+					}
+				}
+			}
+		}
+		
+		
 	}
 
 	@Override

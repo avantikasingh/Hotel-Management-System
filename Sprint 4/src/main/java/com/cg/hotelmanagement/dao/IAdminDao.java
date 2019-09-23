@@ -22,7 +22,7 @@ public interface IAdminDao {
 
 	public boolean removeRoom(Long hotelId, Long roomId); //new version
 
-	public void makeBooking(Long hotelId, Long hotelId2, Date checkIn, Date checkOut, Long roomId);
+	public void makeBooking(Long cityId, Long hotelId, Date checkIn, Date checkOut, Long roomId, Long userId);
 
 	public boolean addBooking(Long cityId, Long hotelId, Long roomId, Booking booking) throws HotelException;
 
