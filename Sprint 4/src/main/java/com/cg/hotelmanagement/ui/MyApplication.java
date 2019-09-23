@@ -25,7 +25,9 @@ public class MyApplication {
 
 		Scanner sc = new Scanner(System.in);
 
-		AdminService adminService = new AdminService();
+		IAdminService adminService = new AdminService();
+		
+		IUserService userService = new UserService();
 		
 		System.out.println(adminService.showHotel(2l));
 		
@@ -484,7 +486,7 @@ public class MyApplication {
 								continue;
 							}
 						}
-						Date dateOfBirth;
+						Date dateOfBirth = null;
 						System.out.println("Enter dateOfBirth");
 						while (true) {
 							input = sc.next();
@@ -546,10 +548,7 @@ public class MyApplication {
 							}
 						}
 
-						//customerService.register(BigInteger.valueOf(userIdSys++), null, firstName, lastName,
-						//		aadharNumber);
-
-						// customerService.register(userId,username,emailId,dateOfBirth,userMobileNo);
+						userService.register(firstName, lastName, username, emailId, dateOfBirth, userMobileNo,aadharNumber.toString());
 						break;
 					}
 					case 2: {

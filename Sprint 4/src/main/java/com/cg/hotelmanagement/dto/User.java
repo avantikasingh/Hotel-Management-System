@@ -38,8 +38,8 @@ public class User {
 	public User() {
 	}
 
-	public User(Long userId, String username, String emailId, Date dob, String userMobile, String firstName,
-			String lastName, String gender, String aadharNumber, Booking booking) {
+	public User(String username, String emailId, Date dob, String userMobile, String firstName,
+			String lastName, String aadharNumber, Booking booking) {
 		super();
 		this.userId = userId;
 		this.username = username;
