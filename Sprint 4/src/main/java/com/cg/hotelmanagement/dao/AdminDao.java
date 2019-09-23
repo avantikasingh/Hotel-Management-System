@@ -74,7 +74,7 @@ public class AdminDao implements IAdminDao {
 		
 		// Add Hotel object in the hotelList of City class
 		City city=entityManager.find(City.class,cityId);	
-		city.getHotelList().put(hotel.getHotelId(),hotel);
+		city.getHotelList().add(hotel);
 		return true;
 	}
 
@@ -113,7 +113,7 @@ public class AdminDao implements IAdminDao {
 		//add Room in the roomList of Hotel class
 		Hotel hotel=entityManager.find(Hotel.class,hotelId);
 		
-		hotel.getRoomList().put(room.getRoomId(),room);
+		hotel.getRoomList().add(room);
 		
 		
 		return true;
@@ -153,7 +153,7 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public Map<Long, City> getCityList() {
+	public List<City> getCityList() {
 		// TODO Auto-generated method stub
 		return null;
 	}

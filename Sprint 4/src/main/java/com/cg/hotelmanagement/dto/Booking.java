@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
 @Entity
 public class Booking {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	private Long bookingId=Long.valueOf(999);
+	private Long bookingId;
 	@Temporal(TemporalType.DATE)
 	@Column(name="check_in")
 	private Date checkIn;

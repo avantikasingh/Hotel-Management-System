@@ -1,6 +1,7 @@
 package com.cg.hotelmanagement.dto;
 
 import java.math.BigInteger;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -19,7 +20,7 @@ import javax.persistence.Table;
 @Table(name="room")
 public class Room {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	private Long roomId=Long.valueOf(999);
+	private Long roomId;
 	@Column(name="room_type")
 	private String roomType;
 	@Column(name="room_rent")
@@ -27,9 +28,7 @@ public class Room {
 	@Column(name="room_number")
 	private String roomNumber;
 	
-	@Embedded
-	private Bookings bookingDates;
-
+	private List<Long> bookingDetails=new LinkedList<>();
 	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "hotelId")
@@ -38,15 +37,20 @@ public class Room {
 	public Room() {
 	}
 
-	public Room(Long roomId, String roomType, Double roomRent, String roomNumber, Bookings bookingDates, Hotel hotel) {
+
+	
+	public Room(Long roomId, String roomType, Double roomRent, String roomNumber, List<Long> bookingDetails,
+			Hotel hotel) {
 		super();
 		this.roomId = roomId;
 		this.roomType = roomType;
 		this.roomRent = roomRent;
 		this.roomNumber = roomNumber;
-		this.bookingDates = bookingDates;
+		this.bookingDetails = bookingDetails;
 		this.hotel = hotel;
 	}
+	
+	
 
 	public Long getRoomId() {
 		return roomId;
@@ -80,12 +84,12 @@ public class Room {
 		this.roomNumber = roomNumber;
 	}
 
-	public Bookings getBookingDates() {
-		return bookingDates;
+	public List<Long> getBookingDetails() {
+		return bookingDetails;
 	}
 
-	public void setBookingDates(Bookings bookingDates) {
-		this.bookingDates = bookingDates;
+	public void setBookingDetails(List<Long> bookingDetails) {
+		this.bookingDetails = bookingDetails;
 	}
 
 	public Hotel getHotel() {
@@ -96,11 +100,16 @@ public class Room {
 		this.hotel = hotel;
 	}
 
+
+
 	@Override
 	public String toString() {
 		return "Room [roomId=" + roomId + ", roomType=" + roomType + ", roomRent=" + roomRent + ", roomNumber="
-				+ roomNumber + ", bookingDates=" + bookingDates + ", hotel=" + hotel + "]";
+				+ roomNumber + ", bookingDetails=" + bookingDetails + ", hotel=" + hotel + "]";
 	}
 
+
 	
+	
+		
 }

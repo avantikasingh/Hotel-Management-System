@@ -2,6 +2,8 @@ package com.cg.hotelmanagement.dto;
 
 import java.math.BigInteger;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 import javax.persistence.CascadeType;
@@ -15,19 +17,19 @@ import javax.persistence.OneToMany;
 @Entity
 public class City {
 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long cityId=Long.valueOf(999);
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	private Long cityId;
 	@Column(name="city_name")
 	private String cityName;
 	@OneToMany(mappedBy="city",cascade=CascadeType.ALL)
-	private Map<Long, Hotel> hotelList=new HashMap<Long,Hotel>();
+	private List<Hotel> hotelList=new LinkedList<Hotel>();
 
 	public City()
 	{
 		
 	}
 
-	public City(Long cityId, String cityName, Map<Long, Hotel> hotelList) {
+	public City(Long cityId, String cityName, List<Hotel> hotelList) {
 		super();
 		this.cityId = cityId;
 		this.cityName = cityName;
@@ -50,11 +52,11 @@ public class City {
 		this.cityName = cityName;
 	}
 
-	public Map<Long, Hotel> getHotelList() {
+	public List<Hotel> getHotelList() {
 		return hotelList;
 	}
 
-	public void setHotelList(Map<Long, Hotel> hotelList) {
+	public void setHotelList(List<Hotel> hotelList) {
 		this.hotelList = hotelList;
 	}
 

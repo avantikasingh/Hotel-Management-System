@@ -13,7 +13,7 @@
         
         <properties>
             <!-- The JDBC URL to the database instance -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://LocalHost/test" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://LocalHost/testdb" />
             <!-- The database username -->
             <property name="javax.persistence.jdbc.user" value="root" />
             <!-- The database password -->

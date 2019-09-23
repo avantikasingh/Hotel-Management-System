@@ -14,7 +14,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class User {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	private Long userId=Long.valueOf(999);
+	private Long userId;
 	@Column(name="username")
 	protected String username;
 	@Column(name="email_id")

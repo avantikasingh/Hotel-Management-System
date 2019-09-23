@@ -56,22 +56,42 @@ public class AdminService implements IAdminService {
 		return adminDao.addBooking(cityId, hotelId, roomId, booking);
 	}
 
-	public Map<Long, City> showCity() {
+	public List<City> showCity() {
 		return adminDao.getCityList();
 	}
 
-	public Map<Long, Hotel> showHotel(Long cityId) throws HotelException {
-		Map<Long, City> cityMap = adminDao.getCityList();
-		City city = cityMap.get(cityId);
-		return adminDao.showHotel(cityId);
+	public List<Hotel> showHotel(Long cityId) throws HotelException {
+		
+		List<City> cityMap = adminDao.getCityList();
+		for(City c:cityMap)
+		{
+			if(c.getCityId()==cityId)
+			{
+				return c.getHotelList();
+			}
+		}
+		
+		return null;
 	}
 
-	public Map<Long, Room> showRoom(Long cityId, Long hotelId) {
-		Map<Long, City> cityMap = adminDao.getCityList();
-		City city = cityMap.get(cityId);
-		Map<Long, Hotel> hotelMap = city.getHotelList();
-		Hotel hotel = hotelMap.get(hotelId);
-		return hotel.getRoomList();
+	public List<Room> showRoom(Long cityId, Long hotelId) {
+		
+		List<City> cityMap = adminDao.getCityList();
+		for(City c:cityMap)
+		{
+			if(c.getCityId()==cityId)
+			{
+				List<Hotel> hotelList=c.getHotelList();
+				
+				for(Hotel hotel:hotelList)
+				{
+					if(hotel.getHotelId()==hotelId)
+						return hotel.getRoomList();
+				}
+			}
+			
+		}
+		return null;
 	}
 
 	@Override

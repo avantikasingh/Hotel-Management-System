@@ -2,6 +2,7 @@ package com.cg.hotelmanagement.service;
 
 import java.math.BigInteger;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 import com.cg.hotelmanagement.dto.Booking;
@@ -30,11 +31,11 @@ public interface IAdminService {
 
 	
 
-	public Map<Long, City> showCity();
+	public List<City> showCity();
 
-	public Map<Long, Hotel> showHotel(Long cityId) throws HotelException;
+	public List<Hotel> showHotel(Long cityId) throws HotelException;
 
-	public Map<Long, Room> showRoom(Long cityId, Long hotelId);
+	public List<Room> showRoom(Long cityId, Long hotelId);
 
 	public boolean addHotel(Long cityId, String hotelName, String hotelAddress,
 			String hotelPhoneNumber, float hotelRating) throws HotelException;

@@ -26,7 +26,7 @@ public interface IAdminDao {
 
 	public boolean addBooking(Long cityId, Long hotelId, Long roomId, Booking booking) throws HotelException;
 
-	public Map<Long, City> getCityList();// old version
+	public List<City> getCityList();// old version
 
 	public List viewHotels(Date checkIn, Date checkOut, Long cityId, boolean sortByRating);
 
