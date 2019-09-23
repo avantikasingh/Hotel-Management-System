@@ -26,7 +26,12 @@ public interface IAdminDao {
 
 	public boolean addBooking(Long cityId, Long hotelId, Long roomId, Booking booking) throws HotelException;
 
-	public List<City> getCityList();// old version
+	public List<City> getCityList();
+	
+	public List<Hotel> showHotel(Long cityId)
+			throws HotelException;
+	
+	public List<Room> showRoom(Long cityId, Long hotelId);
 
 	public List viewHotels(Date checkIn, Date checkOut, Long cityId, boolean sortByRating);
 
@@ -42,9 +47,6 @@ public interface IAdminDao {
 	public boolean updateRoom(Long cityId, Long hotelId,
 			Long roomId, String roomType) throws HotelException;
 	
-	
-	public Map<Long,Hotel> showHotel(Long cityId)
-			throws HotelException;
 
 //	void updateBooking(Booking booking);
 

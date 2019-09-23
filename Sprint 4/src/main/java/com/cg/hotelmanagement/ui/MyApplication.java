@@ -25,6 +25,10 @@ public class MyApplication {
 		Scanner sc = new Scanner(System.in);
 
 		AdminService adminService = new AdminService();
+		
+		System.out.println(adminService.showHotel(2l));
+		
+		System.out.println(adminService.showRoom(2l, 1l));
 
 		//ICustomerService customerService = new CustomerService();
 

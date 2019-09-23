@@ -51,12 +51,13 @@ public class AdminDao implements IAdminDao {
 			
 			entityManager.remove(city);
 			tx.commit();
+			return true;
 		
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		return true;
+		return false;
 	}
 
 	@Override
@@ -90,8 +91,9 @@ public class AdminDao implements IAdminDao {
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	@Override
@@ -125,8 +127,9 @@ public class AdminDao implements IAdminDao {
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	@Override
@@ -144,8 +147,9 @@ public class AdminDao implements IAdminDao {
 
 	@Override
 	public List<City> getCityList() {
-		// TODO Auto-generated method stub
-		return null;
+		Query query = JPAUtil.getEntityManager().createQuery("From City");
+		List<City> cityList = query.getResultList();
+		return cityList;
 	}
 
 	@Override
@@ -180,8 +184,23 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public Map<Long, Hotel> showHotel(Long cityId) throws HotelException {
-		// TODO Auto-generated method stub
+	public List<Hotel> showHotel(Long cityId) throws HotelException {
+		Query query = JPAUtil.getEntityManager().createQuery("From Hotel h where h.cityId:first");
+		query.setParameter("first", cityId);
+		List<Hotel> hotelList = query.getResultList();
+		return hotelList;
+	}
+
+	@Override
+	public List<Room> showRoom(Long cityId, Long hotelId) {
+		Query query = JPAUtil.getEntityManager().createQuery("From Hotel h where h.cityId:first");
+		query.setParameter("first", cityId);
+		List<Hotel> hotelList = query.getResultList();
+		for(Hotel hotel:hotelList) {
+			if(hotel.getHotelId()==hotelId) {
+				System.out.println(hotel.getRoomList());
+			}
+		}
 		return null;
 	}
 
