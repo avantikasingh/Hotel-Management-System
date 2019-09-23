@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -21,7 +22,8 @@ public class City {
 	private Long cityId;
 	@Column(name="city_name")
 	private String cityName;
-	@OneToMany(mappedBy="city",cascade=CascadeType.ALL)
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="city_id")
 	private List<Hotel> hotelList=new LinkedList<Hotel>();
 
 	public City()

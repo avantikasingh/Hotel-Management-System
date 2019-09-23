@@ -32,18 +32,16 @@ public class Hotel {
 	@Column(name="hotel_rating")
 	private Float hotelRating;
 	
-	@OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name="hotel_id")
 	private List<Room> roomList = new LinkedList<>();
 
-	@ManyToOne
-	@JoinColumn(name="city_id")
-	private City city;
 	
 	public Hotel() {
 	}
 
 	public Hotel(Long hotelId, String hotelName, String hotelAddress, Long hotelPhoneNumber, Float hotelRating,
-			List<Room> roomList, City city) {
+			List<Room> roomList) {
 		super();
 		this.hotelId = hotelId;
 		this.hotelName = hotelName;
@@ -51,7 +49,7 @@ public class Hotel {
 		this.hotelPhoneNumber = hotelPhoneNumber;
 		this.hotelRating = hotelRating;
 		this.roomList = roomList;
-		this.city = city;
+		
 	}
 
 	public Long getHotelId() {
@@ -102,19 +100,12 @@ public class Hotel {
 		this.roomList = roomList;
 	}
 
-	public City getCity() {
-		return city;
-	}
-
-	public void setCity(City city) {
-		this.city = city;
-	}
-
+	
 	@Override
 	public String toString() {
 		return "Hotel [hotelId=" + hotelId + ", hotelName=" + hotelName + ", hotelAddress=" + hotelAddress
 				+ ", hotelPhoneNumber=" + hotelPhoneNumber + ", hotelRating=" + hotelRating + ", roomList=" + roomList
-				+ ", city=" + city + "]";
+				+  "]";
 	}
 
 	

@@ -31,27 +31,22 @@ public class Room {
 	@Column(name="room_number")
 	private String roomNumber;
 	
-	@OneToMany(mappedBy = "room",cascade = CascadeType.ALL )	
+	@OneToMany(cascade = CascadeType.ALL )	
+	@JoinColumn(name="room_id")
 	private List<Booking> bookingDetails=new LinkedList<>();
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "hotel_Id")
-	private Hotel hotel;
-
 	public Room() {
 	}
 
 
 	
-	public Room(Long roomId, String roomType, Double roomRent, String roomNumber, List<Booking> bookingDetails,
-			Hotel hotel) {
+	public Room(Long roomId, String roomType, Double roomRent, String roomNumber, List<Booking> bookingDetails) {
 		super();
 		this.roomId = roomId;
 		this.roomType = roomType;
 		this.roomRent = roomRent;
 		this.roomNumber = roomNumber;
 		this.bookingDetails = bookingDetails;
-		this.hotel = hotel;
 	}
 	
 	
@@ -96,20 +91,13 @@ public class Room {
 		this.bookingDetails = bookingDetails;
 	}
 
-	public Hotel getHotel() {
-		return hotel;
-	}
-
-	public void setHotel(Hotel hotel) {
-		this.hotel = hotel;
-	}
 
 
 
 	@Override
 	public String toString() {
 		return "Room [roomId=" + roomId + ", roomType=" + roomType + ", roomRent=" + roomRent + ", roomNumber="
-				+ roomNumber + ", bookingDetails=" + bookingDetails + ", hotel=" + hotel + "]";
+				+ roomNumber + ", bookingDetails=" + bookingDetails +  "]";
 	}
 
 

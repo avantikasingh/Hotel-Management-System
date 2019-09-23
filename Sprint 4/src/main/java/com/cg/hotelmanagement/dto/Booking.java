@@ -29,9 +29,6 @@ public class Booking {
 	@OneToOne(cascade = CascadeType.ALL)
 	private User user;
 	
-	@ManyToOne
-	@JoinColumn(name="room_id")
-	private Room room;
 	
 	public Booking(Long bookingId, Date checkIn, Date checkOut) {
 		super();

@@ -64,7 +64,7 @@ public class AdminDao implements IAdminDao {
 	public boolean addHotel(Long cityId, Hotel hotel) throws HotelException {
 		// TODO Auto-generated method stub
 		
-		hotel.setCity(entityManager.find(City.class, cityId));
+		//hotel.setCity(entityManager.find(City.class, cityId));
 		//add hotel to database
 		tx.begin();
 		entityManager.persist(hotel);
@@ -102,7 +102,7 @@ public class AdminDao implements IAdminDao {
 	public boolean addRoom(Long hotelId, Room room) throws HotelException {
 		// TODO Auto-generated method stub
 		System.out.println(room);
-		room.setHotel(entityManager.find(Hotel.class,hotelId));
+		//room.setHotel(entityManager.find(Hotel.class,hotelId));
 		//add room to database
 		tx.begin();
 		entityManager.persist(room);
