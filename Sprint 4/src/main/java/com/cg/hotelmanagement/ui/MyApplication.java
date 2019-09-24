@@ -36,9 +36,9 @@ public class MyApplication {
 
 		//adminService.makeBooking(2l, 1l, dateFormat.parse("2019-04-07"), dateFormat.parse("2019-05-08"), 1l, 1l);
 		
-		adminService.updateHotel(2l, 1l, "Trident");
+		//adminService.updateHotel(2l, 1l, "Trident");
 		
-		adminService.updateRoom(2l, 1l, 1l, "Premium");
+		//adminService.updateRoom(2l, 1l, 1l, "Premium");
 		
 //		try {
 //			adminService.addCity(BigInteger.valueOf(cityIdSys), "Pune");
@@ -354,7 +354,7 @@ public class MyApplication {
 					case 10: {
 						List<City> cityList = adminService.showCity();
 						for(City city:cityList)
-							System.out.println(city);
+							System.out.println(city.getCityId()+" "+city.getCityName());
 						break;
 					}
 
@@ -371,7 +371,7 @@ public class MyApplication {
 						List<Hotel> hotelList = adminService.showHotel(cityId1);
 						if(hotelList!=null){
 							for(Hotel hotel:hotelList)
-								System.out.println(hotel);
+								System.out.println(hotel.getHotelId()+" "+hotel.getHotelName()+" "+hotel.getHotelAddress()+" "+hotel.getHotelPhoneNumber()+" "+hotel.getHotelRating());
 						}
 						else
 							System.out.println("Does not exist");
@@ -398,7 +398,7 @@ public class MyApplication {
 						}
 						List<Room> roomList = adminService.showRoom(cityId1, hotelId);
 						for(Room room:roomList)
-							System.out.println(room);
+							System.out.println(room.getRoomId()+" "+room.getRoomNumber()+" "+room.getRoomType()+" "+room.getRoomRent());
 						break;
 					}
 					case 13:
@@ -442,6 +442,10 @@ public class MyApplication {
 						System.out.println("Enter date in correct format");
 						continue;
 					}
+				}
+				if(!Validate.validateCheckInCheckOutDate(checkIn, checkOut)) {
+					System.out.println("Check In date should be less than Check out");
+					break;
 				}
 				System.out.println("Enter city id");
 				while (true) {
@@ -620,30 +624,40 @@ public class MyApplication {
 	}
 
 	public static void printAdminDetails() {
-		System.out.println("Enter 1 to Add a City");
-		System.out.println("Enter 2 to Remove a City");
+		System.out.println("---------------------------------------------------------");
+		System.out.println("Enter choice between 1 to 13");
+		System.out.println("1: Add a City");
+		System.out.println("2: Remove a City");
 		// System.out.println("Enter 3 to Update a City");
-		System.out.println("Enter 4 to Add a Hotel");
-		System.out.println("Enter 5 to Remove a Hotel");
-		System.out.println("Enter 6 to Update a Hotel");
-		System.out.println("Enter 7 to Add a Room");
-		System.out.println("Enter 8 to Remove a Room");
-		System.out.println("Enter 9 to Update a Room");
-		System.out.println("Enter 10 to Show a City");
-		System.out.println("Enter 11 to Show a Hotel");
-		System.out.println("Enter 12 to Show a Room");
-		System.out.println("Enter 13 to exit");
+		System.out.println("4: Add a Hotel");
+		System.out.println("5: Remove a Hotel");
+		System.out.println("6: Update a Hotel");
+		System.out.println("7: Add a Room");
+		System.out.println("8: Remove a Room");
+		System.out.println("9: Update a Room");
+		System.out.println("10: Show a City");
+		System.out.println("11: Show a Hotel");
+		System.out.println("12: Show a Room");
+		System.out.println("13: Exit");
+		System.out.println("---------------------------------------------------------");
 	}
 
 	public static void printLoggedInUserDetails() {
-		System.out.println("Enter 1 to Register");
-		System.out.println("Enter 2 to view hotels");
-		System.out.println("Enter 3 to exit");
+		System.out.println("---------------------------------------------------------");
+		System.out.println("Enter choice between 1 to 3");
+		System.out.println("1: Register");
+		System.out.println("2: View hotels");
+		System.out.println("3: Exit");
+		System.out.println("---------------------------------------------------------");
 	}
 
 	public static void printCustomerDetails() {
-		System.out.println("Enter 1 to make booking");
-		System.out.println("Enter 2 to exit");
+		System.out.println("---------------------------------------------------------");
+		System.out.println("Enter choice between 1 to 2");
+		System.out.println("1: Make booking");
+		//System.out.println("2: View booking");
+		System.out.println("2: Exit");
+		System.out.println("---------------------------------------------------------");
 	}
 
 }
