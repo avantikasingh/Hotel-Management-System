@@ -63,6 +63,8 @@ public class MyApplication {
 			Long cityId;
 			Long hotelId, roomId = null;
 			String hotelName, hotelAddress, hotelPhone;
+			List<City> cityList;
+			List<Hotel> hotelList;
 			role = 0;adminChoice = 0;
 			while (true) {
 				String s = sc.next();
@@ -113,6 +115,13 @@ public class MyApplication {
 					}
 
 					case 2: {
+						
+						cityList = adminService.showCity();
+						System.out.println("---------------------------------------------------------");
+						for(City city:cityList)
+							System.out.println(city.getCityId()+" "+city.getCityName());
+						System.out.println("---------------------------------------------------------");
+						
 						System.out.println("Enter City Id to be Removed :");
 
 						while (true) {
@@ -143,6 +152,13 @@ public class MyApplication {
 
 					case 4: {
 						// Long cityId1;
+						cityList = adminService.showCity();
+						System.out.println("---------------------------------------------------------");
+						for(City city:cityList)
+							System.out.println(city.getCityId()+" "+city.getCityName());
+						System.out.println("---------------------------------------------------------");
+						
+						
 						System.out.println("Enter city Id");
 						while (true) {
 							input = sc.next();
@@ -188,6 +204,13 @@ public class MyApplication {
 					}
 
 					case 5:
+						
+						cityList = adminService.showCity();
+						System.out.println("---------------------------------------------------------");
+						for(City city:cityList)
+							System.out.println(city.getCityId()+" "+city.getCityName());
+						System.out.println("---------------------------------------------------------");
+						
 
 						System.out.println("Enter City Id in which Hotel is to be removed :");
 						while (true) {
@@ -197,6 +220,16 @@ public class MyApplication {
 								break;
 							}
 						}
+
+						hotelList = adminService.showHotel(cityId);
+						System.out.println("---------------------------------------------------------");
+						if(hotelList!=null){
+							for(Hotel hotel:hotelList)
+								System.out.println(hotel.getHotelId()+" "+hotel.getHotelName()+" "+hotel.getHotelAddress()+" "+hotel.getHotelPhoneNumber()+" "+hotel.getHotelRating());
+						}
+						else
+							System.out.println("No Hotels exist in this city!");
+						System.out.println("---------------------------------------------------------");
 
 						System.out.println("Enter Hotel Id to be removed:");
 						while (true) {
@@ -212,6 +245,13 @@ public class MyApplication {
 						break;
 
 					case 6:
+						
+						cityList = adminService.showCity();
+						System.out.println("---------------------------------------------------------");
+						for(City city:cityList)
+							System.out.println(city.getCityId()+" "+city.getCityName());
+						System.out.println("---------------------------------------------------------");
+						
 						System.out.println("City id");
 						while (true) {
 							input = sc.next();
@@ -220,6 +260,17 @@ public class MyApplication {
 								break;
 							}
 						}
+						
+						hotelList = adminService.showHotel(cityId);
+						System.out.println("---------------------------------------------------------");
+						if(hotelList!=null){
+							for(Hotel hotel:hotelList)
+								System.out.println(hotel.getHotelId()+" "+hotel.getHotelName()+" "+hotel.getHotelAddress()+" "+hotel.getHotelPhoneNumber()+" "+hotel.getHotelRating());
+						}
+						else
+							System.out.println("Does not exist");
+						System.out.println("---------------------------------------------------------");
+
 						System.out.println("Enter hotel id");
 						while (true) {
 							input = sc.next();
@@ -247,6 +298,13 @@ public class MyApplication {
 
 					case 7: {
 
+						cityList = adminService.showCity();
+						System.out.println("---------------------------------------------------------");
+						for(City city:cityList)
+							System.out.println(city.getCityId()+" "+city.getCityName());
+						System.out.println("---------------------------------------------------------");
+						
+						
 						System.out.println("Enter City Id in which Room is to be added :");
 						while (true) {
 							input = sc.next();
@@ -255,6 +313,18 @@ public class MyApplication {
 								break;
 							}
 						}
+						
+						hotelList = adminService.showHotel(cityId);
+						System.out.println("---------------------------------------------------------");
+						if(hotelList!=null){
+							for(Hotel hotel:hotelList)
+								System.out.println(hotel.getHotelId()+" "+hotel.getHotelName()+" "+hotel.getHotelAddress()+" "+hotel.getHotelPhoneNumber()+" "+hotel.getHotelRating());
+						}
+						else
+							System.out.println("Does not exist");
+						System.out.println("---------------------------------------------------------");
+
+						
 						System.out.println("Enter Hotel Id in which Room is to be added:");
 						while (true) {
 							input = sc.next();
@@ -285,9 +355,29 @@ public class MyApplication {
 					}
 
 					case 8: {
-
+						
+						cityList = adminService.showCity();
+						System.out.println("---------------------------------------------------------");
+						for(City city:cityList)
+							System.out.println(city.getCityId()+" "+city.getCityName());
+						System.out.println("---------------------------------------------------------");
+						
+						
 						System.out.println("Enter City Id in which Room is to be removed :");
 						Long cityId4 = sc.nextLong();
+						
+						
+						hotelList = adminService.showHotel(cityId4);
+						System.out.println("---------------------------------------------------------");
+						if(hotelList!=null){
+							for(Hotel hotel:hotelList)
+								System.out.println(hotel.getHotelId()+" "+hotel.getHotelName()+" "+hotel.getHotelAddress()+" "+hotel.getHotelPhoneNumber()+" "+hotel.getHotelRating());
+						}
+						else
+							System.out.println("Does not exist");
+						System.out.println("---------------------------------------------------------");
+
+						
 
 						System.out.println("Enter Hotel Id in which Room is to be removed:");
 						Long hotelId3 = sc.nextLong();
@@ -301,8 +391,27 @@ public class MyApplication {
 					}
 
 					case 9: {
+						
+						cityList = adminService.showCity();
+						System.out.println("---------------------------------------------------------");
+						for(City city:cityList)
+							System.out.println(city.getCityId()+" "+city.getCityName());
+						System.out.println("---------------------------------------------------------");
+						
+						
 						System.out.println("Enter City Id in which Room is to be updated :");
 						cityId = sc.nextLong();
+						
+						hotelList = adminService.showHotel(cityId);
+						System.out.println("---------------------------------------------------------");
+						if(hotelList!=null){
+							for(Hotel hotel:hotelList)
+								System.out.println(hotel.getHotelId()+" "+hotel.getHotelName()+" "+hotel.getHotelAddress()+" "+hotel.getHotelPhoneNumber()+" "+hotel.getHotelRating());
+						}
+						else
+							System.out.println("Does not exist");
+						System.out.println("---------------------------------------------------------");
+
 
 						System.out.println("Enter Hotel Id in which Room is to be updated:");
 						hotelId = sc.nextLong();
@@ -353,13 +462,19 @@ public class MyApplication {
 					}
 
 					case 10: {
-						List<City> cityList = adminService.showCity();
+						cityList = adminService.showCity();
 						for(City city:cityList)
 							System.out.println(city.getCityId()+" "+city.getCityName());
 						break;
 					}
 
 					case 11: {
+						cityList = adminService.showCity();
+						System.out.println("---------------------------------------------------------");
+						for(City city:cityList)
+							System.out.println(city.getCityId()+" "+city.getCityName());
+						System.out.println("---------------------------------------------------------");
+						
 						System.out.println("Enter city Id");
 						Long cityId1;
 						while (true) {
@@ -369,7 +484,7 @@ public class MyApplication {
 								break;
 							}
 						}
-						List<Hotel> hotelList = adminService.showHotel(cityId1);
+						hotelList = adminService.showHotel(cityId1);
 						if(hotelList!=null){
 							for(Hotel hotel:hotelList)
 								System.out.println(hotel.getHotelId()+" "+hotel.getHotelName()+" "+hotel.getHotelAddress()+" "+hotel.getHotelPhoneNumber()+" "+hotel.getHotelRating());
@@ -380,6 +495,14 @@ public class MyApplication {
 					}
 
 					case 12: {
+						
+						cityList = adminService.showCity();
+						System.out.println("---------------------------------------------------------");
+						for(City city:cityList)
+							System.out.println(city.getCityId()+" "+city.getCityName());
+						System.out.println("---------------------------------------------------------");
+						
+						
 						System.out.println("Enter city Id");
 						Long cityId1;
 						while (true) {
@@ -389,6 +512,18 @@ public class MyApplication {
 								break;
 							}
 						}
+						
+						hotelList = adminService.showHotel(cityId1);
+						System.out.println("---------------------------------------------------------");
+						if(hotelList!=null){
+							for(Hotel hotel:hotelList)
+								System.out.println(hotel.getHotelId()+" "+hotel.getHotelName()+" "+hotel.getHotelAddress()+" "+hotel.getHotelPhoneNumber()+" "+hotel.getHotelRating());
+						}
+						else
+							System.out.println("Does not exist");
+						System.out.println("---------------------------------------------------------");
+
+						
 						System.out.println("Enter hotel Id");
 						while (true) {
 							input = sc.next();
@@ -637,9 +772,9 @@ public class MyApplication {
 		System.out.println("7: Add a Room");
 		System.out.println("8: Remove a Room");
 		System.out.println("9: Update a Room");
-		System.out.println("10: Show a City");
-		System.out.println("11: Show a Hotel");
-		System.out.println("12: Show a Room");
+		System.out.println("10: View Cities");
+		System.out.println("11: View Hotels");
+		System.out.println("12: View Rooms");
 		System.out.println("13: Exit");
 		System.out.println("---------------------------------------------------------");
 	}
