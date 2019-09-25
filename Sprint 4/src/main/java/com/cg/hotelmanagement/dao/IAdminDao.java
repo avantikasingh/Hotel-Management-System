@@ -37,7 +37,7 @@ public interface IAdminDao {
 
 	void showBooking(Booking booking);
 	
-	public boolean register(User user)throws HotelException;
+	public boolean register(Customer customer)throws HotelException;
 
 	//public boolean register(Customer customer, Long userId) throws HotelException;
 		

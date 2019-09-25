@@ -10,7 +10,7 @@ import com.cg.hotelmanagement.dto.Booking;
 import com.cg.hotelmanagement.dto.City;
 import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
-import com.cg.hotelmanagement.dto.User;
+import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.exception.HotelException;
 import com.cg.hotelmanagement.util.JPAUtil;
 
@@ -135,7 +135,7 @@ public class AdminDao implements IAdminDao {
 	@Override
 	public void makeBooking(Long cityId, Long hotelId, Date checkIn, Date checkOut, Long roomId, Long userId) {
 		Booking booking = new Booking(1l, checkIn, checkOut);
-		User user = entityManager.find(User.class, userId);
+		Customer customer = entityManager.find(Customer.class, userId);
 		City city = entityManager.find(City.class, cityId);
 		List<Hotel> hotelList = city.getHotelList();
 		List<Room> roomList;
@@ -145,7 +145,7 @@ public class AdminDao implements IAdminDao {
 				for(Room room:roomList) {
 					if(room.getRoomId()==roomId) {
 						tx.begin();
-						user.setBooking(booking);
+						customer.setBooking(booking);
 						room.getBookingDetails().add(booking);
 						entityManager.merge(room);
 						tx.commit();
@@ -184,7 +184,7 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean register(User user) throws HotelException {
+	public boolean register(Customer customer) throws HotelException {
 		// TODO Auto-generated method stub
 		return false;
 	}

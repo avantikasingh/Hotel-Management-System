@@ -28,7 +28,7 @@ public class Booking {
 	private Date checkOut;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private User user;
+	private Customer customer;
 	
 	
 	public Booking(Long bookingId, Date checkIn, Date checkOut) {

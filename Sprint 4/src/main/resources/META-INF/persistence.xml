@@ -5,7 +5,7 @@
 
         <!-- Entity classes -->
         
-        <class>com.cg.hotelmanagement.dto.User</class>
+        <class>com.cg.hotelmanagement.dto.Customer</class>
         <class>com.cg.hotelmanagement.dto.Hotel</class>
         <class>com.cg.hotelmanagement.dto.Room</class>
         <class>com.cg.hotelmanagement.dto.Booking</class>
@@ -13,7 +13,7 @@
         
         <properties>
             <!-- The JDBC URL to the database instance -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://LocalHost/hoteldb" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://LocalHost/testdb" />
             <!-- The database username -->
             <property name="javax.persistence.jdbc.user" value="root" />
             <!-- The database password -->

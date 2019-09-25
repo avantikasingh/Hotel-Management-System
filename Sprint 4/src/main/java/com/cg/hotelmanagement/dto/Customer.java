@@ -1,5 +1,6 @@
 package com.cg.hotelmanagement.dto;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -12,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class User {
+public class Customer {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long userId;
 	@Column(name="username")
@@ -20,7 +21,7 @@ public class User {
 	@Column(name="email_id")
 	protected String emailId;
 	@Column(name="dob")
-	protected Date dob;
+	protected LocalDate dob;
 	@Column(name="user_mobile")
 	protected String userMobile;
 	@Column(name="first_name")
@@ -35,11 +36,11 @@ public class User {
 	@OneToOne
 	private Booking booking;
 
-	public User() {
+	public Customer() {
 	}
 
-	public User(String username, String emailId, Date dob, String userMobile, String firstName,
-			String lastName, String aadharNumber, Booking booking) {
+	public Customer(String username, String emailId, LocalDate dob, String userMobile, String firstName,
+			String lastName, String gender, String aadharNumber, Booking booking) {
 		super();
 		this.username = username;
 		this.emailId = emailId;
@@ -76,11 +77,11 @@ public class User {
 		this.emailId = emailId;
 	}
 
-	public Date getDob() {
+	public LocalDate getDob() {
 		return dob;
 	}
 
-	public void setDob(Date dob) {
+	public void setDob(LocalDate dob) {
 		this.dob = dob;
 	}
 
@@ -134,7 +135,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", username=" + username + ", emailId=" + emailId + ", dob=" + dob
+		return "Customer [userId=" + userId + ", username=" + username + ", emailId=" + emailId + ", dob=" + dob
 				+ ", userMobile=" + userMobile + ", firstName=" + firstName + ", lastName=" + lastName + ", gender="
 				+ gender + ", aadharNumber=" + aadharNumber + ", booking=" + booking + "]";
 	}

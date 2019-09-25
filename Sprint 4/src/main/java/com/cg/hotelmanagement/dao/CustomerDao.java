@@ -3,10 +3,10 @@ package com.cg.hotelmanagement.dao;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import com.cg.hotelmanagement.dto.User;
+import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.util.JPAUtil;
 
-public class UserDao implements IUserDao {
+public class CustomerDao implements ICustomerDao {
 	
 	private static EntityTransaction tx;
 	private static EntityManager entityManager;
@@ -17,9 +17,9 @@ public class UserDao implements IUserDao {
 	}
 
 	@Override
-	public boolean register(User user) {
+	public boolean register(Customer customer) {
 		tx.begin();
-		entityManager.persist(user);
+		entityManager.persist(customer);
 		tx.commit();
 		return true;
 	}

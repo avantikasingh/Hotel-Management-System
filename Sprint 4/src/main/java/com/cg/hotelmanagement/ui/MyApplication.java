@@ -9,6 +9,7 @@ import com.cg.hotelmanagement.service.*;
 import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -28,7 +29,7 @@ public class MyApplication {
 		IAdminService adminService = new AdminService();
 		
 		
-		IUserService userService = new UserService();
+		ICustomerService customerService = new CustomerService();
 
 		//ICustomerService customerService = new CustomerService();
 
@@ -516,19 +517,14 @@ public class MyApplication {
 								continue;
 							}
 						}
-						Date dateOfBirth = null;
+						
+						LocalDate dateOfBirth = null;
 						System.out.println("Enter dateOfBirth in yyyy-mm-dd");
-						while (true) {
-							input = sc.next();
-							try {
-								Date date = dateFormat.parse(input);
-								break;
+					
+						input = sc.next();
+							
+						dateOfBirth = LocalDate.parse(input);
 
-							} catch (ParseException e) {
-								System.out.println("Enter date in proper format");
-								continue;
-							}
-						}
 						String userMobileNo;
 						System.out.println("Enter mobile number");
 						while (true) {
@@ -560,7 +556,7 @@ public class MyApplication {
 						while (true) {
 							input = sc.next();
 							try {
-								firstName = Validate.isStringOnlyAlphabet(input);
+								lastName = Validate.isStringOnlyAlphabet(input);
 								break;
 
 							} catch (HotelException e) {
@@ -568,6 +564,12 @@ public class MyApplication {
 								continue;
 							}
 						}
+						
+						String gender;
+						System.out.println("Enter Gender(Male/Female/Other)");
+						gender=sc.next();
+						
+						
 						BigInteger aadharNumber;
 						System.out.println("Enter aadhar number");
 						while (true) {
@@ -578,7 +580,7 @@ public class MyApplication {
 							}
 						}
 
-						userService.register(firstName, lastName, username, emailId, dateOfBirth, userMobileNo,aadharNumber.toString());
+						customerService.register(firstName, lastName, gender,username, emailId, dateOfBirth, userMobileNo,aadharNumber.toString());
 						break;
 					}
 					case 2: {
