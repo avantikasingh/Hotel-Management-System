@@ -22,6 +22,9 @@ public class City {
 	private Long cityId;
 	@Column(name="city_name")
 	private String cityName;
+	@Column(name="delete_flag")
+	private int deleteFlag=0;
+	
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="city_id")
 	private List<Hotel> hotelList=new LinkedList<Hotel>();
@@ -61,6 +64,14 @@ public class City {
 	public void setHotelList(List<Hotel> hotelList) {
 		this.hotelList = hotelList;
 	}
+	public int getDeleteFlag() {
+		return deleteFlag;
+	}
+
+	public void setDeleteFlag(int deleteFlag) {
+		this.deleteFlag = deleteFlag;
+	}
+
 
 	@Override
 	public String toString() {

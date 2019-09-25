@@ -31,6 +31,9 @@ public class Hotel {
 	private Long hotelPhoneNumber;
 	@Column(name="hotel_rating")
 	private Float hotelRating;
+	@Column(name="delete_flag")
+	private int deleteFlag=0;
+	
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="hotel_id")
@@ -99,6 +102,15 @@ public class Hotel {
 	public void setRoomList(List<Room> roomList) {
 		this.roomList = roomList;
 	}
+	
+	public int getDeleteFlag() {
+		return deleteFlag;
+	}
+
+	public void setDeleteFlag(int deleteFlag) {
+		this.deleteFlag = deleteFlag;
+	}
+
 
 	
 	@Override

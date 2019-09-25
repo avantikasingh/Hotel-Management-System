@@ -30,6 +30,9 @@ public class Room {
 	private Double roomRent;
 	@Column(name="room_number")
 	private String roomNumber;
+	@Column(name="delete_flag")
+	private int deleteFlag=0;
+	
 	
 	@OneToMany(cascade = CascadeType.ALL )	
 	@JoinColumn(name="room_id")
@@ -91,6 +94,13 @@ public class Room {
 		this.bookingDetails = bookingDetails;
 	}
 
+	public int getDeleteFlag() {
+		return deleteFlag;
+	}
+
+	public void setDeleteFlag(int deleteFlag) {
+		this.deleteFlag = deleteFlag;
+	}
 
 
 

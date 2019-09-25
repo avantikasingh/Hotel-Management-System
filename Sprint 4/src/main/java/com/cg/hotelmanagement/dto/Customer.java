@@ -32,6 +32,8 @@ public class Customer {
 	private String gender;
 	@Column(name="aadhar_number")
 	private String aadharNumber;
+	@Column(name="delete_flag")
+	private int deleteFlag=0;
 	
 	@OneToOne
 	private Booking booking;
@@ -67,6 +69,14 @@ public class Customer {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+ 
+	public int getDeleteFlag() {
+		return deleteFlag;
+	}
+
+	public void setDeleteFlag(int deleteFlag) {
+		this.deleteFlag = deleteFlag;
 	}
 
 	public String getEmailId() {

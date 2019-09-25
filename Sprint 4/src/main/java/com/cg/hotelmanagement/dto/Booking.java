@@ -26,6 +26,8 @@ public class Booking {
 	@Temporal(TemporalType.DATE)
 	@Column(name="check_out")
 	private Date checkOut;
+	@Column(name="delete_flag")
+	private int deleteFlag=0;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Customer customer;
@@ -58,6 +60,14 @@ public class Booking {
 	public void setCheckOut(Date checkOut) {
 		this.checkOut = checkOut;
 	}
+	public int getDeleteFlag() {
+		return deleteFlag;
+	}
+
+	public void setDeleteFlag(int deleteFlag) {
+		this.deleteFlag = deleteFlag;
+	}
+
 	@Override
 	public String toString() {
 		return "Booking [bookingId=" + bookingId + ", checkIn=" + checkIn + ", checkOut=" + checkOut + "]";

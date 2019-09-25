@@ -48,8 +48,19 @@ public class AdminDao implements IAdminDao {
 			try{
 				tx.begin();
 			
+			city.setDeleteFlag(1);
+			//delete all hotels in the city
+			List<Hotel> hotelList=city.getHotelList();
+			for(Hotel hotel:hotelList)
+			{
+				hotel.setDeleteFlag(1);
+				//delete all room in hotel
+				List<Room> roomList=hotel.getRoomList();
+				for(Room room:roomList)
+					room.setDeleteFlag(1);
+			}
 			
-			entityManager.remove(city);
+			entityManager.merge(city);
 			tx.commit();
 			return true;
 		
@@ -84,8 +95,14 @@ public class AdminDao implements IAdminDao {
 			try{
 				tx.begin();
 			
+			hotel.setDeleteFlag(1);
+			//delete all room in hotel
+			List<Room> roomList=hotel.getRoomList();
+			for(Room room:roomList)
+				room.setDeleteFlag(1);
+
 			
-			entityManager.remove(hotel);
+			entityManager.merge(hotel);
 			tx.commit();
 		
 			}catch (Exception e) {
@@ -120,8 +137,8 @@ public class AdminDao implements IAdminDao {
 			try{
 				tx.begin();
 			
-			
-			entityManager.remove(room);
+			room.setDeleteFlag(1);
+			entityManager.merge(room);
 			tx.commit();
 		
 			}catch (Exception e) {
@@ -166,7 +183,7 @@ public class AdminDao implements IAdminDao {
 
 	@Override
 	public List<City> getCityList() {
-		Query query = JPAUtil.getEntityManager().createQuery("From City");
+		Query query = JPAUtil.getEntityManager().createQuery("From City c where c.deleteFlag!=1");
 		List<City> cityList = query.getResultList();
 		return cityList;
 	}
@@ -234,7 +251,7 @@ public class AdminDao implements IAdminDao {
 
 	@Override
 	public List<Hotel> showHotel(Long cityId) throws HotelException {
-		Query query = JPAUtil.getEntityManager().createQuery("From Hotel h where h.cityId:first");
+		Query query = JPAUtil.getEntityManager().createQuery("From Hotel h where h.cityId:first and h.deleteFlag!=1");
 		query.setParameter("first", cityId);
 		List<Hotel> hotelList = query.getResultList();
 		return hotelList;
@@ -242,12 +259,16 @@ public class AdminDao implements IAdminDao {
 
 	@Override
 	public List<Room> showRoom(Long cityId, Long hotelId) {
-		Query query = JPAUtil.getEntityManager().createQuery("From Hotel h where h.cityId:first");
+		Query query = JPAUtil.getEntityManager().createQuery("From Hotel h where h.cityId:first and h.deleteFlag!=1");
 		query.setParameter("first", cityId);
 		List<Hotel> hotelList = query.getResultList();
 		for(Hotel hotel:hotelList) {
 			if(hotel.getHotelId()==hotelId) {
-				System.out.println(hotel.getRoomList());
+				for(Room room:hotel.getRoomList())
+				{
+					if(room.getDeleteFlag()!=1)
+						System.out.println(room);
+				}
 			}
 		}
 		return null;
