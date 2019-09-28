@@ -22,7 +22,7 @@ import com.cg.hotelmanagement.exception.HotelException;
 public class CustomerService implements ICustomerService {
 	
 	@Autowired
-	CustomerDao customerDao;;
+	ICustomerDao customerDao;;
 
 	@Override
 	public boolean register(String firstName, String lastName, String gender,String username, String emailId, LocalDate dateOfBirth,

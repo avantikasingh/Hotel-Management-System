@@ -2,17 +2,18 @@ package com.cg.hotelmanagement.dao;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
-import javax.persistence.*;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
 import com.cg.hotelmanagement.dto.Booking;
 import com.cg.hotelmanagement.dto.City;
+import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
-import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.exception.HotelException;
 import com.cg.hotelmanagement.util.JPAUtil;
 

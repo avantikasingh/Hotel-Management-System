@@ -1,29 +1,26 @@
 package com.cg.hotelmanagement.service;
-import com.cg.hotelmanagement.dao.AdminDao;
-import com.cg.hotelmanagement.dao.IAdminDao;
-import com.cg.hotelmanagement.dto.*;
-import com.cg.hotelmanagement.exception.HotelException;
-
-import java.math.BigInteger;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cg.hotelmanagement.dao.IAdminDao;
+import com.cg.hotelmanagement.dto.Booking;
+import com.cg.hotelmanagement.dto.City;
+import com.cg.hotelmanagement.dto.Hotel;
+import com.cg.hotelmanagement.dto.Room;
+import com.cg.hotelmanagement.exception.HotelException;
+
 
 @Service("adminService")
 @Transactional
-
 public class AdminService implements IAdminService {
 
 	@Autowired
-	AdminDao adminDao;
+	IAdminDao adminDao;
 
 	@Override
 	public boolean addCity(City city) throws Exception {
