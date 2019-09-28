@@ -25,7 +25,7 @@
     </plugins>
   </build>
   
-  <properties>
+   <properties>
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <spring.version>5.1.0.RELEASE</spring.version>
         <hibernate.version>5.3.5.Final</hibernate.version>
@@ -93,6 +93,5 @@
             <version>5.1.47</version>
         </dependency>
     </dependencies>
-  
   
 </project>

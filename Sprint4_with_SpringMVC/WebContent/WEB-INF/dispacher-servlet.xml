@@ -13,32 +13,33 @@
         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
         http://www.springframework.org/schema/tx 
         http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
-        <context:component-scan base-package="com.cg.hotelmanagement"></context:component-scan>
-       <mvc:annotation-driven/>
-     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <property name="prefix" value="/" />
-    <property name="suffix" value=".jsp" />
-    </bean>
-    
-    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+       <context:component-scan
+		base-package="com.cg.hotelmanagement"></context:component-scan>
+	<mvc:annotation-driven />
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
     <!-- This bean will hold references to our database -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/avantika" />
+		<property name="url" value="jdbc:mysql://localhost:3306/lab3" />
 		<property name="username" value="root" />
-		<property name="password" value="root" />
+		<property name="password" value="1234" />
 	</bean>
 	
 	<!-- Spring way of entity manager factory configuration -->
 	
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
           <property name="dataSource" ref="dataSource"/>
-          <property name="packagesToScan" value="com.cg.springmvcdemo.dto"/>
+          <property name="packagesToScan" value="com.cg.hotelmanagement.dto"/>
           <property name="persistenceProviderClass" value="org.hibernate.jpa.HibernatePersistenceProvider"/>
           <property name="jpaPropertyMap">
               <map>
                   <entry key="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
-                  <entry key="hibernate.hbm2ddl.auto" value="update"/>
+                  <entry key="hibernate.hbm2ddl.auto" value="create"/>
                
               </map>
               
@@ -52,9 +53,5 @@
 	
 	<!-- This is required to handle transactions via Annotations like @Transactional -->
 	<tx:annotation-driven transaction-manager="transactionManager"/>
-    
-    
-    
-    </beans>
-    
-   
+
+</beans>

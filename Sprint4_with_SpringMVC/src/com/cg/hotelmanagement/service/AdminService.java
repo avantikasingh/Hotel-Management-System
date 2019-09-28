@@ -26,10 +26,8 @@ public class AdminService implements IAdminService {
 	AdminDao adminDao;
 
 	@Override
-	public boolean addCity(Long cityId, String cityName) throws Exception {
-		City city = new City();
-		//city.setCityId(cityId);
-		city.setCityName(cityName);
+	public boolean addCity(City city) throws Exception {
+		city.setDeleteFlag(0);
 		return adminDao.addCity(city);
 	}
 

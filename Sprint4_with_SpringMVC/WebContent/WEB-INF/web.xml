@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	id="WebApp_ID" version="3.1">
-	<display-name>Sprint4_with_SpringMVC</display-name>
-	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
-	</welcome-file-list>
-	<servlet>
-		<servlet-name>dispacher</servlet-name>
-		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-	</servlet>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>SpringMvcDemo</display-name>
+  <welcome-file-list>
 
-	<servlet-mapping>
-		<servlet-name>dispacher</servlet-name>
-		<url-pattern>/</url-pattern>
-	</servlet-mapping>
-	<context-param>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>dispacher</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+    <servlet-name>dispacher</servlet-name>
+    <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/dispacher-servlet.xml</param-value>
 	</context-param>
-	<listener>
+    <listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+  
 </web-app>
