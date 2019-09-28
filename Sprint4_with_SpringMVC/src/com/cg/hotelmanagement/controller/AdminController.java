@@ -1,5 +1,7 @@
 package com.cg.hotelmanagement.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.cg.hotelmanagement.dto.City;
 import com.cg.hotelmanagement.service.AdminService;
 import com.cg.hotelmanagement.service.IAdminService;
+
 
 
 @Controller
@@ -22,14 +25,14 @@ public class AdminController {
 		return "AdminPage";
 	}
 	@RequestMapping(value = "/addcity", method = RequestMethod.GET)
-	public String addCity() {
+	public String addCity(@ModelAttribute("city") City city) {
 		return "AddCityPage";
 	}
 	
 	@RequestMapping(value = "/pagesubmitaddcitypage", method = RequestMethod.POST)
 	public String addCityData(@ModelAttribute("city") City city) throws Exception {
 		adminService.addCity(city);
-		return "home";
+		return "AdminPage";
 		
 	}
 	

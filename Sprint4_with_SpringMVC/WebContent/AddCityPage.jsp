@@ -15,7 +15,7 @@ Enter City Details
 <fo:form action="pagesubmitaddcitypage" modelAttribute="city" method="POST">
 <tr>
 <td>City Name </td>
-<td><fo:input path="cityName" name= /> </td>
+<td><fo:input path="cityName"  /> </td>
 </tr>
 
 <tr>
