@@ -167,7 +167,7 @@ public class AdminDao implements IAdminDao {
 
 	@Override
 	public List<City> getCityList() {
-		Query query = JPAUtil.getEntityManager().createQuery("From City c where c.deleteFlag!=1");
+		Query query = entityManager.createQuery("From City c where c.deleteFlag!=1");
 		List<City> cityList = query.getResultList();
 		return cityList;
 	}
@@ -231,7 +231,7 @@ public class AdminDao implements IAdminDao {
 
 	@Override
 	public List<Hotel> showHotel(Long cityId) throws HotelException {
-		Query query = JPAUtil.getEntityManager().createQuery("From Hotel h where h.cityId:first and h.deleteFlag!=1");
+		Query query = entityManager.createQuery("From Hotel h where h.cityId:first and h.deleteFlag!=1");
 		query.setParameter("first", cityId);
 		List<Hotel> hotelList = query.getResultList();
 		return hotelList;
@@ -239,7 +239,7 @@ public class AdminDao implements IAdminDao {
 
 	@Override
 	public List<Room> showRoom(Long cityId, Long hotelId) {
-		Query query = JPAUtil.getEntityManager().createQuery("From Hotel h where h.cityId:first and h.deleteFlag!=1");
+		Query query = entityManager.createQuery("From Hotel h where h.cityId:first and h.deleteFlag!=1");
 		query.setParameter("first", cityId);
 		List<Hotel> hotelList = query.getResultList();
 		for(Hotel hotel:hotelList) {

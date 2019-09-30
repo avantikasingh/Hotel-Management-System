@@ -16,9 +16,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.cg.hotelmanagement.dto.City;
 import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
+import com.cg.hotelmanagement.exception.HotelException;
 import com.cg.hotelmanagement.service.AdminService;
 import com.cg.hotelmanagement.service.IAdminService;
-
 
 @Controller
 public class AdminController {
@@ -77,19 +77,29 @@ public class AdminController {
 		List<City> myList = adminService.showCity();
 		return new ModelAndView("ShowAllCities", "data", myList);
 	}
-//
-//	@RequestMapping(value = "/showhotel", method = RequestMethod.GET)
-//	public ModelAndView getAllHotelData() {
-//		List<Hotel> myList = adminService.showHotel(cityId);
-//		return new ModelAndView("ShowAllHotels", "data", myList);
-//	}
-//
-//	@RequestMapping(value = "/showroom", method = RequestMethod.GET)
-//	public ModelAndView getAllRoomData() {
-//		List<Room> myList = adminService.showRoom(cityId, hotelId);
-//		return new ModelAndView("ShowAllRooms", "data", myList);
-//	}
-	
+
+	@RequestMapping(value = "/showhotel", method = RequestMethod.GET)
+	public String getAllHotelData() {
+		return "ShowHotel";
+	}
+
+	@RequestMapping(value = "/showallhotel", method = RequestMethod.POST)
+	public ModelAndView showHotelData(@RequestParam("cityid") int cityId) throws HotelException {
+		List<Hotel> myList = adminService.showHotel((long) cityId);
+		return new ModelAndView("ShowHotel", "data", myList);
+	}
+
+	@RequestMapping(value = "/showroom", method = RequestMethod.GET)
+	public String getAllRoomData() {
+		return "ShowRoom";
+	}
+
+	@RequestMapping(value = "/showallroom", method = RequestMethod.POST)
+	public ModelAndView showRoomData(@RequestParam("cityid") int cityId, @RequestParam("hotelid") int hotelId)
+			throws HotelException {
+		List<Room> myList = adminService.showRoom((long) cityId, (long) hotelId);
+		return new ModelAndView("ShowRoom", "data", myList);
+	}
 
 	@RequestMapping(value = "/deletecity", method = RequestMethod.GET)
 	public String deleteCity() {
@@ -99,7 +109,7 @@ public class AdminController {
 
 	@RequestMapping(value = "/deletecitydata", method = RequestMethod.POST)
 	public String deleteCityData(@RequestParam("cityid") int cityId) {
-		adminService.removeCity((long)cityId);
+		adminService.removeCity((long) cityId);
 //		return "redirect:/showall";
 		return "AdminPage";
 	}
@@ -111,8 +121,8 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/deletehoteldata", method = RequestMethod.POST)
-	public String deleteHotelData(@RequestParam("cityid") int cityId,@RequestParam("hotelid") int hotelId) {
-		adminService.removeHotel((long)cityId, (long)hotelId);
+	public String deleteHotelData(@RequestParam("cityid") int cityId, @RequestParam("hotelid") int hotelId) {
+		adminService.removeHotel((long) cityId, (long) hotelId);
 		return "AdminPage";
 	}
 
@@ -123,9 +133,9 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/deleteroomdata", method = RequestMethod.POST)
-	public String deleteRoomData(@RequestParam("cityid") int cityId,@RequestParam("hotelid") int hotelId,
+	public String deleteRoomData(@RequestParam("cityid") int cityId, @RequestParam("hotelid") int hotelId,
 			@RequestParam("roomid") int roomId) {
-		adminService.removeRoom((long)cityId, (long)hotelId, (long)roomId);
+		adminService.removeRoom((long) cityId, (long) hotelId, (long) roomId);
 		return "AdminPage";
 	}
 

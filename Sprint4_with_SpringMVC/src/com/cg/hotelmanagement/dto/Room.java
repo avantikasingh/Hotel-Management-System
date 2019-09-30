@@ -34,7 +34,7 @@ public class Room {
 	private int deleteFlag=0;
 	
 	
-	@OneToMany(cascade = CascadeType.ALL )	
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER )	
 	@JoinColumn(name="room_id")
 	private List<Booking> bookingDetails=new LinkedList<>();
 	
