@@ -191,13 +191,16 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean updateHotel(Long cityId, Long hotelId, String hotelName) throws HotelException {
+	public boolean updateHotel(Long cityId, Hotel newHotel) throws HotelException {
 		City city = entityManager.find(City.class, cityId);
 		if(city!=null) {
 			List<Hotel> hotelList = city.getHotelList();
 			for(Hotel hotel:hotelList) {
-				if(hotel.getHotelId()==hotelId) {
-					hotel.setHotelName(hotelName);
+				if(hotel.getHotelId()==newHotel.getHotelId()) {
+					hotel.setHotelAddress(newHotel.getHotelAddress());
+					hotel.setHotelName(newHotel.getHotelName());
+					hotel.setHotelPhoneNumber(newHotel.getHotelPhoneNumber());
+					hotel.setHotelRating(newHotel.getHotelRating());
 					entityManager.merge(hotel);
 					return true;
 				}
@@ -252,6 +255,21 @@ public class AdminDao implements IAdminDao {
 			}
 		}
 		return null;
+	}
+
+	@Override
+	public Hotel viewHotel(Integer hotelId) {
+		Query query = entityManager.createQuery("From Hotel h where h.deleteFlag!=1");
+		List<Hotel> hotelList = query.getResultList();
+		
+		for(Hotel hotel:hotelList) {
+			if(hotel.getHotelId()== (long)hotelId) {
+				return hotel;
+				
+			}
+		}
+		return null;
+
 	}
 
 }

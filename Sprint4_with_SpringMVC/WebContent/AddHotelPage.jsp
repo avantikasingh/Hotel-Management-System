@@ -26,11 +26,11 @@ Enter Hotel Details
 </tr>
 <tr>
 <td>Hotel Address</td>
-<td><fo:input path="hotelPhoneNumber" /> </td>
+<td><fo:input path="hotelAddress" /> </td>
 </tr>
 <tr>
 <td>Hotel Phone Number</td>
-<td><fo:input path="hotelAddress" /> </td>
+<td><fo:input path="hotelPhoneNumber" /> </td>
 
 </tr>
 

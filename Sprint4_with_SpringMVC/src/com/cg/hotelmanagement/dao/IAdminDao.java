@@ -41,11 +41,12 @@ public interface IAdminDao {
 
 	//public boolean register(Customer customer, Long userId) throws HotelException;
 		
-	public boolean updateHotel(Long cityId, Long hotelId,
-			String hotelName) throws HotelException ;
+	public boolean updateHotel(Long cityId, Hotel hotel) throws HotelException ;
 	
 	public boolean updateRoom(Long cityId, Long hotelId,
 			Long roomId, String roomType) throws HotelException;
+
+	public Hotel viewHotel(Integer hotelId);
 	
 
 //	void updateBooking(Booking booking);

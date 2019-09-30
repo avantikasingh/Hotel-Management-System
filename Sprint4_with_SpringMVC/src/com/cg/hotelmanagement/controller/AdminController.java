@@ -2,9 +2,6 @@ package com.cg.hotelmanagement.controller;
 
 import java.util.List;
 import java.util.Map;
-
-import javax.sound.midi.Soundbank;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.cg.hotelmanagement.dto.City;
 import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
@@ -20,11 +16,13 @@ import com.cg.hotelmanagement.exception.HotelException;
 import com.cg.hotelmanagement.service.AdminService;
 import com.cg.hotelmanagement.service.IAdminService;
 
+
 @Controller
 public class AdminController {
 
 	@Autowired
 	IAdminService adminService;
+	Long cityID = null;
 
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String adminPage() {
@@ -136,6 +134,48 @@ public class AdminController {
 	public String deleteRoomData(@RequestParam("cityid") int cityId, @RequestParam("hotelid") int hotelId,
 			@RequestParam("roomid") int roomId) {
 		adminService.removeRoom((long) cityId, (long) hotelId, (long) roomId);
+		return "AdminPage";
+	}
+
+	@RequestMapping(value = "/updatehotel", method = RequestMethod.GET)
+	public String viewHotelModifyPage(@ModelAttribute("hoteldata") Hotel hotel) {
+		return "UpdateHotelPage";
+	}
+
+	@RequestMapping(value="/updatehotelview", method=RequestMethod.GET)
+	public ModelAndView viewHotelModifyDetails(@RequestParam("hotelid")Integer hotelId, 
+			@RequestParam("cityid")Long cityid,
+			@ModelAttribute("hoteldata") Hotel hotel) {
+		cityID = cityid;
+		return new ModelAndView("UpdateHotelPage","HotelData", adminService.viewHotel(hotelId));
+	}
+
+	@RequestMapping(value = "/updatehoteldata", method = RequestMethod.POST)
+	public String updateHotel(@ModelAttribute("hoteldata") Hotel hotel) throws HotelException {
+		adminService.updateHotel(cityID, hotel);
+		cityID = null;
+		return "AdminPage";
+	}
+	
+	
+	
+	@RequestMapping(value = "/updatehotel", method = RequestMethod.GET)
+	public String viewRoomModifyPage(@ModelAttribute("hoteldata") Hotel hotel) {
+		return "UpdateHotelPage";
+	}
+
+	@RequestMapping(value="/updatehotelview", method=RequestMethod.GET)
+	public ModelAndView viewRoomModifyDetails(@RequestParam("hotelid")Integer hotelId, 
+			@RequestParam("cityid")Long cityid,
+			@ModelAttribute("hoteldata") Hotel hotel) {
+		cityID = cityid;
+		return new ModelAndView("UpdateHotelPage","HotelData", adminService.viewHotel(hotelId));
+	}
+
+	@RequestMapping(value = "/updatehoteldata", method = RequestMethod.POST)
+	public String updateRoom(@ModelAttribute("hoteldata") Hotel hotel) throws HotelException {
+		adminService.updateHotel(cityID, hotel);
+		cityID = null;
 		return "AdminPage";
 	}
 

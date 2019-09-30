@@ -101,9 +101,8 @@ public class AdminService implements IAdminService {
 	}
 
 	@Override
-	public boolean updateHotel(Long cityId, Long hotelId,
-			String hotelName) throws HotelException {
-		return adminDao.updateHotel(cityId, hotelId, hotelName);
+	public boolean updateHotel(Long cityId, Hotel hotel) throws HotelException {
+		return adminDao.updateHotel(cityId, hotel);
 	}
 
 	@Override
@@ -115,6 +114,11 @@ public class AdminService implements IAdminService {
 	@Override
 	public void makeBooking(Long cityId, Long hotelId, Date checkIn, Date checkOut, Long roomId, Long userId) {
 		adminDao.makeBooking(cityId, hotelId, checkIn, checkOut, roomId, userId);
+	}
+
+	@Override
+	public Hotel viewHotel(Integer hotelId) {
+		return adminDao.viewHotel(hotelId);
 	}
 
 //	public boolean updateHotel(Long cityId, Long hotelId,
