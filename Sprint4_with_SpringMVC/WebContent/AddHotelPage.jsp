@@ -9,42 +9,41 @@
 </head>
 <body>
 <body>
-Enter Trainee Details
+Enter Hotel Details
 
 <table>
-<fo:form action="pagesubmit" modelAttribute="trainee" method="POST">
+<fo:form action="pagesubmitaddhotelpage" modelAttribute="hotel" method="POST">
 <tr>
-<td>Trainee Id </td>
-<td><fo:input path="traineeId" /> </td>
-<td><span><fo:errors path = "traineeId"></fo:errors></span></td>
+
+
+<td>City Id</td>
+<td><input type = "number" name = "cityid" /> </td>
+</tr> 
+<tr>
+<td>Hotel Name </td>
+<td><fo:input path="hotelName" /> </td>
+
+</tr>
+<tr>
+<td>Hotel Address</td>
+<td><fo:input path="hotelPhoneNumber" /> </td>
+</tr>
+<tr>
+<td>Hotel Phone Number</td>
+<td><fo:input path="hotelAddress" /> </td>
+
 </tr>
 
 <tr>
-<td>Trainee Name </td>
-<td><fo:input path="traineeName" /> </td>
-<td><span><fo:errors path = "traineeName"></fo:errors></span></td>
+<td>Hotel Rating</td>
+<td><fo:input path="hotelRating" /> </td>
+
 </tr>
 
 
 
-
-
 <tr>
-<td>Location  </td>
-<td><fo:radiobutton path="traineeLocation" value = "Pune" />Pune
-<td><fo:radiobutton path="traineeLocation" value = "Mumbai" />Mumbai 
-<td><fo:radiobutton path="traineeLocation" value = "Banglore" />Bangalore
-<td><fo:radiobutton path="traineeLocation" value = "Chennai" />Chennai
-</tr>
-
-<tr>
-<td>Trainee Domain </td>
-<td><fo:select path="traineeDomain" items="${dataitem}"  /> 
-</tr>
-
-<tr>
-<td><input type= "submit" value="Add Trainee" />
-<td><input type="reset" value = "Clear"> 
+<td><input type= "submit" value="Add Hotel" />
 </tr>
 
 </fo:form>

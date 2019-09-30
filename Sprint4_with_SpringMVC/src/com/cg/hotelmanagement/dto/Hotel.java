@@ -28,7 +28,7 @@ public class Hotel {
 	@Column(name="hotel_address")
 	private String hotelAddress;
 	@Column(name="hotel_phone_number")
-	private Long hotelPhoneNumber;
+	private String hotelPhoneNumber;
 	@Column(name="hotel_rating")
 	private Float hotelRating;
 	@Column(name="delete_flag")
@@ -43,7 +43,7 @@ public class Hotel {
 	public Hotel() {
 	}
 
-	public Hotel(Long hotelId, String hotelName, String hotelAddress, Long hotelPhoneNumber, Float hotelRating,
+	public Hotel(Long hotelId, String hotelName, String hotelAddress, String hotelPhoneNumber, Float hotelRating,
 			List<Room> roomList) {
 		super();
 		this.hotelId = hotelId;
@@ -79,11 +79,11 @@ public class Hotel {
 		this.hotelAddress = hotelAddress;
 	}
 
-	public Long getHotelPhoneNumber() {
+	public String getHotelPhoneNumber() {
 		return hotelPhoneNumber;
 	}
 
-	public void setHotelPhoneNumber(Long hotelPhoneNumber) {
+	public void setHotelPhoneNumber(String hotelPhoneNumber) {
 		this.hotelPhoneNumber = hotelPhoneNumber;
 	}
 

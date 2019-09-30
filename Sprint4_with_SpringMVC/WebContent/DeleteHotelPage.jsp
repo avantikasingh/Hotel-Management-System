@@ -8,11 +8,16 @@
 </head>
 <body>
 
-<form action="deletecitydata" method="post">
+<form action="deletehoteldata" method="post">
 <table>
 <tr>
 <td>City Id
 <td><input type = "number" name = "cityid">
+</tr>
+
+<tr>
+<td>Hotel Id
+<td><input type = "number" name = "hotelid">
 </tr>
 <tr>
 <td><input type = "submit" value = "delete">

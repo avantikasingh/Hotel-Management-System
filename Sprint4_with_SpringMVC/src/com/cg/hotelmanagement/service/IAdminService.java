@@ -20,8 +20,7 @@ public interface IAdminService {
 	public boolean removeHotel(Long cityId, Long hotelId);
 
 	public boolean addRoom(Long cityId, Long hotelId,
-			Long roomId, String roomType, double roomRent,
-			String roomNumber) throws HotelException;
+			Room room) throws HotelException;
 
 	public boolean removeRoom(Long cityId,Long hotelId,
 			Long roomId);
@@ -37,8 +36,8 @@ public interface IAdminService {
 
 	public List<Room> showRoom(Long cityId, Long hotelId);
 
-	public boolean addHotel(Long cityId, String hotelName, String hotelAddress,
-			String hotelPhoneNumber, float hotelRating) throws HotelException;
+	public boolean addHotel(Long cityId, Hotel hotel)
+			throws HotelException ;
 	
 	public boolean updateHotel(Long cityId, Long hotelId,
 			String hotelName) throws HotelException ;

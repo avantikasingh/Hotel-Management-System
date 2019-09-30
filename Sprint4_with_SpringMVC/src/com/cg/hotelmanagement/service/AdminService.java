@@ -38,14 +38,8 @@ public class AdminService implements IAdminService {
 	}
 
 	public boolean addRoom(Long cityId, Long hotelId,
-			Long roomId, String roomType, double roomRent,
-			String roomNumber) throws HotelException {
-
-		Room newRoom = new Room(); // create Hotel object
-		newRoom.setRoomNumber(roomNumber);
-		newRoom.setRoomRent(roomRent);
-		newRoom.setRoomType(roomType);
-		return adminDao.addRoom(hotelId, newRoom); // add new room in the roomList of the hotel
+			Room room) throws HotelException {
+		return adminDao.addRoom(hotelId, room); // add new room in the roomList of the hotel
 	}
 
 	public boolean removeRoom(Long cityId,Long hotelId,
@@ -100,14 +94,8 @@ public class AdminService implements IAdminService {
 	}
 
 	@Override
-	public boolean addHotel(Long cityId,String hotelName,
-			String hotelAddress, String hotelPhoneNumber, float hotelRating)
+	public boolean addHotel(Long cityId, Hotel hotel)
 			throws HotelException {
-		Hotel hotel = new Hotel();
-		hotel.setHotelName(hotelName);
-		hotel.setHotelAddress(hotelAddress);
-		hotel.setHotelPhoneNumber(Long.valueOf(Long.parseLong(hotelPhoneNumber)));
-		hotel.setHotelRating(hotelRating);
 		adminDao.addHotel(cityId,hotel);
 		return true;
 	}

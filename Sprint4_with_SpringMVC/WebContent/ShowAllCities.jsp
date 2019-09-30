@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix = "a" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,20 +9,20 @@
 </head>
 <body>
 
-<form action="deletecitydata" method="post">
 <table>
 <tr>
-<td>City Id
-<td><input type = "number" name = "cityid">
-</tr>
+<th>City ID</th>
+<th>City Name</th>
+
+</tr> 
+<a:forEach var = "pro" items="${data}">
 <tr>
-<td><input type = "submit" value = "delete">
+<td>${pro.cityId}</td>
+<td>${pro.cityName}</td>
 
 </tr>
-
+</a:forEach>
 </table>
-</form>
-
 
 </body>
 </html>
