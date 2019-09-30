@@ -107,8 +107,8 @@ public class AdminService implements IAdminService {
 
 	@Override
 	public boolean updateRoom(Long cityId, Long hotelId,
-			Long roomId, String roomType) throws HotelException {
-		return adminDao.updateRoom(cityId, hotelId, roomId, roomType);
+			Room room) throws HotelException {
+		return adminDao.updateRoom(cityId, hotelId, room);
 	}
 
 	@Override
@@ -120,6 +120,13 @@ public class AdminService implements IAdminService {
 	public Hotel viewHotel(Integer hotelId) {
 		return adminDao.viewHotel(hotelId);
 	}
+
+	@Override
+	public Room viewSingleRoom(long roomId) {
+		// TODO Auto-generated method stub
+		return adminDao.viewSingleRoom(roomId);
+	}
+
 
 //	public boolean updateHotel(Long cityId, Long hotelId,
 //			String hotelName) {

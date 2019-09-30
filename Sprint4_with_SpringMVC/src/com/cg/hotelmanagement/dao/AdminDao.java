@@ -19,19 +19,18 @@ import com.cg.hotelmanagement.util.JPAUtil;
 
 @Repository("adminDao")
 public class AdminDao implements IAdminDao {
-	
+
 	@PersistenceContext
 	EntityManager entityManager;
-	
 
 	@Override
 	public boolean addCity(City city) throws Exception {
 		// TODO Auto-generated method stub
-		
+
 		entityManager.persist(city);
-		Long cityId=city.getCityId();
+		Long cityId = city.getCityId();
 		city.setCityId(cityId);
-		
+
 		return true;
 	}
 
@@ -39,26 +38,25 @@ public class AdminDao implements IAdminDao {
 	public boolean removeCity(Long cityId) {
 		// TODO Auto-generated method stub
 		City city = entityManager.find(City.class, cityId);
-		
-		if (city!= null) {
-			try{
-			
-			city.setDeleteFlag(1);
-			//delete all hotels in the city
-			List<Hotel> hotelList=city.getHotelList();
-			for(Hotel hotel:hotelList)
-			{
-				hotel.setDeleteFlag(1);
-				//delete all room in hotel
-				List<Room> roomList=hotel.getRoomList();
-				for(Room room:roomList)
-					room.setDeleteFlag(1);
-			}
-			
-			entityManager.merge(city);
-			return true;
-		
-			}catch (Exception e) {
+
+		if (city != null) {
+			try {
+
+				city.setDeleteFlag(1);
+				// delete all hotels in the city
+				List<Hotel> hotelList = city.getHotelList();
+				for (Hotel hotel : hotelList) {
+					hotel.setDeleteFlag(1);
+					// delete all room in hotel
+					List<Room> roomList = hotel.getRoomList();
+					for (Room room : roomList)
+						room.setDeleteFlag(1);
+				}
+
+				entityManager.merge(city);
+				return true;
+
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
@@ -68,13 +66,12 @@ public class AdminDao implements IAdminDao {
 	@Override
 	public boolean addHotel(Long cityId, Hotel hotel) throws HotelException {
 		// TODO Auto-generated method stub
-		City city=entityManager.find(City.class,cityId);	
-		if(city!=null)
-		{
+		City city = entityManager.find(City.class, cityId);
+		if (city != null) {
 			city.getHotelList().add(hotel);
 			entityManager.merge(city);
 			return true;
-		}	
+		}
 		return false;
 	}
 
@@ -83,19 +80,18 @@ public class AdminDao implements IAdminDao {
 		// TODO Auto-generated method stub
 		Hotel hotel = entityManager.find(Hotel.class, hotelId);
 		System.out.println(hotel);
-		if (hotel!= null) {
-			try{
-			
-			hotel.setDeleteFlag(1);
-			//delete all room in hotel
-			List<Room> roomList=hotel.getRoomList();
-			for(Room room:roomList)
-				room.setDeleteFlag(1);
+		if (hotel != null) {
+			try {
 
-			
-			entityManager.merge(hotel);
-		
-			}catch (Exception e) {
+				hotel.setDeleteFlag(1);
+				// delete all room in hotel
+				List<Room> roomList = hotel.getRoomList();
+				for (Room room : roomList)
+					room.setDeleteFlag(1);
+
+				entityManager.merge(hotel);
+
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			return true;
@@ -106,13 +102,12 @@ public class AdminDao implements IAdminDao {
 	@Override
 	public boolean addRoom(Long hotelId, Room room) throws HotelException {
 		// TODO Auto-generated method stub
-		Hotel hotel=entityManager.find(Hotel.class,hotelId);	
-		if(hotel!=null)
-		{
+		Hotel hotel = entityManager.find(Hotel.class, hotelId);
+		if (hotel != null) {
 			hotel.getRoomList().add(room);
 			entityManager.merge(hotel);
 			return true;
-		}	
+		}
 		return false;
 	}
 
@@ -120,14 +115,14 @@ public class AdminDao implements IAdminDao {
 	public boolean removeRoom(Long hotelId, Long roomId) {
 		// TODO Auto-generated method stub
 		Room room = entityManager.find(Room.class, roomId);
-		
-		if (room!= null) {
-			try{
-			
-			room.setDeleteFlag(1);
-			entityManager.merge(room);
-		
-			}catch (Exception e) {
+
+		if (room != null) {
+			try {
+
+				room.setDeleteFlag(1);
+				entityManager.merge(room);
+
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			return true;
@@ -142,11 +137,11 @@ public class AdminDao implements IAdminDao {
 		City city = entityManager.find(City.class, cityId);
 		List<Hotel> hotelList = city.getHotelList();
 		List<Room> roomList;
-		for(Hotel hotel:hotelList) {
-			if(hotel.getHotelId()==hotelId) {
+		for (Hotel hotel : hotelList) {
+			if (hotel.getHotelId() == hotelId) {
 				roomList = hotel.getRoomList();
-				for(Room room:roomList) {
-					if(room.getRoomId()==roomId) {
+				for (Room room : roomList) {
+					if (room.getRoomId() == roomId) {
 						customer.setBooking(booking);
 						room.getBookingDetails().add(booking);
 						entityManager.merge(room);
@@ -154,13 +149,11 @@ public class AdminDao implements IAdminDao {
 				}
 			}
 		}
-		
-		
+
 	}
 
 	@Override
-	public boolean addBooking(Long cityId, Long hotelId, Long roomId, Booking booking)
-			throws HotelException {
+	public boolean addBooking(Long cityId, Long hotelId, Long roomId, Booking booking) throws HotelException {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -193,10 +186,10 @@ public class AdminDao implements IAdminDao {
 	@Override
 	public boolean updateHotel(Long cityId, Hotel newHotel) throws HotelException {
 		City city = entityManager.find(City.class, cityId);
-		if(city!=null) {
+		if (city != null) {
 			List<Hotel> hotelList = city.getHotelList();
-			for(Hotel hotel:hotelList) {
-				if(hotel.getHotelId()==newHotel.getHotelId()) {
+			for (Hotel hotel : hotelList) {
+				if (hotel.getHotelId() == newHotel.getHotelId()) {
 					hotel.setHotelAddress(newHotel.getHotelAddress());
 					hotel.setHotelName(newHotel.getHotelName());
 					hotel.setHotelPhoneNumber(newHotel.getHotelPhoneNumber());
@@ -210,18 +203,19 @@ public class AdminDao implements IAdminDao {
 	}
 
 	@Override
-	public boolean updateRoom(Long cityId, Long hotelId, Long roomId, String roomType)
-			throws HotelException {
+	public boolean updateRoom(Long cityId, Long hotelId, Room newRoom) throws HotelException {
 		City city = entityManager.find(City.class, cityId);
 		List<Hotel> hotelList = city.getHotelList();
 		List<Room> roomList;
-		if(city!=null) {
-			for(Hotel hotel:hotelList) {
-				if(hotel.getHotelId()==hotelId) {
+		if (city != null) {
+			for (Hotel hotel : hotelList) {
+				if (hotel.getHotelId() == hotelId) {
 					roomList = hotel.getRoomList();
-					for(Room room:roomList) {
-						if(room.getRoomId()==roomId) {
-							room.setRoomType(roomType);
+					for (Room room : roomList) {
+						if (room.getRoomId() == newRoom.getRoomId()) {
+							room.setRoomType(newRoom.getRoomType());
+							room.setRoomNumber(newRoom.getRoomNumber());
+							room.setRoomRent(newRoom.getRoomRent());
 							entityManager.merge(room);
 							return true;
 						}
@@ -245,11 +239,10 @@ public class AdminDao implements IAdminDao {
 		Query query = entityManager.createQuery("From Hotel h where h.cityId:first and h.deleteFlag!=1");
 		query.setParameter("first", cityId);
 		List<Hotel> hotelList = query.getResultList();
-		for(Hotel hotel:hotelList) {
-			if(hotel.getHotelId()==hotelId) {
-				for(Room room:hotel.getRoomList())
-				{
-					if(room.getDeleteFlag()!=1)
+		for (Hotel hotel : hotelList) {
+			if (hotel.getHotelId() == hotelId) {
+				for (Room room : hotel.getRoomList()) {
+					if (room.getDeleteFlag() != 1)
 						System.out.println(room);
 				}
 			}
@@ -261,15 +254,32 @@ public class AdminDao implements IAdminDao {
 	public Hotel viewHotel(Integer hotelId) {
 		Query query = entityManager.createQuery("From Hotel h where h.deleteFlag!=1");
 		List<Hotel> hotelList = query.getResultList();
-		
-		for(Hotel hotel:hotelList) {
-			if(hotel.getHotelId()== (long)hotelId) {
+
+		for (Hotel hotel : hotelList) {
+			if (hotel.getHotelId() == (long) hotelId) {
 				return hotel;
-				
+
 			}
 		}
 		return null;
 
 	}
+
+	@Override
+	public Room viewSingleRoom(long roomId) {
+		// TODO Auto-generated method stub
+		Query query = entityManager.createQuery("From Room h where  h.deleteFlag!=1");
+
+		List<Room> roomList = query.getResultList();
+		for (Room room : roomList) {
+			if (room.getRoomId() == roomId) {
+				return room;
+			}
+		}
+		return null;
+	}
+
+
+
 
 }

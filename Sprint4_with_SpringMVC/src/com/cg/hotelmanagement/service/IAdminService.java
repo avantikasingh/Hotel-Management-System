@@ -42,11 +42,13 @@ public interface IAdminService {
 	public boolean updateHotel(Long cityId, Hotel hotel) throws HotelException ;
 	
 	public boolean updateRoom(Long cityId, Long hotelId,
-			Long roomId, String roomType) throws HotelException;
+			Room room) throws HotelException;
 	
 	public void makeBooking(Long cityId, Long hotelId, Date checkIn, Date checkOut, Long roomId, Long userId);
 
 	public Hotel viewHotel(Integer hotelId);
+
+	public Room viewSingleRoom(long roomId);
 	
 	
 	

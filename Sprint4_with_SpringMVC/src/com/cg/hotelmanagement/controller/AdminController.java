@@ -23,6 +23,7 @@ public class AdminController {
 	@Autowired
 	IAdminService adminService;
 	Long cityID = null;
+	Long hotelID = null;
 
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String adminPage() {
@@ -159,23 +160,26 @@ public class AdminController {
 	
 	
 	
-	@RequestMapping(value = "/updatehotel", method = RequestMethod.GET)
-	public String viewRoomModifyPage(@ModelAttribute("hoteldata") Hotel hotel) {
-		return "UpdateHotelPage";
+	@RequestMapping(value = "/updateroom", method = RequestMethod.GET)
+	public String viewRoomModifyPage(@ModelAttribute("roomdata") Room room) {
+		return "UpdateRoomPage";
 	}
 
-	@RequestMapping(value="/updatehotelview", method=RequestMethod.GET)
-	public ModelAndView viewRoomModifyDetails(@RequestParam("hotelid")Integer hotelId, 
-			@RequestParam("cityid")Long cityid,
-			@ModelAttribute("hoteldata") Hotel hotel) {
+	@RequestMapping(value="/updateroomview", method=RequestMethod.GET)
+	public ModelAndView viewRoomModifyDetails(@RequestParam("cityid")Long cityid,
+			@RequestParam("hotelid")Long hotelid, 
+			@RequestParam("roomid")Long roomid,
+			@ModelAttribute("roomdata") Room room) {
 		cityID = cityid;
-		return new ModelAndView("UpdateHotelPage","HotelData", adminService.viewHotel(hotelId));
+		hotelID = hotelid;
+		return new ModelAndView("UpdateRoomPage","RoomData", adminService.viewSingleRoom(roomid));
 	}
 
-	@RequestMapping(value = "/updatehoteldata", method = RequestMethod.POST)
-	public String updateRoom(@ModelAttribute("hoteldata") Hotel hotel) throws HotelException {
-		adminService.updateHotel(cityID, hotel);
+	@RequestMapping(value = "/updateroomdata", method = RequestMethod.POST)
+	public String updateRoom(@ModelAttribute("roomdata") Room room) throws HotelException {
+		adminService.updateRoom(cityID, hotelID, room);
 		cityID = null;
+		hotelID = null;
 		return "AdminPage";
 	}
 

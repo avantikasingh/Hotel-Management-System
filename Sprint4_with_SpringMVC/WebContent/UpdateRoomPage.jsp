@@ -8,7 +8,7 @@
 <title>Update Hotel</title>
 </head>
 <body>
-	<form:form action="updatehotelview" method="GET">
+	<form:form action="updateroomview" method="GET">
 		<table>
 			<tr>
 				<td>Please enter City Id:</td>
@@ -18,44 +18,43 @@
 			<tr>
 				<td>Please enter Hotel Id:</td>
 				<td><input type="text" name="hotelid" /></td>
+			</tr>
+			<tr>
+				<td>Please enter room Id:</td>
+				<td><input type="text" name="roomid" /></td>
 				<td><input type="submit" value="Search">
 			</tr>
 		</table>
 	</form:form>
-	
-	
+
+
 	<h2>Update Hotels Details:</h2>
-	<form:form action="updatehoteldata" method="POST"
-		modelAttribute="hoteldata">
+	<form:form action="updateroomdata" method="POST"
+		modelAttribute="roomdata">
 		<table>
 			<tr>
-				<td>Hotel Id</td>
-				<td><form:input path="hotelId"
-						value="${HotelData.hotelId}" readonly="true" /></td>
+				<td>Room Id</td>
+				<td><form:input path="roomId" value="${RoomData.roomId}"
+						readonly="true" /></td>
 			</tr>
 			<tr>
-				<td>Hotel Name</td>
-				<td><form:input path="hotelName"
-						value="${HotelData.hotelName}" /></td>
-			</tr>
-			<tr>
-				<td>Hotel Address</td>
-				<td><form:input path="hotelAddress"
-						value="${HotelData.hotelAddress}" /></td>
-			</tr>
-			<tr>
-				<td>Hotel Phone Number</td>
-				<td><form:input path="hotelPhoneNumber"
-						value="${HotelData.hotelPhoneNumber}" /></td>
-			</tr>
-			<tr>
-				<td>Hotel Rating</td>
-				<td><form:input path="hotelRating"
-						value="${HotelData.hotelRating}" /></td>
+				<td>Room Type</td>
+				<td><form:input path="roomType" value="${RoomData.roomType}" /></td>
 			</tr>
 
 			<tr>
-				<td><input type="submit" value="Update Hotel"></input></td>
+				<td>Room Rent</td>
+				<td><form:input path="roomRent" value="${RoomData.roomRent}"/></td>
+			</tr>
+			<tr>
+				<td>Room Number</td>
+				<td><form:input path="roomNumber"
+						value="${RoomData.roomNumber}" /></td>
+			</tr>
+
+
+			<tr>
+				<td><input type="submit" value="Update Room"></input></td>
 			</tr>
 		</table>
 	</form:form>
