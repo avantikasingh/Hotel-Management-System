@@ -278,6 +278,20 @@ public class AdminDao implements IAdminDao {
 		}
 		return null;
 	}
+	
+	public int authenticateUser(String username, String password) {
+		Query query = entityManager.createQuery("From Customer u where u.username=:first AND u.password=:second");
+		query.setParameter("first", username);
+		query.setParameter("second", password);
+		Customer customer = (Customer) query.getSingleResult();
+		if(customer!=null) {
+			if(customer.getRole().equalsIgnoreCase("Admin"))
+				return 1;
+			else
+				return 0;
+		}
+		return -1;
+	}
 
 
 

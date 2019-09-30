@@ -26,10 +26,25 @@ public class CustomerService implements ICustomerService {
 
 	@Override
 	public boolean register(String firstName, String lastName, String gender,String username, String emailId, LocalDate dateOfBirth,
-			String userMobileNo, String aadharNumber) {
-		Customer customer = new Customer(username, emailId, dateOfBirth, userMobileNo, firstName, lastName,gender, aadharNumber, null);
+			String userMobileNo, String aadharNumber, String password) {
+		//Customer customer = new Customer(username, emailId, dateOfBirth, userMobileNo, firstName, lastName,gender, aadharNumber, password,);
+		Customer customer = new Customer();
+		customer.setAadharNumber(aadharNumber);
+		customer.setDob(dateOfBirth);
+		customer.setEmailId(emailId);
+		customer.setFirstName(firstName);
+		customer.setGender(gender);
+		customer.setLastName(lastName);
+		customer.setPassword(password);
+		customer.setUserMobile(userMobileNo);
+		customer.setUsername(username);
 		customerDao.register(customer);
 		return true;
+	}
+
+	@Override
+	public int authenticateUser(String username, String password) {
+		return customerDao.authenticateUser(username, password);
 	}
 
 }

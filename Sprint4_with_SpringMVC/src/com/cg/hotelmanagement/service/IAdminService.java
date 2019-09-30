@@ -50,6 +50,8 @@ public interface IAdminService {
 
 	public Room viewSingleRoom(long roomId);
 	
+	public int authenticateUser(String username, String password);
+	
 	
 	
 

@@ -127,6 +127,11 @@ public class AdminService implements IAdminService {
 		return adminDao.viewSingleRoom(roomId);
 	}
 
+	@Override
+	public int authenticateUser(String username, String password) {
+		return adminDao.authenticateUser(username, password);
+	}
+
 
 //	public boolean updateHotel(Long cityId, Long hotelId,
 //			String hotelName) {

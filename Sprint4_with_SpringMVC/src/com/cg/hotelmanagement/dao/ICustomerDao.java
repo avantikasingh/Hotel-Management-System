@@ -12,5 +12,7 @@ public interface ICustomerDao {
 	public boolean register(Customer customer);
 	
 	public List<Hotel> viewAvailableHotels(LocalDate checkin, LocalDate checkout);
+	
+	public int authenticateUser(String username, String password);
 
 }

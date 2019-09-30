@@ -48,6 +48,8 @@ public interface IAdminDao {
 	public boolean updateRoom(Long cityId, Long hotelId, Room room) throws HotelException;
 
 	public Room viewSingleRoom(long roomId);
+	
+	public int authenticateUser(String username, String password);
 
 //	void updateBooking(Booking booking);
 

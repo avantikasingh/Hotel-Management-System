@@ -25,11 +25,31 @@ public class AdminController {
 	Long cityID = null;
 	Long hotelID = null;
 
+//	@RequestMapping(value = "/home", method = RequestMethod.GET)
+//	public String adminPage() {
+//		return "AdminPage";
+//	}
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String adminPage() {
-		return "AdminPage";
+		return "LoginPage";
 	}
+	@RequestMapping(value = "/loginpage", method = RequestMethod.GET)
+	public String checkLogin(@RequestParam("username") String username, @RequestParam("password") String password) {
+		int value = adminService.authenticateUser(username, password);
+		if (value == 1) {
+			return "AdminPage";
+			
+		} else if (value == 0) {
+			return "CustomerPage";
+		} 
+		else {
+			return "LoginPage";
+		}
 
+		
+		
+	}
+	
 	@RequestMapping(value = "/addcity", method = RequestMethod.GET)
 	public String addCity(@ModelAttribute("city") City city) {
 		return "AddCityPage";

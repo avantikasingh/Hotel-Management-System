@@ -32,6 +32,10 @@ public class Customer {
 	private String gender;
 	@Column(name="aadhar_number")
 	private String aadharNumber;
+	@Column(name="password")
+	private String password;
+	@Column(name="role")
+	private String role;
 	@Column(name="delete_flag")
 	private int deleteFlag=0;
 	
@@ -39,10 +43,26 @@ public class Customer {
 	private Booking booking;
 
 	public Customer() {
+		this.role="User";
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	
+
 	public Customer(String username, String emailId, LocalDate dob, String userMobile, String firstName,
-			String lastName, String gender, String aadharNumber, Booking booking) {
+			String lastName, String gender, String aadharNumber, String password, int deleteFlag,
+			Booking booking) {
 		super();
 		this.username = username;
 		this.emailId = emailId;
@@ -52,6 +72,9 @@ public class Customer {
 		this.lastName = lastName;
 		this.gender = gender;
 		this.aadharNumber = aadharNumber;
+		this.password = password;
+		this.role = role;
+		this.deleteFlag = deleteFlag;
 		this.booking = booking;
 	}
 
