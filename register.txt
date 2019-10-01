@@ -1,0 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+Enter User Name
+<table>
+<fo:form action="registerpage"  method="POST">
+<tr>
+<td>Username
+<td><input type = "text" name = "userName">
+</tr>
+<tr>
+<tr>
+<td>Email Id
+<td><input type = "email" name = "emaiId">
+</tr>
+<tr>
+<td>Date of Birth
+<td><input type = "date" name = "dob">
+</tr>
+<tr>
+<td>Mobile number
+<td><input type = "text" name = "userMobile">
+</tr>
+<tr>
+<td>First Name
+<td><input type = "text" name = "firstName">
+</tr>
+<tr>
+<td>Last Name
+<td><input type = "text" name = "lastName">
+</tr>
+<tr>
+<td><input type= "text" value="gender" />
+</tr>
+<tr>
+<td><input type= "text" value="aadharNumber" />
+</tr>
+<tr>
+<td><input type= "password" value="password" />
+</tr>
+<tr>
+<td><input type= "submit" value="Register" />
+</tr>
+</fo:form>
+</table>
+
+</body>
+</html>
