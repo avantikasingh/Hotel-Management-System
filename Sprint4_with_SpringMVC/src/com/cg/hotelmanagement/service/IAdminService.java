@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.cg.hotelmanagement.dto.Booking;
 import com.cg.hotelmanagement.dto.City;
+import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.exception.HotelException;
@@ -51,6 +52,8 @@ public interface IAdminService {
 	public Room viewSingleRoom(long roomId);
 	
 	public int authenticateUser(String username, String password);
+	
+	public boolean register(Customer customer) throws HotelException;
 	
 	
 	

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.cg.hotelmanagement.dao.IAdminDao;
 import com.cg.hotelmanagement.dto.Booking;
 import com.cg.hotelmanagement.dto.City;
+import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.exception.HotelException;
@@ -130,6 +131,11 @@ public class AdminService implements IAdminService {
 	@Override
 	public int authenticateUser(String username, String password) {
 		return adminDao.authenticateUser(username, password);
+	}
+
+	@Override
+	public boolean register(Customer customer) throws HotelException {
+		return adminDao.register(customer);
 	}
 
 

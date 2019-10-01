@@ -21,12 +21,24 @@ Enter User Name
 <td>Password
 <td><input type = "password" name = "password">
 </tr>
-
 <tr>
 <td><input type= "submit" value="Login" />
 </tr>
-
 </fo:form>
 </table>
+
+<fo:form action="register" method="POST">
+<tr>
+<td><input type= "submit" value="Register" />
+</tr>
+</fo:form>
+
+
 </body>
 </html>
+
+
+
+
+
+

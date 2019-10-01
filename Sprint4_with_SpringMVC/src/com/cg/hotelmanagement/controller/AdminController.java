@@ -1,7 +1,7 @@
 package com.cg.hotelmanagement.controller;
 
+import java.time.LocalDate;
 import java.util.List;
-import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.cg.hotelmanagement.dto.City;
+import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.exception.HotelException;
-import com.cg.hotelmanagement.service.AdminService;
 import com.cg.hotelmanagement.service.IAdminService;
 
 
@@ -33,6 +33,23 @@ public class AdminController {
 	public String adminPage() {
 		return "LoginPage";
 	}
+	
+	@RequestMapping(value="/registerpage", method = RequestMethod.GET)
+	public String registerUser(@RequestParam("emailId") String emailId, @RequestParam("dob") LocalDate dob, @RequestParam("userMoblie") String userMobile, @RequestParam("firstName") String firstname,
+			@RequestParam("lastname") String lastname, @RequestParam("gender") String gender, @RequestParam("aadharNumber")	String aadharNumber, @RequestParam("password") String password,	@RequestParam("userName") String username) throws HotelException {
+		Customer customer = new Customer();
+		customer.setAadharNumber(aadharNumber);
+		customer.setDob(dob);
+		customer.setEmailId(emailId);
+		customer.setFirstName(firstname);
+		customer.setGender(gender);
+		customer.setLastName(lastname);
+		customer.setPassword(password);
+		customer.setUserMobile(userMobile);
+		customer.setUsername(username);
+		adminService.register(customer);
+		return "LoginPage";
+	}
 	@RequestMapping(value = "/loginpage", method = RequestMethod.GET)
 	public String checkLogin(@RequestParam("username") String username, @RequestParam("password") String password) {
 		int value = adminService.authenticateUser(username, password);
@@ -44,10 +61,7 @@ public class AdminController {
 		} 
 		else {
 			return "LoginPage";
-		}
-
-		
-		
+		}	
 	}
 	
 	@RequestMapping(value = "/addcity", method = RequestMethod.GET)
