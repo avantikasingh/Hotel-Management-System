@@ -18,12 +18,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name="Hotel")
 public class Hotel {
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="hotel_id")
 	private Long hotelId;
+	@NotEmpty(message = "aasd")
 	@Column(name="hotel_name")
 	private String hotelName;
 	@Column(name="hotel_address")

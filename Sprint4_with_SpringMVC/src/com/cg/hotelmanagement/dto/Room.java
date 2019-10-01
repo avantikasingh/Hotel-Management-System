@@ -22,11 +22,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name="room")
 public class Room {
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long roomId;
 	@Column(name="room_type")
 	private String roomType;
 	@Column(name="room_rent")
+	
 	private Double roomRent;
 	@Column(name="room_number")
 	private String roomNumber;

@@ -19,7 +19,7 @@ import javax.persistence.OneToMany;
 @Entity
 public class City {
 
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long cityId;
 	@Column(name="city_name")
 	private String cityName;

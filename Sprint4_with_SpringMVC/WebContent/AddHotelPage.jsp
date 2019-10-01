@@ -21,7 +21,8 @@ Enter Hotel Details
 </tr> 
 <tr>
 <td>Hotel Name </td>
-<td><fo:input path="hotelName" /> </td>
+<td><fo:input path="hotelName" />
+<td><span><fo:errors path="hotelName"></fo:errors></span></td> </td>
 
 </tr>
 <tr>

@@ -4,8 +4,12 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -44,7 +48,6 @@ public class AdminController {
 	public String registerUser(@ModelAttribute("customer") Customer customer) throws HotelException {
 		adminService.register(customer);
 		return "LoginPage";
-		
 
 	}
 
@@ -82,12 +85,14 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/pagesubmitaddhotelpage", method = RequestMethod.POST)
-	public String addHotelData(@ModelAttribute("hotel") Hotel hotel, @RequestParam("cityid") int cityId)
-			throws Exception {
-		System.out.println(hotel.toString());
-		System.out.println(cityId);
-		adminService.addHotel((long) cityId, hotel);
-		return "AdminPage";
+	public String addHotelData(@Valid @ModelAttribute("hotel") Hotel hotel, BindingResult result,
+			@RequestParam("cityid") int cityId) throws Exception {
+		if (result.hasErrors()) {
+			return "AddHotelPage";
+		} else {
+			adminService.addHotel((long) cityId, hotel);
+			return "AdminPage";
+		}
 
 	}
 
