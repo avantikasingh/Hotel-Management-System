@@ -27,11 +27,6 @@ Enter User Name
 </fo:form>
 </table>
 
-<fo:form action="register" method="POST">
-<tr>
-<td><input type= "submit" value="Register" />
-</tr>
-</fo:form>
 
 
 </body>

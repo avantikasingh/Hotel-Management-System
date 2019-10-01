@@ -12,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Customer {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
@@ -20,6 +22,7 @@ public class Customer {
 	protected String username;
 	@Column(name="email_id")
 	protected String emailId;
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	@Column(name="dob")
 	protected LocalDate dob;
 	@Column(name="user_mobile")

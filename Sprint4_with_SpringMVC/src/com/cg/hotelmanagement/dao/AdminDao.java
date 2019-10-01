@@ -180,7 +180,11 @@ public class AdminDao implements IAdminDao {
 	@Override
 	public boolean register(Customer customer) throws HotelException {
 		// TODO Auto-generated method stub
-		return false;
+		entityManager.persist(customer);
+		Long userId = customer.getUserId();
+		customer.setUserId(userId);
+		return true;
+
 	}
 
 	@Override
@@ -278,22 +282,25 @@ public class AdminDao implements IAdminDao {
 		}
 		return null;
 	}
-	
+
 	public int authenticateUser(String username, String password) {
+	try {
 		Query query = entityManager.createQuery("From Customer u where u.username=:first AND u.password=:second");
 		query.setParameter("first", username);
 		query.setParameter("second", password);
 		Customer customer = (Customer) query.getSingleResult();
-		if(customer!=null) {
-			if(customer.getRole().equalsIgnoreCase("Admin"))
+		if (customer != null) {
+			if (customer.getRole().equalsIgnoreCase("Admin"))
 				return 1;
 			else
 				return 0;
 		}
+	} catch (Exception e) {
+		// TODO: handle exception
 		return -1;
 	}
-
-
-
+	return -1;
+		
+	}
 
 }

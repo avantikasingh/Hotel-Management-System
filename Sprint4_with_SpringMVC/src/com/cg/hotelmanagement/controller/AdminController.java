@@ -1,6 +1,8 @@
 package com.cg.hotelmanagement.controller;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +18,6 @@ import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.exception.HotelException;
 import com.cg.hotelmanagement.service.IAdminService;
 
-
 @Controller
 public class AdminController {
 
@@ -29,41 +30,38 @@ public class AdminController {
 //	public String adminPage() {
 //		return "AdminPage";
 //	}
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String adminPage() {
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String loginPage() {
 		return "LoginPage";
 	}
-	
-	@RequestMapping(value="/registerpage", method = RequestMethod.GET)
-	public String registerUser(@RequestParam("emailId") String emailId, @RequestParam("dob") LocalDate dob, @RequestParam("userMoblie") String userMobile, @RequestParam("firstName") String firstname,
-			@RequestParam("lastname") String lastname, @RequestParam("gender") String gender, @RequestParam("aadharNumber")	String aadharNumber, @RequestParam("password") String password,	@RequestParam("userName") String username) throws HotelException {
-		Customer customer = new Customer();
-		customer.setAadharNumber(aadharNumber);
-		customer.setDob(dob);
-		customer.setEmailId(emailId);
-		customer.setFirstName(firstname);
-		customer.setGender(gender);
-		customer.setLastName(lastname);
-		customer.setPassword(password);
-		customer.setUserMobile(userMobile);
-		customer.setUsername(username);
+
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public String registerPage(@ModelAttribute("customer") Customer customer) {
+		return "RegisterPage";
+	}
+
+	@RequestMapping(value = "/registerpage", method = RequestMethod.POST)
+	public String registerUser(@ModelAttribute("customer") Customer customer) throws HotelException {
 		adminService.register(customer);
 		return "LoginPage";
 	}
-	@RequestMapping(value = "/loginpage", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/loginpage", method = RequestMethod.POST)
 	public String checkLogin(@RequestParam("username") String username, @RequestParam("password") String password) {
 		int value = adminService.authenticateUser(username, password);
 		if (value == 1) {
 			return "AdminPage";
-			
-		} else if (value == 0) {
-			return "CustomerPage";
-		} 
-		else {
+
+		}
+		if (value == 0) {
+			return "AdminPage";
+		}
+		if (value == -1) {
 			return "LoginPage";
-		}	
+		}
+		return "LoginPage";
 	}
-	
+
 	@RequestMapping(value = "/addcity", method = RequestMethod.GET)
 	public String addCity(@ModelAttribute("city") City city) {
 		return "AddCityPage";
@@ -177,12 +175,11 @@ public class AdminController {
 		return "UpdateHotelPage";
 	}
 
-	@RequestMapping(value="/updatehotelview", method=RequestMethod.GET)
-	public ModelAndView viewHotelModifyDetails(@RequestParam("hotelid")Integer hotelId, 
-			@RequestParam("cityid")Long cityid,
-			@ModelAttribute("hoteldata") Hotel hotel) {
+	@RequestMapping(value = "/updatehotelview", method = RequestMethod.GET)
+	public ModelAndView viewHotelModifyDetails(@RequestParam("hotelid") Integer hotelId,
+			@RequestParam("cityid") Long cityid, @ModelAttribute("hoteldata") Hotel hotel) {
 		cityID = cityid;
-		return new ModelAndView("UpdateHotelPage","HotelData", adminService.viewHotel(hotelId));
+		return new ModelAndView("UpdateHotelPage", "HotelData", adminService.viewHotel(hotelId));
 	}
 
 	@RequestMapping(value = "/updatehoteldata", method = RequestMethod.POST)
@@ -191,22 +188,19 @@ public class AdminController {
 		cityID = null;
 		return "AdminPage";
 	}
-	
-	
-	
+
 	@RequestMapping(value = "/updateroom", method = RequestMethod.GET)
 	public String viewRoomModifyPage(@ModelAttribute("roomdata") Room room) {
 		return "UpdateRoomPage";
 	}
 
-	@RequestMapping(value="/updateroomview", method=RequestMethod.GET)
-	public ModelAndView viewRoomModifyDetails(@RequestParam("cityid")Long cityid,
-			@RequestParam("hotelid")Long hotelid, 
-			@RequestParam("roomid")Long roomid,
+	@RequestMapping(value = "/updateroomview", method = RequestMethod.GET)
+	public ModelAndView viewRoomModifyDetails(@RequestParam("cityid") Long cityid,
+			@RequestParam("hotelid") Long hotelid, @RequestParam("roomid") Long roomid,
 			@ModelAttribute("roomdata") Room room) {
 		cityID = cityid;
 		hotelID = hotelid;
-		return new ModelAndView("UpdateRoomPage","RoomData", adminService.viewSingleRoom(roomid));
+		return new ModelAndView("UpdateRoomPage", "RoomData", adminService.viewSingleRoom(roomid));
 	}
 
 	@RequestMapping(value = "/updateroomdata", method = RequestMethod.POST)
