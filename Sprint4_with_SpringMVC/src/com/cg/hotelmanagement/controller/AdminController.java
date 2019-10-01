@@ -44,6 +44,7 @@ public class AdminController {
 	public String registerUser(@ModelAttribute("customer") Customer customer) throws HotelException {
 		adminService.register(customer);
 		return "LoginPage";
+
 	}
 
 	@RequestMapping(value = "/loginpage", method = RequestMethod.POST)
