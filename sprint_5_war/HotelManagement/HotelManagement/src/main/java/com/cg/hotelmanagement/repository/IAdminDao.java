@@ -1,4 +1,4 @@
-package com.cg.hotelmanagement.dao;
+package com.cg.hotelmanagement.repository;
 
 import com.cg.hotelmanagement.dto.*;
 import com.cg.hotelmanagement.exception.HotelException;

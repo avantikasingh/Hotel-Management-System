@@ -42,7 +42,7 @@ public class AdminController {
 //	public String adminPage() {
 //		return "AdminPage";
 //	}
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage() {
 		System.out.println("as");
 		return "LoginPage";

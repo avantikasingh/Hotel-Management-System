@@ -1,4 +1,4 @@
-package com.cg.hotelmanagement.dao;
+package com.cg.hotelmanagement.repository;
 
 import java.util.Date;
 import java.util.List;

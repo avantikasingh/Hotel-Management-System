@@ -1,4 +1,5 @@
 package com.cg.hotelmanagement.service;
+
 import java.util.Date;
 import java.util.List;
 
@@ -7,14 +8,15 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cg.hotelmanagement.dao.IAdminDao;
 import com.cg.hotelmanagement.dto.Booking;
 import com.cg.hotelmanagement.dto.City;
 import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.exception.HotelException;
-
+import com.cg.hotelmanagement.repository.CityRepository;
+import com.cg.hotelmanagement.repository.HotelRepository;
+import com.cg.hotelmanagement.repository.IAdminDao;
 
 @Service("adminService")
 @Transactional
@@ -22,15 +24,23 @@ public class AdminService implements IAdminService {
 
 	@Autowired
 	IAdminDao adminDao;
+	@Autowired
+	CityRepository cityrepo;
+	HotelRepository hotelrepo;
 
 	@Override
 	public boolean addCity(City city) throws Exception {
-		city.setDeleteFlag(0);
-		return adminDao.addCity(city);
+
+		cityrepo.save(city);
+		return true;
+
 	}
 
 	public boolean removeCity(Long cityId) {
-		return adminDao.removeCity(cityId);
+		
+		
+		cityrepo.deleteById(cityId);
+		return true;
 	}
 
 	@Override
@@ -38,21 +48,18 @@ public class AdminService implements IAdminService {
 		return adminDao.removeHotel(cityId, hotelId);
 	}
 
-	public boolean addRoom(Long cityId, Long hotelId,
-			Room room) throws HotelException {
+	public boolean addRoom(Long cityId, Long hotelId, Room room) throws HotelException {
 		return adminDao.addRoom(hotelId, room); // add new room in the roomList of the hotel
 	}
 
-	public boolean removeRoom(Long cityId,Long hotelId,
-			Long roomId) {
+	public boolean removeRoom(Long cityId, Long hotelId, Long roomId) {
 
 		return adminDao.removeRoom(hotelId, roomId);
 
 	}
 
 	@Override
-	public boolean addBooking(Long cityId, Long hotelId,
-			Long roomId, Booking booking) throws HotelException {
+	public boolean addBooking(Long cityId, Long hotelId, Long roomId, Booking booking) throws HotelException {
 		return adminDao.addBooking(cityId, hotelId, roomId, booking);
 	}
 
@@ -61,43 +68,37 @@ public class AdminService implements IAdminService {
 	}
 
 	public List<Hotel> showHotel(Long cityId) throws HotelException {
-		
+
 		List<City> cityMap = adminDao.getCityList();
-		for(City c:cityMap)
-		{
-			if(c.getCityId()==cityId)
-			{
+		for (City c : cityMap) {
+			if (c.getCityId() == cityId) {
 				return c.getHotelList();
 			}
 		}
-		
+
 		return null;
 	}
 
 	public List<Room> showRoom(Long cityId, Long hotelId) {
-		
+
 		List<City> cityMap = adminDao.getCityList();
-		for(City c:cityMap)
-		{
-			if(c.getCityId()==cityId)
-			{
-				List<Hotel> hotelList=c.getHotelList();
-				
-				for(Hotel hotel:hotelList)
-				{
-					if(hotel.getHotelId()==hotelId)
+		for (City c : cityMap) {
+			if (c.getCityId() == cityId) {
+				List<Hotel> hotelList = c.getHotelList();
+
+				for (Hotel hotel : hotelList) {
+					if (hotel.getHotelId() == hotelId)
 						return hotel.getRoomList();
 				}
 			}
-			
+
 		}
 		return null;
 	}
 
 	@Override
-	public boolean addHotel(Long cityId, Hotel hotel)
-			throws HotelException {
-		adminDao.addHotel(cityId,hotel);
+	public boolean addHotel(Long cityId, Hotel hotel) throws HotelException {
+		adminDao.addHotel(cityId, hotel);
 		return true;
 	}
 
@@ -107,8 +108,7 @@ public class AdminService implements IAdminService {
 	}
 
 	@Override
-	public boolean updateRoom(Long cityId, Long hotelId,
-			Room room) throws HotelException {
+	public boolean updateRoom(Long cityId, Long hotelId, Room room) throws HotelException {
 		return adminDao.updateRoom(cityId, hotelId, room);
 	}
 
@@ -137,7 +137,6 @@ public class AdminService implements IAdminService {
 	public boolean register(Customer customer) throws HotelException {
 		return adminDao.register(customer);
 	}
-
 
 //	public boolean updateHotel(Long cityId, Long hotelId,
 //			String hotelName) {

@@ -10,17 +10,22 @@
 
 <body>
 Welcome to the base
-<form action="login" method="post">
+
 <table>
-
+<fo:form action="login" method="Get">
 <tr>
-<td><input type= "submit" value="Login" /></td>
+<td><input type= "submit" value="Login" />
 </tr>
+</fo:form>
 
-
+<fo:form action="register" method="Get">
+<tr>
+<td><input type= "submit" value="Register" />
+</tr>
+</fo:form>
 
 
 </table>
-</form>
+
 </body>
 </html>

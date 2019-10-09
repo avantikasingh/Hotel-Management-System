@@ -1,4 +1,4 @@
-package com.cg.hotelmanagement.dao;
+package com.cg.hotelmanagement.repository;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
