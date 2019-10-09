@@ -26,26 +26,24 @@ public class AdminService implements IAdminService {
 	IAdminDao adminDao;
 	@Autowired
 	CityRepository cityrepo;
+	@Autowired
 	HotelRepository hotelrepo;
 
 	@Override
 	public boolean addCity(City city) throws Exception {
-
 		cityrepo.save(city);
 		return true;
-
 	}
 
 	public boolean removeCity(Long cityId) {
-		
-		
 		cityrepo.deleteById(cityId);
 		return true;
 	}
 
 	@Override
 	public boolean removeHotel(Long cityId, Long hotelId) {
-		return adminDao.removeHotel(cityId, hotelId);
+		 hotelrepo.deleteById(hotelId);
+		 return true;
 	}
 
 	public boolean addRoom(Long cityId, Long hotelId, Room room) throws HotelException {
@@ -98,8 +96,17 @@ public class AdminService implements IAdminService {
 
 	@Override
 	public boolean addHotel(Long cityId, Hotel hotel) throws HotelException {
-		adminDao.addHotel(cityId, hotel);
-		return true;
+//		adminDao.addHotel(cityId, hotel);
+//		hotelrepo.save(hotel,cityId);
+		City city = cityrepo.findById(cityId).orElse(null);
+		if(city!=null) {
+			List<Hotel> hotelList = city.getHotelList();
+			hotelList.add(hotel);
+			city.setHotelList(hotelList);
+			cityrepo.save(city);
+			return true;
+		}
+		return false;
 	}
 
 	@Override
