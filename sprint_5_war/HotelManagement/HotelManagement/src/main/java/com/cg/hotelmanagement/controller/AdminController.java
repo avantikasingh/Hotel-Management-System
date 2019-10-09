@@ -35,12 +35,14 @@ public class AdminController {
 	IAdminService adminService;
 	Long cityID = null;
 	Long hotelID = null;
-
-//	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public AdminController() {
+		// TODO Auto-generated constructor stub
+	}
+//	@RequestMapping(value = "/", method = RequestMethod.GET)
 //	public String adminPage() {
 //		return "AdminPage";
 //	}
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String loginPage() {
 		System.out.println("as");
 		return "LoginPage";
