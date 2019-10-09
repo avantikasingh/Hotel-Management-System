@@ -1,3 +1,8 @@
+/*
+ * 
+ * 
+ */
+
 package com.cg.hotelmanagement.service;
 
 import java.util.Date;
@@ -17,57 +22,79 @@ import com.cg.hotelmanagement.exception.HotelException;
 import com.cg.hotelmanagement.repository.CityRepository;
 import com.cg.hotelmanagement.repository.HotelRepository;
 import com.cg.hotelmanagement.repository.IAdminDao;
+import com.cg.hotelmanagement.repository.RoomRepository;
 
 @Service("adminService")
 @Transactional
 public class AdminService implements IAdminService {
 
 	@Autowired
-	IAdminDao adminDao;
-	@Autowired
 	CityRepository cityrepo;
 	@Autowired
 	HotelRepository hotelrepo;
+	@Autowired
+	RoomRepository roomrepo;
 
 	@Override
 	public boolean addCity(City city) throws Exception {
+//		Add a new city in the database
 		cityrepo.save(city);
 		return true;
 	}
 
 	public boolean removeCity(Long cityId) {
+//		Delete the city from the database
 		cityrepo.deleteById(cityId);
 		return true;
 	}
 
 	@Override
 	public boolean removeHotel(Long cityId, Long hotelId) {
+//		Remove hotel from the database
 		hotelrepo.deleteById(hotelId);
 		return true;
 	}
 
 	public boolean addRoom(Long cityId, Long hotelId, Room room) throws HotelException {
-		return adminDao.addRoom(hotelId, room); // add new room in the roomList of the hotel
+//		Add a new room in the hotel based on cityid and hotelid
+		City city = cityrepo.findById(cityId).orElse(null);
+		List<Hotel> hotelList = city.getHotelList();
+		for (Hotel hotel : hotelList) {
+			if (hotel.getHotelId() == hotelId) {
+				List<Room> roomList = hotel.getRoomList();
+				roomList.add(room);
+				hotel.setRoomList(roomList);
+				break;
+			}
+		}
+
+		city.setHotelList(hotelList);
+		cityrepo.save(city);
+		return true;
 	}
 
 	public boolean removeRoom(Long cityId, Long hotelId, Long roomId) {
-
-		return adminDao.removeRoom(hotelId, roomId);
+//		Deletes a room from the database based on the roomId
+		Room room = roomrepo.findById(roomId).orElse(null);
+		roomrepo.delete(room);
+		return true;
 
 	}
 
 	@Override
-	public boolean addBooking(Long cityId, Long hotelId, Long roomId, Booking booking) throws HotelException {
-		return adminDao.addBooking(cityId, hotelId, roomId, booking);
-	}
+//	public boolean addBooking(Long cityId, Long hotelId, Long roomId, Booking booking) throws HotelException {
+//		return adminDao.addBooking(cityId, hotelId, roomId, booking);
+//	}
 
 	public List<City> showCity() {
-		return adminDao.getCityList();
+//		Returns a list containing all the cities 
+		List<City> city = cityrepo.findAll();
+		return city;
 	}
 
 	public List<Hotel> showHotel(Long cityId) throws HotelException {
-
-		List<City> cityMap = adminDao.getCityList();
+//		Returns a list of all the hotels in a city
+		List<City> cityMap = cityrepo.findAll();
 		for (City c : cityMap) {
 			if (c.getCityId() == cityId) {
 				return c.getHotelList();
@@ -78,8 +105,8 @@ public class AdminService implements IAdminService {
 	}
 
 	public List<Room> showRoom(Long cityId, Long hotelId) {
-
-		List<City> cityMap = adminDao.getCityList();
+//		returns a list of rooms in a hotel in a city
+		List<City> cityMap = cityrepo.findAll();
 		for (City c : cityMap) {
 			if (c.getCityId() == cityId) {
 				List<Hotel> hotelList = c.getHotelList();
@@ -96,8 +123,7 @@ public class AdminService implements IAdminService {
 
 	@Override
 	public boolean addHotel(Long cityId, Hotel hotel) throws HotelException {
-//		adminDao.addHotel(cityId, hotel);
-//		hotelrepo.save(hotel,cityId);
+//		Add a new hotel in the database in existing city
 		City city = cityrepo.findById(cityId).orElse(null);
 		if (city != null) {
 			List<Hotel> hotelList = city.getHotelList();
@@ -111,6 +137,7 @@ public class AdminService implements IAdminService {
 
 	@Override
 	public boolean updateHotel(Long cityId, Hotel hotel) throws HotelException {
+//		Update the credentials of existing hotel
 		City city = cityrepo.findById(cityId).orElse(null);
 		List<Hotel> hotelList = city.getHotelList();
 		for (Hotel hotel2 : hotelList) {
@@ -129,44 +156,53 @@ public class AdminService implements IAdminService {
 
 	@Override
 	public boolean updateRoom(Long cityId, Long hotelId, Room room) throws HotelException {
-		return adminDao.updateRoom(cityId, hotelId, room);
+//		Update the credentials of existing room
+		City city = cityrepo.findById(cityId).orElse(null);
+		List<Hotel> hotelList = city.getHotelList();
+		for (Hotel hotel : hotelList) {
+			if (hotel.getHotelId() == hotelId) {
+				for (Room rooms : hotel.getRoomList()) {
+					if (rooms.getRoomId() == rooms.getRoomId()) {
+						rooms.setRoomType(room.getRoomType());
+						rooms.setRoomNumber(room.getRoomNumber());
+						rooms.setRoomRent(room.getRoomRent());
+						break;
+					}
+				}
+			}
+
+		}
+		return true;
 	}
 
-	@Override
-	public void makeBooking(Long cityId, Long hotelId, Date checkIn, Date checkOut, Long roomId, Long userId) {
-		adminDao.makeBooking(cityId, hotelId, checkIn, checkOut, roomId, userId);
-	}
+//	@Override
+//	public void makeBooking(Long cityId, Long hotelId, Date checkIn, Date checkOut, Long roomId, Long userId) {
+//		adminDao.makeBooking(cityId, hotelId, checkIn, checkOut, roomId, userId);
+//	}
 
 	@Override
 	public Hotel viewHotel(Long hotelId) {
+//		Returns a hotel based on the hotelId
 		Hotel hotel = (Hotel) hotelrepo.findById(Long.valueOf(hotelId)).orElse(null);
 		return hotel;
 	}
 
 	@Override
 	public Room viewSingleRoom(long roomId) {
+//		Returns a single room object based on the id supplied
 		// TODO Auto-generated method stub
-		return adminDao.viewSingleRoom(roomId);
+		Room room = (Room) roomrepo.findById(roomId).orElse(null);
+		return room;
 	}
 
-	@Override
-	public int authenticateUser(String username, String password) {
-		return adminDao.authenticateUser(username, password);
-	}
-
-	@Override
-	public boolean register(Customer customer) throws HotelException {
-		return adminDao.register(customer);
-	}
-
-//	public boolean updateHotel(Long cityId, Long hotelId,
-//			String hotelName) {
-//		return adminDao.updateHotel(cityId, hotelId, hotelName);
-//	}
 //	@Override
-//	public boolean updateRoom(Long cityId, Long hotelId,
-//			Long roomId, String roomType) {
-//		return adminDao.updateRoom(cityId, hotelId, roomId, roomType);
+//	public int authenticateUser(String username, String password) {
+//		return adminDao.authenticateUser(username, password);
+//	}
+//
+//	@Override
+//	public boolean register(Customer customer) throws HotelException {
+//		return adminDao.register(customer);
 //	}
 
 }

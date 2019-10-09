@@ -26,8 +26,8 @@ public interface IAdminService {
 	public boolean removeRoom(Long cityId,Long hotelId,
 			Long roomId);
 
-	public boolean addBooking(Long cityId, Long hotelId,
-			Long roomId, Booking booking) throws HotelException;
+//	public boolean addBooking(Long cityId, Long hotelId,
+//			Long roomId, Booking booking) throws HotelException;
 
 	
 
@@ -45,16 +45,16 @@ public interface IAdminService {
 	public boolean updateRoom(Long cityId, Long hotelId,
 			Room room) throws HotelException;
 	
-	public void makeBooking(Long cityId, Long hotelId, Date checkIn, Date checkOut, Long roomId, Long userId);
+//	public void makeBooking(Long cityId, Long hotelId, Date checkIn, Date checkOut, Long roomId, Long userId);
 
 	public Hotel viewHotel(Long hotelId);
 
 	public Room viewSingleRoom(long roomId);
 	
-	public int authenticateUser(String username, String password);
-	
-	public boolean register(Customer customer) throws HotelException;
-	
+//	public int authenticateUser(String username, String password);
+//	
+//	public boolean register(Customer customer) throws HotelException;
+//	
 	
 	
 
