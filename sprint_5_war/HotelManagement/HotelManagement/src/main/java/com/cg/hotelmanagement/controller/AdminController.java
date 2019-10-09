@@ -55,7 +55,7 @@ public class AdminController {
 
 	@RequestMapping(value = "/registerpage", method = RequestMethod.POST)
 	public String registerUser(@ModelAttribute("customer") Customer customer) throws HotelException {
-		adminService.register(customer);
+//		adminService.register(customer);
 		return "LoginPage";
 
 	}
@@ -117,19 +117,19 @@ public class AdminController {
 
 	@RequestMapping(value = "/loginpage", method = RequestMethod.POST)
 	public String checkLogin(@RequestParam("username") String username, @RequestParam("password") String password) {
-		int value = adminService.authenticateUser(username, password);
+//		int value = adminService.authenticateUser(username, password);
 		session.setAttribute("username", "password");
-		if (value == 1) {
+//		if (value == 1) {
 			return "AdminPage";
 
-		}
-		if (value == 0) {
-			return "Customer";
-		}
-		if (value == -1) {
-			return "LoginPage";
-		}
-		return "LoginPage";
+//		}
+//		if (value == 0) {
+//			return "Customer";
+//		}
+//		if (value == -1) {
+//			return "LoginPage";
+//		}
+//		return "LoginPage";
 	}
 
 	@RequestMapping(value = "/addcity", method = RequestMethod.GET)
@@ -177,7 +177,7 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/showcity", method = RequestMethod.GET)
-	public ModelAndView getAllCityData() {
+	public ModelAndView getAllCityData() throws HotelException {
 		List<City> myList = adminService.showCity();
 		return new ModelAndView("ShowAllCities", "data", myList);
 	}

@@ -14,28 +14,28 @@ import com.cg.hotelmanagement.exception.HotelException;
 
 public interface IAdminService {
 
-	public boolean addCity(City city) throws Exception;
+	public boolean addCity(City city) throws HotelException;
 
-	public boolean removeCity(Long cityId);
+	public boolean removeCity(Long cityId) throws HotelException;
 
-	public boolean removeHotel(Long cityId, Long hotelId);
+	public boolean removeHotel(Long cityId, Long hotelId) throws HotelException;
 
 	public boolean addRoom(Long cityId, Long hotelId,
 			Room room) throws HotelException;
 
 	public boolean removeRoom(Long cityId,Long hotelId,
-			Long roomId);
+			Long roomId) throws HotelException;
 
 //	public boolean addBooking(Long cityId, Long hotelId,
 //			Long roomId, Booking booking) throws HotelException;
 
 	
 
-	public List<City> showCity();
+	public List<City> showCity() throws HotelException;
 
 	public List<Hotel> showHotel(Long cityId) throws HotelException;
 
-	public List<Room> showRoom(Long cityId, Long hotelId);
+	public List<Room> showRoom(Long cityId, Long hotelId) throws HotelException;
 
 	public boolean addHotel(Long cityId, Hotel hotel)
 			throws HotelException ;
@@ -47,9 +47,9 @@ public interface IAdminService {
 	
 //	public void makeBooking(Long cityId, Long hotelId, Date checkIn, Date checkOut, Long roomId, Long userId);
 
-	public Hotel viewHotel(Long hotelId);
+	public Hotel viewHotel(Long hotelId) throws HotelException;
 
-	public Room viewSingleRoom(long roomId);
+	public Room viewSingleRoom(long roomId) throws HotelException;
 	
 //	public int authenticateUser(String username, String password);
 //	

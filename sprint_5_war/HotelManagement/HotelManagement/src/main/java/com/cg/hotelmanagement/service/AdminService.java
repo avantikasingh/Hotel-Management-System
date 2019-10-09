@@ -7,7 +7,6 @@ package com.cg.hotelmanagement.service;
 
 import java.util.Date;
 import java.util.List;
-
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +26,6 @@ import com.cg.hotelmanagement.repository.RoomRepository;
 @Service("adminService")
 @Transactional
 public class AdminService implements IAdminService {
-
 	@Autowired
 	CityRepository cityrepo;
 	@Autowired
@@ -36,48 +34,76 @@ public class AdminService implements IAdminService {
 	RoomRepository roomrepo;
 
 	@Override
-	public boolean addCity(City city) throws Exception {
+	public boolean addCity(City city) throws HotelException {
 //		Add a new city in the database
-		cityrepo.save(city);
-		return true;
+		try {
+			cityrepo.save(city);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to add city");
+		}
+
 	}
 
-	public boolean removeCity(Long cityId) {
+	public boolean removeCity(Long cityId) throws HotelException {
 //		Delete the city from the database
-		cityrepo.deleteById(cityId);
-		return true;
+		try {
+			cityrepo.deleteById(cityId);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to remove city");
+		}
 	}
 
 	@Override
-	public boolean removeHotel(Long cityId, Long hotelId) {
+	public boolean removeHotel(Long cityId, Long hotelId) throws HotelException {
 //		Remove hotel from the database
-		hotelrepo.deleteById(hotelId);
-		return true;
+		try {
+			hotelrepo.deleteById(hotelId);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to remove hotel");
+		}
+
 	}
 
 	public boolean addRoom(Long cityId, Long hotelId, Room room) throws HotelException {
 //		Add a new room in the hotel based on cityid and hotelid
-		City city = cityrepo.findById(cityId).orElse(null);
-		List<Hotel> hotelList = city.getHotelList();
-		for (Hotel hotel : hotelList) {
-			if (hotel.getHotelId() == hotelId) {
-				List<Room> roomList = hotel.getRoomList();
-				roomList.add(room);
-				hotel.setRoomList(roomList);
-				break;
+		try {
+			City city = cityrepo.findById(cityId).orElse(null);
+			List<Hotel> hotelList = city.getHotelList();
+			for (Hotel hotel : hotelList) {
+				if (hotel.getHotelId() == hotelId) {
+					List<Room> roomList = hotel.getRoomList();
+					roomList.add(room);
+					hotel.setRoomList(roomList);
+					break;
+				}
 			}
-		}
 
-		city.setHotelList(hotelList);
-		cityrepo.save(city);
-		return true;
+			city.setHotelList(hotelList);
+			cityrepo.save(city);
+			return true;
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to add room");
+		}
 	}
 
-	public boolean removeRoom(Long cityId, Long hotelId, Long roomId) {
+	public boolean removeRoom(Long cityId, Long hotelId, Long roomId) throws HotelException {
 //		Deletes a room from the database based on the roomId
-		Room room = roomrepo.findById(roomId).orElse(null);
-		roomrepo.delete(room);
-		return true;
+		try {
+			Room room = roomrepo.findById(roomId).orElse(null);
+			roomrepo.delete(room);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to remove room");
+		}
 
 	}
 
@@ -86,93 +112,124 @@ public class AdminService implements IAdminService {
 //		return adminDao.addBooking(cityId, hotelId, roomId, booking);
 //	}
 
-	public List<City> showCity() {
+	public List<City> showCity() throws HotelException {
 //		Returns a list containing all the cities 
-		List<City> city = cityrepo.findAll();
-		return city;
+		try {
+			List<City> city = cityrepo.findAll();
+			return city;
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to show city");
+		}
 	}
 
 	public List<Hotel> showHotel(Long cityId) throws HotelException {
 //		Returns a list of all the hotels in a city
-		List<City> cityMap = cityrepo.findAll();
-		for (City c : cityMap) {
-			if (c.getCityId() == cityId) {
-				return c.getHotelList();
-			}
-		}
-
-		return null;
-	}
-
-	public List<Room> showRoom(Long cityId, Long hotelId) {
-//		returns a list of rooms in a hotel in a city
-		List<City> cityMap = cityrepo.findAll();
-		for (City c : cityMap) {
-			if (c.getCityId() == cityId) {
-				List<Hotel> hotelList = c.getHotelList();
-
-				for (Hotel hotel : hotelList) {
-					if (hotel.getHotelId() == hotelId)
-						return hotel.getRoomList();
+		try {
+			List<City> cityMap = cityrepo.findAll();
+			for (City c : cityMap) {
+				if (c.getCityId() == cityId) {
+					return c.getHotelList();
 				}
 			}
 
+			return null;
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to show hotel");
 		}
-		return null;
+	}
+
+	public List<Room> showRoom(Long cityId, Long hotelId) throws HotelException {
+//		returns a list of rooms in a hotel in a city
+		try {
+			List<City> cityMap = cityrepo.findAll();
+			for (City c : cityMap) {
+				if (c.getCityId() == cityId) {
+					List<Hotel> hotelList = c.getHotelList();
+
+					for (Hotel hotel : hotelList) {
+						if (hotel.getHotelId() == hotelId)
+							return hotel.getRoomList();
+					}
+				}
+
+			}
+			return null;
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to show Room");
+		}
 	}
 
 	@Override
 	public boolean addHotel(Long cityId, Hotel hotel) throws HotelException {
 //		Add a new hotel in the database in existing city
-		City city = cityrepo.findById(cityId).orElse(null);
-		if (city != null) {
-			List<Hotel> hotelList = city.getHotelList();
-			hotelList.add(hotel);
-			city.setHotelList(hotelList);
-			cityrepo.save(city);
-			return true;
+		try {
+			City city = cityrepo.findById(cityId).orElse(null);
+			if (city != null) {
+				List<Hotel> hotelList = city.getHotelList();
+				hotelList.add(hotel);
+				city.setHotelList(hotelList);
+				cityrepo.save(city);
+				return true;
+			}
+			return false;
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to add hotel");
 		}
-		return false;
 	}
 
 	@Override
 	public boolean updateHotel(Long cityId, Hotel hotel) throws HotelException {
 //		Update the credentials of existing hotel
-		City city = cityrepo.findById(cityId).orElse(null);
-		List<Hotel> hotelList = city.getHotelList();
-		for (Hotel hotel2 : hotelList) {
-			if (hotel2.getHotelId() == hotel.getHotelId()) {
-				hotel2.setHotelAddress(hotel.getHotelAddress());
-				hotel2.setHotelName(hotel.getHotelName());
-				hotel2.setHotelPhoneNumber(hotel.getHotelPhoneNumber());
-				hotel2.setHotelRating(hotel.getHotelRating());
-				break;
+		try {
+			City city = cityrepo.findById(cityId).orElse(null);
+			List<Hotel> hotelList = city.getHotelList();
+			for (Hotel hotel2 : hotelList) {
+				if (hotel2.getHotelId() == hotel.getHotelId()) {
+					hotel2.setHotelAddress(hotel.getHotelAddress());
+					hotel2.setHotelName(hotel.getHotelName());
+					hotel2.setHotelPhoneNumber(hotel.getHotelPhoneNumber());
+					hotel2.setHotelRating(hotel.getHotelRating());
+					break;
+				}
 			}
-		}
 
-		cityrepo.save(city);
-		return true;
+			cityrepo.save(city);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to update hotel");
+		}
 	}
 
 	@Override
 	public boolean updateRoom(Long cityId, Long hotelId, Room room) throws HotelException {
 //		Update the credentials of existing room
-		City city = cityrepo.findById(cityId).orElse(null);
-		List<Hotel> hotelList = city.getHotelList();
-		for (Hotel hotel : hotelList) {
-			if (hotel.getHotelId() == hotelId) {
-				for (Room rooms : hotel.getRoomList()) {
-					if (rooms.getRoomId() == rooms.getRoomId()) {
-						rooms.setRoomType(room.getRoomType());
-						rooms.setRoomNumber(room.getRoomNumber());
-						rooms.setRoomRent(room.getRoomRent());
-						break;
+
+		try {
+			City city = cityrepo.findById(cityId).orElse(null);
+			List<Hotel> hotelList = city.getHotelList();
+			for (Hotel hotel : hotelList) {
+				if (hotel.getHotelId() == hotelId) {
+					for (Room rooms : hotel.getRoomList()) {
+						if (rooms.getRoomId() == rooms.getRoomId()) {
+							rooms.setRoomType(room.getRoomType());
+							rooms.setRoomNumber(room.getRoomNumber());
+							rooms.setRoomRent(room.getRoomRent());
+							break;
+						}
 					}
 				}
-			}
 
+			}
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to update room");
 		}
-		return true;
 	}
 
 //	@Override
@@ -181,18 +238,28 @@ public class AdminService implements IAdminService {
 //	}
 
 	@Override
-	public Hotel viewHotel(Long hotelId) {
+	public Hotel viewHotel(Long hotelId) throws HotelException {
 //		Returns a hotel based on the hotelId
-		Hotel hotel = (Hotel) hotelrepo.findById(Long.valueOf(hotelId)).orElse(null);
-		return hotel;
+		try {
+			Hotel hotel = (Hotel) hotelrepo.findById(Long.valueOf(hotelId)).orElse(null);
+			return hotel;
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("No hotel found");
+		}
 	}
 
 	@Override
-	public Room viewSingleRoom(long roomId) {
+	public Room viewSingleRoom(long roomId) throws HotelException {
 //		Returns a single room object based on the id supplied
 		// TODO Auto-generated method stub
-		Room room = (Room) roomrepo.findById(roomId).orElse(null);
-		return room;
+		try {
+			Room room = (Room) roomrepo.findById(roomId).orElse(null);
+			return room;
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("No room found");
+		}
 	}
 
 //	@Override
