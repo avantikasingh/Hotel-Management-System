@@ -47,7 +47,7 @@ public interface IAdminService {
 	
 	public void makeBooking(Long cityId, Long hotelId, Date checkIn, Date checkOut, Long roomId, Long userId);
 
-	public Hotel viewHotel(Integer hotelId);
+	public Hotel viewHotel(Long hotelId);
 
 	public Room viewSingleRoom(long roomId);
 	

@@ -42,8 +42,8 @@ public class AdminService implements IAdminService {
 
 	@Override
 	public boolean removeHotel(Long cityId, Long hotelId) {
-		 hotelrepo.deleteById(hotelId);
-		 return true;
+		hotelrepo.deleteById(hotelId);
+		return true;
 	}
 
 	public boolean addRoom(Long cityId, Long hotelId, Room room) throws HotelException {
@@ -99,7 +99,7 @@ public class AdminService implements IAdminService {
 //		adminDao.addHotel(cityId, hotel);
 //		hotelrepo.save(hotel,cityId);
 		City city = cityrepo.findById(cityId).orElse(null);
-		if(city!=null) {
+		if (city != null) {
 			List<Hotel> hotelList = city.getHotelList();
 			hotelList.add(hotel);
 			city.setHotelList(hotelList);
@@ -114,8 +114,7 @@ public class AdminService implements IAdminService {
 		City city = cityrepo.findById(cityId).orElse(null);
 		List<Hotel> hotelList = city.getHotelList();
 		for (Hotel hotel2 : hotelList) {
-			if (hotel2.getHotelId() == hotel.getHotelId())
-			{
+			if (hotel2.getHotelId() == hotel.getHotelId()) {
 				hotel2.setHotelAddress(hotel.getHotelAddress());
 				hotel2.setHotelName(hotel.getHotelName());
 				hotel2.setHotelPhoneNumber(hotel.getHotelPhoneNumber());
@@ -123,7 +122,7 @@ public class AdminService implements IAdminService {
 				break;
 			}
 		}
-		
+
 		cityrepo.save(city);
 		return true;
 	}
@@ -139,8 +138,9 @@ public class AdminService implements IAdminService {
 	}
 
 	@Override
-	public Hotel viewHotel(Integer hotelId) {
-		return adminDao.viewHotel(hotelId);
+	public Hotel viewHotel(Long hotelId) {
+		Hotel hotel = (Hotel) hotelrepo.findById(Long.valueOf(hotelId)).orElse(null);
+		return hotel;
 	}
 
 	@Override

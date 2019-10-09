@@ -252,7 +252,7 @@ public class AdminController {
 	public ModelAndView viewHotelModifyDetails(@RequestParam("hotelid") Integer hotelId,
 			@RequestParam("cityid") Long cityid, @ModelAttribute("hoteldata") Hotel hotel) {
 		cityID = cityid;
-		return new ModelAndView("UpdateHotelPage", "HotelData", adminService.viewHotel(hotelId));
+		return new ModelAndView("UpdateHotelPage", "HotelData", adminService.viewHotel((long)hotelId));
 	}
 
 	@RequestMapping(value = "/updatehoteldata", method = RequestMethod.POST)
