@@ -111,7 +111,21 @@ public class AdminService implements IAdminService {
 
 	@Override
 	public boolean updateHotel(Long cityId, Hotel hotel) throws HotelException {
-		return adminDao.updateHotel(cityId, hotel);
+		City city = cityrepo.findById(cityId).orElse(null);
+		List<Hotel> hotelList = city.getHotelList();
+		for (Hotel hotel2 : hotelList) {
+			if (hotel2.getHotelId() == hotel.getHotelId())
+			{
+				hotel2.setHotelAddress(hotel.getHotelAddress());
+				hotel2.setHotelName(hotel.getHotelName());
+				hotel2.setHotelPhoneNumber(hotel.getHotelPhoneNumber());
+				hotel2.setHotelRating(hotel.getHotelRating());
+				break;
+			}
+		}
+		
+		cityrepo.save(city);
+		return true;
 	}
 
 	@Override
