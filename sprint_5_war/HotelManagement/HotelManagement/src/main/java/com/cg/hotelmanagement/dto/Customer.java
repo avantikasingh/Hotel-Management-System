@@ -45,6 +45,9 @@ public class Customer {
 	@OneToOne
 	private Booking booking;
 
+	
+	//Default role for a new registered user is USER.
+	//We can add Admin through database.
 	public Customer() {
 		this.role="User";
 	}
@@ -76,7 +79,6 @@ public class Customer {
 		this.gender = gender;
 		this.aadharNumber = aadharNumber;
 		this.password = password;
-		this.role = role;
 		this.deleteFlag = deleteFlag;
 		this.booking = booking;
 	}
@@ -168,6 +170,8 @@ public class Customer {
 	public void setBooking(Booking booking) {
 		this.booking = booking;
 	}
+	
+	
 
 	@Override
 	public String toString() {

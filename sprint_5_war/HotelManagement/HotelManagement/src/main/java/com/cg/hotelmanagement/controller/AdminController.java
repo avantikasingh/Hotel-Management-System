@@ -9,6 +9,8 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -35,16 +37,21 @@ public class AdminController {
 	IAdminService adminService;
 	Long cityID = null;
 	Long hotelID = null;
-	public AdminController() {
-		// TODO Auto-generated constructor stub
-	}
+//	public AdminController() {
+//		// TODO Auto-generated constructor stub
+//	}
 //	@RequestMapping(value = "/", method = RequestMethod.GET)
 //	public String adminPage() {
 //		return "AdminPage";
 //	}
+	
+	private static final Logger logger = 
+			LoggerFactory.getLogger(AdminController.class);
+	
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage() {
-		System.out.println("as");
+		logger.debug("In login controller");
 		return "LoginPage";
 	}
 
@@ -213,7 +220,12 @@ public class AdminController {
 
 	@RequestMapping(value = "/deletecitydata", method = RequestMethod.POST)
 	public String deleteCityData(@RequestParam("cityid") int cityId) {
-		adminService.removeCity((long) cityId);
+		try {
+			adminService.removeCity((long) cityId);
+		} catch (HotelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 //		return "redirect:/showall";
 		return "AdminPage";
 	}
@@ -226,7 +238,12 @@ public class AdminController {
 
 	@RequestMapping(value = "/deletehoteldata", method = RequestMethod.POST)
 	public String deleteHotelData(@RequestParam("cityid") int cityId, @RequestParam("hotelid") int hotelId) {
-		adminService.removeHotel((long) cityId, (long) hotelId);
+		try {
+			adminService.removeHotel((long) cityId, (long) hotelId);
+		} catch (HotelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return "AdminPage";
 	}
 
@@ -239,7 +256,12 @@ public class AdminController {
 	@RequestMapping(value = "/deleteroomdata", method = RequestMethod.POST)
 	public String deleteRoomData(@RequestParam("cityid") int cityId, @RequestParam("hotelid") int hotelId,
 			@RequestParam("roomid") int roomId) {
-		adminService.removeRoom((long) cityId, (long) hotelId, (long) roomId);
+		try {
+			adminService.removeRoom((long) cityId, (long) hotelId, (long) roomId);
+		} catch (HotelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return "AdminPage";
 	}
 
@@ -250,7 +272,7 @@ public class AdminController {
 
 	@RequestMapping(value = "/updatehotelview", method = RequestMethod.GET)
 	public ModelAndView viewHotelModifyDetails(@RequestParam("hotelid") Integer hotelId,
-			@RequestParam("cityid") Long cityid, @ModelAttribute("hoteldata") Hotel hotel) {
+			@RequestParam("cityid") Long cityid, @ModelAttribute("hoteldata") Hotel hotel) throws HotelException {
 		cityID = cityid;
 		return new ModelAndView("UpdateHotelPage", "HotelData", adminService.viewHotel((long)hotelId));
 	}
@@ -270,7 +292,7 @@ public class AdminController {
 	@RequestMapping(value = "/updateroomview", method = RequestMethod.GET)
 	public ModelAndView viewRoomModifyDetails(@RequestParam("cityid") Long cityid,
 			@RequestParam("hotelid") Long hotelid, @RequestParam("roomid") Long roomid,
-			@ModelAttribute("roomdata") Room room) {
+			@ModelAttribute("roomdata") Room room) throws HotelException {
 		cityID = cityid;
 		hotelID = hotelid;
 		return new ModelAndView("UpdateRoomPage", "RoomData", adminService.viewSingleRoom(roomid));

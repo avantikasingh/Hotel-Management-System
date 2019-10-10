@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -21,12 +23,32 @@ public class Booking {
 	@DateTimeFormat(pattern = "YYYY-MM-DD")
 	@Column(name = "check_in")
 	private LocalDate checkIn;
+	
 	@DateTimeFormat(pattern = "YYYY-MM-DD")
 	// @Temporal(TemporalType.DATE)
 	@Column(name = "check_out")
 	private LocalDate checkOut;
+	
 	@Column(name = "city_name")
 	private String cityName;
+	
+	@Column(name = "hotel_name")
+	private String hotelName;
+	
+	@Column(name = "hotel_address")
+	private String hotelAddress;
+	
+	@Column(name = "hotel_phoneno")
+	private String hotelPhoneno;
+	
+	@Column(name = "hotel_rating")
+	private Float hotelRating;
+	
+	@ManyToOne
+	@JoinColumn(name="room_id")
+	private Room room;
+	
+	
 	@Column(name = "delete_flag")
 	private int deleteFlag = 0;
 
@@ -42,7 +64,6 @@ public class Booking {
 		this.bookingId = bookingId;
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
-
 		this.deleteFlag = deleteFlag;
 		this.customer = customer;
 	}
@@ -94,6 +115,8 @@ public class Booking {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
+	
+	
 
 	@Override
 	public String toString() {

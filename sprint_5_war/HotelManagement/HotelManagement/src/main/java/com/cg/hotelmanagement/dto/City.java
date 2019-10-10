@@ -26,8 +26,7 @@ public class City {
 	@Column(name="delete_flag")
 	private int deleteFlag=0;
 	
-	@OneToMany(cascade=CascadeType.ALL , fetch = FetchType.EAGER)
-	@JoinColumn(name="city_id")
+	@OneToMany(mappedBy = "city" , cascade=CascadeType.ALL)
 	private List<Hotel> hotelList=new LinkedList<Hotel>();
 
 	public City()
@@ -73,6 +72,7 @@ public class City {
 		this.deleteFlag = deleteFlag;
 	}
 
+	
 
 	@Override
 	public String toString() {

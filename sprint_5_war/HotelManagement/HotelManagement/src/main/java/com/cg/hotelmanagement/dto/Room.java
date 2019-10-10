@@ -34,9 +34,12 @@ public class Room {
 	@Column(name="delete_flag")
 	private int deleteFlag=0;
 	
+	@ManyToOne
+	@JoinColumn(name="hotel_id")
+	private Hotel hotel;
 	
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER )	
-	@JoinColumn(name="room_id")
+	
+	@OneToMany(mappedBy = "room",cascade = CascadeType.ALL)	
 	private List<Booking> bookingDetails=new LinkedList<>();
 	
 	public Room() {
@@ -101,6 +104,14 @@ public class Room {
 
 	public void setDeleteFlag(int deleteFlag) {
 		this.deleteFlag = deleteFlag;
+	}
+
+	public Hotel getHotel() {
+		return hotel;
+	}
+
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
 	}
 
 

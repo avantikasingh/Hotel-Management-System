@@ -43,7 +43,6 @@ public class AdminService implements IAdminService {
 			// TODO: handle exception
 			throw new HotelException("Unable to add city");
 		}
-
 	}
 
 	public boolean removeCity(Long cityId) throws HotelException {
@@ -67,7 +66,6 @@ public class AdminService implements IAdminService {
 			// TODO: handle exception
 			throw new HotelException("Unable to remove hotel");
 		}
-
 	}
 
 	public boolean addRoom(Long cityId, Long hotelId, Room room) throws HotelException {
@@ -98,12 +96,16 @@ public class AdminService implements IAdminService {
 //		Deletes a room from the database based on the roomId
 		try {
 			Room room = roomrepo.findById(roomId).orElse(null);
-			roomrepo.delete(room);
-			return true;
+			Hotel hotel = room.getHotel();
+			City city = hotel.getCity();
+			if(city!=null && hotel!=null && city.getCityId()==cityId && hotel.getHotelId()==hotelId) {
+				roomrepo.delete(room);
+				return true;
+			}
 		} catch (Exception e) {
-			// TODO: handle exception
 			throw new HotelException("Unable to remove room");
 		}
+		return false;
 
 	}
 
@@ -171,6 +173,7 @@ public class AdminService implements IAdminService {
 				List<Hotel> hotelList = city.getHotelList();
 				hotelList.add(hotel);
 				city.setHotelList(hotelList);
+				hotel.setCity(city);
 				cityrepo.save(city);
 				return true;
 			}

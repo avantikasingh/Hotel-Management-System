@@ -37,7 +37,9 @@ public class Hotel {
 	private Float hotelRating;
 	@Column(name="delete_flag")
 	private int deleteFlag=0;
-	
+	@ManyToOne
+	@JoinColumn(name="city_id")
+	private City city;
 	
 	@OneToMany(cascade = CascadeType.ALL ,fetch = FetchType.EAGER)
 	@JoinColumn(name="hotel_id")
@@ -114,9 +116,15 @@ public class Hotel {
 	public void setDeleteFlag(int deleteFlag) {
 		this.deleteFlag = deleteFlag;
 	}
-
-
 	
+	public City getCity() {
+		return city;
+	}
+
+	public void setCity(City city) {
+		this.city = city;
+	}
+
 	@Override
 	public String toString() {
 		return "Hotel [hotelId=" + hotelId + ", hotelName=" + hotelName + ", hotelAddress=" + hotelAddress
