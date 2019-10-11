@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="com/cg/hotelmanagement/ui/" kind="src" path="HotelManagement/src/main/java"/>
+	<classpathentry kind="src" path="HotelManagement/src/main/java/com/cg/hotelmanagement/ui"/>
+	<classpathentry kind="src" path="HotelManagement/src/test/java"/>
+	<classpathentry kind="output" path="HotelManagement/target/classes"/>
+</classpath>

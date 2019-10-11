@@ -5,14 +5,21 @@ import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.format.annotation.DateTimeFormat;
+
+
 
 @Entity
 public class Customer {
@@ -44,6 +51,23 @@ public class Customer {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Booking booking;
+	
+	
+	
+	@Column(name = "created_date", nullable = false, updatable = false)
+	@CreatedDate
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createdDate;
+	@Column(name = "modified_date")
+	@LastModifiedDate
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date modifiedDate;
+	@Column(name = "created_by")
+	@CreatedBy
+	private String createdBy;
+	@Column(name = "modified_by")
+	@LastModifiedBy
+	private String modifiedBy;
 
 	
 	//Default role for a new registered user is USER.
@@ -66,10 +90,49 @@ public class Customer {
 
 	
 
-	public Customer(String username, String emailId, LocalDate dob, String userMobile, String firstName,
-			String lastName, String gender, String aadharNumber, String password, int deleteFlag,
-			Booking booking) {
+
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public Date getModifiedDate() {
+		return modifiedDate;
+	}
+
+	public void setModifiedDate(Date modifiedDate) {
+		this.modifiedDate = modifiedDate;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public String getModifiedBy() {
+		return modifiedBy;
+	}
+
+	public void setModifiedBy(String modifiedBy) {
+		this.modifiedBy = modifiedBy;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public Customer(Long userId, String username, String emailId, LocalDate dob, String userMobile, String firstName,
+			String lastName, String gender, String aadharNumber, String password, String role, int deleteFlag,
+			Booking booking, Date createdDate, Date modifiedDate, String createdBy, String modifiedBy) {
 		super();
+		this.userId = userId;
 		this.username = username;
 		this.emailId = emailId;
 		this.dob = dob;
@@ -79,8 +142,13 @@ public class Customer {
 		this.gender = gender;
 		this.aadharNumber = aadharNumber;
 		this.password = password;
+		this.role = role;
 		this.deleteFlag = deleteFlag;
 		this.booking = booking;
+		this.createdDate = createdDate;
+		this.modifiedDate = modifiedDate;
+		this.createdBy = createdBy;
+		this.modifiedBy = modifiedBy;
 	}
 
 	public Long getUserId() {

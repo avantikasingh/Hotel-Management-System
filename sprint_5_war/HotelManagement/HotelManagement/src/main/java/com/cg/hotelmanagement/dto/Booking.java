@@ -1,6 +1,7 @@
 package com.cg.hotelmanagement.dto;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -11,6 +12,16 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -54,23 +65,98 @@ public class Booking {
 
 	@OneToOne
 	private Customer customer;
+	
+	@Column(name = "created_date", nullable = false, updatable = false)
+	@CreatedDate
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createdDate;
+	@Column(name = "modified_date")
+	@LastModifiedDate
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date modifiedDate;
+	@Column(name = "created_by")
+	@CreatedBy
+	private String createdBy;
+	@Column(name = "modified_by")
+	@LastModifiedBy
+	private String modifiedBy;
 
 	public Booking() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Booking(LocalDate checkIn, LocalDate checkOut,Room room,int deleteFlag) {
+
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+
+
+	public Date getModifiedDate() {
+		return modifiedDate;
+	}
+
+
+
+	public void setModifiedDate(Date modifiedDate) {
+		this.modifiedDate = modifiedDate;
+	}
+
+
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+
+
+	public String getModifiedBy() {
+		return modifiedBy;
+	}
+
+
+
+	public void setModifiedBy(String modifiedBy) {
+		this.modifiedBy = modifiedBy;
+	}
+
+
+
+	public Booking(Long bookingId, LocalDate checkIn, LocalDate checkOut, String cityName, String hotelName,
+			String hotelAddress, String hotelPhoneno, Float hotelRating, Room room, int deleteFlag, Customer customer,
+			Date createdDate, Date modifiedDate, String createdBy, String modifiedBy) {
 		super();
+		this.bookingId = bookingId;
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
-		this.room=room;
+		this.cityName = cityName;
+		this.hotelName = hotelName;
+		this.hotelAddress = hotelAddress;
+		this.hotelPhoneno = hotelPhoneno;
+		this.hotelRating = hotelRating;
+		this.room = room;
 		this.deleteFlag = deleteFlag;
-		this.hotelName=room.getHotel().getHotelName();
-		this.hotelAddress=room.getHotel().getHotelAddress();
-		this.hotelRating=room.getHotel().getHotelRating();
-		this.hotelPhoneno=room.getHotel().getHotelPhoneNumber();
-		this.cityName=room.getHotel().getCity().getCityName();
+		this.customer = customer;
+		this.createdDate = createdDate;
+		this.modifiedDate = modifiedDate;
+		this.createdBy = createdBy;
+		this.modifiedBy = modifiedBy;
 	}
+
+
 
 	public Long getBookingId() {
 		return bookingId;
