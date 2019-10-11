@@ -134,6 +134,22 @@ public class Booking {
 	}
 
 
+	
+	
+	public Booking(LocalDate checkIn, LocalDate checkOut, Room room, int deleteFlag) {
+		super();
+		this.checkIn = checkIn;
+		this.checkOut = checkOut;
+		this.room = room;
+		this.deleteFlag = deleteFlag;
+		this.hotelName=room.getHotel().getHotelName();
+		this.hotelAddress=room.getHotel().getHotelAddress();
+		this.hotelRating=room.getHotel().getHotelRating();
+		this.hotelPhoneno=room.getHotel().getHotelPhoneNumber();
+		this.cityName=room.getHotel().getCity().getCityName();
+	}
+
+
 
 	public Booking(Long bookingId, LocalDate checkIn, LocalDate checkOut, String cityName, String hotelName,
 			String hotelAddress, String hotelPhoneno, Float hotelRating, Room room, int deleteFlag, Customer customer,
