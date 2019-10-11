@@ -20,7 +20,7 @@ Enter City Details
 </tr>
 
 <tr>
-<td><input type= "submit" value="Add City" />
+<td><input type= "submit" value="Add City" id="submit" />
 </tr>
 
 </fo:form>
@@ -32,7 +32,9 @@ Enter City Details
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </body>
 
+
 <script type="text/javascript">
+
 $(function(){
 	$("#cityname_error_message").hide();
 	var error_cityname=false;

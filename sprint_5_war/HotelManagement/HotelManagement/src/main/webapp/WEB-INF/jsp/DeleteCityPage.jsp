@@ -63,16 +63,8 @@ error_cityid=true;
 }
 $("#deletecityform").submit(function(){
 error_cityid=false;
-error_hotelname=false;
-error_hoteladdress=false;
-error_hotelphone=false;
-error_hotelrating=false;
 check_cityid();
-check_hotelname();
-check_hoteladdress();
-check_hotelphone();
-check_hotelrating()
-if(error_cityid===false && error_hotelname===false && error_hoteladdress===false && error_hotelphone===false && error_hotelrating=false)
+if(error_cityid===false)
 {
 //alert("Added center successfully");
 return true;

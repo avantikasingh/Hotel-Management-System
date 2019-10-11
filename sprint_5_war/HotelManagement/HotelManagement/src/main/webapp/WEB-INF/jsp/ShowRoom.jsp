@@ -12,7 +12,7 @@
 <table>
 <tr>
 <td>City Id
-<td><input type = "number" name = "cityid" id="form_city_id" required="">
+<td><input type = "number" name = "cityid" id="form_city_id" required=""></td>
 <td><span class="form_error" id="cityid_error_message" style="color:red;"></span></td>
 </tr>
 <tr>
@@ -121,6 +121,4 @@ return false;
 });
 
 </script>
-</html>
-
 </html>

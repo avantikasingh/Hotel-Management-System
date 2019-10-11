@@ -100,6 +100,7 @@ error_hotelid=true;
 $("#deletehotelform").submit(function(){
 error_cityid=false;
 error_hotelid=false;
+check_cityid();
 check_hotelid();
 if(error_cityid===false && error_hotelid===false)
 {
