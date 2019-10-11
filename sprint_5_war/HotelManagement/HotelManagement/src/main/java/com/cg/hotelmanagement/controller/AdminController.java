@@ -39,7 +39,6 @@ public class AdminController {
 	@Autowired
 	ICustomerService customerService;
 
-	
 	Long cityID = null;
 	Long hotelID = null;
 //	public AdminController() {
@@ -49,9 +48,9 @@ public class AdminController {
 //	public String adminPage() {
 //		return "AdminPage";
 //	}
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
-	
+
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage() {
 		logger.debug("In login controller");
@@ -68,35 +67,35 @@ public class AdminController {
 		System.out.println("ok1");
 		customerService.register(customer);
 		System.out.println("ok1");
-		//customerService.register(firstName, lastName, gender, username, emailId, dateOfBirth, userMobileNo, aadharNumber, password)
+		// customerService.register(firstName, lastName, gender, username, emailId,
+		// dateOfBirth, userMobileNo, aadharNumber, password)
 		return "LoginPage";
 
 	}
 
-	
-
 	@RequestMapping(value = "/loginpage", method = RequestMethod.POST)
-	public ModelAndView checkLogin(@RequestParam("username") String username, @RequestParam("password") String password) {
-		
+	public ModelAndView checkLogin(@RequestParam("username") String username,
+			@RequestParam("password") String password) {
+
 		session.setAttribute("username", username);
 		session.setAttribute("password", password);
-		
+
 		System.out.println(session.getAttribute("username"));
-		
+
 		int value = customerService.authenticateUser(username, password);
-		System.out.println("value :"+value);
-		
+		System.out.println("value :" + value);
+
 		if (value == 1) {
-			return new ModelAndView("AdminPage","session",session);
+			return new ModelAndView("AdminPage", "session", session);
 
 		}
 		if (value == 0) {
-			return new ModelAndView("Customer","session",session);
+			return new ModelAndView("Customer", "session", session);
 		}
 		if (value == -1) {
-			return new ModelAndView("LoginPage","session",null);
+			return new ModelAndView("LoginPage", "session", null);
 		}
-		return new ModelAndView("LoginPage","session",null);
+		return new ModelAndView("LoginPage", "session", null);
 	}
 
 	@RequestMapping(value = "/addcity", method = RequestMethod.GET)
@@ -106,8 +105,14 @@ public class AdminController {
 
 	@RequestMapping(value = "/pagesubmitaddcitypage", method = RequestMethod.POST)
 	public String addCityData(@ModelAttribute("city") City city) throws Exception {
-		adminService.addCity(city);
-		return "AdminPage";
+		try {
+			adminService.addCity(city);
+			return "AdminPage";
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to Show City");
+		}
+		
 
 	}
 
@@ -119,12 +124,17 @@ public class AdminController {
 	@RequestMapping(value = "/pagesubmitaddhotelpage", method = RequestMethod.POST)
 	public String addHotelData(@Valid @ModelAttribute("hotel") Hotel hotel, BindingResult result,
 			@RequestParam("cityid") int cityId) throws Exception {
-		if (result.hasErrors()) {
-			return "AddHotelPage";
-		} else {
-			hotel.setDeleteFlag(0);
-			adminService.addHotel((long) cityId, hotel);
-			return "AdminPage";
+		try {
+			if (result.hasErrors()) {
+				return "AddHotelPage";
+			} else {
+				hotel.setDeleteFlag(0);
+				adminService.addHotel((long) cityId, hotel);
+				return "AdminPage";
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to perform the operation");
 		}
 
 	}
@@ -137,16 +147,26 @@ public class AdminController {
 	@RequestMapping(value = "/pagesubmitaddroompage", method = RequestMethod.POST)
 	public String addRoomData(@ModelAttribute("room") Room room, @RequestParam("cityid") int cityId,
 			@RequestParam("hotelid") int hotelId) throws Exception {
-		// System.out.println(room.toString());
-		adminService.addRoom((long) cityId, (long) hotelId, room);
-		return "AdminPage";
+		
+		try {
+			adminService.addRoom((long) cityId, (long) hotelId, room);
+			return "AdminPage";
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to add Room");
+		}
 
 	}
 
 	@RequestMapping(value = "/showcity", method = RequestMethod.GET)
 	public ModelAndView getAllCityData() throws HotelException {
-		List<City> myList = adminService.showCity();
-		return new ModelAndView("ShowAllCities", "data", myList);
+		try {
+			List<City> myList = adminService.showCity();
+			return new ModelAndView("ShowAllCities", "data", myList);
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to Show City");
+		}
 	}
 
 	@RequestMapping(value = "/showhotel", method = RequestMethod.GET)
@@ -156,8 +176,13 @@ public class AdminController {
 
 	@RequestMapping(value = "/showallhotel", method = RequestMethod.POST)
 	public ModelAndView showHotelData(@RequestParam("cityid") int cityId) throws HotelException {
-		List<Hotel> myList = adminService.showHotel((long) cityId);
-		return new ModelAndView("ShowHotel", "data", myList);
+		try {
+			List<Hotel> myList = adminService.showHotel((long) cityId);
+			return new ModelAndView("ShowHotel", "data", myList);
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to Show Hotel");
+		}
 	}
 
 	@RequestMapping(value = "/showroom", method = RequestMethod.GET)
@@ -168,8 +193,13 @@ public class AdminController {
 	@RequestMapping(value = "/showallroom", method = RequestMethod.POST)
 	public ModelAndView showRoomData(@RequestParam("cityid") int cityId, @RequestParam("hotelid") int hotelId)
 			throws HotelException {
-		List<Room> myList = adminService.showRoom((long) cityId, (long) hotelId);
-		return new ModelAndView("ShowRoom", "data", myList);
+		try {
+			List<Room> myList = adminService.showRoom((long) cityId, (long) hotelId);
+			return new ModelAndView("ShowRoom", "data", myList);
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to Remove City");
+		}
 	}
 
 	@RequestMapping(value = "/deletecity", method = RequestMethod.GET)
@@ -179,15 +209,16 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/deletecitydata", method = RequestMethod.POST)
-	public String deleteCityData(@RequestParam("cityid") int cityId) {
+	public String deleteCityData(@RequestParam("cityid") int cityId) throws HotelException {
 		try {
 			adminService.removeCity((long) cityId);
+			return "AdminPage";
 		} catch (HotelException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new HotelException("Unable to Remove City");
+			
 		}
-//		return "redirect:/showall";
-		return "AdminPage";
+		
 	}
 
 	@RequestMapping(value = "/deletehotel", method = RequestMethod.GET)
@@ -197,14 +228,15 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/deletehoteldata", method = RequestMethod.POST)
-	public String deleteHotelData(@RequestParam("cityid") int cityId, @RequestParam("hotelid") int hotelId) {
+	public String deleteHotelData(@RequestParam("cityid") int cityId, @RequestParam("hotelid") int hotelId)throws HotelException {
 		try {
 			adminService.removeHotel((long) cityId, (long) hotelId);
+			return "AdminPage";
 		} catch (HotelException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new HotelException("Unable to Remove Hotel");
 		}
-		return "AdminPage";
+		
 	}
 
 	@RequestMapping(value = "/deleteroom", method = RequestMethod.GET)
@@ -215,14 +247,15 @@ public class AdminController {
 
 	@RequestMapping(value = "/deleteroomdata", method = RequestMethod.POST)
 	public String deleteRoomData(@RequestParam("cityid") int cityId, @RequestParam("hotelid") int hotelId,
-			@RequestParam("roomid") int roomId) {
+			@RequestParam("roomid") int roomId) throws HotelException {
 		try {
 			adminService.removeRoom((long) cityId, (long) hotelId, (long) roomId);
+			return "AdminPage";
 		} catch (HotelException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new HotelException("Unable to Remove Room");
 		}
-		return "AdminPage";
+
 	}
 
 	@RequestMapping(value = "/updatehotel", method = RequestMethod.GET)
@@ -233,15 +266,25 @@ public class AdminController {
 	@RequestMapping(value = "/updatehotelview", method = RequestMethod.GET)
 	public ModelAndView viewHotelModifyDetails(@RequestParam("hotelid") Integer hotelId,
 			@RequestParam("cityid") Long cityid, @ModelAttribute("hoteldata") Hotel hotel) throws HotelException {
-		cityID = cityid;
-		return new ModelAndView("UpdateHotelPage", "HotelData", adminService.viewHotel((long)hotelId));
+		try {
+			cityID = cityid;
+			return new ModelAndView("UpdateHotelPage", "HotelData", adminService.viewHotel((long) hotelId));
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to Find Hotel");
+		}
 	}
 
 	@RequestMapping(value = "/updatehoteldata", method = RequestMethod.POST)
 	public String updateHotel(@ModelAttribute("hoteldata") Hotel hotel) throws HotelException {
-		adminService.updateHotel(cityID, hotel);
-		cityID = null;
-		return "AdminPage";
+		try {
+			adminService.updateHotel(cityID, hotel);
+			cityID = null;
+			return "AdminPage";
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to Update Hotel");
+		}
 	}
 
 	@RequestMapping(value = "/updateroom", method = RequestMethod.GET)
@@ -253,44 +296,27 @@ public class AdminController {
 	public ModelAndView viewRoomModifyDetails(@RequestParam("cityid") Long cityid,
 			@RequestParam("hotelid") Long hotelid, @RequestParam("roomid") Long roomid,
 			@ModelAttribute("roomdata") Room room) throws HotelException {
-		cityID = cityid;
-		hotelID = hotelid;
-		return new ModelAndView("UpdateRoomPage", "RoomData", adminService.viewSingleRoom(roomid));
+		try {
+			cityID = cityid;
+			hotelID = hotelid;
+			return new ModelAndView("UpdateRoomPage", "RoomData", adminService.viewSingleRoom(roomid));
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to Find Room");
+		}
 	}
 
 	@RequestMapping(value = "/updateroomdata", method = RequestMethod.POST)
 	public String updateRoom(@ModelAttribute("roomdata") Room room) throws HotelException {
-		adminService.updateRoom(cityID, hotelID, room);
-		cityID = null;
-		hotelID = null;
-		return "AdminPage";
+		try {
+			adminService.updateRoom(cityID, hotelID, room);
+			cityID = null;
+			hotelID = null;
+			return "AdminPage";
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new HotelException("Unable to Update Room");
+		}
 	}
-
-//	@RequestMapping(value = "/showall", method = RequestMethod.GET)
-//	public ModelAndView getAllData() {
-//		List<Trainee> traineeList = traineeservice.showAllTrainee();
-//		return new ModelAndView("ShowAllTrainee", "data", traineeList);
-//	}
-//
-//	@RequestMapping(value = "/search", method = RequestMethod.GET)
-//	public String search() {
-//		return "SearchTrainee";
-//		
-//	}
-//	
-//	@RequestMapping(value = "/showtrainee", method = RequestMethod.POST)
-//	public ModelAndView searchTrainee(@RequestParam("tid") int traineeId) {
-//		Trainee trainee = traineeservice.searchTrainee(traineeId);
-//		return new ModelAndView("SearchTrainee","trainee", trainee);
-//		
-//	}
-//	@RequestMapping(value = "/showdeletetrainee", method = RequestMethod.POST)
-//	public ModelAndView searchDeleteTrainee(@RequestParam("tid") int traineeId) {
-//		idDelete = traineeId;
-//		Trainee trainee = traineeservice.searchTrainee(traineeId);
-//		return new ModelAndView("DeleteTrainee","trainee", trainee);
-//		
-//	}
-//	
 
 }
