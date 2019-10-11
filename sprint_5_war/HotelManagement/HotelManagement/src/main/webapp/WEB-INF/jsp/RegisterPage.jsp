@@ -25,8 +25,7 @@
 
 			<tr>
 				<td>Email Id</td>
-				<td><input type="text" name="emailId" id="form_login_email"/></td>
-				<td><span class="form_error" id="email_error_message" style="color:red;"></span></td>
+				<td><input type="text" name="emailId" "/></td>
 			</tr>
 			<tr>
 				<td>Date of Birth</td>
@@ -72,20 +71,15 @@
 $(function(){
 $("#username_error_message").hide();
 $("#password_error_message").hide();
-$("#email_error_message").hide();
 $("#hotelphone_error_message").hide();
 var error_username=false;
 var error_password=false;
-var error_email=false;
 var error_hotelphone=false;
 $("#form_login_username").focusout(function(){
 check_username();
 });
 $("#form_login_password").focusout(function(){
 check_password();
-});
-$("#form_login_email").focusout(function(){
-	check_email();
 });
 $("#form_hotel_phone").focusout(function(){
 	check_hotelphone();
@@ -154,30 +148,6 @@ error_password=true;
 
 }
 }
-function check_email()
-{	
-var pattern=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-var email=$("#form_login_email").val();
-if(pattern.test(email) && cityid!=='')
-{
-$("#email_error_message").hide();
-$("#form_login_email").css("border-bottom","2px solid #34FA58");
-}
-else if(email=='')
-{
-$("#email_error_message").html("should not be empty");
-$("#email_error_message").show();
-$("#form_login_email").css("border-bottom","2px solid #F90A0A");
-error_email=true;
-}
-else
-{
-$("#email_error_message").html("Enter a valid email");
-$("#email_error_message").show();
-$("#form_login_email").css("border-bottom","2px solid #F90A0A");
-error_email=true;
-}
-}
 function check_hotelphone()
 {
 var pattern=/^[0]?[789]\d{9}$/;
@@ -206,13 +176,11 @@ error_hotelphone=true;
 $("#registerform").submit(function(){
 error_username=false;
 error_password=false;
-error_email=false;
 error_hotelphone=false;
 check_username();
 check_password();
-check_email();
 check_hotelphone();
-if(error_username===false && error_password===false && error_email===false && error_hotelphone===false)
+if(error_username===false && error_password===false && error_hotelphone===false)
 {
 //alert("Added center successfully");
 return true;
