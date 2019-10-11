@@ -35,8 +35,8 @@ Enter Room Details
 </tr>
 <tr>
 <td>Room Number</td>
-<td><fo:input path="roomNumber" /> </td>
-
+<td><fo:input path="roomNumber" id="form_room_number" required="" /> </td>
+<td><span class="form_error" id="roomnumber_error_message" style="color:red;"></span></td>
 </tr>
 
 
@@ -59,9 +59,11 @@ $(function(){
 $("#cityid_error_message").hide();
 $("#hotelid_error_message").hide();
 $("#roomrent_error_message").hide();
+$("#roomnumber_error_message").hide();
 var error_cityid=false;
 var error_hotelid=false;
 var error_roomrent=false;
+var error_roomnumber=false;
 $("#form_city_id").focusout(function(){
 	check_cityid();
 });
@@ -70,6 +72,9 @@ $("#form_hotel_id").focusout(function(){
 });
 $("#form_room_rent").focusout(function(){
 check_roomrent();
+});
+$("#form_room_number").focusout(function(){
+check_roomnumber();
 });
 function check_cityid()
 {
@@ -146,14 +151,32 @@ error_roomrent=true;
 
 }
 }
+function check_roomnumber()
+{
+var roomnumber=$("#form_room_rent").val();
+if(roomrent!=='')
+{
+$("#roomnumber_error_message").hide();
+$("#form_room_number").css("border-bottom","2px solid #34FA58");
+}
+else(roomrent=='')
+{
+$("#roomnumber_error_message").html("should not be empty");
+$("#roomnumber_error_message").show();
+$("#form_room_number").css("border-bottom","2px solid #F90A0A");
+error_roomnumber=true;
+}
+}
 $("#addroomform").submit(function(){
 error_cityid=false;
 error_hotelid=false;
 error_roomrent=false;
+error_roomnumber=false;
 check_cityid();
 check_hotelid();
 check_roomrent();
-if(error_cityid===false && error_hotelid===false && error_roomrent===false)
+check_roomnumber();
+if(error_cityid===false && error_hotelid===false && error_roomrent===false && error_roomnumber===false)
 {
 //alert("Added center successfully");
 return true;
