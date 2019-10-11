@@ -40,19 +40,18 @@ public class CustomerService implements ICustomerService {
 	HotelRepository hotelRepo;
 	
 	@Override
-	public boolean register(String firstName, String lastName, String gender,String username, String emailId, LocalDate dateOfBirth,
-			String userMobileNo, String aadharNumber, String password) {
+	public boolean register(Customer customer) {
 		//Customer customer = new Customer(username, emailId, dateOfBirth, userMobileNo, firstName, lastName,gender, aadharNumber, password,);
-		Customer customer = new Customer();
-		customer.setAadharNumber(aadharNumber);
-		customer.setDob(dateOfBirth);
-		customer.setEmailId(emailId);
-		customer.setFirstName(firstName);
-		customer.setGender(gender);
-		customer.setLastName(lastName);
-		customer.setPassword(password);
-		customer.setUserMobile(userMobileNo);
-		customer.setUsername(username);
+//		Customer customer = new Customer();
+//		customer.setAadharNumber(aadharNumber);
+//		customer.setDob(dateOfBirth);
+//		customer.setEmailId(emailId);
+//		customer.setFirstName(firstName);
+//		customer.setGender(gender);
+//		customer.setLastName(lastName);
+//		customer.setPassword(password);
+//		customer.setUserMobile(userMobileNo);
+//		customer.setUsername(username);
 		customerRepo.save(customer);
 		return true;
 	}

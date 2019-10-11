@@ -14,8 +14,7 @@ import com.cg.hotelmanagement.exception.HotelException;
 
 public interface ICustomerService {
 	
-	boolean register(String firstName, String lastName, String gender, String username, String emailId,
-			LocalDate dateOfBirth, String userMobileNo, String aadharNumber, String password);
+	public boolean register(Customer customer);
 	
 	public int authenticateUser(String username, String password);
 	
