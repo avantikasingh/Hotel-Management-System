@@ -300,6 +300,7 @@ public class AdminController {
 		}
 	}
 
+	
 	@RequestMapping(value = "/updateroomdata", method = RequestMethod.POST)
 	public String updateRoom(@ModelAttribute("roomdata") Room room) throws HotelException {
 		try {
