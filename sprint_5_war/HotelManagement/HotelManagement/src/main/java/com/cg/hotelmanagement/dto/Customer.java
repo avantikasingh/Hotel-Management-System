@@ -42,7 +42,7 @@ public class Customer {
 	@Column(name="delete_flag")
 	private int deleteFlag=0;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Booking booking;
 
 	

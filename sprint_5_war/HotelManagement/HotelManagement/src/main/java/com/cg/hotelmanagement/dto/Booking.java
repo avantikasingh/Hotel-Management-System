@@ -52,20 +52,24 @@ public class Booking {
 	@Column(name = "delete_flag")
 	private int deleteFlag = 0;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	private Customer customer;
 
 	public Booking() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Booking(LocalDate checkIn, LocalDate checkOut, int deleteFlag) {
+	public Booking(LocalDate checkIn, LocalDate checkOut,Room room,int deleteFlag) {
 		super();
-		this.bookingId = bookingId;
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
+		this.room=room;
 		this.deleteFlag = deleteFlag;
-		this.customer = customer;
+		this.hotelName=room.getHotel().getHotelName();
+		this.hotelAddress=room.getHotel().getHotelAddress();
+		this.hotelRating=room.getHotel().getHotelRating();
+		this.hotelPhoneno=room.getHotel().getHotelPhoneNumber();
+		this.cityName=room.getHotel().getCity().getCityName();
 	}
 
 	public Long getBookingId() {
@@ -92,14 +96,6 @@ public class Booking {
 		this.checkOut = checkOut;
 	}
 
-	public String getCityName() {
-		return cityName;
-	}
-
-	public void setCityName(String cityName) {
-		this.cityName = cityName;
-	}
-
 	public int getDeleteFlag() {
 		return deleteFlag;
 	}
@@ -115,13 +111,60 @@ public class Booking {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
+
 	
+	public String getCityName() {
+		return cityName;
+	}
+
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
+	}
+
+	public String getHotelName() {
+		return hotelName;
+	}
+
+	public void setHotelName(String hotelName) {
+		this.hotelName = hotelName;
+	}
+
+	public String getHotelAddress() {
+		return hotelAddress;
+	}
+
+	public void setHotelAddress(String hotelAddress) {
+		this.hotelAddress = hotelAddress;
+	}
+
+	public String getHotelPhoneno() {
+		return hotelPhoneno;
+	}
+
+	public void setHotelPhoneno(String hotelPhoneno) {
+		this.hotelPhoneno = hotelPhoneno;
+	}
+
+	public Float getHotelRating() {
+		return hotelRating;
+	}
+
+	public void setHotelRating(Float hotelRating) {
+		this.hotelRating = hotelRating;
+	}
+
+	public Room getRoom() {
+		return room;
+	}
+
+	public void setRoom(Room room) {
+		this.room = room;
+	}
 	
 
 	@Override
 	public String toString() {
-		return "Booking [bookingId=" + bookingId + ", checkIn=" + checkIn + ", checkOut=" + checkOut + ", cityName="
-				+ cityName + ", deleteFlag=" + deleteFlag + ", customer=" + customer + "]";
+		return "Booking [bookingId=" + bookingId + ", checkIn=" + checkIn + ", checkOut=" + checkOut + ", deleteFlag=" + deleteFlag + ", customer=" + customer + "]";
 	}
 
 }

@@ -19,6 +19,7 @@ import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.exception.HotelException;
 import com.cg.hotelmanagement.repository.CityRepository;
+import com.cg.hotelmanagement.repository.CustomerRepository;
 import com.cg.hotelmanagement.repository.HotelRepository;
 import com.cg.hotelmanagement.repository.IAdminDao;
 import com.cg.hotelmanagement.repository.RoomRepository;
@@ -32,6 +33,8 @@ public class AdminService implements IAdminService {
 	HotelRepository hotelrepo;
 	@Autowired
 	RoomRepository roomrepo;
+	@Autowired
+	CustomerRepository customerRepo;
 
 	@Override
 	public boolean addCity(City city) throws HotelException {
@@ -206,6 +209,22 @@ public class AdminService implements IAdminService {
 			// TODO: handle exception
 			throw new HotelException("Unable to update hotel");
 		}
+	}
+	
+	@Override
+	public int authenticateUser(String username, String password) {
+		List<Customer> userList=customerRepo.findAll();
+		for(Customer c:userList)
+		{
+			if((c.getUsername()==username)&&(c.getPassword()==password))
+			{
+				if (c.getRole().equalsIgnoreCase("Admin"))
+					return 1;
+				else
+					return 0;
+			}
+		}
+		return -1;
 	}
 
 	@Override

@@ -27,6 +27,7 @@ import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.exception.HotelException;
 import com.cg.hotelmanagement.service.IAdminService;
+import com.cg.hotelmanagement.service.ICustomerService;
 
 @Controller
 public class AdminController {
@@ -35,6 +36,10 @@ public class AdminController {
 	HttpSession session;
 	@Autowired
 	IAdminService adminService;
+	@Autowired
+	ICustomerService customerService;
+
+	
 	Long cityID = null;
 	Long hotelID = null;
 //	public AdminController() {
@@ -67,76 +72,30 @@ public class AdminController {
 
 	}
 
-	@RequestMapping(value = "/BookingPage", method = RequestMethod.POST)
-	public String viewBooking(@RequestParam("cityName") String cityName, @RequestParam("hotelid") Long hotelId,
-			@RequestParam("roomid") Long roomId,@RequestParam("checkin") String checkin,@RequestParam("checkout") String checkout,Map<String,Object> model) throws HotelException {
-		
-		System.out.println(checkin);
-		System.out.println(checkout);
-		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-
-		LocalDate checkinDate = LocalDate.parse(checkin, formatter);
-		LocalDate checkoutDate = LocalDate.parse(checkout, formatter);
-		
-		model.put("checkin", checkinDate);
-		model.put("checkout", checkoutDate);
-		
-		List<City> cityList = adminService.showCity();
-		Hotel hotel;
-		Room room;
-		City city;
-
-		for (City c : cityList) {
-			if (c.getCityName() == cityName) {
-				city=c;
-				model.put("city", c);
-
-				List<Hotel> hotelList=adminService.showHotel(c.getCityId());
-				
-				for(Hotel h:hotelList)
-				{
-					if(h.getHotelId()==hotelId)
-					{
-						hotel=h;
-						model.put("hotel",h);
-						
-						List<Room> roomList=h.getRoomList();
-						for(Room r:roomList)
-						{
-							if(r.getRoomId()==roomId)
-							{
-								room=r;
-								model.put("room", r);
-							}
-						}
-					}
-				}
-			}
-		}
-		
-		Booking booking=new Booking(checkinDate,checkoutDate,0);
-		System.out.println(booking);
-		model.put("booking", booking);
-		
-		return "BookingPage";
-	}
+	
 
 	@RequestMapping(value = "/loginpage", method = RequestMethod.POST)
-	public String checkLogin(@RequestParam("username") String username, @RequestParam("password") String password) {
-//		int value = adminService.authenticateUser(username, password);
-		session.setAttribute("username", "password");
-//		if (value == 1) {
-			return "AdminPage";
+	public ModelAndView checkLogin(@RequestParam("username") String username, @RequestParam("password") String password) {
+		
+		session.setAttribute("username", username);
+		session.setAttribute("password", password);
+		
+		System.out.println(session.getAttribute("username"));
+		
+		int value = customerService.authenticateUser(username, password);
+		System.out.println("value :"+value);
+		
+		if (value == 1) {
+			return new ModelAndView("AdminPage","session",session);
 
-//		}
-//		if (value == 0) {
-//			return "Customer";
-//		}
-//		if (value == -1) {
-//			return "LoginPage";
-//		}
-//		return "LoginPage";
+		}
+		if (value == 0) {
+			return new ModelAndView("Customer","session",session);
+		}
+		if (value == -1) {
+			return new ModelAndView("LoginPage","session",null);
+		}
+		return new ModelAndView("LoginPage","session",null);
 	}
 
 	@RequestMapping(value = "/addcity", method = RequestMethod.GET)

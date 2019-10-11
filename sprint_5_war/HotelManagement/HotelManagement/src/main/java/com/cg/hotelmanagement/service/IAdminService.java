@@ -51,6 +51,8 @@ public interface IAdminService {
 
 	public Room viewSingleRoom(long roomId) throws HotelException;
 	
+	public int authenticateUser(String username, String password);
+	
 //	public int authenticateUser(String username, String password);
 //	
 //	public boolean register(Customer customer) throws HotelException;
