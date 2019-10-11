@@ -14,7 +14,7 @@ import com.cg.hotelmanagement.exception.HotelException;
 
 public interface ICustomerService {
 	
-	boolean register(Customer customer);
+	public boolean register(Customer customer);
 	
 	public int authenticateUser(String username, String password);
 	
@@ -32,3 +32,4 @@ public interface ICustomerService {
 
 	
 }
+

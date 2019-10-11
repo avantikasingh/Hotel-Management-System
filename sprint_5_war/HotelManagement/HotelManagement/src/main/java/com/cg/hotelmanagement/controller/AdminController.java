@@ -50,9 +50,7 @@ public class AdminController {
 //		return "AdminPage";
 //	}
 	
-	private static final Logger logger = 
-			LoggerFactory.getLogger(AdminController.class);
-	
+	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage() {
@@ -67,7 +65,10 @@ public class AdminController {
 
 	@RequestMapping(value = "/registerpage", method = RequestMethod.POST)
 	public String registerUser(@ModelAttribute("customer") Customer customer) throws HotelException {
+		System.out.println("ok1");
 		customerService.register(customer);
+		System.out.println("ok1");
+		//customerService.register(firstName, lastName, gender, username, emailId, dateOfBirth, userMobileNo, aadharNumber, password)
 		return "LoginPage";
 
 	}
