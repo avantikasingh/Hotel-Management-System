@@ -52,13 +52,14 @@ public class AdminController {
 
 	@PostMapping(value = "/register")
 	public ResponseEntity<Customer> registerUser(@ModelAttribute Customer customer) throws HotelException {
-		if (customer == null) {
-			logger.error("Error in register user controller");
-			return new ResponseEntity("User not Registered", HttpStatus.INTERNAL_SERVER_ERROR);
-		} else {
+		try {
 			customerService.register(customer);
 			logger.info("Customer registered: " + customer.getUsername());
 			return new ResponseEntity<Customer>(customer, HttpStatus.OK);
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("Error in register user controller");
+			return new ResponseEntity("User not Registered", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -89,41 +90,43 @@ public class AdminController {
 
 	@PostMapping(value = "/addcity")
 	public ResponseEntity<City> addCityData(@ModelAttribute("city") City city) throws Exception {
-		if (city == null) {
-			logger.error("Error in add city controller");
-			return new ResponseEntity("City not added", HttpStatus.INTERNAL_SERVER_ERROR);
-		} else {
+		try {
 			adminService.addCity(city);
 			logger.info("City added: " + city.getCityName());
 			return new ResponseEntity<City>(city, HttpStatus.OK);
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("Error in add city controller");
+			return new ResponseEntity("City not added", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
 	@PostMapping(value = "/addhotel")
 	public ResponseEntity<Hotel> addHotelData(@Valid @ModelAttribute("hotel") Hotel hotel, BindingResult result,
 			@RequestParam("cityid") int cityId) throws Exception {
-		if (hotel == null) {
-			logger.error("Error in add hotel controller");
-			return new ResponseEntity("Hotel not added", HttpStatus.INTERNAL_SERVER_ERROR);
-		} else {
+		try {
 			adminService.addHotel((long) cityId, hotel);
 			logger.info("Hotel registered: " + hotel.getHotelId());
 			return new ResponseEntity<Hotel>(hotel, HttpStatus.OK);
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("Error in add hotel controller");
+			return new ResponseEntity("Hotel not added", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
 	}
-	
 
 	@PostMapping(value = "/addroom")
 	public ResponseEntity<Room> addRoomData(@ModelAttribute Room room, @RequestParam("cityid") int cityId,
 			@RequestParam("hotelid") int hotelId) throws Exception {
-		if (room == null) {
-			logger.error("Error in add room controller");
-			return new ResponseEntity("Room not added", HttpStatus.INTERNAL_SERVER_ERROR);
-		} else {
+		try {
 			adminService.addRoom((long) cityId, (long) hotelId, room);
 			logger.info("Room  registered: " + room.getRoomId());
 			return new ResponseEntity<Room>(room, HttpStatus.OK);
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("Error in add room controller");
+			return new ResponseEntity("Room not added", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
 	}
@@ -131,25 +134,27 @@ public class AdminController {
 	@GetMapping(value = "/showcity")
 	public ResponseEntity<List<City>> getAllCityData() throws HotelException {
 		List<City> cityList = adminService.showCity();
-		if (cityList.isEmpty()) {
-			logger.error("Error in show city controller");
-			return new ResponseEntity("No City Found", HttpStatus.INTERNAL_SERVER_ERROR);
-		} else {
+		try {
 			logger.info("All cities showed");
 			return new ResponseEntity<List<City>>(cityList, HttpStatus.OK);
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("Error in show city controller");
+			return new ResponseEntity("No City Found", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
 	@PostMapping(value = "/showhotel")
 	public ResponseEntity<List<Hotel>> showHotelData(@RequestParam("cityid") int cityId) throws HotelException {
 		List<Hotel> hotelList = adminService.showHotel((long) cityId);
-		if (hotelList.isEmpty()) {
-			logger.error("Error in show hotel controller");
-			return new ResponseEntity("Hotel not available", HttpStatus.INTERNAL_SERVER_ERROR);
-		} else {
+		try {
 			// TODO: handle exception
 			logger.info("All hotels showed");
 			return new ResponseEntity<List<Hotel>>(hotelList, HttpStatus.OK);
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("Error in show hotel controller");
+			return new ResponseEntity("Hotel not available", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
 	}
@@ -158,22 +163,24 @@ public class AdminController {
 	public ResponseEntity<List<Room>> showRoomData(@RequestParam("cityid") int cityId,
 			@RequestParam("hotelid") int hotelId) throws HotelException {
 		List<Room> roomList = adminService.showRoom((long) cityId, (long) hotelId);
-		if (roomList.isEmpty()) {
-			logger.error("Error in show room controller");
-			return new ResponseEntity("Room not available", HttpStatus.INTERNAL_SERVER_ERROR);
-		} else {
+		try {
 			// TODO: handle exception
 			logger.info("All Rooms showed");
 			return new ResponseEntity<List<Room>>(roomList, HttpStatus.OK);
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("Error in show room controller");
+			return new ResponseEntity("Room not available", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
 	@PostMapping(value = "/deletecity")
 	public ResponseEntity deleteCityData(@RequestParam("cityid") int cityId) throws HotelException {
-		if (adminService.removeCity((long) cityId)) {
+		try {
+			adminService.removeCity((long) cityId);
 			logger.info("City Deleted" + cityId);
 			return new ResponseEntity("City deleted", HttpStatus.OK);
-		} else {
+		} catch (Exception e) {
 			logger.error("Error in delete city controller");
 			return new ResponseEntity("City not Deleted", HttpStatus.INTERNAL_SERVER_ERROR);
 
@@ -183,10 +190,11 @@ public class AdminController {
 	@PostMapping(value = "/deletehotel")
 	public ResponseEntity deleteHotelData(@RequestParam("cityid") int cityId, @RequestParam("hotelid") int hotelId)
 			throws HotelException {
-		if (adminService.removeHotel((long) cityId, (long) hotelId)) {
+		try {
+			adminService.removeHotel((long) cityId, (long) hotelId);
 			logger.info("Hotel deleted " + hotelId);
 			return new ResponseEntity("Hotel deleted", HttpStatus.OK);
-		} else {
+		} catch (Exception e) {
 			logger.error("Error in delete hotel controller");
 			return new ResponseEntity("Hotel not Deleted", HttpStatus.INTERNAL_SERVER_ERROR);
 
@@ -196,10 +204,11 @@ public class AdminController {
 	@PostMapping(value = "/deleteroom")
 	public ResponseEntity deleteRoomData(@RequestParam("cityid") int cityId, @RequestParam("hotelid") int hotelId,
 			@RequestParam("roomid") int roomId) throws HotelException {
-		if (adminService.removeRoom((long) cityId, (long) hotelId, (long) roomId)) {
+		try {
+			adminService.removeRoom((long) cityId, (long) hotelId, (long) roomId);
 			logger.info("Deleted Room" + roomId);
 			return new ResponseEntity("Room delted", HttpStatus.OK);
-		} else {
+		} catch (Exception e) {
 			logger.error("Error in delete room controller");
 			return new ResponseEntity("Room not Updated", HttpStatus.INTERNAL_SERVER_ERROR);
 
@@ -220,13 +229,13 @@ public class AdminController {
 
 	@PostMapping(value = "/updatehotel")
 	public ResponseEntity<Hotel> updateHotel(@ModelAttribute Hotel hotel) throws HotelException {
-		if (adminService.updateHotel(cityID, hotel)) {
+		try {
 			adminService.updateHotel(cityID, hotel);
 			cityID = null;
 			logger.info("Hotel Updated: " + hotel.getHotelId());
 			return new ResponseEntity<Hotel>(hotel, HttpStatus.OK);
 
-		} else {
+		} catch (Exception e) {
 			logger.error("Error in update controller");
 			return new ResponseEntity("Hotel not Updated", HttpStatus.INTERNAL_SERVER_ERROR);
 
@@ -250,13 +259,14 @@ public class AdminController {
 
 	@PostMapping(value = "/updateroom")
 	public ResponseEntity<Room> updateRoom(@ModelAttribute Room room) throws HotelException {
-
-		if (adminService.updateRoom(cityID, hotelID, room)) {
+		try {
+			adminService.updateRoom(cityID, hotelID, room);
 			cityID = null;
 			hotelID = null;
 			logger.info("Room update " + room.getRoomId());
 			return new ResponseEntity<Room>(room, HttpStatus.OK);
-		} else {
+		} catch (Exception e) {
+			// TODO: handle exception
 			logger.error("Error in update room controller");
 			return new ResponseEntity("Room not Updated", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
