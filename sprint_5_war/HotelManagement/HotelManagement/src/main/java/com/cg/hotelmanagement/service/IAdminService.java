@@ -1,13 +1,8 @@
 package com.cg.hotelmanagement.service;
 
-import java.math.BigInteger;
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
-import com.cg.hotelmanagement.dto.Booking;
 import com.cg.hotelmanagement.dto.City;
-import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.exception.HotelException;

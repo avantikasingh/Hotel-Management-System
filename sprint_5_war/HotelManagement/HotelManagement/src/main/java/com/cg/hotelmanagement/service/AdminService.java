@@ -1,12 +1,7 @@
-/*
- * 
- * 
- */
-
 package com.cg.hotelmanagement.service;
 
-import java.util.Date;
 import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.slf4j.Logger;
@@ -14,8 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cg.hotelmanagement.controller.AdminController;
-import com.cg.hotelmanagement.dto.Booking;
 import com.cg.hotelmanagement.dto.City;
 import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.dto.Hotel;
@@ -24,7 +17,6 @@ import com.cg.hotelmanagement.exception.HotelException;
 import com.cg.hotelmanagement.repository.CityRepository;
 import com.cg.hotelmanagement.repository.CustomerRepository;
 import com.cg.hotelmanagement.repository.HotelRepository;
-import com.cg.hotelmanagement.repository.IAdminDao;
 import com.cg.hotelmanagement.repository.RoomRepository;
 
 @Service("adminService")

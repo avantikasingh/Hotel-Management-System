@@ -1,10 +1,6 @@
 package com.cg.hotelmanagement.controller;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -20,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.cg.hotelmanagement.dto.Booking;
 import com.cg.hotelmanagement.dto.City;
 import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.dto.Hotel;
@@ -65,7 +60,6 @@ public class AdminController {
 	public String registerUser(@ModelAttribute("customer") Customer customer) throws HotelException {
 		customerService.register(customer);
 		return "LoginPage";
-
 	}
 
 	@RequestMapping(value = "/loginpage", method = RequestMethod.POST)
