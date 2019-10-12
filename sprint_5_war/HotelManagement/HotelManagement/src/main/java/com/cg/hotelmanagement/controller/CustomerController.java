@@ -21,8 +21,13 @@ import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.exception.HotelException;
 import com.cg.hotelmanagement.service.ICustomerService;
 
-@Controller
+/**
+ * 
+ * @author Avantika
+ *
+ */
 
+@Controller
 public class CustomerController {
 
 	@Autowired

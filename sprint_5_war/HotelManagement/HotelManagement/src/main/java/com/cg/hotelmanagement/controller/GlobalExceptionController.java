@@ -6,6 +6,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cg.hotelmanagement.exception.HotelException;
 
+/**
+ * 
+ * @author Saurabh
+ *
+ */
+
 @ControllerAdvice
 public class GlobalExceptionController {
 
