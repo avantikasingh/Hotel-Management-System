@@ -1,11 +1,8 @@
 package com.cg.hotelmanagement.dto;
 
-import java.math.BigInteger;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;

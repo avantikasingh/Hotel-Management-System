@@ -1,10 +1,6 @@
 package com.cg.hotelmanagement.controller;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -20,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.cg.hotelmanagement.dto.Booking;
 import com.cg.hotelmanagement.dto.City;
 import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.dto.Hotel;
@@ -53,7 +48,6 @@ public class AdminController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage() {
-		logger.debug("In login controller");
 		return "LoginPage";
 	}
 
@@ -64,13 +58,8 @@ public class AdminController {
 
 	@RequestMapping(value = "/registerpage", method = RequestMethod.POST)
 	public String registerUser(@ModelAttribute("customer") Customer customer) throws HotelException {
-		System.out.println("ok1");
 		customerService.register(customer);
-		System.out.println("ok1");
-		// customerService.register(firstName, lastName, gender, username, emailId,
-		// dateOfBirth, userMobileNo, aadharNumber, password)
 		return "LoginPage";
-
 	}
 
 	@RequestMapping(value = "/loginpage", method = RequestMethod.POST)
@@ -109,7 +98,7 @@ public class AdminController {
 			adminService.addCity(city);
 			return "AdminPage";
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in add city controller");
 			throw new HotelException("Unable to Show City");
 		}
 		
@@ -126,6 +115,7 @@ public class AdminController {
 			@RequestParam("cityid") int cityId) throws Exception {
 		try {
 			if (result.hasErrors()) {
+				logger.error("Error in add hotel controller");
 				return "AddHotelPage";
 			} else {
 				hotel.setDeleteFlag(0);
@@ -133,7 +123,7 @@ public class AdminController {
 				return "AdminPage";
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in add hotel controller");
 			throw new HotelException("Unable to perform the operation");
 		}
 
@@ -152,7 +142,7 @@ public class AdminController {
 			adminService.addRoom((long) cityId, (long) hotelId, room);
 			return "AdminPage";
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in add room controller");
 			throw new HotelException("Unable to add Room");
 		}
 
@@ -164,7 +154,7 @@ public class AdminController {
 			List<City> myList = adminService.showCity();
 			return new ModelAndView("ShowAllCities", "data", myList);
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in show city controller");
 			throw new HotelException("Unable to Show City");
 		}
 	}
@@ -180,7 +170,7 @@ public class AdminController {
 			List<Hotel> myList = adminService.showHotel((long) cityId);
 			return new ModelAndView("ShowHotel", "data", myList);
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in show hotel controller");
 			throw new HotelException("Unable to Show Hotel");
 		}
 	}
@@ -197,8 +187,8 @@ public class AdminController {
 			List<Room> myList = adminService.showRoom((long) cityId, (long) hotelId);
 			return new ModelAndView("ShowRoom", "data", myList);
 		} catch (Exception e) {
-			// TODO: handle exception
-			throw new HotelException("Unable to Remove City");
+			logger.error("Error in show room controller");
+			throw new HotelException("Unable to Show Room");
 		}
 	}
 
@@ -214,7 +204,7 @@ public class AdminController {
 			adminService.removeCity((long) cityId);
 			return "AdminPage";
 		} catch (HotelException e) {
-			// TODO Auto-generated catch block
+			logger.error("Error in delete city controller");
 			throw new HotelException("Unable to Remove City");
 			
 		}
@@ -233,10 +223,9 @@ public class AdminController {
 			adminService.removeHotel((long) cityId, (long) hotelId);
 			return "AdminPage";
 		} catch (HotelException e) {
-			// TODO Auto-generated catch block
+			logger.error("Error in delete hotel controller");
 			throw new HotelException("Unable to Remove Hotel");
-		}
-		
+		}	
 	}
 
 	@RequestMapping(value = "/deleteroom", method = RequestMethod.GET)
@@ -252,7 +241,7 @@ public class AdminController {
 			adminService.removeRoom((long) cityId, (long) hotelId, (long) roomId);
 			return "AdminPage";
 		} catch (HotelException e) {
-			// TODO Auto-generated catch block
+			logger.error("Error in delete room controller");
 			throw new HotelException("Unable to Remove Room");
 		}
 
@@ -270,7 +259,6 @@ public class AdminController {
 			cityID = cityid;
 			return new ModelAndView("UpdateHotelPage", "HotelData", adminService.viewHotel((long) hotelId));
 		} catch (Exception e) {
-			// TODO: handle exception
 			throw new HotelException("Unable to Find Hotel");
 		}
 	}
@@ -282,7 +270,7 @@ public class AdminController {
 			cityID = null;
 			return "AdminPage";
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in Update Hotel controller");
 			throw new HotelException("Unable to Update Hotel");
 		}
 	}
@@ -301,11 +289,12 @@ public class AdminController {
 			hotelID = hotelid;
 			return new ModelAndView("UpdateRoomPage", "RoomData", adminService.viewSingleRoom(roomid));
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in Update Room controller");
 			throw new HotelException("Unable to Find Room");
 		}
 	}
 
+	
 	@RequestMapping(value = "/updateroomdata", method = RequestMethod.POST)
 	public String updateRoom(@ModelAttribute("roomdata") Room room) throws HotelException {
 		try {
@@ -314,7 +303,7 @@ public class AdminController {
 			hotelID = null;
 			return "AdminPage";
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in Update Room controller");
 			throw new HotelException("Unable to Update Room");
 		}
 	}

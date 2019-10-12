@@ -1,18 +1,14 @@
-/*
- * 
- * 
- */
-
 package com.cg.hotelmanagement.service;
 
-import java.util.Date;
 import java.util.List;
+
 import javax.transaction.Transactional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cg.hotelmanagement.dto.Booking;
 import com.cg.hotelmanagement.dto.City;
 import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.dto.Hotel;
@@ -21,7 +17,6 @@ import com.cg.hotelmanagement.exception.HotelException;
 import com.cg.hotelmanagement.repository.CityRepository;
 import com.cg.hotelmanagement.repository.CustomerRepository;
 import com.cg.hotelmanagement.repository.HotelRepository;
-import com.cg.hotelmanagement.repository.IAdminDao;
 import com.cg.hotelmanagement.repository.RoomRepository;
 
 @Service("adminService")
@@ -35,15 +30,18 @@ public class AdminService implements IAdminService {
 	RoomRepository roomrepo;
 	@Autowired
 	CustomerRepository customerRepo;
+	
+	private static final Logger logger = LoggerFactory.getLogger(AdminService.class);
 
 	@Override
 	public boolean addCity(City city) throws HotelException {
 //		Add a new city in the database
 		try {
 			cityrepo.save(city);
+			logger.trace("City added with name: "+city.getCityName());
 			return true;
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in addCity in Service");
 			throw new HotelException("Unable to add city");
 		}
 	}
@@ -52,9 +50,10 @@ public class AdminService implements IAdminService {
 //		Delete the city from the database
 		try {
 			cityrepo.deleteById(cityId);
+			logger.trace("City removed with Id: "+cityId);
 			return true;
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in removeCity in Service");
 			throw new HotelException("Unable to remove city");
 		}
 	}
@@ -64,9 +63,10 @@ public class AdminService implements IAdminService {
 //		Remove hotel from the database
 		try {
 			hotelrepo.deleteById(hotelId);
+			logger.trace("Hotel removed with Id: "+hotelId);
 			return true;
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in removeHotel in Service");
 			throw new HotelException("Unable to remove hotel");
 		}
 	}
@@ -87,10 +87,11 @@ public class AdminService implements IAdminService {
 
 			city.setHotelList(hotelList);
 			cityrepo.save(city);
+			logger.trace("Room added");
 			return true;
 
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in add room in Service");
 			throw new HotelException("Unable to add room");
 		}
 	}
@@ -103,9 +104,11 @@ public class AdminService implements IAdminService {
 			City city = hotel.getCity();
 			if(city!=null && hotel!=null && city.getCityId()==cityId && hotel.getHotelId()==hotelId) {
 				roomrepo.delete(room);
+				logger.trace("Room removed with Id: "+roomId);
 				return true;
 			}
 		} catch (Exception e) {
+			logger.error("Error in removeRoom in Service");
 			throw new HotelException("Unable to remove room");
 		}
 		return false;
@@ -123,7 +126,7 @@ public class AdminService implements IAdminService {
 			List<City> city = cityrepo.findAll();
 			return city;
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in showCity in Service");
 			throw new HotelException("Unable to show city");
 		}
 	}
@@ -140,7 +143,7 @@ public class AdminService implements IAdminService {
 
 			return null;
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in showHotel in Service");
 			throw new HotelException("Unable to show hotel");
 		}
 	}
@@ -162,7 +165,7 @@ public class AdminService implements IAdminService {
 			}
 			return null;
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in showRoom in Service");
 			throw new HotelException("Unable to show Room");
 		}
 	}
@@ -178,11 +181,12 @@ public class AdminService implements IAdminService {
 				city.setHotelList(hotelList);
 				hotel.setCity(city);
 				cityrepo.save(city);
+				logger.trace("Hotel added with name: "+hotel.getHotelName());
 				return true;
 			}
 			return false;
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in addHotel in service");
 			throw new HotelException("Unable to add hotel");
 		}
 	}
@@ -199,6 +203,7 @@ public class AdminService implements IAdminService {
 					hotel2.setHotelName(hotel.getHotelName());
 					hotel2.setHotelPhoneNumber(hotel.getHotelPhoneNumber());
 					hotel2.setHotelRating(hotel.getHotelRating());
+					logger.trace("Hotel update with name: "+hotel.getHotelName());
 					break;
 				}
 			}
@@ -206,11 +211,14 @@ public class AdminService implements IAdminService {
 			cityrepo.save(city);
 			return true;
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in updateHotel in service");
 			throw new HotelException("Unable to update hotel");
 		}
 	}
 	
+	/*
+	 Method to get the type of user
+	 */
 	@Override
 	public int authenticateUser(String username, String password) {
 		List<Customer> userList=customerRepo.findAll();
@@ -241,6 +249,7 @@ public class AdminService implements IAdminService {
 							rooms.setRoomType(room.getRoomType());
 							rooms.setRoomNumber(room.getRoomNumber());
 							rooms.setRoomRent(room.getRoomRent());
+							logger.trace("Room updated");
 							break;
 						}
 					}
@@ -249,7 +258,7 @@ public class AdminService implements IAdminService {
 			}
 			return true;
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in updateRoom in service");
 			throw new HotelException("Unable to update room");
 		}
 	}
@@ -266,7 +275,7 @@ public class AdminService implements IAdminService {
 			Hotel hotel = (Hotel) hotelrepo.findById(Long.valueOf(hotelId)).orElse(null);
 			return hotel;
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in show hotel in Service");
 			throw new HotelException("No hotel found");
 		}
 	}
@@ -279,7 +288,7 @@ public class AdminService implements IAdminService {
 			Room room = (Room) roomrepo.findById(roomId).orElse(null);
 			return room;
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error("Error in viewSingleRoom function");
 			throw new HotelException("No room found");
 		}
 	}

@@ -15,7 +15,6 @@ import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.exception.HotelException;
-import com.cg.hotelmanagement.util.JPAUtil;
 
 @Repository("adminDao")
 public class AdminDao implements IAdminDao {
@@ -25,23 +24,17 @@ public class AdminDao implements IAdminDao {
 
 	@Override
 	public boolean addCity(City city) throws Exception {
-		// TODO Auto-generated method stub
-
 		entityManager.persist(city);
 		Long cityId = city.getCityId();
 		city.setCityId(cityId);
-
 		return true;
 	}
 
 	@Override
 	public boolean removeCity(Long cityId) {
-		// TODO Auto-generated method stub
 		City city = entityManager.find(City.class, cityId);
-
 		if (city != null) {
 			try {
-
 				city.setDeleteFlag(1);
 				// delete all hotels in the city
 				List<Hotel> hotelList = city.getHotelList();
@@ -55,7 +48,6 @@ public class AdminDao implements IAdminDao {
 
 				entityManager.merge(city);
 				return true;
-
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -65,7 +57,6 @@ public class AdminDao implements IAdminDao {
 
 	@Override
 	public boolean addHotel(Long cityId, Hotel hotel) throws HotelException {
-		// TODO Auto-generated method stub
 		City city = entityManager.find(City.class, cityId);
 		if (city != null) {
 			city.getHotelList().add(hotel);
@@ -77,7 +68,6 @@ public class AdminDao implements IAdminDao {
 
 	@Override
 	public boolean removeHotel(Long cityId, Long hotelId) {
-		// TODO Auto-generated method stub
 		Hotel hotel = entityManager.find(Hotel.class, hotelId);
 		System.out.println(hotel);
 		if (hotel != null) {
@@ -101,7 +91,6 @@ public class AdminDao implements IAdminDao {
 
 	@Override
 	public boolean addRoom(Long hotelId, Room room) throws HotelException {
-		// TODO Auto-generated method stub
 		Hotel hotel = entityManager.find(Hotel.class, hotelId);
 		if (hotel != null) {
 			hotel.getRoomList().add(room);
@@ -113,12 +102,9 @@ public class AdminDao implements IAdminDao {
 
 	@Override
 	public boolean removeRoom(Long hotelId, Long roomId) {
-		// TODO Auto-generated method stub
 		Room room = entityManager.find(Room.class, roomId);
-
 		if (room != null) {
 			try {
-
 				room.setDeleteFlag(1);
 				entityManager.merge(room);
 
