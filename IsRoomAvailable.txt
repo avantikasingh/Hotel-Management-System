@@ -2,6 +2,9 @@ public boolean isAvailable(Room room, LocalDate checkIn, LocalDate checkOut) {
 		
 		List<Booking> bookingList = room.getBookingDetails();
 		
+		if(bookingList==null)
+			return true;
+		
 		List<LocalDate> dates = new ArrayList<>();
 		
 		LocalDate localDate;
