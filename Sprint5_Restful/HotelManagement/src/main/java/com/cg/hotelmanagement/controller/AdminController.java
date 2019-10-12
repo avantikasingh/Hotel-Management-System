@@ -112,6 +112,7 @@ public class AdminController {
 		}
 
 	}
+	
 
 	@PostMapping(value = "/addroom")
 	public ResponseEntity<Room> addRoomData(@ModelAttribute Room room, @RequestParam("cityid") int cityId,
