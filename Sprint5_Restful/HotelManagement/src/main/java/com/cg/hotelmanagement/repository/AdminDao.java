@@ -15,7 +15,6 @@ import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.exception.HotelException;
-import com.cg.hotelmanagement.util.JPAUtil;
 
 @Repository("adminDao")
 public class AdminDao implements IAdminDao {
