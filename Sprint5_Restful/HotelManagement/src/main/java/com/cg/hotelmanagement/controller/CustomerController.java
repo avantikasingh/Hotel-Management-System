@@ -56,9 +56,11 @@ public class CustomerController {
 	 * @return
 	 */
 	@GetMapping("/availablerooms")
-	public Map<Hotel,List<Room>> availableRooms(@RequestParam("checkIn") LocalDate checkIn, @RequestParam("checkOut") LocalDate checkOut, @RequestParam("cityName") String cityName){
-		if(Validate.validateCheckInCheckOutDate(checkIn, checkOut));
-			return customerService.availableRooms(checkIn, checkOut, cityName);
+	public Map<Hotel,List<Room>> availableRooms(@RequestParam("checkIn") String checkIn, @RequestParam("checkOut") String checkOut, @RequestParam("cityName") String cityName){
+		LocalDate localDateCheckIn = LocalDate.parse(checkIn);
+		LocalDate localDateCheckOut = LocalDate.parse(checkOut);
+		if(Validate.validateCheckInCheckOutDate(localDateCheckIn, localDateCheckOut));
+			return customerService.availableRooms(localDateCheckIn, localDateCheckOut, cityName);
 	}
 	
 	

@@ -1,0 +1,4 @@
+2019-10-11 17:05:31,517 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 9496 (C:\Users\osis\Documents\GitHub\Hotel-Management-System\sprint_5_war\HotelManagement\HotelManagement\target\classes started by osis in C:\Users\osis\Documents\GitHub\Hotel-Management-System\sprint_5_war\HotelManagement\HotelManagement)
+2019-10-11 17:05:31,519 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-11 17:05:31,519 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-11 17:05:35,323 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.18 seconds (JVM running for 4.698)
