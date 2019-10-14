@@ -226,7 +226,7 @@ public class AdminService implements IAdminService {
 		{
 			if((c.getUsername()==username)&&(c.getPassword()==password))
 			{
-				if (c.getRole().equalsIgnoreCase("Admin"))
+				if (c.getRoles().equalsIgnoreCase("Admin"))
 					return 1;
 				else
 					return 0;

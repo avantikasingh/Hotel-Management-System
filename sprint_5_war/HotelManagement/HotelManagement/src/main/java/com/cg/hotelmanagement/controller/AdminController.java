@@ -31,6 +31,7 @@ import com.cg.hotelmanagement.service.ICustomerService;
  */
 
 @Controller
+@RequestMapping(value="/admin")
 public class AdminController {
 
 	@Autowired
@@ -59,22 +60,22 @@ public class AdminController {
 	}
 	
 
-	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public String registerPage(@ModelAttribute("customer") Customer customer) {
-		return "RegisterPage";
-	}
-	
-
-	/**
-	 * @author   Description: Register a new user
-	 * @param customer
-	 * @return LoginPage.jsp
-	 */
-	@RequestMapping(value = "/registerpage", method = RequestMethod.POST)
-	public String registerUser(@ModelAttribute("customer") Customer customer) throws HotelException {
-		customerService.register(customer);
-		return "LoginPage";
-	}
+//	@RequestMapping(value = "/register", method = RequestMethod.GET)
+//	public String registerPage(@ModelAttribute("customer") Customer customer) {
+//		return "RegisterPage";
+//	}
+//	
+//
+//	/**
+//	 * @author   Description: Register a new user
+//	 * @param customer
+//	 * @return LoginPage.jsp
+//	 */
+//	@RequestMapping(value = "/registerpage", method = RequestMethod.POST)
+//	public String registerUser(@ModelAttribute("customer") Customer customer) throws HotelException {
+//		customerService.register(customer);
+//		return "LoginPage";
+//	}
 
 	
 	/**
@@ -82,30 +83,30 @@ public class AdminController {
 	 * @param username
 	 * @param password
 	 */
-	@RequestMapping(value = "/loginpage", method = RequestMethod.POST)
-	public ModelAndView checkLogin(@RequestParam("username") String username,
-			@RequestParam("password") String password) {
-
-		session.setAttribute("username", username);
-		session.setAttribute("password", password);
-
-		System.out.println(session.getAttribute("username"));
-
-		int value = customerService.authenticateUser(username, password);
-		//System.out.println("value :" + value);
-
-		if (value == 1) {
-			return new ModelAndView("AdminPage", "session", session);
-
-		}
-		if (value == 0) {
-			return new ModelAndView("Customer", "session", session);
-		}
-		if (value == -1) {
-			return new ModelAndView("LoginPage", "session", null);
-		}
-		return new ModelAndView("LoginPage", "session", null);
-	}
+//	@RequestMapping(value = "/loginpage", method = RequestMethod.POST)
+//	public ModelAndView checkLogin(@RequestParam("username") String username,
+//			@RequestParam("password") String password) {
+//
+//		session.setAttribute("username", username);
+//		session.setAttribute("password", password);
+//
+//		System.out.println(session.getAttribute("username"));
+//
+//		int value = customerService.authenticateUser(username, password);
+//		//System.out.println("value :" + value);
+//
+//		if (value == 1) {
+//			return new ModelAndView("AdminPage", "session", session);
+//
+//		}
+//		if (value == 0) {
+//			return new ModelAndView("Customer", "session", session);
+//		}
+//		if (value == -1) {
+//			return new ModelAndView("LoginPage", "session", null);
+//		}
+//		return new ModelAndView("LoginPage", "session", null);
+//	}
 
 	
 	/**

@@ -1,8 +1,10 @@
 package com.cg.hotelmanagement.dto;
 
-import java.util.Date;
+import java.math.BigInteger;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -15,18 +17,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.NotEmpty;
 
-import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedBy;
-import org.springframework.data.annotation.LastModifiedDate;
-
-
-
-
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name="Hotel")
@@ -52,95 +44,22 @@ public class Hotel {
 	@OneToMany(cascade = CascadeType.ALL ,fetch = FetchType.EAGER)
 	@JoinColumn(name="hotel_id")
 	private List<Room> roomList = new LinkedList<>();
-	
-	@Column(name = "created_date", nullable = false, updatable = false)
-	@CreatedDate
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date createdDate;
-	@Column(name = "modified_date")
-	@LastModifiedDate
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date modifiedDate;
-	@Column(name = "created_by")
-	@CreatedBy
-	private String createdBy;
-	@Column(name = "modified_by")
-	@LastModifiedBy
-	private String modifiedBy;
 
 	
 	public Hotel() {
 	}
 
-
-
-	public Hotel(Long hotelId, @NotEmpty(message = "aasd") String hotelName, String hotelAddress,
-			String hotelPhoneNumber, Float hotelRating, int deleteFlag, City city, List<Room> roomList,
-			Date createdDate, Date modifiedDate, String createdBy, String modifiedBy) {
+	public Hotel(Long hotelId, String hotelName, String hotelAddress, String hotelPhoneNumber, Float hotelRating,
+			List<Room> roomList) {
 		super();
 		this.hotelId = hotelId;
 		this.hotelName = hotelName;
 		this.hotelAddress = hotelAddress;
 		this.hotelPhoneNumber = hotelPhoneNumber;
 		this.hotelRating = hotelRating;
-		this.deleteFlag = deleteFlag;
-		this.city = city;
 		this.roomList = roomList;
-		this.createdDate = createdDate;
-		this.modifiedDate = modifiedDate;
-		this.createdBy = createdBy;
-		this.modifiedBy = modifiedBy;
+		
 	}
-
-
-
-	public Date getCreatedDate() {
-		return createdDate;
-	}
-
-
-
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
-	}
-
-
-
-	public Date getModifiedDate() {
-		return modifiedDate;
-	}
-
-
-
-	public void setModifiedDate(Date modifiedDate) {
-		this.modifiedDate = modifiedDate;
-	}
-
-
-
-	public String getCreatedBy() {
-		return createdBy;
-	}
-
-
-
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
-	}
-
-
-
-	public String getModifiedBy() {
-		return modifiedBy;
-	}
-
-
-
-	public void setModifiedBy(String modifiedBy) {
-		this.modifiedBy = modifiedBy;
-	}
-
-
 
 	public Long getHotelId() {
 		return hotelId;

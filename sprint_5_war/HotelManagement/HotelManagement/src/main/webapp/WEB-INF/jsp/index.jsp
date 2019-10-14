@@ -12,7 +12,7 @@
 Welcome to the base
 
 <table>
-<fo:form action="login" method="Get">
+<fo:form action="/admin/login/" method="Get">
 <tr>
 <td><input type= "submit" value="Login" />
 </tr>

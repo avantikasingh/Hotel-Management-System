@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,33 +20,44 @@ import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.exception.HotelException;
+import com.cg.hotelmanagement.repository.CustomerRepository;
 import com.cg.hotelmanagement.service.ICustomerService;
 
-/**
- * 
- * @author Avantika
- *
- */
-
 @Controller
+@RequestMapping(value="/customer")
 public class CustomerController {
 
 	@Autowired
 	ICustomerService customerService;
 	@Autowired
 	HttpSession session;
+	@Autowired
+	CustomerRepository customerRepository;
 
-	@RequestMapping(value = "customer", method = RequestMethod.GET)
+	@RequestMapping(value = "home", method = RequestMethod.GET)
 	public String customerPage(Map<String, Object> model) {
-
+		System.out.println("Hi");
+		
 		List<City> cityList = customerService.getCityList();
 		System.out.println(cityList);
 		model.put("cityList", cityList);
 		return "CustomerHomePage";
 
 	}
+	
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public String registerPage(@ModelAttribute("customer") Customer customer) {
+		return "RegisterPage";
+	}
 
-	@RequestMapping(value = "viewHotelsPage", method = RequestMethod.POST)
+	@RequestMapping(value = "/registerpage", method = RequestMethod.POST)
+	public String registerUser(@ModelAttribute("customer") Customer customer) throws HotelException {
+//		adminService.register(customer);
+		return "LoginPage";
+
+	}
+
+	@RequestMapping(value = "/viewHotelsPage", method = {RequestMethod.POST,RequestMethod.GET})
 	public String viewHotelsPage(@RequestParam("checkIn") String checkin, @RequestParam("checkOut") String checkout,
 			@RequestParam("cityname") String cityName, Map<String, Object> model) {
 
@@ -72,9 +84,9 @@ public class CustomerController {
 	public String viewBooking(Map<String, Object> model)  {
 		System.out.println("in view booking");
 		String username=session.getAttribute("username").toString();
-		String password=session.getAttribute("password").toString();
+		//String password=session.getAttribute("password").toString();
 		
-		Customer customer=customerService.getCustomer(username, password);
+		Customer customer=customerService.getCustomer(username);
 		model.put("booking",customer.getBooking());
 		
 		return "BookingPage";
@@ -82,7 +94,7 @@ public class CustomerController {
 	
 	
 
-	@RequestMapping(value = "/BookingPage", method = RequestMethod.POST)
+	@RequestMapping(value = "/BookingPage", method = {RequestMethod.GET,RequestMethod.POST})
 	public String makeBooking(@RequestParam("hotelid") Long hotelId, @RequestParam("roomid") Long roomId,
 			Map<String, Object> model) throws HotelException {
 
@@ -116,8 +128,7 @@ public class CustomerController {
 		System.out.println("ok1");
 		Booking booking = new Booking(checkinDate, checkoutDate, selectedRoom, 0);
 		System.out.println("ok2");
-		customerService.makeBooking(booking, session.getAttribute("username").toString(),
-				session.getAttribute("password").toString());
+		customerService.makeBooking(booking, session.getAttribute("username").toString());
 		
 		System.out.println("ok3");
 		System.out.println(booking);

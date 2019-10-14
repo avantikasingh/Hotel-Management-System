@@ -8,11 +8,15 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 
@@ -20,6 +24,7 @@ import com.cg.hotelmanagement.dto.Booking;
 import com.cg.hotelmanagement.dto.City;
 import com.cg.hotelmanagement.dto.Customer;
 import com.cg.hotelmanagement.dto.Hotel;
+import com.cg.hotelmanagement.dto.MyUserDetails;
 import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.exception.HotelException;
 import com.cg.hotelmanagement.repository.CityRepository;
@@ -27,10 +32,11 @@ import com.cg.hotelmanagement.repository.CustomerRepository;
 import com.cg.hotelmanagement.repository.HotelRepository;
 
 
+
 @Service("customerService")
 @Transactional
 
-public class CustomerService implements ICustomerService {
+public class CustomerService implements ICustomerService,UserDetailsService{
 	
 	@Autowired
 	CustomerRepository customerRepo;
@@ -40,18 +46,19 @@ public class CustomerService implements ICustomerService {
 	HotelRepository hotelRepo;
 	
 	@Override
-	public boolean register(Customer customer) {
+	public boolean register(String firstName, String lastName, String gender,String username, String emailId, LocalDate dateOfBirth,
+			String userMobileNo, String aadharNumber, String password) {
 		//Customer customer = new Customer(username, emailId, dateOfBirth, userMobileNo, firstName, lastName,gender, aadharNumber, password,);
-//		Customer customer = new Customer();
-//		customer.setAadharNumber(aadharNumber);
-//		customer.setDob(dateOfBirth);
-//		customer.setEmailId(emailId);
-//		customer.setFirstName(firstName);
-//		customer.setGender(gender);
-//		customer.setLastName(lastName);
-//		customer.setPassword(password);
-//		customer.setUserMobile(userMobileNo);
-//		customer.setUsername(username);
+		Customer customer = new Customer();
+		customer.setAadharNumber(aadharNumber);
+		customer.setDob(dateOfBirth);
+		customer.setEmailId(emailId);
+		customer.setFirstName(firstName);
+		customer.setGender(gender);
+		customer.setLastName(lastName);
+		customer.setPassword(password);
+		customer.setUserMobile(userMobileNo);
+		customer.setUsername(username);
 		customerRepo.save(customer);
 		return true;
 	}
@@ -62,12 +69,12 @@ public class CustomerService implements ICustomerService {
 		System.out.println("parameter");
 		System.out.println(username);
 		System.out.println(password);
-		Customer user=getCustomer(username, password);
+		Customer user=getCustomer(username);
 		System.out.println("attribute");
 		System.out.println(user.getUsername());
 		System.out.println(user.getPassword());
 		if(user!=null)
-		{	if (user.getRole().equalsIgnoreCase("Admin"))
+		{	if (user.getRoles().equalsIgnoreCase("Admin"))
 					return 1;
 				else
 					return 0;
@@ -204,11 +211,11 @@ public class CustomerService implements ICustomerService {
 	
 	
 	@Override
-	public Booking makeBooking(Booking booking, String username, String password) {
+	public Booking makeBooking(Booking booking, String username) {
 		// TODO Auto-generated method stub
 		System.out.println("In cust service make booking");
 		
-		Customer customer=getCustomer(username, password);
+		Customer customer=getCustomer(username);
 		System.out.println(customer);
 		customer.setBooking(booking);
 		customerRepo.save(customer);
@@ -222,7 +229,7 @@ public class CustomerService implements ICustomerService {
 	
 	
 	@Override
-	public Customer getCustomer(String username, String password) {
+	public Customer getCustomer(String username) {
 		// TODO Auto-generated method stub
 		System.out.println("In get Customer");
 		List<Customer> customerList=customerRepo.findAll();
@@ -231,7 +238,7 @@ public class CustomerService implements ICustomerService {
 		{
 			System.out.println(customer.getUsername());
 			System.out.println(customer.getPassword());
-			if((customer.getUsername().equals(username))&&(customer.getPassword().equals(password)))
+			if(customer.getUsername().equals(username))
 			{
 				System.out.println("ok");
 				return customer;
@@ -241,7 +248,14 @@ public class CustomerService implements ICustomerService {
 		return null;
 	}
 	
-	
+	@Override
+    public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+        Optional<Customer> user = customerRepo.findByUsername(userName);
+
+        user.orElseThrow(() -> new UsernameNotFoundException("Not found: " + userName));
+
+        return user.map(MyUserDetails::new).get();
+    }
 	
 
 }
