@@ -1,10 +1,19 @@
 package com.cg.hotelmanagement.controller;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,12 +23,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.cg.hotelmanagement.dto.City;
 import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.exception.HotelException;
 import com.cg.hotelmanagement.exception.ResourceNotFoundException;
+import com.cg.hotelmanagement.service.ExcelGenerator;
 import com.cg.hotelmanagement.service.IAdminService;
 import com.cg.hotelmanagement.service.ICustomerService;
 
@@ -82,12 +93,42 @@ public class AdminController {
 		return adminService.removeCity(cityId);
 	}
 	
-	@GetMapping("/cities/download")
-	public boolean downloadCity() {
+	/**
+	 * Download Excel
+	 * @return
+	 * @throws IOException
+	 */
+	@GetMapping("/cities/download/cities.xlsx")
+	public ResponseEntity<InputStreamResource> downloadCity() throws IOException {
 		List<City> cityList = customerService.getCityList();
-		
-		return true;
+
+		ByteArrayInputStream in = ExcelGenerator.customersToExcel(cityList);
+		// return IOUtils.toByteArray(in);
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Content-Disposition", "attachment; filename=customers.xlsx");
+
+		return ResponseEntity.ok().headers(headers).body(new InputStreamResource(in));
 	}
+	
+	@PostMapping("/upload/city")
+	public void uploadCity(@RequestParam("file") MultipartFile reapExcelDataFile) throws IOException {
+
+	   List<City> cities = new ArrayList<City>();
+	    XSSFWorkbook workbook = new XSSFWorkbook(reapExcelDataFile.getInputStream());
+	    XSSFSheet worksheet = workbook.getSheetAt(0);
+
+	    for(int i=1;i<worksheet.getPhysicalNumberOfRows() ;i++) {
+	        City tempCity = new City();
+
+	        XSSFRow row = worksheet.getRow(i);
+
+	        tempCity.setCityName(row.getCell(0).getStringCellValue());
+	        adminService.addCity(tempCity);      
+	    }
+	}
+	
+	
 	
 	
 	
