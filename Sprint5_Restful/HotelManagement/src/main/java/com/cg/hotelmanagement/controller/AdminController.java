@@ -123,7 +123,7 @@ public class AdminController {
 	 * @throws HotelException
 	 */
 	@PostMapping("/hotels")
-	public Hotel addHotel(@RequestParam("cityId") long cityId, @RequestBody Hotel hotel) throws HotelException {
+	public Hotel addHotel(@RequestParam("cityId") long cityId, @RequestBody Hotel hotel) {
 		adminService.addHotel(cityId, hotel);
 		logger.info("addHotel in Controller");
 		return hotel;
