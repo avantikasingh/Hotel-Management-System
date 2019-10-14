@@ -154,12 +154,14 @@ public class AdminService implements IAdminService {
 	public boolean addHotel(Long cityId, Hotel hotel){	
 		//Validate fields
 		//Throws exception if mobile number is not valid
-		Validate.validateMobileNumber(hotel.getHotelPhoneNumber());
+		//Validate.validateMobileNumber(hotel.getHotelPhoneNumber());
 		
 		//First check if city with given id exists
 		City city = cityrepo.findById(cityId).orElse(null);
+		System.out.println("4");
 		//If city not found
 		if(city==null) {
+			System.out.println("3");
 			logger.error("City not found in addHotel method");
 			throw new ResourceNotFoundException(cityNotFound+cityId);
 		}
@@ -168,12 +170,14 @@ public class AdminService implements IAdminService {
 			List<Hotel> hotelList = city.getHotelList();
 			//Add hotel to list and set the updated list in city
 			hotelList.add(hotel);
+			hotel.setCity(city);
+			hotelrepo.save(hotel);
 			city.setHotelList(hotelList);
 			//Set city in hotel for Bidirectional mapping
-			hotel.setCity(city);
 			//Save city
-			//cityrepo.save(city);
-			hotelrepo.save(hotel);
+			cityrepo.save(city);
+			System.out.println("1");
+			//hotelrepo.save(hotel);
 			logger.info("Hotel added");
 			return true;
 		}

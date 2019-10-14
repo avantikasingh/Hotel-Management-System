@@ -36,7 +36,7 @@ public class AdminController {
 	Long hotelID = null;
 	
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
-
+	
 	
 	//----------------------City--------------------------
 	
@@ -82,6 +82,12 @@ public class AdminController {
 		return adminService.removeCity(cityId);
 	}
 	
+	@GetMapping("/cities/download")
+	public boolean downloadCity() {
+		List<City> cityList = customerService.getCityList();
+		return true;
+	}
+	
 	
 	
 	//----------------------Hotel--------------------------
@@ -123,9 +129,15 @@ public class AdminController {
 	 * @throws HotelException
 	 */
 	@PostMapping("/hotels")
-	public Hotel addHotel(@RequestParam("cityId") long cityId, @RequestBody Hotel hotel) throws HotelException {
+	public Hotel addHotel(@RequestParam("cityId") long cityId, @RequestBody Hotel hotel) {
+		System.out.println("2");
 		adminService.addHotel(cityId, hotel);
+		System.out.println(hotel);
 		logger.info("addHotel in Controller");
+		//City city = hotel.getCity();
+		//city.setHotelList(null);
+		//hotel.setCity(city);
+		hotel.setCity(null);
 		return hotel;
 	}
 	

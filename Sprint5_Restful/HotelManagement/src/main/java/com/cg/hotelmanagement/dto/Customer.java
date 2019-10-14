@@ -14,7 +14,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Size;
 
@@ -22,8 +21,11 @@ import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 
 
@@ -40,6 +42,8 @@ public class Customer {
 	@Email(message="Enter valid email")
 	protected String emailId;
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+	@JsonDeserialize(using = LocalDateDeserializer.class)  
+	@JsonSerialize(using = LocalDateSerializer.class)
 	@Column(name="dob")
 	@PastOrPresent(message="Birth date should be past or present")
 	protected LocalDate dob;

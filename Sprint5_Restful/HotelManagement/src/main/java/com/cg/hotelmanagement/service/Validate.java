@@ -1,7 +1,7 @@
 package com.cg.hotelmanagement.service;
 
 import java.math.BigInteger;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,9 +12,9 @@ public class Validate {
 	public static String validateMobileNumber(String mobileNumber)
 	{
 
-		Pattern p = Pattern.compile("(0/91)?[7-9][0-9]{9}");
-		Matcher m = p.matcher(mobileNumber);
-		if (!(m.find() && m.group().equals(mobileNumber)))
+		Pattern pattern = Pattern.compile("(0/91)?[7-9][0-9]{9}");
+		Matcher mat = pattern.matcher(mobileNumber);
+		if (!(mat.find() && mat.group().equals(mobileNumber)))
 			throw new HotelException("Enter a valid mobile number");
 		return mobileNumber;
 
@@ -32,9 +32,9 @@ public class Validate {
 		return email;
 	}
 
-	public static boolean validateCheckInCheckOutDate(Date checkIn,
-			Date checkOut) throws HotelException {
-		if (checkIn.after(checkOut))
+	public static boolean validateCheckInCheckOutDate(LocalDate checkIn,
+			LocalDate checkOut) throws HotelException {
+		if (checkIn.isAfter(checkOut))
 			throw new HotelException("CheckOut date should after checkIn date");
 		return true;
 	}

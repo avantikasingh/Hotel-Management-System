@@ -1,7 +1,6 @@
 package com.cg.hotelmanagement.service;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -29,6 +28,8 @@ public interface ICustomerService {
 	public Booking makeBooking(Booking booking, String username, String password);
 	
 	public Customer getCustomer(String username,String password);
+
+	boolean isAvailable(Room room, LocalDate checkIn, LocalDate checkOut);
 
 	
 }

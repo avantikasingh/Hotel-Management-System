@@ -3,18 +3,15 @@ package com.cg.hotelmanagement.service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 
 import com.cg.hotelmanagement.dto.Booking;
 import com.cg.hotelmanagement.dto.City;
@@ -39,6 +36,9 @@ public class CustomerService implements ICustomerService {
 	@Autowired
 	HotelRepository hotelRepo;
 	
+	/**
+	 * Register a new user
+	 */
 	@Override
 	public boolean register(Customer customer) {
 		if(!Validate.aadhar(customer.getAadharNumber()))
@@ -50,6 +50,9 @@ public class CustomerService implements ICustomerService {
 		return true;
 	}
 
+	/**
+	 * Authenticate a user and check his role
+	 */
 	@Override
 	public int authenticateUser(String username, String password) {
 		
@@ -62,31 +65,39 @@ public class CustomerService implements ICustomerService {
 		System.out.println(user.getPassword());
 		if(user!=null)
 		{	if (user.getRole().equalsIgnoreCase("Admin"))
-					return 1;
-				else
-					return 0;
+				return 1;
+			else
+				return 0;
 		}
 		
 		return -1;
 	}
 
+	/**
+	 * Return a list of cities
+	 */
 	@Override
 	public List<City> getCityList() {
 		// TODO Auto-generated method stub
 		return cityRepo.findAll();
 	}
 	
-	
+	/**
+	 * Check if a given room is available for the given checkIn and checkOut date
+	 */
+	@Override
 	public boolean isAvailable(Room room, LocalDate checkIn, LocalDate checkOut) {
 		
 		/*
 		 * Return true if room is available in the given date interval
 		 * Else returns false 
-		 */
+		 */		
+		Validate.validateCheckInCheckOutDate(checkIn, checkOut);
 		
 		List<Booking> bookingList = room.getBookingDetails();
 		
 		
+		//Case when there are no bookings
 		if(bookingList.size()==0)
 		{
 			
@@ -94,8 +105,8 @@ public class CustomerService implements ICustomerService {
 		}
 		List<LocalDate> dates = new ArrayList<>();
 		
-		LocalDate localDate;
-		
+		//Add checkIn and checkOut date in list
+		//And sort it. checkOut date of
 		for(Booking b:bookingList) {
 			dates.add(b.getCheckIn());
 			dates.add(b.getCheckOut());
