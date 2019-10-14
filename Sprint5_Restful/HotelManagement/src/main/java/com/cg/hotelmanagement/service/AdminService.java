@@ -47,6 +47,7 @@ public class AdminService implements IAdminService {
 	//-------------City-------------------------
 	
 	/**
+	 * @return List<City>
 	 * Returns a list containing all the cities
 	 */
 	@Override
@@ -61,7 +62,8 @@ public class AdminService implements IAdminService {
 		return cityList;
 	}
 	
-	/**
+	/**@input: Long
+	 * @return City
 	 * Find city by cityId
 	 */
 	@Override
@@ -78,6 +80,8 @@ public class AdminService implements IAdminService {
 	}
 	
 	/**
+	 * @input City
+	 * @return City
 	 * Add a new city in the database
 	 */
 	@Override
@@ -89,6 +93,8 @@ public class AdminService implements IAdminService {
 	}
 
 	/**
+	 * @input Long
+	 * @return boolean
 	 * Delete the city from the database
 	 */
 	@Override
@@ -111,6 +117,8 @@ public class AdminService implements IAdminService {
 	//-------------Hotel-------------------------
 	
 	/**
+	 * @input Long
+	 * @return List
 	 * Returns a list of all the hotels in a city
 	 */
 	@Override
@@ -133,6 +141,8 @@ public class AdminService implements IAdminService {
 	}
 	
 	/**
+	 * @input Long
+	 * @return Hotel
 	 * Returns a hotel based on the hotelId
 	 */
 	@Override
@@ -148,6 +158,9 @@ public class AdminService implements IAdminService {
 	}
 	
 	/**
+	 * @input Long
+	 * @input Hotel
+	 * @return boolean
 	 * Add a new hotel in the database in existing city
 	 */
 	@Override
@@ -184,6 +197,8 @@ public class AdminService implements IAdminService {
 	}
 	
 	/**
+	 * @input Long
+	 * @return boolean
 	 * Remove hotel from the database
 	 */
 	@Override
