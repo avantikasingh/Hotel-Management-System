@@ -37,6 +37,7 @@ public class Hotel {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="hotel_id")
 	private Long hotelId;
+	
 	@NotEmpty(message = "Should not be empty")
 	@Column(name="hotel_name")
 	private String hotelName;
