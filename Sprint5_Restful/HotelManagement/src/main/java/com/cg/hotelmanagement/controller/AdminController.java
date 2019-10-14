@@ -85,6 +85,7 @@ public class AdminController {
 	@GetMapping("/cities/download")
 	public boolean downloadCity() {
 		List<City> cityList = customerService.getCityList();
+		
 		return true;
 	}
 	

@@ -72,20 +72,26 @@ public class CustomerController {
 	 * @return
 	 */
 	@PostMapping("/makebooking")
-	public Booking makeBooking(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("checkIn") LocalDate checkIn, @RequestParam("checkOut") LocalDate checkOut, @RequestParam("cityId") long cityId,
+	public Booking makeBooking(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("checkIn") String checkIn, @RequestParam("checkOut") String checkOut, @RequestParam("cityId") long cityId,
 						@RequestParam("hotelId") long hotelId, @RequestParam("roomId") long roomId) {
 							
 		Room room = adminService.viewSingleRoom(roomId);
+		LocalDate localDateCheckIn = LocalDate.parse(checkIn);
+		LocalDate localDateCheckOut = LocalDate.parse(checkOut);
 		if(room==null)
 			throw new ResourceNotFoundException("Room not found");
 		if(room.getHotel().getHotelId()==hotelId && room.getHotel().getCity().getCityId()==cityId) {
-			if(customerService.isAvailable(room, checkIn, checkOut)) {
-				Booking booking = new Booking(checkIn, checkOut, room, 0);
+			if(customerService.isAvailable(room, localDateCheckIn, localDateCheckOut)) {
+				Booking booking = new Booking(localDateCheckIn, localDateCheckOut, room, 0);
+				System.out.println(booking);
 				Customer customer = customerService.getCustomer(username, password);
 				if(customer==null)
 					throw new ResourceNotFoundException("Invalid username and password");
 				customer.setBooking(booking);
 				customerRepo.save(customer);
+				long bookingId = customer.getBooking().getBookingId();
+				booking.setBookingId(bookingId);
+				booking.setCustomer(customer);
 				return booking;
 			}
 		}
