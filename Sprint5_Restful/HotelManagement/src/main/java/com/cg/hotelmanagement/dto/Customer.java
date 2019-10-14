@@ -13,6 +13,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.Size;
 
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -30,11 +34,14 @@ public class Customer {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long userId;
 	@Column(name="username")
+	@Size(min=5,max=10,message="Length of username should be between 5 and 10")
 	protected String username;
 	@Column(name="email_id")
+	@Email(message="Enter valid email")
 	protected String emailId;
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	@Column(name="dob")
+	@PastOrPresent(message="Birth date should be past or present")
 	protected LocalDate dob;
 	@Column(name="user_mobile")
 	protected String userMobile;
@@ -47,6 +54,7 @@ public class Customer {
 	@Column(name="aadhar_number")
 	private String aadharNumber;
 	@Column(name="password")
+	@Size(min=5,max=10,message="Length of password should be between 5 and 10")
 	private String password;
 	@Column(name="role")
 	private String role;

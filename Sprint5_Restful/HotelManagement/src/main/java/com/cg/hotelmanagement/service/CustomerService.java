@@ -41,17 +41,11 @@ public class CustomerService implements ICustomerService {
 	
 	@Override
 	public boolean register(Customer customer) {
-		//Customer customer = new Customer(username, emailId, dateOfBirth, userMobileNo, firstName, lastName,gender, aadharNumber, password,);
-//		Customer customer = new Customer();
-//		customer.setAadharNumber(aadharNumber);
-//		customer.setDob(dateOfBirth);
-//		customer.setEmailId(emailId);
-//		customer.setFirstName(firstName);
-//		customer.setGender(gender);
-//		customer.setLastName(lastName);
-//		customer.setPassword(password);
-//		customer.setUserMobile(userMobileNo);
-//		customer.setUsername(username);
+		if(!Validate.aadhar(customer.getAadharNumber()))
+			throw new HotelException("Length of aadhar must be 12");
+		//validateMobileNumber throws exception if mobile number is invalid
+		Validate.validateMobileNumber(customer.getUserMobile());
+			
 		customerRepo.save(customer);
 		return true;
 	}

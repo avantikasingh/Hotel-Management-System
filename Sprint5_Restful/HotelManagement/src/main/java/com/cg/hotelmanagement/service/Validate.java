@@ -10,7 +10,7 @@ import com.cg.hotelmanagement.exception.HotelException;
 public class Validate {
 
 	public static String validateMobileNumber(String mobileNumber)
-			throws HotelException {
+	{
 
 		Pattern p = Pattern.compile("(0/91)?[7-9][0-9]{9}");
 		Matcher m = p.matcher(mobileNumber);

@@ -28,7 +28,7 @@ public class City {
 
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long cityId;
-	@Column(name="city_name")
+	@Column(name="city_name",unique = true)
 	private String cityName;
 	@Column(name="delete_flag")
 	private int deleteFlag=0;

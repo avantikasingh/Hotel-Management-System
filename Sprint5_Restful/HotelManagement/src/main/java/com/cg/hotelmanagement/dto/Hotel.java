@@ -1,11 +1,8 @@
 package com.cg.hotelmanagement.dto;
 
-import java.math.BigInteger;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -37,7 +34,7 @@ public class Hotel {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="hotel_id")
 	private Long hotelId;
-	@NotEmpty(message = "aasd")
+	@NotEmpty(message = "Should not be empty")
 	@Column(name="hotel_name")
 	private String hotelName;
 	@Column(name="hotel_address")

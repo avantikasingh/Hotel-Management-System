@@ -82,7 +82,6 @@ public class Booking {
 	private String modifiedBy;
 
 	public Booking() {
-		// TODO Auto-generated constructor stub
 	}
 
 
