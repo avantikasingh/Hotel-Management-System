@@ -2,7 +2,6 @@ package com.cg.hotelmanagement.controller;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -111,10 +110,15 @@ public class AdminController {
 		return ResponseEntity.ok().headers(headers).body(new InputStreamResource(in));
 	}
 	
+	/**
+	 * Upload excel file
+	 * @param reapExcelDataFile
+	 * @throws IOException
+	 */
 	@PostMapping("/upload/city")
 	public void uploadCity(@RequestParam("file") MultipartFile reapExcelDataFile) throws IOException {
 
-	   List<City> cities = new ArrayList<City>();
+		//List<City> cities = new ArrayList<City>();
 	    XSSFWorkbook workbook = new XSSFWorkbook(reapExcelDataFile.getInputStream());
 	    XSSFSheet worksheet = workbook.getSheetAt(0);
 
@@ -124,7 +128,8 @@ public class AdminController {
 	        XSSFRow row = worksheet.getRow(i);
 
 	        tempCity.setCityName(row.getCell(0).getStringCellValue());
-	        adminService.addCity(tempCity);      
+	        adminService.addCity(tempCity);
+	        workbook.close();
 	    }
 	}
 	
@@ -172,7 +177,6 @@ public class AdminController {
 	 */
 	@PostMapping("/hotels")
 	public Hotel addHotel(@RequestParam("cityId") long cityId, @RequestBody Hotel hotel) {
-		System.out.println("2");
 		adminService.addHotel(cityId, hotel);
 		System.out.println(hotel);
 		logger.info("addHotel in Controller");

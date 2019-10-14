@@ -1,9 +1,5 @@
 package com.cg.hotelmanagement.HotelManagement;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,7 +7,6 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.cg.hotelmanagement.controller.AdminController;
-import com.cg.hotelmanagement.dto.City;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
