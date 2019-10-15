@@ -28,6 +28,8 @@ public interface ICustomerService {
 	public Booking makeBooking(Booking booking, String username, String password);
 	
 	public Customer getCustomer(String username,String password);
+	
+	public Customer getCustomer(String username);
 
 	boolean isAvailable(Room room, LocalDate checkIn, LocalDate checkOut);
 

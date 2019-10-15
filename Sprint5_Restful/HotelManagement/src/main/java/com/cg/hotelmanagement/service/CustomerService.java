@@ -246,6 +246,25 @@ public class CustomerService implements ICustomerService {
 		return null;
 	}
 	
+	public Customer getCustomer(String username) {
+		// TODO Auto-generated method stub
+		System.out.println("In get Customer");
+		List<Customer> customerList=customerRepo.findAll();
+		System.out.println(customerList);
+		for(Customer customer:customerList)
+		{
+			System.out.println(customer.getUsername());
+			System.out.println(customer.getPassword());
+			if(customer.getUsername().equals(username))
+			{
+				System.out.println("ok");
+				return customer;
+			}
+		}
+		System.out.println("not ok");
+		return null;
+	}
+	
 	
 	
 
