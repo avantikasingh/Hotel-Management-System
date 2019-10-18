@@ -1,5 +1,5 @@
 import { Component , OnInit, OnChanges, OnDestroy } from "@angular/core";
-import {ProductService} from './service/app.productservice'
+import {ProductService} from './service/app.hmsservice'
 import {Product}from './_model/app.product'
 
 
