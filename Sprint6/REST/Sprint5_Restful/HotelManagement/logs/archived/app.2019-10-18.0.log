@@ -1,0 +1,62 @@
+2019-10-18 17:40:38,630 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 11440 (C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement)
+2019-10-18 17:40:38,636 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-18 17:40:38,636 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-18 17:40:43,201 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 4.997 seconds (JVM running for 5.664)
+2019-10-18 17:41:18,016 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-18 17:41:32,603 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] City addded
+2019-10-18 17:42:15,307 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-9088-exec-4] Duplicate entry 'Pune' for key 'UK_djnk44fptegbsu6drhc9xvlfj'
+2019-10-18 17:42:28,447 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] City addded
+2019-10-18 17:43:15,424 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] FindCityById method
+2019-10-18 17:43:22,859 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-18 17:44:10,812 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] City addded
+2019-10-18 17:44:19,051 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] City removed with Id: 3
+2019-10-18 17:47:45,997 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 11440 (C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement)
+2019-10-18 17:47:45,997 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-18 17:47:45,997 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-18 17:47:47,453 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.508 seconds (JVM running for 429.918)
+2019-10-18 17:49:45,747 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 11440 (C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement)
+2019-10-18 17:49:45,747 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-18 17:49:45,747 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-18 17:49:47,031 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.329 seconds (JVM running for 549.5)
+2019-10-18 17:53:25,767 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] Hotel added
+2019-10-18 17:53:55,762 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] Hotel added
+2019-10-18 17:54:08,254 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] Hotel added
+2019-10-18 17:54:15,301 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] Hotel added
+2019-10-18 17:54:27,744 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] Hotel added
+2019-10-18 17:54:37,625 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] Hotel added
+2019-10-18 17:55:12,264 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 11440 (C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement)
+2019-10-18 17:55:12,264 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-18 17:55:12,264 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-18 17:55:13,390 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.172 seconds (JVM running for 875.862)
+2019-10-18 17:56:52,850 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 11440 (C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement)
+2019-10-18 17:56:52,850 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-18 17:56:52,850 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-18 17:56:53,952 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.139 seconds (JVM running for 976.421)
+2019-10-18 17:57:00,223 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] Hotel deleted with Id: 6
+2019-10-18 17:58:10,774 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 11440 (C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement)
+2019-10-18 17:58:10,774 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-18 17:58:10,774 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-18 17:58:11,902 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.162 seconds (JVM running for 1054.378)
+2019-10-18 17:59:17,113 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] Room added
+2019-10-18 18:00:42,789 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 11440 (C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement)
+2019-10-18 18:00:42,789 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-18 18:00:42,789 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-18 18:00:43,874 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.123 seconds (JVM running for 1206.338)
+2019-10-18 18:00:49,946 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 11440 (C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement)
+2019-10-18 18:00:49,946 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-18 18:00:49,946 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-18 18:00:51,016 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.113 seconds (JVM running for 1213.487)
+2019-10-18 18:01:24,117 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 11440 (C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement)
+2019-10-18 18:01:24,117 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-18 18:01:24,117 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-18 18:01:25,173 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.087 seconds (JVM running for 1247.636)
+2019-10-18 18:01:32,230 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] Room added
+2019-10-18 18:04:37,738 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 11440 (C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Desktop\Sprint5_Restful_15Oct_5.53\Sprint5_Restful\HotelManagement)
+2019-10-18 18:04:37,738 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-18 18:04:37,738 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-18 18:04:38,828 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.119 seconds (JVM running for 1441.295)
+2019-10-18 18:09:53,989 ERROR org.hibernate.internal.ExceptionMapperStandardImpl [http-nio-9088-exec-3] HHH000346: Error during managed flush [Validation failed for classes [com.cg.hotelmanagement.dto.Customer] during update time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='Length of username should be between 5 and 10', propertyPath=username, rootBeanClass=class com.cg.hotelmanagement.dto.Customer, messageTemplate='Length of username should be between 5 and 10'}
+	ConstraintViolationImpl{interpolatedMessage='Length of password should be between 5 and 10', propertyPath=password, rootBeanClass=class com.cg.hotelmanagement.dto.Customer, messageTemplate='Length of password should be between 5 and 10'}
+]]

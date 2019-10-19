@@ -34,7 +34,6 @@ public class Room {
 	@Column(name="room_type")
 	private String roomType;
 	@Column(name="room_rent")
-	
 	private Double roomRent;
 	@Column(name="room_number")
 	private String roomNumber;

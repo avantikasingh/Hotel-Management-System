@@ -8,8 +8,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +24,7 @@ import com.cg.hotelmanagement.repository.HotelRepository;
 
 
 @Service("customerService")
-@Transactional
+//@Transactional
 
 public class CustomerService implements ICustomerService {
 	
@@ -230,8 +228,14 @@ public class CustomerService implements ICustomerService {
 		System.out.println("In cust service make booking");
 		
 		Customer customer=getCustomer(username, password);
+//		if(customer.getBooking()!=null) {
+//			System.out.println("Already booked1");
+//			if(LocalDate.now().isBefore(booking.getCheckOut()))
+//				System.out.println("Already booked2");
+//		}
 		System.out.println(customer);
 		customer.setBooking(booking);
+		booking.setCustomer(customer);
 		customerRepo.save(customer);
 		Long bookingId = customer.getBooking().getBookingId();
 		System.out.println(bookingId);

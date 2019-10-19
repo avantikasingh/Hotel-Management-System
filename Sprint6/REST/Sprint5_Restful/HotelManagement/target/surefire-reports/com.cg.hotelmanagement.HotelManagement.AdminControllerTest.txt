@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.cg.hotelmanagement.HotelManagement.AdminControllerTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.176 s <<< FAILURE! - in com.cg.hotelmanagement.HotelManagement.AdminControllerTest
+initializationError(com.cg.hotelmanagement.HotelManagement.AdminControllerTest)  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.Exception: No runnable methods
+

@@ -196,8 +196,8 @@ public class AdminController {
 	 * @param hotelId
 	 * @return
 	 */
-	@DeleteMapping("/hotels")
-	public boolean deleteHotel(@RequestParam("hotelId") long hotelId) {
+	@DeleteMapping("/hotels/{hotelId}")
+	public boolean deleteHotel(@PathVariable long hotelId) {
 		logger.trace("deleteHotel in Controller");
 		return adminService.removeHotel(hotelId);
 	}
@@ -237,9 +237,8 @@ public class AdminController {
 	 */
 	@PostMapping("/rooms")
 	public Room addRoom(@RequestParam("cityId") long cityId, @RequestParam("hotelId") long hotelId, @RequestBody Room room) {
-		adminService.addRoom(cityId, hotelId, room);
 		logger.trace("addRoom in Controller");
-		return room;
+		return adminService.addRoom(cityId, hotelId, room);
 	}
 	
 	/**

@@ -160,7 +160,6 @@ public class AdminService implements IAdminService {
 		
 		//First check if city with given id exists
 		City city = cityrepo.findById(cityId).orElse(null);
-		System.out.println("4");
 		//If city not found
 		if(city==null) {
 			System.out.println("3");
@@ -227,7 +226,7 @@ public class AdminService implements IAdminService {
 	/**
 	 * Add a new room in the hotel based on cityid and hotelid
 	 */
-	public boolean addRoom(Long cityId, Long hotelId, Room room) {
+	public Room addRoom(Long cityId, Long hotelId, Room room) {
 		//First check if city with given id exists
 		City city = cityrepo.findById(cityId).orElse(null);
 		//If city not found
@@ -248,7 +247,7 @@ public class AdminService implements IAdminService {
 					//city.setHotelList(hotelList);
 					//cityrepo.save(city);
 					logger.info("Room added");
-					return true;
+					return room;
 				}
 			}
 			//If hotel not found

@@ -1,0 +1,283 @@
+2019-10-15 10:54:14,475 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 13352 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 10:54:14,481 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 10:54:14,481 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 10:54:18,190 ERROR org.apache.catalina.util.LifecycleBase [main] Failed to start component [Connector[HTTP/1.1-9088]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.cg.hotelmanagement.HotelManagementApplication.main(HotelManagementApplication.java:10)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:230)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:213)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+2019-10-15 10:54:18,209 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 9088 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 9088, or configure this application to listen on another port.
+
+2019-10-15 10:55:24,830 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 13872 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 10:55:24,832 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 10:55:24,832 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 10:55:28,597 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.141 seconds (JVM running for 4.664)
+2019-10-15 10:56:09,120 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9087-exec-2] City addded
+2019-10-15 10:56:37,580 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9087-exec-3] showCity method
+2019-10-15 10:56:52,601 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9087-exec-4] FindCityById method
+2019-10-15 10:57:33,648 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9087-exec-5] City addded
+2019-10-15 10:58:23,941 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9087-exec-6] City removed with Id: 5
+2019-10-15 11:00:29,604 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9087-exec-1] City addded
+2019-10-15 11:03:05,380 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 1412 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 11:03:05,382 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 11:03:05,382 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 11:03:09,249 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.275 seconds (JVM running for 4.812)
+2019-10-15 11:03:51,080 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 13548 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 11:03:51,081 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 11:03:51,081 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 11:03:54,842 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.14 seconds (JVM running for 4.676)
+2019-10-15 11:05:26,802 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 11232 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 11:05:26,804 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 11:05:26,804 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 11:05:30,544 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.114 seconds (JVM running for 4.633)
+2019-10-15 11:08:06,317 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 12948 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 11:08:06,319 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 11:08:06,319 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 11:08:10,108 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.168 seconds (JVM running for 4.696)
+2019-10-15 11:08:12,521 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9087-exec-1] Hotel added
+2019-10-15 11:09:31,766 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9087-exec-7] Hotel updated with Id: 12
+2019-10-15 11:09:36,713 ERROR com.cg.hotelmanagement.service.AdminService [http-nio-9087-exec-8] Hotel not found in updateHotel method
+2019-10-15 11:10:34,173 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9087-exec-9] Hotel deleted with Id: 11
+2019-10-15 11:10:43,615 ERROR com.cg.hotelmanagement.service.AdminService [http-nio-9087-exec-10] Hotel not found in removeHotel method
+2019-10-15 11:13:22,437 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9087-exec-6] showRooms method
+2019-10-15 11:13:31,988 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9087-exec-8] showRooms method
+2019-10-15 11:15:09,795 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 12300 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 11:15:09,797 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 11:15:09,797 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 11:15:13,703 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.289 seconds (JVM running for 4.836)
+2019-10-15 11:15:14,887 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9087-exec-2] showRooms method
+2019-10-15 11:17:30,097 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9087-exec-8] Room added
+2019-10-15 11:19:30,092 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9087-exec-1] Room updated with Id: 4
+2019-10-15 11:20:04,242 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9087-exec-2] Room removed with Id: 2
+2019-10-15 11:22:40,176 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 7432 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 11:22:40,180 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 11:22:40,180 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 11:22:44,306 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.518 seconds (JVM running for 5.057)
+2019-10-15 11:29:05,848 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 832 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 11:29:05,850 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 11:29:05,850 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 11:29:11,924 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 6.447 seconds (JVM running for 14.611)
+2019-10-15 11:29:59,938 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 6304 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 11:29:59,940 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 11:29:59,940 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 11:30:03,796 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.263 seconds (JVM running for 4.794)
+2019-10-15 11:31:17,197 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 9628 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 11:31:17,198 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 11:31:17,198 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 11:31:20,983 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.162 seconds (JVM running for 4.69)
+2019-10-15 11:32:57,632 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 8068 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 11:32:57,634 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 11:32:57,634 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 11:33:01,351 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.094 seconds (JVM running for 4.624)
+2019-10-15 11:33:39,935 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 1744 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 11:33:39,936 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 11:33:39,937 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 11:33:43,696 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.127 seconds (JVM running for 4.664)
+2019-10-15 11:36:38,513 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 12084 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 11:36:38,519 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 11:36:38,519 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 11:36:42,445 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.328 seconds (JVM running for 4.88)
+2019-10-15 11:37:07,906 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 8008 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 11:37:07,908 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 11:37:07,908 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 11:37:11,826 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.311 seconds (JVM running for 4.862)
+2019-10-15 11:38:00,970 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 7676 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 11:38:00,972 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 11:38:00,972 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 11:38:05,079 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.499 seconds (JVM running for 5.046)
+2019-10-15 11:43:53,368 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 14304 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 11:43:53,372 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 11:43:53,372 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 11:43:57,312 ERROR org.apache.catalina.util.LifecycleBase [main] Failed to start component [Connector[HTTP/1.1-9087]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.cg.hotelmanagement.HotelManagementApplication.main(HotelManagementApplication.java:10)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:230)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:213)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+2019-10-15 11:43:57,333 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 9087 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 9087, or configure this application to listen on another port.
+
+2019-10-15 11:46:15,445 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 9632 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 11:46:15,447 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 11:46:15,447 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 11:46:19,662 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.621 seconds (JVM running for 5.174)
+2019-10-15 11:56:27,014 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 13080 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 11:56:27,016 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 11:56:27,016 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 11:56:30,612 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 3.971 seconds (JVM running for 4.497)
+2019-10-15 11:58:22,728 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 13092 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 11:58:22,729 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 11:58:22,730 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 11:58:26,508 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.154 seconds (JVM running for 4.689)
+2019-10-15 11:58:31,164 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-9087-exec-2] Field 'booking_id' doesn't have a default value
+2019-10-15 12:00:45,614 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 8188 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 12:00:45,615 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 12:00:45,616 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 12:00:49,357 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.123 seconds (JVM running for 4.649)
+2019-10-15 12:00:53,768 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-9087-exec-1] Field 'booking_id' doesn't have a default value
+2019-10-15 12:00:58,806 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-9087-exec-4] Field 'booking_id' doesn't have a default value
+2019-10-15 12:02:37,515 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 9148 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 12:02:37,517 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 12:02:37,517 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 12:02:41,257 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.118 seconds (JVM running for 4.65)
+2019-10-15 12:02:46,877 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-9087-exec-2] Field 'booking_id' doesn't have a default value
+2019-10-15 12:29:44,297 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 3644 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 12:29:44,299 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 12:29:44,299 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 12:29:48,258 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.37 seconds (JVM running for 4.934)
+2019-10-15 12:31:34,287 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 13960 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 12:31:34,289 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 12:31:34,289 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 12:31:38,186 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.279 seconds (JVM running for 4.814)
+2019-10-15 12:31:50,311 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9087-exec-2] City addded
+2019-10-15 14:28:51,083 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 12376 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 14:28:51,085 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 14:28:51,085 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 14:28:55,067 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.391 seconds (JVM running for 4.922)
+2019-10-15 15:01:15,121 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 1280 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 15:01:15,123 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 15:01:15,123 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 15:01:19,686 ERROR org.apache.catalina.util.LifecycleBase [main] Failed to start component [Connector[HTTP/1.1-9087]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.cg.hotelmanagement.HotelManagementApplication.main(HotelManagementApplication.java:10)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:230)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:213)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+2019-10-15 15:01:19,710 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 9087 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 9087, or configure this application to listen on another port.
+
+2019-10-15 15:02:42,565 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 6676 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 15:02:42,576 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 15:02:42,576 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 15:02:47,081 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.973 seconds (JVM running for 5.582)
+2019-10-15 15:30:58,557 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 8356 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 15:30:58,564 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 15:30:58,564 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 15:31:02,324 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.155 seconds (JVM running for 4.8)
+2019-10-15 15:36:05,562 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 12512 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 15:36:05,564 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 15:36:05,564 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 15:36:09,241 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.044 seconds (JVM running for 4.589)
+2019-10-15 16:30:47,289 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 9668 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 16:30:47,291 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 16:30:47,291 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 16:30:51,087 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.17 seconds (JVM running for 4.712)
+2019-10-15 16:43:42,857 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 10432 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 16:43:42,859 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 16:43:42,859 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 16:43:46,476 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 3.999 seconds (JVM running for 4.532)
+2019-10-15 16:46:00,967 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 8384 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 16:46:00,969 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 16:46:00,969 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 16:46:04,601 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.003 seconds (JVM running for 4.524)
+2019-10-15 17:46:05,087 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Starting HotelManagementApplication on DESKTOP-9EHQEUU with PID 7308 (C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement\target\classes started by osis in C:\Users\osis\Downloads\Sprint5_Restful_logger\Sprint5_Restful\HotelManagement)
+2019-10-15 17:46:05,089 DEBUG com.cg.hotelmanagement.HotelManagementApplication [main] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-15 17:46:05,089 INFO com.cg.hotelmanagement.HotelManagementApplication [main] The following profiles are active: production
+2019-10-15 17:46:08,965 INFO com.cg.hotelmanagement.HotelManagementApplication [main] Started HotelManagementApplication in 4.261 seconds (JVM running for 4.797)

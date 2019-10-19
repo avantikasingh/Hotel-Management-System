@@ -20,6 +20,7 @@ import com.cg.hotelmanagement.dto.Hotel;
 import com.cg.hotelmanagement.dto.Room;
 import com.cg.hotelmanagement.exception.HotelException;
 import com.cg.hotelmanagement.exception.ResourceNotFoundException;
+import com.cg.hotelmanagement.repository.BookingRepository;
 import com.cg.hotelmanagement.repository.CustomerRepository;
 import com.cg.hotelmanagement.service.IAdminService;
 import com.cg.hotelmanagement.service.ICustomerService;
@@ -37,6 +38,8 @@ public class CustomerController {
 	HttpSession session;
 	@Autowired
 	CustomerRepository customerRepo;
+	@Autowired
+	BookingRepository bookingRepo;
 	
 	/**
 	 * Register a new user
@@ -87,20 +90,33 @@ public class CustomerController {
 		LocalDate localDateCheckOut = LocalDate.parse(checkOut);
 		if(room==null)
 			throw new ResourceNotFoundException("Room not found");
+		System.out.println(room.getHotel().getCity().getCityId());
+		System.out.println(room.getHotel().getHotelId());
+		System.out.println(roomId);
 		if(room.getHotel().getHotelId()==hotelId && room.getHotel().getCity().getCityId()==cityId) {
+			System.out.println("Ok");
 			if(customerService.isAvailable(room, localDateCheckIn, localDateCheckOut)) {
 				Booking booking = new Booking(localDateCheckIn, localDateCheckOut, room, 0);
 				System.out.println(booking);
 				Customer customer = customerService.getCustomer(username, password);
 				if(customer==null)
 					throw new ResourceNotFoundException("Invalid username and password");
-				booking.setBookingId(4l);
-				customer.setBooking(booking);
-				customerRepo.save(customer);
-				long bookingId = customer.getBooking().getBookingId();
-				booking.setBookingId(bookingId);
-				booking.setCustomer(customer);
-				return booking;
+				
+//				booking.setCustomer(customer);
+//				bookingRepo.save(booking);
+//				customer.setBooking(booking);
+//				customerRepo.save(customer);
+				
+				
+//				customer.setBooking(booking);
+//				customerRepo.save(customer);
+//				long bookingId = customer.getBooking().getBookingId();
+//				booking.setBookingId(bookingId);
+//				booking.setCustomer(customer);
+//				return booking;
+				
+				return customerService.makeBooking(booking, username, password);
+			
 			}
 		}
 		throw new ResourceNotFoundException("Resource not found");

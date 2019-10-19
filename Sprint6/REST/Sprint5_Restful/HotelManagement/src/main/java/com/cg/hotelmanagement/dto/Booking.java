@@ -3,7 +3,7 @@ package com.cg.hotelmanagement.dto;
 import java.time.LocalDate;
 import java.util.Date;
 
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -59,11 +59,10 @@ public class Booking {
 	@JoinColumn(name="room_id")
 	private Room room;
 	
-	
 	@Column(name = "delete_flag")
 	private int deleteFlag = 0;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Customer customer;
 	
 	@Column(name = "created_date", nullable = false, updatable = false)
@@ -146,7 +145,6 @@ public class Booking {
 		this.hotelRating=room.getHotel().getHotelRating();
 		this.hotelPhoneno=room.getHotel().getHotelPhoneNumber();
 		this.cityName=room.getHotel().getCity().getCityName();
-		this.bookingId=11111l;
 	}
 
 

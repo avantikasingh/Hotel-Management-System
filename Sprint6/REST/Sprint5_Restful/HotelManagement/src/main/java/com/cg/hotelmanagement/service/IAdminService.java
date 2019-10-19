@@ -35,7 +35,7 @@ public interface IAdminService {
 	
 	public Room viewSingleRoom(long roomId);
 	
-	public boolean addRoom(Long cityId, Long hotelId,
+	public Room addRoom(Long cityId, Long hotelId,
 			Room room);
 
 	public boolean removeRoom(Long roomId);

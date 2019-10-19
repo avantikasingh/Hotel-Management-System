@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests" time="53.379" tests="14" errors="14" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="D:\Saurabh\Code\Sprint5_Restful\HotelManagement\target\test-classes;D:\Saurabh\Code\Sprint5_Restful\HotelManagement\target\classes;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-data-jdbc\2.1.9.RELEASE\spring-boot-starter-data-jdbc-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.1.9.RELEASE\spring-boot-starter-jdbc-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\com\zaxxer\HikariCP\3.2.0\HikariCP-3.2.0.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-jdbc\5.1.10.RELEASE\spring-jdbc-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\data\spring-data-jdbc\1.0.11.RELEASE\spring-data-jdbc-1.0.11.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\data\spring-data-commons\2.1.11.RELEASE\spring-data-commons-2.1.11.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-tx\5.1.10.RELEASE\spring-tx-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-context\5.1.10.RELEASE\spring-context-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-beans\5.1.10.RELEASE\spring-beans-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\slf4j\slf4j-api\1.7.28\slf4j-api-1.7.28.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.1.9.RELEASE\spring-boot-starter-data-jpa-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-aop\2.1.9.RELEASE\spring-boot-starter-aop-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-aop\5.1.10.RELEASE\spring-aop-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\aspectj\aspectjweaver\1.9.4\aspectjweaver-1.9.4.jar;C:\Users\Admin\.m2\repository\javax\transaction\javax.transaction-api\1.3\javax.transaction-api-1.3.jar;C:\Users\Admin\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\Users\Admin\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\Admin\.m2\repository\org\hibernate\hibernate-core\5.3.12.Final\hibernate-core-5.3.12.Final.jar;C:\Users\Admin\.m2\repository\org\jboss\logging\jboss-logging\3.3.3.Final\jboss-logging-3.3.3.Final.jar;C:\Users\Admin\.m2\repository\javax\persistence\javax.persistence-api\2.2\javax.persistence-api-2.2.jar;C:\Users\Admin\.m2\repository\org\javassist\javassist\3.23.2-GA\javassist-3.23.2-GA.jar;C:\Users\Admin\.m2\repository\net\bytebuddy\byte-buddy\1.9.16\byte-buddy-1.9.16.jar;C:\Users\Admin\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\Admin\.m2\repository\org\jboss\jandex\2.0.5.Final\jandex-2.0.5.Final.jar;C:\Users\Admin\.m2\repository\com\fasterxml\classmate\1.4.0\classmate-1.4.0.jar;C:\Users\Admin\.m2\repository\org\dom4j\dom4j\2.1.1\dom4j-2.1.1.jar;C:\Users\Admin\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.0.4.Final\hibernate-commons-annotations-5.0.4.Final.jar;C:\Users\Admin\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.1\jaxb-runtime-2.3.1.jar;C:\Users\Admin\.m2\repository\org\glassfish\jaxb\txw2\2.3.1\txw2-2.3.1.jar;C:\Users\Admin\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.7\istack-commons-runtime-3.0.7.jar;C:\Users\Admin\.m2\repository\org\jvnet\staxex\stax-ex\1.8\stax-ex-1.8.jar;C:\Users\Admin\.m2\repository\com\sun\xml\fastinfoset\FastInfoset\1.2.15\FastInfoset-1.2.15.jar;C:\Users\Admin\.m2\repository\org\springframework\data\spring-data-jpa\2.1.11.RELEASE\spring-data-jpa-2.1.11.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-orm\5.1.10.RELEASE\spring-orm-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-aspects\5.1.10.RELEASE\spring-aspects-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-web\2.1.9.RELEASE\spring-boot-starter-web-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter\2.1.9.RELEASE\spring-boot-starter-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.1.9.RELEASE\spring-boot-starter-logging-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\Admin\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;C:\Users\Admin\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.11.2\log4j-to-slf4j-2.11.2.jar;C:\Users\Admin\.m2\repository\org\apache\logging\log4j\log4j-api\2.11.2\log4j-api-2.11.2.jar;C:\Users\Admin\.m2\repository\org\slf4j\jul-to-slf4j\1.7.28\jul-to-slf4j-1.7.28.jar;C:\Users\Admin\.m2\repository\org\yaml\snakeyaml\1.23\snakeyaml-1.23.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-json\2.1.9.RELEASE\spring-boot-starter-json-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.9.9\jackson-datatype-jdk8-2.9.9.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.9.9\jackson-datatype-jsr310-2.9.9.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.9.9\jackson-module-parameter-names-2.9.9.jar;C:\Users\Admin\.m2\repository\org\hibernate\validator\hibernate-validator\6.0.17.Final\hibernate-validator-6.0.17.Final.jar;C:\Users\Admin\.m2\repository\javax\validation\validation-api\2.0.1.Final\validation-api-2.0.1.Final.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-web\5.1.10.RELEASE\spring-web-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-webmvc\5.1.10.RELEASE\spring-webmvc-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-expression\5.1.10.RELEASE\spring-expression-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-test\2.1.9.RELEASE\spring-boot-starter-test-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-test\2.1.9.RELEASE\spring-boot-test-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\2.1.9.RELEASE\spring-boot-test-autoconfigure-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\com\jayway\jsonpath\json-path\2.4.0\json-path-2.4.0.jar;C:\Users\Admin\.m2\repository\net\minidev\json-smart\2.3\json-smart-2.3.jar;C:\Users\Admin\.m2\repository\net\minidev\accessors-smart\1.2\accessors-smart-1.2.jar;C:\Users\Admin\.m2\repository\org\ow2\asm\asm\5.0.4\asm-5.0.4.jar;C:\Users\Admin\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Admin\.m2\repository\org\assertj\assertj-core\3.11.1\assertj-core-3.11.1.jar;C:\Users\Admin\.m2\repository\org\mockito\mockito-core\2.23.4\mockito-core-2.23.4.jar;C:\Users\Admin\.m2\repository\net\bytebuddy\byte-buddy-agent\1.9.16\byte-buddy-agent-1.9.16.jar;C:\Users\Admin\.m2\repository\org\objenesis\objenesis\2.6\objenesis-2.6.jar;C:\Users\Admin\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Admin\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar;C:\Users\Admin\.m2\repository\org\skyscreamer\jsonassert\1.5.0\jsonassert-1.5.0.jar;C:\Users\Admin\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-core\5.1.10.RELEASE\spring-core-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-jcl\5.1.10.RELEASE\spring-jcl-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-test\5.1.10.RELEASE\spring-test-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\xmlunit\xmlunit-core\2.6.3\xmlunit-core-2.6.3.jar;C:\Users\Admin\.m2\repository\mysql\mysql-connector-java\8.0.17\mysql-connector-java-8.0.17.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\2.1.9.RELEASE\spring-boot-starter-tomcat-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\javax\annotation\javax.annotation-api\1.3.2\javax.annotation-api-1.3.2.jar;C:\Users\Admin\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\9.0.26\tomcat-embed-core-9.0.26.jar;C:\Users\Admin\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\9.0.26\tomcat-embed-el-9.0.26.jar;C:\Users\Admin\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\9.0.26\tomcat-embed-websocket-9.0.26.jar;C:\Users\Admin\.m2\repository\org\apache\tomcat\embed\tomcat-embed-jasper\9.0.26\tomcat-embed-jasper-9.0.26.jar;C:\Users\Admin\.m2\repository\org\eclipse\jdt\ecj\3.18.0\ecj-3.18.0.jar;C:\Users\Admin\.m2\repository\javax\servlet\jstl\1.2\jstl-1.2.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.9.5\jackson-databind-2.9.5.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.9.0\jackson-annotations-2.9.0.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.9.9\jackson-core-2.9.9.jar;C:\Users\Admin\.m2\repository\org\apache\poi\poi-ooxml\3.17\poi-ooxml-3.17.jar;C:\Users\Admin\.m2\repository\org\apache\poi\poi\3.17\poi-3.17.jar;C:\Users\Admin\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\Admin\.m2\repository\org\apache\commons\commons-collections4\4.1\commons-collections4-4.1.jar;C:\Users\Admin\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.17\poi-ooxml-schemas-3.17.jar;C:\Users\Admin\.m2\repository\org\apache\xmlbeans\xmlbeans\2.6.0\xmlbeans-2.6.0.jar;C:\Users\Admin\.m2\repository\stax\stax-api\1.0.1\stax-api-1.0.1.jar;C:\Users\Admin\.m2\repository\com\github\virtuald\curvesapi\1.04\curvesapi-1.04.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-devtools\2.1.9.RELEASE\spring-boot-devtools-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot\2.1.9.RELEASE\spring-boot-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.1.9.RELEASE\spring-boot-autoconfigure-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\apache\maven\plugins\maven-resources-plugin\2.4.3\maven-resources-plugin-2.4.3.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-plugin-api\2.0.6\maven-plugin-api-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-project\2.0.6\maven-project-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-profile\2.0.6\maven-profile-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-artifact-manager\2.0.6\maven-artifact-manager-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-plugin-registry\2.0.6\maven-plugin-registry-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-core\2.0.6\maven-core-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\wagon\wagon-file\1.0-beta-2\wagon-file-1.0-beta-2.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-plugin-parameter-documenter\2.0.6\maven-plugin-parameter-documenter-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\wagon\wagon-http-lightweight\1.0-beta-2\wagon-http-lightweight-1.0-beta-2.jar;C:\Users\Admin\.m2\repository\org\apache\maven\wagon\wagon-http-shared\1.0-beta-2\wagon-http-shared-1.0-beta-2.jar;C:\Users\Admin\.m2\repository\jtidy\jtidy\4aug2000r7-dev\jtidy-4aug2000r7-dev.jar;C:\Users\Admin\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar;C:\Users\Admin\.m2\repository\org\apache\maven\reporting\maven-reporting-api\2.0.6\maven-reporting-api-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.0-alpha-7\doxia-sink-api-1.0-alpha-7.jar;C:\Users\Admin\.m2\repository\org\apache\maven\wagon\wagon-provider-api\1.0-beta-2\wagon-provider-api-1.0-beta-2.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-repository-metadata\2.0.6\maven-repository-metadata-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-error-diagnostics\2.0.6\maven-error-diagnostics-2.0.6.jar;C:\Users\Admin\.m2\repository\commons-cli\commons-cli\1.0\commons-cli-1.0.jar;C:\Users\Admin\.m2\repository\org\apache\maven\wagon\wagon-ssh-external\1.0-beta-2\wagon-ssh-external-1.0-beta-2.jar;C:\Users\Admin\.m2\repository\org\apache\maven\wagon\wagon-ssh-common\1.0-beta-2\wagon-ssh-common-1.0-beta-2.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-plugin-descriptor\2.0.6\maven-plugin-descriptor-2.0.6.jar;C:\Users\Admin\.m2\repository\org\codehaus\plexus\plexus-interactivity-api\1.0-alpha-4\plexus-interactivity-api-1.0-alpha-4.jar;C:\Users\Admin\.m2\repository\org\apache\maven\wagon\wagon-ssh\1.0-beta-2\wagon-ssh-1.0-beta-2.jar;C:\Users\Admin\.m2\repository\com\jcraft\jsch\0.1.27\jsch-0.1.27.jar;C:\Users\Admin\.m2\repository\classworlds\classworlds\1.1\classworlds-1.1.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-artifact\2.0.6\maven-artifact-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-settings\2.0.6\maven-settings-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-model\2.0.6\maven-model-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-monitor\2.0.6\maven-monitor-2.0.6.jar;C:\Users\Admin\.m2\repository\org\codehaus\plexus\plexus-container-default\1.0-alpha-9-stable-1\plexus-container-default-1.0-alpha-9-stable-1.jar;C:\Users\Admin\.m2\repository\org\codehaus\plexus\plexus-utils\2.0.5\plexus-utils-2.0.5.jar;C:\Users\Admin\.m2\repository\org\apache\maven\shared\maven-filtering\1.0-beta-4\maven-filtering-1.0-beta-4.jar;C:\Users\Admin\.m2\repository\org\sonatype\plexus\plexus-build-api\0.0.4\plexus-build-api-0.0.4.jar;C:\Users\Admin\.m2\repository\org\codehaus\plexus\plexus-interpolation\1.13\plexus-interpolation-1.13.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Los_Angeles"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_221\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\Admin\AppData\Local\Temp\surefire7065553792946162838\surefirebooter6851240699175533114.jar C:\Users\Admin\AppData\Local\Temp\surefire7065553792946162838 2019-10-19T00-46-30_140-jvmRun1 surefire6975363781718637777tmp surefire_06457296257202664132tmp"/>
+    <property name="surefire.test.class.path" value="D:\Saurabh\Code\Sprint5_Restful\HotelManagement\target\test-classes;D:\Saurabh\Code\Sprint5_Restful\HotelManagement\target\classes;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-data-jdbc\2.1.9.RELEASE\spring-boot-starter-data-jdbc-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.1.9.RELEASE\spring-boot-starter-jdbc-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\com\zaxxer\HikariCP\3.2.0\HikariCP-3.2.0.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-jdbc\5.1.10.RELEASE\spring-jdbc-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\data\spring-data-jdbc\1.0.11.RELEASE\spring-data-jdbc-1.0.11.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\data\spring-data-commons\2.1.11.RELEASE\spring-data-commons-2.1.11.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-tx\5.1.10.RELEASE\spring-tx-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-context\5.1.10.RELEASE\spring-context-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-beans\5.1.10.RELEASE\spring-beans-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\slf4j\slf4j-api\1.7.28\slf4j-api-1.7.28.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.1.9.RELEASE\spring-boot-starter-data-jpa-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-aop\2.1.9.RELEASE\spring-boot-starter-aop-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-aop\5.1.10.RELEASE\spring-aop-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\aspectj\aspectjweaver\1.9.4\aspectjweaver-1.9.4.jar;C:\Users\Admin\.m2\repository\javax\transaction\javax.transaction-api\1.3\javax.transaction-api-1.3.jar;C:\Users\Admin\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\Users\Admin\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\Admin\.m2\repository\org\hibernate\hibernate-core\5.3.12.Final\hibernate-core-5.3.12.Final.jar;C:\Users\Admin\.m2\repository\org\jboss\logging\jboss-logging\3.3.3.Final\jboss-logging-3.3.3.Final.jar;C:\Users\Admin\.m2\repository\javax\persistence\javax.persistence-api\2.2\javax.persistence-api-2.2.jar;C:\Users\Admin\.m2\repository\org\javassist\javassist\3.23.2-GA\javassist-3.23.2-GA.jar;C:\Users\Admin\.m2\repository\net\bytebuddy\byte-buddy\1.9.16\byte-buddy-1.9.16.jar;C:\Users\Admin\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\Admin\.m2\repository\org\jboss\jandex\2.0.5.Final\jandex-2.0.5.Final.jar;C:\Users\Admin\.m2\repository\com\fasterxml\classmate\1.4.0\classmate-1.4.0.jar;C:\Users\Admin\.m2\repository\org\dom4j\dom4j\2.1.1\dom4j-2.1.1.jar;C:\Users\Admin\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.0.4.Final\hibernate-commons-annotations-5.0.4.Final.jar;C:\Users\Admin\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.1\jaxb-runtime-2.3.1.jar;C:\Users\Admin\.m2\repository\org\glassfish\jaxb\txw2\2.3.1\txw2-2.3.1.jar;C:\Users\Admin\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.7\istack-commons-runtime-3.0.7.jar;C:\Users\Admin\.m2\repository\org\jvnet\staxex\stax-ex\1.8\stax-ex-1.8.jar;C:\Users\Admin\.m2\repository\com\sun\xml\fastinfoset\FastInfoset\1.2.15\FastInfoset-1.2.15.jar;C:\Users\Admin\.m2\repository\org\springframework\data\spring-data-jpa\2.1.11.RELEASE\spring-data-jpa-2.1.11.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-orm\5.1.10.RELEASE\spring-orm-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-aspects\5.1.10.RELEASE\spring-aspects-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-web\2.1.9.RELEASE\spring-boot-starter-web-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter\2.1.9.RELEASE\spring-boot-starter-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.1.9.RELEASE\spring-boot-starter-logging-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\Admin\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;C:\Users\Admin\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.11.2\log4j-to-slf4j-2.11.2.jar;C:\Users\Admin\.m2\repository\org\apache\logging\log4j\log4j-api\2.11.2\log4j-api-2.11.2.jar;C:\Users\Admin\.m2\repository\org\slf4j\jul-to-slf4j\1.7.28\jul-to-slf4j-1.7.28.jar;C:\Users\Admin\.m2\repository\org\yaml\snakeyaml\1.23\snakeyaml-1.23.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-json\2.1.9.RELEASE\spring-boot-starter-json-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.9.9\jackson-datatype-jdk8-2.9.9.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.9.9\jackson-datatype-jsr310-2.9.9.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.9.9\jackson-module-parameter-names-2.9.9.jar;C:\Users\Admin\.m2\repository\org\hibernate\validator\hibernate-validator\6.0.17.Final\hibernate-validator-6.0.17.Final.jar;C:\Users\Admin\.m2\repository\javax\validation\validation-api\2.0.1.Final\validation-api-2.0.1.Final.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-web\5.1.10.RELEASE\spring-web-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-webmvc\5.1.10.RELEASE\spring-webmvc-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-expression\5.1.10.RELEASE\spring-expression-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-test\2.1.9.RELEASE\spring-boot-starter-test-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-test\2.1.9.RELEASE\spring-boot-test-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\2.1.9.RELEASE\spring-boot-test-autoconfigure-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\com\jayway\jsonpath\json-path\2.4.0\json-path-2.4.0.jar;C:\Users\Admin\.m2\repository\net\minidev\json-smart\2.3\json-smart-2.3.jar;C:\Users\Admin\.m2\repository\net\minidev\accessors-smart\1.2\accessors-smart-1.2.jar;C:\Users\Admin\.m2\repository\org\ow2\asm\asm\5.0.4\asm-5.0.4.jar;C:\Users\Admin\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Admin\.m2\repository\org\assertj\assertj-core\3.11.1\assertj-core-3.11.1.jar;C:\Users\Admin\.m2\repository\org\mockito\mockito-core\2.23.4\mockito-core-2.23.4.jar;C:\Users\Admin\.m2\repository\net\bytebuddy\byte-buddy-agent\1.9.16\byte-buddy-agent-1.9.16.jar;C:\Users\Admin\.m2\repository\org\objenesis\objenesis\2.6\objenesis-2.6.jar;C:\Users\Admin\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Admin\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar;C:\Users\Admin\.m2\repository\org\skyscreamer\jsonassert\1.5.0\jsonassert-1.5.0.jar;C:\Users\Admin\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-core\5.1.10.RELEASE\spring-core-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-jcl\5.1.10.RELEASE\spring-jcl-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-test\5.1.10.RELEASE\spring-test-5.1.10.RELEASE.jar;C:\Users\Admin\.m2\repository\org\xmlunit\xmlunit-core\2.6.3\xmlunit-core-2.6.3.jar;C:\Users\Admin\.m2\repository\mysql\mysql-connector-java\8.0.17\mysql-connector-java-8.0.17.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\2.1.9.RELEASE\spring-boot-starter-tomcat-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\javax\annotation\javax.annotation-api\1.3.2\javax.annotation-api-1.3.2.jar;C:\Users\Admin\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\9.0.26\tomcat-embed-core-9.0.26.jar;C:\Users\Admin\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\9.0.26\tomcat-embed-el-9.0.26.jar;C:\Users\Admin\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\9.0.26\tomcat-embed-websocket-9.0.26.jar;C:\Users\Admin\.m2\repository\org\apache\tomcat\embed\tomcat-embed-jasper\9.0.26\tomcat-embed-jasper-9.0.26.jar;C:\Users\Admin\.m2\repository\org\eclipse\jdt\ecj\3.18.0\ecj-3.18.0.jar;C:\Users\Admin\.m2\repository\javax\servlet\jstl\1.2\jstl-1.2.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.9.5\jackson-databind-2.9.5.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.9.0\jackson-annotations-2.9.0.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.9.9\jackson-core-2.9.9.jar;C:\Users\Admin\.m2\repository\org\apache\poi\poi-ooxml\3.17\poi-ooxml-3.17.jar;C:\Users\Admin\.m2\repository\org\apache\poi\poi\3.17\poi-3.17.jar;C:\Users\Admin\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\Admin\.m2\repository\org\apache\commons\commons-collections4\4.1\commons-collections4-4.1.jar;C:\Users\Admin\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.17\poi-ooxml-schemas-3.17.jar;C:\Users\Admin\.m2\repository\org\apache\xmlbeans\xmlbeans\2.6.0\xmlbeans-2.6.0.jar;C:\Users\Admin\.m2\repository\stax\stax-api\1.0.1\stax-api-1.0.1.jar;C:\Users\Admin\.m2\repository\com\github\virtuald\curvesapi\1.04\curvesapi-1.04.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-devtools\2.1.9.RELEASE\spring-boot-devtools-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot\2.1.9.RELEASE\spring-boot-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.1.9.RELEASE\spring-boot-autoconfigure-2.1.9.RELEASE.jar;C:\Users\Admin\.m2\repository\org\apache\maven\plugins\maven-resources-plugin\2.4.3\maven-resources-plugin-2.4.3.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-plugin-api\2.0.6\maven-plugin-api-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-project\2.0.6\maven-project-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-profile\2.0.6\maven-profile-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-artifact-manager\2.0.6\maven-artifact-manager-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-plugin-registry\2.0.6\maven-plugin-registry-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-core\2.0.6\maven-core-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\wagon\wagon-file\1.0-beta-2\wagon-file-1.0-beta-2.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-plugin-parameter-documenter\2.0.6\maven-plugin-parameter-documenter-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\wagon\wagon-http-lightweight\1.0-beta-2\wagon-http-lightweight-1.0-beta-2.jar;C:\Users\Admin\.m2\repository\org\apache\maven\wagon\wagon-http-shared\1.0-beta-2\wagon-http-shared-1.0-beta-2.jar;C:\Users\Admin\.m2\repository\jtidy\jtidy\4aug2000r7-dev\jtidy-4aug2000r7-dev.jar;C:\Users\Admin\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar;C:\Users\Admin\.m2\repository\org\apache\maven\reporting\maven-reporting-api\2.0.6\maven-reporting-api-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.0-alpha-7\doxia-sink-api-1.0-alpha-7.jar;C:\Users\Admin\.m2\repository\org\apache\maven\wagon\wagon-provider-api\1.0-beta-2\wagon-provider-api-1.0-beta-2.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-repository-metadata\2.0.6\maven-repository-metadata-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-error-diagnostics\2.0.6\maven-error-diagnostics-2.0.6.jar;C:\Users\Admin\.m2\repository\commons-cli\commons-cli\1.0\commons-cli-1.0.jar;C:\Users\Admin\.m2\repository\org\apache\maven\wagon\wagon-ssh-external\1.0-beta-2\wagon-ssh-external-1.0-beta-2.jar;C:\Users\Admin\.m2\repository\org\apache\maven\wagon\wagon-ssh-common\1.0-beta-2\wagon-ssh-common-1.0-beta-2.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-plugin-descriptor\2.0.6\maven-plugin-descriptor-2.0.6.jar;C:\Users\Admin\.m2\repository\org\codehaus\plexus\plexus-interactivity-api\1.0-alpha-4\plexus-interactivity-api-1.0-alpha-4.jar;C:\Users\Admin\.m2\repository\org\apache\maven\wagon\wagon-ssh\1.0-beta-2\wagon-ssh-1.0-beta-2.jar;C:\Users\Admin\.m2\repository\com\jcraft\jsch\0.1.27\jsch-0.1.27.jar;C:\Users\Admin\.m2\repository\classworlds\classworlds\1.1\classworlds-1.1.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-artifact\2.0.6\maven-artifact-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-settings\2.0.6\maven-settings-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-model\2.0.6\maven-model-2.0.6.jar;C:\Users\Admin\.m2\repository\org\apache\maven\maven-monitor\2.0.6\maven-monitor-2.0.6.jar;C:\Users\Admin\.m2\repository\org\codehaus\plexus\plexus-container-default\1.0-alpha-9-stable-1\plexus-container-default-1.0-alpha-9-stable-1.jar;C:\Users\Admin\.m2\repository\org\codehaus\plexus\plexus-utils\2.0.5\plexus-utils-2.0.5.jar;C:\Users\Admin\.m2\repository\org\apache\maven\shared\maven-filtering\1.0-beta-4\maven-filtering-1.0-beta-4.jar;C:\Users\Admin\.m2\repository\org\sonatype\plexus\plexus-build-api\0.0.4\plexus-build-api-0.0.4.jar;C:\Users\Admin\.m2\repository\org\codehaus\plexus\plexus-interpolation\1.13\plexus-interpolation-1.13.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Admin"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_221\jre"/>
+    <property name="basedir" value="D:\Saurabh\Code\Sprint5_Restful\HotelManagement"/>
+    <property name="style.color" value="always"/>
+    <property name="file.separator" value="\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\Admin\AppData\Local\Temp\surefire7065553792946162838\surefirebooter6851240699175533114.jar"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_221\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_221\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_221\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_221\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_221\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_221\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_221\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_221\jre\classes"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_221-b11"/>
+    <property name="user.name" value="Admin"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_221\jre\lib\endorsed"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Admin\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\Admin\AppData\Local\Temp\"/>
+    <property name="java.version" value="1.8.0_221"/>
+    <property name="user.dir" value="D:\Saurabh\Code\Sprint5_Restful\HotelManagement"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_221\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_221/bin/server;C:/Program Files/Java/jre1.8.0_221/bin;C:/Program Files/Java/jre1.8.0_221/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;&quot;C:\Program Files\Java\jdk1.8.0_221&quot;;C:\Program Files\nodejs\;C:\Users\Admin\AppData\Local\Microsoft\WindowsApps;C:\Users\Admin\Downloads\apache-maven-3.6.2\bin;C:\Users\Admin\AppData\Roaming\npm;C:\Users\Admin\AppData\Local\GitHubDesktop\bin;D:\spring-tool-suite-4-4.4.0.RELEASE-e4.13.0-win32.win32.x86_64\sts-4.4.0.RELEASE;;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="25.221-b11"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_221\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="testViewSingleRoom" classname="com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests" time="0.001">
+    <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'hoteldb'
+</error>
+    <system-out><![CDATA[00:46:32.879 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests]
+00:46:32.903 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+00:46:32.913 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+00:46:32.934 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+00:46:32.948 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests], using SpringBootContextLoader
+00:46:32.953 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests]: class path resource [com/cg/hotelmanagement/HotelManagement/HotelManagementApplicationTests-context.xml] does not exist
+00:46:32.954 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests]: class path resource [com/cg/hotelmanagement/HotelManagement/HotelManagementApplicationTestsContext.groovy] does not exist
+00:46:32.954 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+00:46:32.956 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests]: HotelManagementApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:46:33.006 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests]
+00:46:33.086 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [D:\Saurabh\Code\Sprint5_Restful\HotelManagement\target\classes\com\cg\hotelmanagement\HotelManagementApplication.class]
+00:46:33.090 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.cg.hotelmanagement.HotelManagementApplication for test class com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests
+00:46:33.200 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests]: using defaults.
+00:46:33.200 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+00:46:33.217 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@385c9627, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@139982de, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@682b2fa, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@217ed35e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7dcf94f8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@229f66ed, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@31190526, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@662ac478, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6743e411, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3eb25e1a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@477b4cdf, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@77c2494c]
+00:46:33.219 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests]
+00:46:33.220 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests]
+00:46:33.221 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests]
+00:46:33.221 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests]
+00:46:33.222 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests]
+00:46:33.222 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests]
+00:46:33.227 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@40005471 testClass = HotelManagementApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2cd76f31 testClass = HotelManagementApplicationTests, locations = '{}', classes = '{class com.cg.hotelmanagement.HotelManagementApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4516af24, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6d3af739, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@17baae6e, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3d8314f0], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+00:46:33.228 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests]
+00:46:33.228 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests]
+00:46:33.256 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.9.RELEASE)
+
+]]></system-out>
+  </testcase>
+  <testcase name="testremoveCity" classname="com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests" time="0">
+    <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'hoteldb'
+</error>
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.9.RELEASE)
+
+]]></system-out>
+  </testcase>
+  <testcase name="testremoveRoom" classname="com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests" time="0.001">
+    <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'hoteldb'
+</error>
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.9.RELEASE)
+
+]]></system-out>
+  </testcase>
+  <testcase name="testViewSingleHotel" classname="com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests" time="0.001">
+    <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'hoteldb'
+</error>
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.9.RELEASE)
+
+]]></system-out>
+  </testcase>
+  <testcase name="testShowRooms" classname="com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests" time="0">
+    <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'hoteldb'
+</error>
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.9.RELEASE)
+
+]]></system-out>
+  </testcase>
+  <testcase name="testaddHotel" classname="com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests" time="0">
+    <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'hoteldb'
+</error>
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.9.RELEASE)
+
+]]></system-out>
+  </testcase>
+  <testcase name="testfindCityById" classname="com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests" time="0">
+    <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'hoteldb'
+</error>
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.9.RELEASE)
+
+]]></system-out>
+  </testcase>
+  <testcase name="testshowCity" classname="com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests" time="0.001">
+    <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'hoteldb'
+</error>
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.9.RELEASE)
+
+]]></system-out>
+  </testcase>
+  <testcase name="testaddCity" classname="com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests" time="0.001">
+    <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'hoteldb'
+</error>
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.9.RELEASE)
+
+]]></system-out>
+  </testcase>
+  <testcase name="testaddRoom" classname="com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests" time="0">
+    <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'hoteldb'
+</error>
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.9.RELEASE)
+
+]]></system-out>
+  </testcase>
+  <testcase name="testupdateRoom" classname="com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests" time="0">
+    <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'hoteldb'
+</error>
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.9.RELEASE)
+
+]]></system-out>
+  </testcase>
+  <testcase name="testupdateHotel" classname="com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests" time="0.001">
+    <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'hoteldb'
+</error>
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.9.RELEASE)
+
+]]></system-out>
+  </testcase>
+  <testcase name="testHotels" classname="com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests" time="0.001">
+    <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'hoteldb'
+</error>
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.9.RELEASE)
+
+]]></system-out>
+  </testcase>
+  <testcase name="testremoveHotel" classname="com.cg.hotelmanagement.HotelManagement.HotelManagementApplicationTests" time="0">
+    <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'hoteldb'
+</error>
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.9.RELEASE)
+
+]]></system-out>
+  </testcase>
+</testsuite>
