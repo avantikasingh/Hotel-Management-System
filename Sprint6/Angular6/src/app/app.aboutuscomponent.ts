@@ -1,11 +1,10 @@
-import { Component , OnInit, OnChanges, OnDestroy } from "@angular/core";
-import {ProductService} from './service/app.hmsservice'
-import {Product}from './_model/app.product'
+import { Component } from "@angular/core";
+// import { Component , OnInit, OnChanges, OnDestroy } from "@angular/core";
+import {HmsService} from './service/app.hmsservice'
 
 
-@Component({selector:'prod',
-templateUrl:'app.product.html'})
+@Component({selector:'aboutus',
+templateUrl:'app.aboutus.html'})
+export class AboutUsComponent {
 
-
-export class ProductComponent {
-    model:any = {};
+}

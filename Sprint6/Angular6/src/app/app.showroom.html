@@ -1,0 +1,20 @@
+<h1>Show Product</h1>
+<table>
+    <tr>
+        <th>Product Id</th>
+        <th>Name</th>
+        <th>Cost</th>
+        <th>Description</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor = "let pro of products; let i = index">
+        <td>{{pro.prodId}}</td>
+        <td>{{pro.prodName}}</td>
+        <td>{{pro.prodCost}}</td>
+        <td>{{pro.prodDescription}}</td>
+        <td><input type="Button" value = "Update" (click) = "initiateUpdateProduct(pro.pid)"/></td>
+        <td><input type="Button" value = "Delete " (click) = "deleteProduct(i)"/></td>
+    </tr>
+
+
+</table>

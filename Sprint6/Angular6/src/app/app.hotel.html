@@ -1,0 +1,42 @@
+<h1>Add Hotel</h1>
+<table>
+    <tr>
+        <td>City Id</td>
+        <td><input id="form_city_id" type = "number" name = "cityid" required=""/> </td>
+        <!-- <td><span class="form_error" id="cityid_error_message" style="color:red;"></span></td> -->
+        </tr> 
+        <tr>
+            <tr>
+                <td>Hotel Name</td>
+                <td><input type="text" [(ngModel)]='modelHotel.hotelName' /></td>
+            </tr>
+        <tr>
+        <td>Hotel Address</td>
+        <td><input type="text" [(ngModel)]='modelHotel.hotelAddress' /></td>
+        <!-- <td><span class="form_error" id="hoteladdress_error_message" style="color:red;"></span></td> -->
+        </tr>
+        <tr>
+        <td>Hotel Phone Number</td>
+        <td><input type="text" [(ngModel)]='modelHotel.hotelPhoneNumber' /></td>
+        <!-- <td><span class="form_error" id="hotelphone_error_message" style="color:red;"></span></td> -->
+        </tr>
+        
+        <tr>
+        <td>Hotel Rating</td>
+        <td><input type="text" [(ngModel)]='modelHotel.hotelRating' /></td>
+        <!-- <td><span class="form_error" id="hotelrating_error_message" style="color:red;"></span></td> -->
+        
+        </tr>
+    
+
+
+    <tr>
+        <td><input type="button" value="Add Hotel" (click)="addHotel()" /></td>
+    </tr>
+</table>
+
+
+
+
+
+

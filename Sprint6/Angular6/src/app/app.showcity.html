@@ -1,0 +1,15 @@
+<h1>Show City</h1>
+<table>
+    <tr>
+        <th>City Id</th>
+        <th>City Name</th>
+
+    </tr>
+    <tr *ngFor = "let city of cities; let i = index">
+        <td>{{city.cityId}}</td>
+        <td>{{city.cityName}}</td>
+        <td><input type="Button" value = "Update" (click) = "initiateUpdateProduct(pro.pid)"/></td>
+        <td><input type="Button" value = "Delete " (click) = "deleteProduct(i)"/></td>
+    </tr>
+
+</table>
