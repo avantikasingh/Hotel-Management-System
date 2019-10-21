@@ -1,55 +1,67 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+register(data:any){
+    return this.myhttp.post("http://localhost:9088/customer/register",data);
+}
 
-Enter User Name
+
+
+<h1>Register</h1>
 <table>
-<fo:form action="registerpage"  method="POST">
-<tr>
-<td>Username
-<td><input type = "text" name = "userName">
-</tr>
-<tr>
-<tr>
-<td>Email Id
-<td><input type = "email" name = "emaiId">
-</tr>
-<tr>
-<td>Date of Birth
-<td><input type = "date" name = "dob">
-</tr>
-<tr>
-<td>Mobile number
-<td><input type = "text" name = "userMobile">
-</tr>
-<tr>
-<td>First Name
-<td><input type = "text" name = "firstName">
-</tr>
-<tr>
-<td>Last Name
-<td><input type = "text" name = "lastName">
-</tr>
-<tr>
-<td><input type= "text" value="gender" />
-</tr>
-<tr>
-<td><input type= "text" value="aadharNumber" />
-</tr>
-<tr>
-<td><input type= "password" value="password" />
-</tr>
-<tr>
-<td><input type= "submit" value="Register" />
-</tr>
-</fo:form>
+    <tr>
+        <td>Username</td>
+        <td><input type="text" [(ngModel)]='customer.username' /></td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td><input type="password" [(ngModel)]='customer.password' /></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><input type="text" [(ngModel)]='customer.emailId' /></td>
+    </tr>
+    <tr>
+        <td>Firstname</td>
+        <td><input type="text" [(ngModel)]='customer.firstName' /></td>
+    </tr>
+    <tr>
+        <td>Lastname</td>
+        <td><input type="text" [(ngModel)]='customer.lastName' /></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><input type="text" [(ngModel)]='customer.emailId' /></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><input type="text" [(ngModel)]='customer.userMobile' /></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><input type="date" [(ngModel)]='customer.dob' /></td>
+    </tr>
+    <tr>
+        <td>Aadhar Number</td>
+        <td><input type="text" [(ngModel)]='customer.aadharNumber' /></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Add City" (click)="register()" /></td>
+    </tr>
 </table>
 
-</body>
-</html>
+
+import { Component } from "@angular/core";
+import {HmsService} from './service/app.hmsservice';
+import { Customer } from "./_model/app.customer";
+
+@Component({selector:'register',
+templateUrl:'app.register.html'})
+
+
+export class ShowComponent {
+    customer:any = {};
+
+customers:Customer[]=[];
+constructor(private service:HmsService){
+    console.log("In constructor");
+}
+
+}
