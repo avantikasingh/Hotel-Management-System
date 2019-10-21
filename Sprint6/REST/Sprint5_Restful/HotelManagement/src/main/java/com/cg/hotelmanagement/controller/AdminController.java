@@ -144,6 +144,7 @@ public class AdminController {
 	 * @param cityId
 	 * @return
 	 */
+	
 	@GetMapping("/hotels/{cityId}")
 	public List<Hotel> getHotels(@PathVariable long cityId){
 		logger.trace("getHotels in Controller");
