@@ -1,0 +1,190 @@
+2019-10-20 21:36:21,662 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7892 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-20 21:36:21,670 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-20 21:36:21,670 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-20 21:36:32,337 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 12.161 seconds (JVM running for 13.63)
+2019-10-20 21:38:24,257 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7892 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-20 21:38:24,257 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-20 21:38:24,257 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-20 21:38:31,579 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminController' defined in file [C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes\com\cg\hotelmanagement\controller\AdminController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.cg.hotelmanagement.controller.AdminController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	CrossOrigin cannot be resolved to a type
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1303)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:847)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.cg.hotelmanagement.HotelManagementApplication.main(HotelManagementApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.cg.hotelmanagement.controller.AdminController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	CrossOrigin cannot be resolved to a type
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1295)
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	CrossOrigin cannot be resolved to a type
+
+	at com.cg.hotelmanagement.controller.AdminController.<init>(AdminController.java:38)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172)
+	... 24 common frames omitted
+2019-10-20 21:38:41,372 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7892 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-20 21:38:41,372 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-20 21:38:41,372 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-20 21:38:43,703 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminController' defined in file [C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes\com\cg\hotelmanagement\controller\AdminController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.cg.hotelmanagement.controller.AdminController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	CrossOrigin cannot be resolved to a type
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1303)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:847)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.cg.hotelmanagement.HotelManagementApplication.main(HotelManagementApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.cg.hotelmanagement.controller.AdminController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	CrossOrigin cannot be resolved to a type
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1295)
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	CrossOrigin cannot be resolved to a type
+
+	at com.cg.hotelmanagement.controller.AdminController.<init>(AdminController.java:38)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172)
+	... 24 common frames omitted
+2019-10-20 21:38:46,294 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7892 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-20 21:38:46,295 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-20 21:38:46,295 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-20 21:38:48,033 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminController' defined in file [C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes\com\cg\hotelmanagement\controller\AdminController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.cg.hotelmanagement.controller.AdminController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	CrossOrigin cannot be resolved to a type
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1303)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:847)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.cg.hotelmanagement.HotelManagementApplication.main(HotelManagementApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.cg.hotelmanagement.controller.AdminController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	CrossOrigin cannot be resolved to a type
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1295)
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	CrossOrigin cannot be resolved to a type
+
+	at com.cg.hotelmanagement.controller.AdminController.<init>(AdminController.java:38)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172)
+	... 24 common frames omitted
+2019-10-20 21:51:50,084 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7892 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-20 21:51:50,084 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-20 21:51:50,084 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-20 21:51:52,563 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 2.551 seconds (JVM running for 933.856)
+2019-10-20 21:55:01,365 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7892 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-20 21:55:01,365 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-20 21:55:01,365 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-20 21:55:03,362 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 2.056 seconds (JVM running for 1124.655)
+2019-10-20 21:56:34,138 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 948 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-20 21:56:34,141 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-20 21:56:34,141 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-20 21:56:40,264 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 6.725 seconds (JVM running for 7.801)
+2019-10-20 21:56:55,512 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 6940 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-20 21:56:55,515 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-20 21:56:55,515 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-20 21:57:01,982 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 7.083 seconds (JVM running for 8.053)
+2019-10-20 22:04:56,281 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 6940 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-20 22:04:56,282 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-20 22:04:56,282 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-20 22:04:58,789 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 2.576 seconds (JVM running for 484.861)
+2019-10-20 22:09:08,553 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 6940 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-20 22:09:08,553 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-20 22:09:08,553 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-20 22:09:10,551 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 2.069 seconds (JVM running for 736.623)
+2019-10-20 22:10:09,719 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] City addded
+2019-10-20 22:11:54,607 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-9088-exec-7] Duplicate entry 'test' for key 'UK_djnk44fptegbsu6drhc9xvlfj'
+2019-10-20 22:14:02,292 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] City addded
+2019-10-20 22:24:29,370 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 6940 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-20 22:24:29,371 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-20 22:24:29,371 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-20 22:24:31,115 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.804 seconds (JVM running for 1657.187)
+2019-10-20 23:26:55,963 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 6420 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-20 23:26:55,966 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-20 23:26:55,967 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-20 23:27:03,738 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 8.785 seconds (JVM running for 9.95)
+2019-10-20 23:27:14,787 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-20 23:46:27,203 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-20 23:48:39,099 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] Hotel added
+2019-10-20 23:49:25,962 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] Hotel added
+2019-10-20 23:52:14,968 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 6420 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-20 23:52:14,968 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-20 23:52:14,968 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-20 23:52:17,107 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 2.203 seconds (JVM running for 1523.319)
+2019-10-20 23:52:26,754 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] Hotel added
+2019-10-20 23:53:07,362 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] City addded

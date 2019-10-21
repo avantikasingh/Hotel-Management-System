@@ -22,6 +22,8 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @EntityListeners({ AuditingEntityListener.class })
 public class City {
@@ -34,6 +36,7 @@ public class City {
 	private int deleteFlag=0;
 	
 	@OneToMany(mappedBy = "city" , cascade=CascadeType.ALL)
+	@JsonIgnore
 	private List<Hotel> hotelList=new LinkedList<Hotel>();
 	
 	@Column(name = "created_date", nullable = false, updatable = false)

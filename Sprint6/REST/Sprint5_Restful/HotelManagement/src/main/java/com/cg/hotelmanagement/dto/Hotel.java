@@ -26,6 +26,8 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 
 
@@ -55,6 +57,7 @@ public class Hotel {
 	
 	@OneToMany(cascade = CascadeType.ALL ,fetch = FetchType.EAGER)
 	@JoinColumn(name="hotel_id")
+	@JsonIgnore
 	private List<Room> roomList = new LinkedList<>();
 	
 	@Column(name = "created_date", nullable = false, updatable = false)
