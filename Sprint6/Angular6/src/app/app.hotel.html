@@ -2,7 +2,17 @@
 <table>
     <tr>
         <td>City Id</td>
-        <td><input id="form_city_id" type = "number" name = "cityid" required=""/> </td>
+        <div>
+            <select [(ngModel)]="citySelected">
+            <option *ngFor="let center of cityList" value={{center.cityId}}>{{center.cityName}}</option></select>
+            
+       </div>   
+       <br><br>
+       
+       
+
+       <br><br>
+
         <!-- <td><span class="form_error" id="cityid_error_message" style="color:red;"></span></td> -->
         </tr> 
         <tr>
@@ -31,8 +41,9 @@
 
 
     <tr>
-        <td><input type="button" value="Add Hotel" (click)="addHotel()" /></td>
+        <td><input type="button" value="Add Hotel" [routerLink]="['/showhotel']" (click)="addHotel(citySelected)" /></td>
     </tr>
+   
 </table>
 
 

@@ -20,6 +20,10 @@ deleteCity(data:any){
     return this.myhttp.post("http://localhost:9088/admin/cities", data);
 }
 
+getCities(){
+    return this.myhttp.get("http://localhost:9088/admin/cities");
+}
+
 
 
 addHotel(data:any, cityId:any){
@@ -32,6 +36,10 @@ updateHotel(data:any, hotelId:any){
 
 deleteHotel(hotelId:any){
     return this.myhttp.delete("http://localhost:9088/admin/hotels/"+hotelId);
+}
+
+getHotels(cityId){
+    return this.myhttp.get("http://localhost:9088/admin/hotels/"+cityId);
 }
 
 

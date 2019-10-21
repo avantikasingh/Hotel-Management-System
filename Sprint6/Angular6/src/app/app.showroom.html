@@ -1,20 +1,18 @@
-<h1>Show Product</h1>
+<h1>Show Room</h1>
 <table>
     <tr>
-        <th>Product Id</th>
-        <th>Name</th>
-        <th>Cost</th>
-        <th>Description</th>
-        <th>Action</th>
+        <th>Room Type</th>
+        <th>Room Rent</th>
+        <th>Room Number</th>
     </tr>
-    <tr *ngFor = "let pro of products; let i = index">
-        <td>{{pro.prodId}}</td>
-        <td>{{pro.prodName}}</td>
-        <td>{{pro.prodCost}}</td>
-        <td>{{pro.prodDescription}}</td>
-        <td><input type="Button" value = "Update" (click) = "initiateUpdateProduct(pro.pid)"/></td>
+    <tr *ngFor = "let rom of rooms; let i = index">
+        <td>{{room.roomType}}</td>
+        <td>{{room.roomRent}}</td>
+        <td>{{room.roomNumber}}</td>
+        <td><input type="Button" value = "Update" (click) = "initiateUpdateProduct()"/></td>
         <td><input type="Button" value = "Delete " (click) = "deleteProduct(i)"/></td>
     </tr>
 
+    
 
 </table>

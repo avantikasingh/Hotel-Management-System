@@ -5,11 +5,11 @@ import {Hotel}from './_model/app.hotel'
 import {City}from './_model/app.city'
 
 
-@Component({selector:'show',
-templateUrl:'app.show.html'})
+@Component({selector:'showhotel',
+templateUrl:'app.showhotel.html'})
 
 
-export class ShowComponent {
+export class ShowHotelComponent {
     modelCity:any = {};
     modelHotel:any = {};
     modelRoom:any = {};

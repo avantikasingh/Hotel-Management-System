@@ -5,17 +5,15 @@ import {Hotel}from './_model/app.hotel'
 import {City}from './_model/app.city'
 
 
-@Component({selector:'show',
-templateUrl:'app.show.html'})
+@Component({selector:'showroom',
+templateUrl:'app.showroom.html'})
 
 
-export class ShowComponent {
-    modelCity:any = {};
-    modelHotel:any = {};
+export class ShowRoomComponent {
+
     modelRoom:any = {};
 
-cities:City[]=[];
-hotels:Hotel[]=[];
+
 rooms:Room[]=[];
 constructor(private service:HmsService){
 

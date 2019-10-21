@@ -10,16 +10,20 @@ templateUrl:'app.hotel.html'})
 export class HotelComponent {
     modelHotel:any = {};
     
+cityList:any[]=[];
+
 
 constructor(private service:HmsService){
 
     console.log("In Hotel constructor");
 }
+ngOnInit(): void {
 
-
-getcities(){
-
+    this.service.getCities().subscribe((cityListS:any[]) => this.cityList = cityListS);
+    console.log(this.cityList);
 }
+
+
 
 addHotel(cityId):any
 {

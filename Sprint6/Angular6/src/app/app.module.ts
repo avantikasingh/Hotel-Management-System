@@ -8,17 +8,19 @@ import { CityComponent } from './app.citycomponent';
 import { HotelComponent } from './app.hotelcomponent';
 import { RoomComponent } from './app.roomcomponent';
 import { AboutUsComponent } from './app.aboutuscomponent';
-import { ShowComponent } from './app.showroomcomponent';
+import { ShowCityComponent } from './app.showcitycomponent';
+import { ShowHotelComponent } from './app.showhotelcomponent';
+import { ShowRoomComponent } from './app.showroomcomponent';
 
 const myroute:Routes=[
     {path:'', redirectTo: 'about', pathMatch:'full'},
     {path:'about', component:AboutUsComponent},
     {path:'addcity', component:CityComponent},
-    {path:'showcity', component:ShowComponent},   
+    {path:'showcity', component:ShowCityComponent},   
     {path:'addhotel', component:HotelComponent},
-    {path:'showhotel', component:ShowComponent},
+    {path:'showhotel', component:ShowHotelComponent},
     {path:'addroom', component:RoomComponent},
-    {path:'showroom', component:ShowComponent}
+    {path:'showroom', component:ShowRoomComponent}
 ]
 @NgModule({
     imports: [
@@ -27,8 +29,8 @@ const myroute:Routes=[
         
     ],
     declarations: [
-        AppComponent, AboutUsComponent,
-        ShowComponent, CityComponent, HotelComponent, RoomComponent
+        AppComponent, AboutUsComponent,ShowCityComponent, ShowHotelComponent,
+        ShowRoomComponent, CityComponent, HotelComponent, RoomComponent
 		],
     providers: [ ],
     bootstrap: [AppComponent]
