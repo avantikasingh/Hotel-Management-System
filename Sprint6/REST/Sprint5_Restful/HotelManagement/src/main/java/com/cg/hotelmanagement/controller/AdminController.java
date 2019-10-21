@@ -144,14 +144,13 @@ public class AdminController {
 	 * @param cityId
 	 * @return
 	 */
-	
 	@GetMapping("/hotels/{cityId}")
 	public List<Hotel> getHotels(@PathVariable long cityId){
 		logger.trace("getHotels in Controller");
 		List<Hotel> hotelList = adminService.showHotels(cityId);
-		if(hotelList.size()==0)			
-			throw new ResourceNotFoundException("No hotels in city with Id: "+cityId);
-		System.out.println(hotelList);
+//		if(hotelList.size()==0)			
+//			throw new ResourceNotFoundException("No hotels in city with Id: "+cityId);
+//		System.out.println(hotelList);
 		return hotelList;
 	}
 	

@@ -53,6 +53,7 @@ public class Hotel {
 	private int deleteFlag=0;
 	@ManyToOne
 	@JoinColumn(name="city_id")
+	@JsonIgnore
 	private City city;
 	
 	@OneToMany(cascade = CascadeType.ALL ,fetch = FetchType.EAGER)

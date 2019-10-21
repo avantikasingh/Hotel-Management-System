@@ -52,11 +52,6 @@ public class AdminService implements IAdminService {
 	@Override
 	public List<City> showCity() { 
 		List<City> cityList = cityrepo.findAll();
-		//If no cities exist
-		if(cityList==null) {
-			logger.error("City not found in showCity()");
-			throw new ResourceNotFoundException("No cities found");
-		}
 		logger.info("showCity method");
 		return cityList;
 	}
@@ -121,16 +116,15 @@ public class AdminService implements IAdminService {
 		//First check if city with given id exists
 		City city = cityrepo.findById(cityId).orElse(null);
 		//If city not found
-		if(city==null) {
-			logger.error("City not found in showHotels method");
-			throw new ResourceNotFoundException(cityNotFound+cityId);
-		}
-		//Check if hotelList is not empty
-		if(city.getHotelList()==null) {
-			logger.error("No hotels in given city");
-			throw new ResourceNotFoundException("No hotels in given city: "+cityId);
-		}
-		System.out.println(city.getHotelList());
+//		if(city==null) {
+//			logger.error("City not found in showHotels method");
+//			throw new ResourceNotFoundException(cityNotFound+cityId);
+//		}
+//		//Check if hotelList is not empty
+//		if(city.getHotelList()==null) {
+//			logger.error("No hotels in given city");
+//		}
+//		System.out.println(city.getHotelList());
 		return city.getHotelList();
 	}
 	
@@ -283,7 +277,6 @@ public class AdminService implements IAdminService {
 		//If room not found
 		if(room==null) {
 			logger.error("Room not found in viewSingleRoom method");
-			throw new ResourceNotFoundException(roomNotFound+roomId);
 		}
 		return room;
 	}
@@ -295,25 +288,24 @@ public class AdminService implements IAdminService {
 		//First check if city with given id exists
 		City city = cityrepo.findById(cityId).orElse(null);
 		//If city not found
-		if(city==null) {
-			logger.error("City not found in showRooms method");
-			throw new ResourceNotFoundException(cityNotFound+cityId);
-		}
-		else {
+//		if(city==null) {
+//			logger.error("City not found in showRooms method");
+//			throw new ResourceNotFoundException(cityNotFound+cityId);
+//		}
+//		else {
 			List<Hotel> hotelList = city.getHotelList();
 			//check if hotel with given id exists
 			for(Hotel hotel:hotelList) {
 				if(hotel.getHotelId()==hotelId) {
 					logger.info("showRooms method");
-					if(hotel.getRoomList().size()==0)
-						throw new ResourceNotFoundException("No rooms found");
 					return hotel.getRoomList();
 				}
 			}
 			//If hotel not found
-			logger.error("Hotel not found showRooms method");
-			throw new ResourceNotFoundException(hotelNotFound+hotelId);
-		}
+//			logger.error("Hotel not found showRooms method");
+//			throw new ResourceNotFoundException(hotelNotFound+hotelId);
+//		}
+		return null;
 	}
 
 	/**
