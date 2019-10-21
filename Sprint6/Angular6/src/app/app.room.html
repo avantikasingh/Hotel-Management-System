@@ -3,8 +3,8 @@
     <tr>
         <td>City </td>
         <div>
-               
-            <select [(ngModel)]="citySelected"  (change)="onChange(citySelected)">
+
+            <select [(ngModel)]="citySelected" (change)="onChange(citySelected)">
                 <option *ngFor="let center of cityList" value={{center.cityId}}>{{center.cityName}}</option>
             </select>
 
@@ -57,6 +57,7 @@
 
 
     <tr>
-        <td><input type="button" value="Add Room" [routerLink]="['/showroom']" (click)="addRoom(citySelected, hotelSelected)" /></td>
+        <td><input type="button" value="Add Room" [routerLink]="['/showroom']"
+                (click)="addRoom(citySelected, hotelSelected)" /></td>
     </tr>
 </table>

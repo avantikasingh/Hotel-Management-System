@@ -4,50 +4,45 @@
         <td>City Id</td>
         <div>
             <select [(ngModel)]="citySelected">
-            <option *ngFor="let center of cityList" value={{center.cityId}}>{{center.cityName}}</option></select>
-            
-       </div>   
-       <br><br>
-       
-       
+                <option *ngFor="let center of cityList" value={{center.cityId}}>{{center.cityName}}</option>
+            </select>
 
-       <br><br>
+        </div>
+        <br><br>
+
+
+        <br><br>
 
         <!-- <td><span class="form_error" id="cityid_error_message" style="color:red;"></span></td> -->
-        </tr> 
-        <tr>
-            <tr>
-                <td>Hotel Name</td>
-                <td><input type="text" [(ngModel)]='modelHotel.hotelName' /></td>
-            </tr>
-        <tr>
+    </tr>
+    <tr>
+    <tr>
+        <td>Hotel Name</td>
+        <td><input type="text" [(ngModel)]='modelHotel.hotelName' /></td>
+    </tr>
+    <tr>
         <td>Hotel Address</td>
         <td><input type="text" [(ngModel)]='modelHotel.hotelAddress' /></td>
         <!-- <td><span class="form_error" id="hoteladdress_error_message" style="color:red;"></span></td> -->
-        </tr>
-        <tr>
+    </tr>
+    <tr>
         <td>Hotel Phone Number</td>
         <td><input type="text" [(ngModel)]='modelHotel.hotelPhoneNumber' /></td>
         <!-- <td><span class="form_error" id="hotelphone_error_message" style="color:red;"></span></td> -->
-        </tr>
-        
-        <tr>
+    </tr>
+
+    <tr>
         <td>Hotel Rating</td>
         <td><input type="text" [(ngModel)]='modelHotel.hotelRating' /></td>
         <!-- <td><span class="form_error" id="hotelrating_error_message" style="color:red;"></span></td> -->
-        
-        </tr>
-    
+
+    </tr>
+
 
 
     <tr>
-        <td><input type="button" value="Add Hotel" [routerLink]="['/showhotel']" (click)="addHotel(citySelected)" /></td>
+        <td><input type="button" value="Add Hotel" [routerLink]="['/showhotel']" (click)="addHotel(citySelected)" />
+        </td>
     </tr>
-   
+
 </table>
-
-
-
-
-
-

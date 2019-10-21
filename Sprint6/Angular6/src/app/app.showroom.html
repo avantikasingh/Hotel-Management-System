@@ -1,18 +1,60 @@
 <h1>Show Room</h1>
 <table>
     <tr>
+        <td>City </td>
+        <div>
+
+            <select [(ngModel)]="citySelected" (change)="onChangeCity(citySelected)">
+                <option *ngFor="let center of cityList" value={{center.cityId}}>{{center.cityName}}</option>
+            </select>
+
+        </div>
+        <br><br>
+
+
+
+        <br><br>
+
+        <!-- <td><span class="form_error" id="cityid_error_message" style="color:red;"></span></td> -->
+    </tr>
+
+
+    <tr>
+        <td>Hotel </td>
+        <div>
+            <select [(ngModel)]="hotelSelected" (change)="onChangeHotel(hotelSelected,citySelected)">
+                <option *ngFor="let center of hotelList" value={{center.hotelId}}>{{center.hotelName}}</option>
+            </select>
+
+        </div>
+        <br><br>
+
+
+
+        <br><br>
+
+        <!-- <td><span class="form_error" id="cityid_error_message" style="color:red;"></span></td> -->
+    </tr>
+    <div *ngIf = "roomList != null else falseblock">
+    <tr>
         <th>Room Type</th>
         <th>Room Rent</th>
         <th>Room Number</th>
     </tr>
-    <tr *ngFor = "let rom of rooms; let i = index">
-        <td>{{room.roomType}}</td>
-        <td>{{room.roomRent}}</td>
-        <td>{{room.roomNumber}}</td>
-        <td><input type="Button" value = "Update" (click) = "initiateUpdateProduct()"/></td>
-        <td><input type="Button" value = "Delete " (click) = "deleteProduct(i)"/></td>
+    <!-- <tr *ngFor="let rom of roomlist | paginate: { itemsPerPage: 10, currentPage: p}; let i = index "> -->
+        <tr *ngFor = "let rom of roomList; let i = index ">
+        <td>{{rom.roomType}}</td>
+        <td>{{rom.roomRent}}</td>
+        <td>{{rom.roomNumber}}</td>
+        <!-- <td><input type="Button" value = "Update" (click) = "initiateUpdateProduct()"/></td> -->
+        <td><input type="Button" value="Delete " (click)="deleteRoom(roomList[i].roomId)" /></td>
     </tr>
+</div>
+<ng-template #falseblock>No Rooms Available at the Moment.
+    </ng-template>
+    <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
 
-    
+
 
 </table>
+

@@ -1,5 +1,22 @@
+
 <h1>Show Hotel</h1>
+
 <table>
+        <tr>
+                <td>City Id</td>
+                <div>
+                    <select [(ngModel)]="citySelected" (change)="onChangeCity(citySelected)" >
+                    <option *ngFor="let center of cityList" value={{center.cityId}}>{{center.cityName}}</option></select>
+                    
+               </div>   
+               <br><br>
+               
+               
+        
+               <br><br>
+        
+                <!-- <td><span class="form_error" id="cityid_error_message" style="color:red;"></span></td> -->
+                </tr> 
     <tr>
         <th>Hotel Id</th>
         <th>Hotel Name</th>
@@ -7,17 +24,18 @@
         <th>Hotel Phone Number</th>
         <th>Hotel Rating</th>
     </tr>
-    <tr *ngFor = "let pro of products; let i = index">
-        <td>{{pro.prodId}}</td>
-        <td>{{pro.prodName}}</td>
-        <td>{{pro.prodCost}}</td>
-        <td>{{pro.prodDescription}}</td>
-        <td><input type = "button" value = "Update" (click) = "updateHotel(pro)" /></td>
-        <td><input type = "button" value = "Delete" (click) = "deleteHotel(pro)" /></td>
+    <tr *ngFor = "let hot of hotelList; let i = index">
+        <td>{{hot.hotelId}}</td>
+        <td>{{hot.hotelName}}</td>
+        <td>{{hot.hotelAddress}}</td>
+        <td>{{hot.hotelPhoneNumber}}</td>
+        <td>{{hot.hotelRating}}</td>
+        <!-- <td><input type = "button" value = "Update" (click) = "updateHotel(pro)" /></td> -->
+        <td><input type = "button" value = "Delete" (click) = "deleteHotel(hotelList[i].hotelId)" /></td>
     </tr>
 </table>
 
-<div *ngIf = "update">
+<!-- <div *ngIf = "update">
     <h1>Update Product</h1>
     <table>
         <tr>
@@ -40,4 +58,4 @@
             <td><input type = "button" value="Update Product" (click) = "updateProductSubmit()"></td>
         </tr>
     </table>
-</div>
+</div> -->

@@ -4,7 +4,9 @@ import {City}from './_model/app.city'
 
 
 @Component({selector:'city',
-templateUrl:'app.city.html'})
+templateUrl:'app.city.html'
+}
+)
 
 
 export class CityComponent {

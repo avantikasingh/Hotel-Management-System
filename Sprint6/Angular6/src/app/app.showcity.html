@@ -5,11 +5,11 @@
         <th>City Name</th>
 
     </tr>
-    <tr *ngFor = "let city of cities; let i = index">
+    <tr *ngFor="let city of cityList; let i = index">
         <td>{{city.cityId}}</td>
         <td>{{city.cityName}}</td>
-        <td><input type="Button" value = "Update" (click) = "initiateUpdateProduct(pro.pid)"/></td>
-        <td><input type="Button" value = "Delete " (click) = "deleteProduct(i)"/></td>
+        <!-- <td><input type="Button" value = "Update" (click) = "initiateUpdateProduct()"/></td> -->
+        <td><input type="Button" value="Delete " (click)="deleteProduct(cityList[i].cityId)" /></td>
     </tr>
 
 </table>
