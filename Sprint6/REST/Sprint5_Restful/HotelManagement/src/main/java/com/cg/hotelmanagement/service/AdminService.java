@@ -227,6 +227,7 @@ public class AdminService implements IAdminService {
 		}
 		//If it exists set the Id of the updated hotel object and save it
 		hotel.setHotelId(hotelTemp.getHotelId());
+		hotel.setCity(hotelTemp.getCity());
 		hotelrepo.save(hotel);
 		logger.info("Hotel updated with Id: "+hotelId);
 		return true;
@@ -325,6 +326,7 @@ public class AdminService implements IAdminService {
 		}
 		//If it exists set the Id of the updated room object and save it
 		room.setRoomId(roomTemp.getRoomId());
+		room.setHotel(roomTemp.getHotel());
 		roomrepo.save(room);
 		logger.info("Room updated with Id: "+roomId);
 		return true;

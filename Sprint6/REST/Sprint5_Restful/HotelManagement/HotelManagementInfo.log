@@ -357,3 +357,312 @@ Caused by: java.lang.Error: Unresolved compilation problems:
 2019-10-22 02:43:50,159 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
 2019-10-22 02:43:50,159 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
 2019-10-22 02:43:52,339 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 2.266 seconds (JVM running for 3896.047)
+2019-10-22 03:45:17,104 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-22 03:45:33,411 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-22 03:45:44,280 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-22 03:45:44,385 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] Hotel added
+2019-10-22 03:45:53,058 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-22 03:45:56,192 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-22 03:46:03,321 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] Hotel deleted with Id: 1
+2019-10-22 03:46:08,332 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-22 03:55:57,794 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-22 03:56:21,184 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-22 03:56:26,477 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
+2019-10-22 03:56:30,546 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-22 03:56:43,172 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-22 03:56:45,517 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showRooms method
+2019-10-22 03:56:47,723 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showRooms method
+2019-10-22 03:56:59,925 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-22 03:57:08,580 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-22 03:57:08,618 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] Room added
+2019-10-22 03:57:11,479 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showRooms method
+2019-10-22 03:57:16,907 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-22 03:57:23,812 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-22 03:57:23,833 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] Room added
+2019-10-22 03:57:26,542 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showRooms method
+2019-10-22 03:57:29,257 INFO com.cg.hotelmanagement.controller.AdminController [http-nio-9088-exec-6] deleteRoom in Controller
+2019-10-22 03:57:29,269 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] Room removed with Id: 6
+2019-10-22 03:57:44,182 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-22 03:59:38,857 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-22 04:00:12,187 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-22 04:00:26,159 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-22 04:01:29,030 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-22 04:01:34,079 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
+2019-10-22 04:01:36,891 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-22 04:01:40,336 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-22 04:01:44,188 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-22 04:02:23,917 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-22 04:03:10,183 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-22 04:03:21,679 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-22 04:08:08,988 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
+2019-10-22 04:08:21,771 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-22 04:08:24,282 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
+2019-10-22 04:08:57,210 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-22 04:09:00,104 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-22 04:09:56,126 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-22 04:12:55,242 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-22 04:13:30,002 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-22 04:13:34,758 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-22 04:13:56,963 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
+2019-10-22 04:16:38,675 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
+2019-10-22 04:16:40,662 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] City removed with Id: 15
+2019-10-22 04:16:42,978 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-22 04:19:03,127 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-22 04:19:10,760 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-22 04:22:12,488 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] City addded
+2019-10-22 04:22:12,494 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-9088-exec-5] Duplicate entry 'te' for key 'UK_djnk44fptegbsu6drhc9xvlfj'
+2019-10-22 04:22:35,393 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-22 04:22:40,381 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] City removed with Id: 17
+2019-10-22 04:22:43,316 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-22 04:22:44,417 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] City removed with Id: 16
+2019-10-22 04:22:49,225 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-22 04:22:59,379 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] City addded
+2019-10-22 04:22:59,384 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] City addded
+2019-10-22 04:23:01,065 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-22 04:25:41,111 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-22 04:26:27,838 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
+2019-10-22 04:26:31,438 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showRooms method
+2019-10-22 04:27:20,244 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-22 04:27:23,377 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showRooms method
+2019-10-22 04:28:02,168 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-22 04:28:22,191 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
+2019-10-22 04:28:29,559 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-22 04:28:36,361 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showRooms method
+2019-10-22 04:28:50,450 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-22 04:29:18,495 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-22 04:29:22,156 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-22 04:29:26,967 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-22 04:29:30,114 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-22 04:29:37,794 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-22 04:29:42,671 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
+2019-10-22 04:29:51,719 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-22 04:29:54,434 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
+2019-10-22 04:29:56,648 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-22 04:30:12,924 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-22 04:30:27,504 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-22 04:30:29,819 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-22 04:30:31,776 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-22 04:30:39,375 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-22 04:30:44,784 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-22 04:30:52,289 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
+2019-10-22 04:30:57,294 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-22 04:31:03,779 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
+2019-10-22 04:31:05,874 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-22 04:31:09,630 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-22 04:31:14,668 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-22 04:31:17,905 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-22 04:31:23,341 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-22 04:31:36,001 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showRooms method
+2019-10-22 04:32:51,964 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
+2019-10-22 04:32:54,171 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-22 04:32:58,348 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-22 04:33:00,312 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-22 04:33:05,806 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-22 04:33:08,360 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showRooms method
+2019-10-22 04:33:59,148 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-22 04:34:01,512 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showRooms method
+2019-10-22 04:35:53,138 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-22 04:35:57,016 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-22 04:36:02,133 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-22 04:36:08,896 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-22 04:36:15,913 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-22 04:36:18,304 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showRooms method
+2019-10-22 04:37:39,377 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-22 04:37:43,675 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
+2019-10-22 04:37:57,413 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-22 04:37:59,445 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-22 04:38:12,865 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-22 04:38:20,292 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-22 04:40:36,010 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-22 04:40:46,976 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-22 04:41:01,437 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
+2019-10-22 04:41:10,673 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showRooms method
+2019-10-22 04:42:31,312 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-22 04:42:34,568 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showRooms method
+2019-10-22 04:43:14,416 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-22 04:43:17,513 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showRooms method
+2019-10-22 04:45:49,847 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-22 04:46:35,885 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
+2019-10-22 04:46:45,607 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-22 04:46:58,983 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-22 04:47:02,596 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-22 04:47:06,355 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-22 04:47:09,725 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-22 04:48:16,074 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-22 04:48:55,758 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
+2019-10-22 04:49:11,637 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-22 04:49:14,800 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
+2019-10-22 04:49:20,928 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-22 04:49:26,611 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-22 04:49:35,444 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-22 04:49:38,457 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-22 04:49:42,569 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-22 04:49:46,471 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-22 04:49:52,520 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-22 04:49:57,613 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
+2019-10-22 04:50:03,995 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-22 04:50:13,252 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
+2019-10-22 04:50:19,197 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-22 04:50:25,711 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-22 04:50:28,798 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-22 04:57:40,470 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-22 04:58:13,117 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-22 04:58:15,512 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-22 04:58:24,919 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showRooms method
+2019-10-22 04:59:16,239 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
+2019-10-22 04:59:21,308 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-22 04:59:30,424 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-22 04:59:49,939 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-22 04:59:52,055 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showRooms method
+2019-10-22 05:00:32,337 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-22 05:00:36,668 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-22 05:00:39,741 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
+2019-10-22 05:00:41,879 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showRooms method
+2019-10-22 05:01:21,742 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-22 05:01:25,268 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-22 05:01:28,281 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-22 05:02:14,256 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showRooms method
+2019-10-22 05:02:30,617 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] Room updated with Id: 6
+2019-10-22 05:03:12,629 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] Room updated with Id: 6
+2019-10-22 05:03:23,088 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-22 05:03:29,166 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showRooms method
+2019-10-22 05:06:36,699 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-22 05:06:56,782 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showRooms method
+2019-10-22 05:08:30,072 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 8508 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-22 05:08:30,072 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-22 05:08:30,072 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-22 05:08:32,315 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'adminController' method 
+public boolean com.cg.hotelmanagement.controller.AdminController.updateRoom(long,com.cg.hotelmanagement.dto.Room)
+to {POST /admin/rooms}: There is already 'adminController' bean method
+public com.cg.hotelmanagement.dto.Room com.cg.hotelmanagement.controller.AdminController.addRoom(long,long,com.cg.hotelmanagement.dto.Room) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:847)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.cg.hotelmanagement.HotelManagementApplication.main(HotelManagementApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'adminController' method 
+public boolean com.cg.hotelmanagement.controller.AdminController.updateRoom(long,com.cg.hotelmanagement.dto.Room)
+to {POST /admin/rooms}: There is already 'adminController' bean method
+public com.cg.hotelmanagement.dto.Room com.cg.hotelmanagement.controller.AdminController.addRoom(long,long,com.cg.hotelmanagement.dto.Room) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.assertUniqueMethodMapping(AbstractHandlerMethodMapping.java:619)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:587)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:313)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$1(AbstractHandlerMethodMapping.java:283)
+	at java.util.LinkedHashMap.forEach(Unknown Source)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:281)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:253)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:212)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:200)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774)
+	... 21 common frames omitted
+2019-10-22 05:10:07,403 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7048 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-22 05:10:07,413 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-22 05:10:07,413 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-22 05:10:13,084 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'adminController' method 
+public boolean com.cg.hotelmanagement.controller.AdminController.updateRoom(long,com.cg.hotelmanagement.dto.Room)
+to {POST /admin/rooms}: There is already 'adminController' bean method
+public com.cg.hotelmanagement.dto.Room com.cg.hotelmanagement.controller.AdminController.addRoom(long,long,com.cg.hotelmanagement.dto.Room) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:847)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.cg.hotelmanagement.HotelManagementApplication.main(HotelManagementApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'adminController' method 
+public boolean com.cg.hotelmanagement.controller.AdminController.updateRoom(long,com.cg.hotelmanagement.dto.Room)
+to {POST /admin/rooms}: There is already 'adminController' bean method
+public com.cg.hotelmanagement.dto.Room com.cg.hotelmanagement.controller.AdminController.addRoom(long,long,com.cg.hotelmanagement.dto.Room) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.assertUniqueMethodMapping(AbstractHandlerMethodMapping.java:619)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:587)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:313)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$1(AbstractHandlerMethodMapping.java:283)
+	at java.util.LinkedHashMap.forEach(Unknown Source)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:281)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:253)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:212)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:200)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774)
+	... 21 common frames omitted
+2019-10-22 05:11:59,371 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7512 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-22 05:11:59,374 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-22 05:11:59,374 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-22 05:12:05,232 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 6.47 seconds (JVM running for 7.531)
+2019-10-22 05:12:13,667 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-22 05:12:17,516 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showRooms method
+2019-10-22 05:12:24,371 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] Room updated with Id: 5
+2019-10-22 05:18:53,502 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7512 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-22 05:18:53,502 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-22 05:18:53,502 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-22 05:18:55,452 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 2.02 seconds (JVM running for 417.751)
+2019-10-22 05:19:55,220 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-22 05:19:58,104 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showRooms method
+2019-10-22 05:20:02,495 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] Room updated with Id: 6
+2019-10-22 05:20:13,586 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] Room updated with Id: 6
+2019-10-22 05:21:22,885 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7512 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-22 05:21:22,886 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-22 05:21:22,886 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-22 05:21:24,902 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 2.116 seconds (JVM running for 567.202)
+2019-10-22 05:22:24,518 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7512 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-22 05:22:24,519 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-22 05:22:24,519 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-22 05:22:26,814 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 2.367 seconds (JVM running for 629.114)
+2019-10-22 05:22:56,796 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-22 05:23:47,195 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-22 05:24:20,707 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-22 05:25:49,600 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
+2019-10-22 05:25:59,555 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-22 05:26:06,045 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-22 05:37:15,753 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
+2019-10-22 05:37:18,760 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-22 05:37:51,625 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-22 05:37:56,349 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-22 05:38:04,038 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-22 05:38:10,830 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
+2019-10-22 05:38:19,067 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-22 05:38:25,102 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-22 05:40:16,310 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-22 05:40:27,812 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] Hotel updated with Id: 8
+2019-10-22 05:40:31,885 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-22 05:42:19,192 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7512 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-22 05:42:19,192 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-22 05:42:19,192 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-22 05:42:21,686 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 2.572 seconds (JVM running for 1823.986)
