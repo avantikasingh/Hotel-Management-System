@@ -1,0 +1,36 @@
+<div>
+    <h1>
+        {{title}}!
+    </h1>
+
+    <ng-container>
+        <input type="file" id="file" multiple 
+            (change)="getFileDetails($event)">
+
+        <button (click)="uploadFiles()">Upload</button>
+    </ng-container>
+</div>
+
+<!-- <h1>Excel File Upload</h1>
+ 
+<div>
+  <input #fileInput type="file" ng2FileSelect [uploader]="uploader"/>
+ 
+  <div class="drop-box" ng2FileDrop
+       [ngClass]="{'dragover': isDropOver}"
+       [uploader]="uploader"
+       (fileOver)="fileOverAnother($event)"
+       (click)="fileClicked()">
+    <span class="drag-in-title">Import or drag file here</span>
+    <span class="drag-over-title">Drop the file</span>
+  </div>
+</div>
+ 
+<router-outlet></router-outlet> --> -->
+
+<!-- <div class="form-group">
+    <label for="file">Choose File</label>
+    <input type="file"
+           id="file"
+           (change)="handleFileInput($event.target.files)">
+</div> -->

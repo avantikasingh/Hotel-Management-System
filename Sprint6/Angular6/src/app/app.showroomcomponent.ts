@@ -49,7 +49,7 @@ export class ShowRoomComponent {
 
     deleteRoom(i): any {
 
-        this.service.deleteRoom(this.roomList[i].roomId).subscribe(() => console.log());
+        this.service.deleteRoom(i).subscribe(() => console.log());
     }
 
 

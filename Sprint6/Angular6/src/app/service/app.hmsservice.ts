@@ -17,7 +17,7 @@ export class HmsService {
     }
 
     deleteCity(data: any) {
-        return this.myhttp.post("http://localhost:9088/admin/cities", data);
+        return this.myhttp.delete("http://localhost:9088/admin/cities/"+data);
     }
 
     getCities() {
@@ -54,17 +54,13 @@ export class HmsService {
 
 
     deleteRoom(roomId: any) {
+        alert(roomId);
         return this.myhttp.delete("http://localhost:9088/admin/rooms/" + roomId);
     }
 
     getRooms(hotelId, cityId) {
         return this.myhttp.get("http://localhost:9088/admin/rooms?cityId=" + cityId + "&hotelId=" + hotelId);
     }
-
-
-
-
-
 
 
 
@@ -86,4 +82,10 @@ export class HmsService {
 
         return this.myhttp.delete("http://localhost:9088/product/delete?id=" + i);
     }
+
+
+    register(data:any){
+        return this.myhttp.post("http://localhost:9088/customer/register",data);
+    }
+
 }

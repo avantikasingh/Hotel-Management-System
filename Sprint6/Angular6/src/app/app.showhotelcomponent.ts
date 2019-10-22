@@ -19,6 +19,7 @@ export class ShowHotelComponent {
     cityList: any[] = [];
     hotelList: any[] = [];
     roomList: any[] = [];
+    cityId : any;
     constructor(private service: HmsService) {
 
         console.log("In constructor");
@@ -31,8 +32,9 @@ export class ShowHotelComponent {
     }
 
 
-    onChangeCity(cityId): any {
-        this.service.getHotels(cityId).subscribe((hotelListS: any[]) => this.hotelList = hotelListS);
+    onChangeCity(cityid): any {
+        this.cityId = cityid;
+        this.service.getHotels(cityid).subscribe((hotelListS: any[]) => this.hotelList = hotelListS);
 
     }
 
@@ -42,9 +44,10 @@ export class ShowHotelComponent {
 
     }
 
-    deleteHotel(i): any {
-        alert(this.hotelList[i].hotelId);
-        this.service.deleteHotel(this.hotelList[i].hotelId).subscribe(() => console.log());
+    deleteHotel(hotelId): any {
+        alert(hotelId);
+        this.service.deleteHotel(hotelId).subscribe(() => console.log());
+        this.service.getHotels(this.cityId).subscribe((hotelListS: any[]) => this.hotelList = hotelListS);
     }
 
 

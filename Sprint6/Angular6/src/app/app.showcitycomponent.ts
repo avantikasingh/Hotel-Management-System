@@ -35,7 +35,7 @@ export class ShowCityComponent {
     }
 
     deleteCity(cityId): any {
-        this.service.deleteHotel(cityId).subscribe(() => console.log());
+        this.service.deleteCity(cityId).subscribe(() => console.log());
     }
 
 

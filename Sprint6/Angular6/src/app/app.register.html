@@ -1,0 +1,110 @@
+<h1>Register</h1>
+<table>
+    <tr>
+        <td>Username</td>
+        <td>
+                <input type="text" [(ngModel)]="customer.username" #username="ngModel" >
+          
+        </td>
+    </tr>
+
+
+<tr>
+        <td>Password</td>
+        <td>
+                <input type="password" >
+        </td>
+    </tr>
+
+
+<tr>
+        <td>emailId</td>
+        <td>
+                <input id="emailId" type="email" emailId="emailId" class="form-control"
+                required
+                [(ngModel)]="customer.emailId" #emailId="ngModel" >
+          
+          <div *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)"
+              class="alert alert-danger">
+          
+            <div *ngIf="emailId.errors.required">
+				emailId is required.
+            </div>
+          </div>
+        </td>
+    </tr>
+
+
+<tr>
+        <td>First Name</td>
+        <td>
+                <input id="firstName" firstName="firstName" class="form-control"
+                [(ngModel)]="customer.firstName" #firstName="ngModel" >
+          
+          <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+              class="alert alert-danger">
+          </div>
+        </td>
+    </tr>
+
+
+<tr>
+        <td>Last name</td>
+        <td>
+                <input id="lastName" lastName="lastName" class="form-control"
+                [(ngModel)]="customer.lastName" #lastName="ngModel" >
+        </td>
+    </tr>
+
+
+<tr>
+        <td>User Mobile</td>
+        <td>
+                <input id="userMobile" userMobile="userMobile" class="form-control"
+                required pattern="^\d{10}$"
+                [(ngModel)]="customer.userMobile" #userMobile="ngModel" >
+          
+          <div *ngIf="userMobile.invalid && (userMobile.dirty || userMobile.touched)"
+              class="alert alert-danger">
+          </div>
+            <div *ngIf="userMobile.errors.required">
+				Mobile number is required.
+          </div>
+		    <div *ngIf="userMobile.errors.pattern">
+				Mobile number should contain 10 digits.
+          </div>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>Date of birth</td>
+        <td><input type="date" [(ngModel)]='customer.dob' /></td>
+    </tr>
+
+
+    <tr>
+        <td>Aadhar Number</td>
+        <td>
+                <input id="aadharNumber" aadharNumber="aadharNumber" class="form-control"
+                required pattern="^\d{4}\d{4}\d{4}$"
+                [(ngModel)]="customer.aadharNumber" #aadharNumber="ngModel" >
+          
+          <div *ngIf="aadharNumber.invalid && (aadharNumber.dirty || aadharNumber.touched)"
+              class="alert alert-danger">
+        </div>
+            <div *ngIf="aadharNumber.errors.required">
+				Mobile number is required.
+          </div>
+		    <div *ngIf="aadharNumber.errors.pattern">
+				Mobile number should contain 10 digits and can start with 7/8/9.
+          </div>
+        </td>
+    </tr>
+
+
+
+    <tr>
+        <td><input type="button" value="Register" (click)="register()" /></td>
+    </tr>
+</table>

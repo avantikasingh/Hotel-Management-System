@@ -11,6 +11,11 @@ import { AboutUsComponent } from './app.aboutuscomponent';
 import { ShowCityComponent } from './app.showcitycomponent';
 import { ShowHotelComponent } from './app.showhotelcomponent';
 import { ShowRoomComponent } from './app.showroomcomponent';
+import { ExcelUploadComponent } from './app.exceluploadcomponent';
+import { RegisterComponent } from './app.registercomponent';
+import {FileUploadModule} from 'ng2-file-upload';
+
+
 
 const myroute: Routes = [
     { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -20,17 +25,19 @@ const myroute: Routes = [
     { path: 'addhotel', component: HotelComponent },
     { path: 'showhotel', component: ShowHotelComponent },
     { path: 'addroom', component: RoomComponent },
-    { path: 'showroom', component: ShowRoomComponent }
+    { path: 'showroom', component: ShowRoomComponent },
+    { path: 'excelupload', component: ExcelUploadComponent },
+    { path: 'register', component: RegisterComponent }
 ]
 @NgModule({
     imports: [
-        BrowserModule, FormsModule, HttpClientModule,
+        BrowserModule, FormsModule, HttpClientModule,FileUploadModule,
         RouterModule.forRoot(myroute)
 
     ],
     declarations: [
-        AppComponent, AboutUsComponent, ShowCityComponent, ShowHotelComponent,
-        ShowRoomComponent, CityComponent, HotelComponent, RoomComponent
+        AppComponent, AboutUsComponent, ShowCityComponent, ShowHotelComponent, ExcelUploadComponent,
+        ShowRoomComponent, CityComponent, HotelComponent, RoomComponent, RegisterComponent
     ],
     providers: [],
     bootstrap: [AppComponent]
