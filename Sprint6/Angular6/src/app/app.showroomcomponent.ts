@@ -12,6 +12,11 @@ import { City } from './_model/app.city'
 
 
 export class ShowRoomComponent {
+    update = false;
+
+    rName: any;
+    rType: any;
+    rRent: any;
 
     modelRoom: any = {};
 
@@ -42,8 +47,10 @@ export class ShowRoomComponent {
 
 
 
-    updateRoom(roomId): any {
-        this.service.updateRoom(this.modelRoom, roomId).subscribe((data) => console.log(data));
+    updateRoom(): any {
+        this.service.updateRoom(this.modelRoom, this.modelRoom.roomId).subscribe((data) => console.log(data));
+        this.update = false;
+
 
     }
 
@@ -51,6 +58,29 @@ export class ShowRoomComponent {
 
         this.service.deleteRoom(i).subscribe(() => console.log());
     }
+
+
+
+
+    initiateUpdateRoom(inid): any {
+        this.update = true;
+        for (var i = 0; i < this.roomList.length; i++) {
+            if (inid == this.roomList[i].roomId) {
+                this.modelRoom.roomId = this.roomList[i].roomId;
+                this.modelRoom.roomType = this.roomList[i].roomType;
+                this.modelRoom.roomRent = this.roomList[i].roomRent;
+                this.modelRoom.roomNumber = this.roomList[i].roomNumber;
+                
+                
+
+            }
+        }
+
+
+    }
+
+
+
 
 
 

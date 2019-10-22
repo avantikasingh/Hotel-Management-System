@@ -12,9 +12,9 @@ import { City } from './_model/app.city'
 
 
 export class ShowHotelComponent {
-    modelCity: any = {};
+    
     modelHotel: any = {};
-    modelRoom: any = {};
+    update= false;
 
     cityList: any[] = [];
     hotelList: any[] = [];
@@ -39,16 +39,39 @@ export class ShowHotelComponent {
     }
 
 
-    updateHotel(hotelId): any {
-        this.service.updateHotel(this.modelHotel, hotelId).subscribe((data) => console.log(data));
-
-    }
+   
 
     deleteHotel(hotelId): any {
         alert(hotelId);
         this.service.deleteHotel(hotelId).subscribe(() => console.log());
+        this.hotelList = [];
         this.service.getHotels(this.cityId).subscribe((hotelListS: any[]) => this.hotelList = hotelListS);
     }
+
+    updateHotel(): any {
+        this.service.updateHotel(this.modelHotel, this.modelHotel.hotelId).subscribe((data) => console.log(data));
+        this.update = false;
+
+
+    }
+
+    
+
+
+
+    initiateUpdateHotel(inid): any {
+        this.update = true;
+        for (var i = 0; i < this.hotelList.length; i++) {
+            if (inid == this.hotelList[i].hotelId) {
+                this.modelHotel.hotelId = this.hotelList[i].hotelId;
+                this.modelHotel.hotelName = this.hotelList[i].hotelName;
+                this.modelHotel.hotelAddress = this.hotelList[i].hotelAddress;
+                this.modelHotel.hotelPhoneNumber = this.hotelList[i].hotelPhoneNumber;
+                this.modelHotel.hotelRating = this.hotelList[i].hotelRating;
+                
+
+            }
+        }
 
 
 

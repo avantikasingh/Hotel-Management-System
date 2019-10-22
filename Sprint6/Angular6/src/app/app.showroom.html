@@ -35,26 +35,47 @@
 
         <!-- <td><span class="form_error" id="cityid_error_message" style="color:red;"></span></td> -->
     </tr>
-    <div *ngIf = "roomList != null else falseblock">
-    <tr>
-        <th>Room Type</th>
-        <th>Room Rent</th>
-        <th>Room Number</th>
-    </tr>
-    <!-- <tr *ngFor="let rom of roomlist | paginate: { itemsPerPage: 10, currentPage: p}; let i = index "> -->
-        <tr *ngFor = "let rom of roomList; let i = index ">
-        <td>{{rom.roomType}}</td>
-        <td>{{rom.roomRent}}</td>
-        <td>{{rom.roomNumber}}</td>
-        <!-- <td><input type="Button" value = "Update" (click) = "initiateUpdateProduct()"/></td> -->
-        <td><input type="Button" value="Delete " (click)="deleteRoom(roomList[i].roomId)" /></td>
-    </tr>
+    <div *ngIf="roomList != null else falseblock">
+        <tr>
+            <th>Room Type</th>
+            <th>Room Rent</th>
+            <th>Room Number</th>
+        </tr>
+        <!-- <tr *ngFor="let rom of roomlist | paginate: { itemsPerPage: 10, currentPage: p}; let i = index "> -->
+        <tr *ngFor="let rom of roomList; let i = index ">
+            <td>{{rom.roomType}}</td>
+            <td>{{rom.roomRent}}</td>
+            <td>{{rom.roomNumber}}</td>
+            <!-- <td><input type="Button" value = "Update" (click) = "initiateUpdateProduct()"/></td> -->
+            <!-- <td><input type="Button" value="Update" (click)="initiateUpdateRoom(roomList[i].roomId)" /></td> -->
+            <td><input type="Button" value="Update" (click)="initiateUpdateRoom(roomList[i].roomId)" /></td>
+            <td><input type="Button" value="Delete" (click)="deleteRoom(roomList[i].roomId)" /></td>
+        </tr>
+    
+    <div *ngIf="update else innerfalseblock">
+        <table>
+            <tr>
+                <th>Room Type</th>
+                <th>Room Rent</th>
+                <th>Room Number</th>
+            </tr>
+            <tr>
+
+                <td><input type="text" [(ngModel)]='modelRoom.roomType' /></td>
+                <td><input type="text" [(ngModel)]='modelRoom.roomRent' /></td>
+                <td><input type="text" [(ngModel)]='modelRoom.roomNumber' /></td>
+                <td><input type="Button" value="Update" (click)="updateRoom()" /></td>
+
+            </tr>
+
+
+        </table>
+
+        <ng-template #innerfalseblock>
+        </ng-template>
+    </div>
 </div>
-<ng-template #falseblock>No Rooms Available at the Moment.
+    <ng-template #falseblock>No Rooms Available at the Moment.
     </ng-template>
     <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
-
-
-
 </table>
-
