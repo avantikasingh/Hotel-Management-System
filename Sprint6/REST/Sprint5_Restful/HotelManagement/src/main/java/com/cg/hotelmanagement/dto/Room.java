@@ -8,6 +8,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -48,7 +49,9 @@ public class Room {
 	private Hotel hotel;
 	
 	
-	@OneToMany(mappedBy = "room",cascade = CascadeType.ALL)	
+
+	
+	@OneToMany(mappedBy = "room",cascade = CascadeType.ALL,fetch = FetchType.EAGER)	
 	@JsonIgnore
 	private List<Booking> bookingDetails=new LinkedList<>();
 	

@@ -22,8 +22,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.http.HttpStatus;
 
 import com.cg.hotelmanagement.dto.City;
 import com.cg.hotelmanagement.dto.Hotel;
@@ -37,6 +39,7 @@ import com.cg.hotelmanagement.service.ICustomerService;
 @RestController
 @RequestMapping("/admin")
 @CrossOrigin(origins ="http://localhost:4200")
+
 public class AdminController {
 
 	@Autowired
@@ -96,7 +99,6 @@ public class AdminController {
 	
 	/**
 	 * Download excel
-	 * @return File
 	 * @throws IOException
 	 */
 	@GetMapping("/cities/download/cities.xlsx")
@@ -118,8 +120,9 @@ public class AdminController {
 	 * @throws IOException
 	 */
 	@PostMapping("/upload/city")
+//	@ResponseStatus(HttpStatus.OK)
 	public void uploadCity(@RequestParam("file") MultipartFile reapExcelDataFile) throws IOException {
-
+System.out.println("testUPLOAD");
 		XSSFWorkbook workbook = new XSSFWorkbook(reapExcelDataFile.getInputStream());
 	    XSSFSheet worksheet = workbook.getSheetAt(0);
 
@@ -131,6 +134,7 @@ public class AdminController {
 	        tempCity.setCityName(row.getCell(0).getStringCellValue());
 	        adminService.addCity(tempCity);
 	        workbook.close();
+	        
 	            
 	    }
 	}
@@ -262,9 +266,11 @@ public class AdminController {
 	 */
 	@DeleteMapping("rooms/{roomId}")
 	public boolean deleteRoom(@PathVariable long roomId) {
-		logger.trace("deleteRoom in Controller");
+		System.out.println("delete call"+ roomId);
+		logger.info("deleteRoom in Controller");
 		return adminService.removeRoom(roomId);
 	}
+	
 	
 }
 

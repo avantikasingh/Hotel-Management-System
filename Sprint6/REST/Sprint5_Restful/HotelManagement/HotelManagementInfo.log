@@ -1,121 +1,359 @@
-2019-10-21 00:13:08,803 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
-2019-10-21 00:13:25,246 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
-2019-10-21 00:14:39,488 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] Room added
-2019-10-21 00:17:27,282 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
-2019-10-21 00:18:33,490 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
-2019-10-21 00:27:02,038 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
-2019-10-21 00:37:53,632 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
-2019-10-21 00:38:15,772 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
-2019-10-21 00:38:26,588 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] Room added
-2019-10-21 00:41:54,237 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 6420 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
-2019-10-21 00:41:54,237 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
-2019-10-21 00:41:54,237 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
-2019-10-21 00:41:56,044 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.869 seconds (JVM running for 4502.255)
-2019-10-21 02:28:57,889 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
-2019-10-21 02:29:02,575 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
-2019-10-21 02:29:23,319 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
-2019-10-21 02:29:54,963 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
-2019-10-21 02:30:38,499 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
-2019-10-21 02:31:42,373 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
-2019-10-21 02:32:38,661 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
-2019-10-21 02:32:40,883 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
-2019-10-21 02:32:59,951 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
-2019-10-21 02:35:03,607 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
-2019-10-21 02:35:09,787 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
-2019-10-21 02:35:43,621 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
-2019-10-21 02:35:49,336 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
-2019-10-21 02:35:51,679 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
-2019-10-21 02:37:03,835 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
-2019-10-21 02:39:09,232 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
-2019-10-21 02:40:13,675 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
-2019-10-21 02:41:28,619 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
-2019-10-21 02:43:15,466 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
-2019-10-21 02:43:18,544 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
-2019-10-21 02:43:20,558 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
-2019-10-21 02:43:23,793 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
-2019-10-21 02:43:28,407 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showRooms method
-2019-10-21 02:44:02,005 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showRooms method
-2019-10-21 02:44:18,682 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
-2019-10-21 02:44:24,012 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
-2019-10-21 02:45:10,422 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showRooms method
-2019-10-21 02:47:07,412 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
-2019-10-21 02:47:12,677 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showRooms method
-2019-10-21 02:53:00,960 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showRooms method
-2019-10-21 02:55:33,768 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 6420 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
-2019-10-21 02:55:33,768 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
-2019-10-21 02:55:33,768 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
-2019-10-21 02:55:35,852 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 2.171 seconds (JVM running for 12522.064)
-2019-10-21 02:55:38,170 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showRooms method
-2019-10-21 02:55:52,433 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
-2019-10-21 02:55:54,813 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showRooms method
-2019-10-21 03:02:11,183 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showRooms method
-2019-10-21 03:02:39,890 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showRooms method
-2019-10-21 03:04:10,103 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 6420 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
-2019-10-21 03:04:10,104 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
-2019-10-21 03:04:10,104 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
-2019-10-21 03:04:11,794 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.747 seconds (JVM running for 13043.667)
-2019-10-21 03:05:11,226 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 6420 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
-2019-10-21 03:05:11,226 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
-2019-10-21 03:05:11,227 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
-2019-10-21 03:05:13,042 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.885 seconds (JVM running for 13104.915)
-2019-10-21 03:05:37,959 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 6420 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
-2019-10-21 03:05:37,959 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
-2019-10-21 03:05:37,960 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
-2019-10-21 03:05:39,685 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.782 seconds (JVM running for 13131.557)
-2019-10-21 03:05:51,475 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 6420 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
-2019-10-21 03:05:51,476 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
-2019-10-21 03:05:51,476 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
-2019-10-21 03:05:53,160 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.739 seconds (JVM running for 13145.033)
-2019-10-21 03:06:07,080 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
-2019-10-21 03:07:00,685 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
-2019-10-21 03:07:03,785 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showRooms method
-2019-10-21 03:07:51,243 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 6420 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
-2019-10-21 03:07:51,244 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
-2019-10-21 03:07:51,244 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
-2019-10-21 03:07:52,800 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.608 seconds (JVM running for 13264.673)
-2019-10-21 03:08:42,007 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 6420 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
-2019-10-21 03:08:42,007 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
-2019-10-21 03:08:42,007 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
-2019-10-21 03:08:43,636 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.677 seconds (JVM running for 13315.509)
-2019-10-21 03:14:11,899 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
-2019-10-21 03:16:23,308 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
-2019-10-21 03:16:48,212 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
-2019-10-21 03:16:52,860 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
-2019-10-21 03:16:55,315 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
-2019-10-21 03:16:57,540 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
-2019-10-21 03:17:02,255 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
-2019-10-21 03:17:04,431 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
-2019-10-21 03:17:09,959 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
-2019-10-21 03:17:17,349 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 6420 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
-2019-10-21 03:17:17,349 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
-2019-10-21 03:17:17,349 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
-2019-10-21 03:17:19,110 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.825 seconds (JVM running for 13830.983)
-2019-10-21 03:17:24,367 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
-2019-10-21 03:17:26,387 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
-2019-10-21 04:42:34,486 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
-2019-10-21 04:42:34,523 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] City addded
-2019-10-21 04:43:41,971 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 6420 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
-2019-10-21 04:43:41,971 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
-2019-10-21 04:43:41,971 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
-2019-10-21 04:43:43,806 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.898 seconds (JVM running for 19015.679)
-2019-10-21 04:43:45,563 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 6420 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
-2019-10-21 04:43:45,563 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
-2019-10-21 04:43:45,563 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
-2019-10-21 04:43:47,384 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.883 seconds (JVM running for 19019.257)
-2019-10-21 04:44:21,767 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
-2019-10-21 04:45:06,477 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
-2019-10-21 04:46:44,115 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
-2019-10-21 04:46:49,802 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
-2019-10-21 04:54:40,717 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
-2019-10-21 04:54:46,662 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
-2019-10-21 04:54:52,977 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
-2019-10-21 04:55:00,797 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
-2019-10-21 04:55:06,354 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
-2019-10-21 04:55:14,342 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
-2019-10-21 04:55:18,794 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
-2019-10-21 04:55:33,500 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
-2019-10-21 04:57:58,720 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
-2019-10-21 04:58:04,310 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
-2019-10-21 04:58:17,271 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
-2019-10-21 04:59:44,165 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] City addded
-2019-10-21 04:59:44,180 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-21 21:12:57,339 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] Room removed with Id: 3
+2019-10-21 21:13:20,111 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7120 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-21 21:13:20,111 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-21 21:13:20,111 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-21 21:13:21,883 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.842 seconds (JVM running for 1453.608)
+2019-10-21 21:15:02,654 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7120 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-21 21:15:02,655 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-21 21:15:02,655 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-21 21:15:04,559 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.962 seconds (JVM running for 1556.284)
+2019-10-21 21:15:04,691 INFO com.cg.hotelmanagement.controller.AdminController [http-nio-9088-exec-2] deleteRoom in Controller
+2019-10-21 21:15:04,718 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] Room removed with Id: 3
+2019-10-21 21:16:11,175 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] Hotel deleted with Id: 4
+2019-10-21 21:21:26,350 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7120 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-21 21:21:26,351 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-21 21:21:26,351 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-21 21:21:28,126 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.83 seconds (JVM running for 1939.851)
+2019-10-21 21:23:04,936 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7120 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-21 21:23:04,937 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-21 21:23:04,937 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-21 21:23:06,897 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 2.028 seconds (JVM running for 2038.622)
+2019-10-21 21:23:28,609 INFO com.cg.hotelmanagement.controller.AdminController [http-nio-9088-exec-2] deleteRoom in Controller
+2019-10-21 21:23:28,641 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] Room removed with Id: 2
+2019-10-21 21:24:24,952 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] City removed with Id: 7
+2019-10-21 21:27:43,050 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7120 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-21 21:27:43,051 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-21 21:27:43,051 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-21 21:27:45,067 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 2.093 seconds (JVM running for 2316.792)
+2019-10-21 21:28:08,582 INFO com.cg.hotelmanagement.controller.AdminController [http-nio-9088-exec-2] deleteRoom in Controller
+2019-10-21 21:28:08,612 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] Room removed with Id: 2
+2019-10-21 21:28:55,048 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7120 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-21 21:28:55,049 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-21 21:28:55,049 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-21 21:28:56,556 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminController': Unsatisfied dependency expressed through field 'adminService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminService' defined in file [C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes\com\cg\hotelmanagement\service\AdminService.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.cg.hotelmanagement.service.AdminService]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	The import com.cg.hotelmanagement.repository.RoomRepository cannot be resolved
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:598)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:376)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:847)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.cg.hotelmanagement.HotelManagementApplication.main(HotelManagementApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminService' defined in file [C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes\com\cg\hotelmanagement\service\AdminService.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.cg.hotelmanagement.service.AdminService]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	The import com.cg.hotelmanagement.repository.RoomRepository cannot be resolved
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1303)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1255)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1175)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:595)
+	... 24 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.cg.hotelmanagement.service.AdminService]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	The import com.cg.hotelmanagement.repository.RoomRepository cannot be resolved
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1295)
+	... 35 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The import com.cg.hotelmanagement.repository.RoomRepository cannot be resolved
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+	RoomRepository cannot be resolved to a type
+
+	at com.cg.hotelmanagement.service.AdminService.<init>(AdminService.java:25)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172)
+	... 37 common frames omitted
+2019-10-21 21:29:09,393 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7120 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-21 21:29:09,394 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-21 21:29:09,394 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-21 21:29:12,307 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [restartedMain] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field roomrepo in com.cg.hotelmanagement.service.AdminService required a bean of type 'com.cg.hotelmanagement.repository.RoomRepository' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cg.hotelmanagement.repository.RoomRepository' in your configuration.
+
+2019-10-21 21:29:35,545 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7120 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-21 21:29:35,545 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-21 21:29:35,545 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-21 21:29:37,070 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminController': Unsatisfied dependency expressed through field 'adminService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminService' defined in file [C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes\com\cg\hotelmanagement\service\AdminService.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.cg.hotelmanagement.service.AdminService]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	The type Room cannot be resolved. It is indirectly referenced from required .class files
+	The method findById(Long) from the type CrudRepository<Room,Long> refers to the missing type Room
+	The method findById(Long) from the type CrudRepository<Room,Long> refers to the missing type Room
+	The method findById(Long) from the type CrudRepository<Room,Long> refers to the missing type Room
+	CrudRepository<Room,Long> cannot be resolved to a type
+
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:598)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:376)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:847)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.cg.hotelmanagement.HotelManagementApplication.main(HotelManagementApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminService' defined in file [C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes\com\cg\hotelmanagement\service\AdminService.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.cg.hotelmanagement.service.AdminService]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	The type Room cannot be resolved. It is indirectly referenced from required .class files
+	The method findById(Long) from the type CrudRepository<Room,Long> refers to the missing type Room
+	The method findById(Long) from the type CrudRepository<Room,Long> refers to the missing type Room
+	The method findById(Long) from the type CrudRepository<Room,Long> refers to the missing type Room
+	CrudRepository<Room,Long> cannot be resolved to a type
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1303)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1255)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1175)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:595)
+	... 24 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.cg.hotelmanagement.service.AdminService]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	The type Room cannot be resolved. It is indirectly referenced from required .class files
+	The method findById(Long) from the type CrudRepository<Room,Long> refers to the missing type Room
+	The method findById(Long) from the type CrudRepository<Room,Long> refers to the missing type Room
+	The method findById(Long) from the type CrudRepository<Room,Long> refers to the missing type Room
+	CrudRepository<Room,Long> cannot be resolved to a type
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1295)
+	... 35 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The type Room cannot be resolved. It is indirectly referenced from required .class files
+	The method findById(Long) from the type CrudRepository<Room,Long> refers to the missing type Room
+	The method findById(Long) from the type CrudRepository<Room,Long> refers to the missing type Room
+	The method findById(Long) from the type CrudRepository<Room,Long> refers to the missing type Room
+	CrudRepository<Room,Long> cannot be resolved to a type
+
+	at com.cg.hotelmanagement.service.AdminService.<init>(AdminService.java:202)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172)
+	... 37 common frames omitted
+2019-10-21 21:29:42,227 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7120 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-21 21:29:42,227 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-21 21:29:42,227 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-21 21:29:43,885 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.786 seconds (JVM running for 2435.609)
+2019-10-21 21:30:19,770 INFO com.cg.hotelmanagement.controller.AdminController [http-nio-9088-exec-2] deleteRoom in Controller
+2019-10-21 21:30:19,801 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] Room removed with Id: 2
+2019-10-21 21:31:18,420 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-21 21:31:24,212 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-21 21:31:36,078 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
+2019-10-21 21:31:36,125 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] Hotel added
+2019-10-21 21:31:59,602 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-21 21:32:02,893 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showRooms method
+2019-10-21 21:32:06,693 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-21 21:32:08,931 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showRooms method
+2019-10-21 21:32:14,552 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
+2019-10-21 21:32:47,423 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-21 21:33:00,775 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-21 21:33:00,807 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] Room added
+2019-10-21 21:33:33,917 INFO com.cg.hotelmanagement.controller.AdminController [http-nio-9088-exec-8] deleteRoom in Controller
+2019-10-21 21:33:33,927 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] Room removed with Id: 4
+2019-10-21 21:42:28,703 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7120 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-21 21:42:28,703 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-21 21:42:28,704 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-21 21:42:30,308 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.658 seconds (JVM running for 3202.033)
+2019-10-21 21:43:08,850 INFO com.cg.hotelmanagement.controller.AdminController [http-nio-9088-exec-3] deleteRoom in Controller
+2019-10-21 21:43:08,876 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] Room removed with Id: 4
+2019-10-21 21:45:44,488 INFO com.cg.hotelmanagement.controller.AdminController [http-nio-9088-exec-6] deleteRoom in Controller
+2019-10-21 21:47:24,223 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7120 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-21 21:47:24,223 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-21 21:47:24,223 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-21 21:47:25,822 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.653 seconds (JVM running for 3497.548)
+2019-10-21 21:48:57,468 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7120 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-21 21:48:57,468 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-21 21:48:57,468 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-21 21:48:59,020 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.606 seconds (JVM running for 3590.745)
+2019-10-21 21:49:08,427 INFO com.cg.hotelmanagement.controller.AdminController [http-nio-9088-exec-2] deleteRoom in Controller
+2019-10-21 21:49:15,095 INFO com.cg.hotelmanagement.controller.AdminController [http-nio-9088-exec-4] deleteRoom in Controller
+2019-10-21 21:49:15,114 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] Room removed with Id: 4
+2019-10-21 21:50:18,022 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7120 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-21 21:50:18,022 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-21 21:50:18,022 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-21 21:50:19,713 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.741 seconds (JVM running for 3671.438)
+2019-10-21 21:50:21,820 INFO com.cg.hotelmanagement.controller.AdminController [http-nio-9088-exec-2] deleteRoom in Controller
+2019-10-21 21:50:21,842 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] Room removed with Id: 4
+2019-10-21 21:53:42,164 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-21 21:53:49,888 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
+2019-10-21 21:56:48,507 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
+2019-10-21 21:56:48,516 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] City addded
+2019-10-21 21:59:24,274 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-21 21:59:29,360 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-21 21:59:34,991 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-21 21:59:40,061 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
+2019-10-21 21:59:43,809 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-21 21:59:55,640 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] Hotel deleted with Id: 5
+2019-10-21 22:03:42,692 INFO com.cg.hotelmanagement.controller.AdminController [http-nio-9088-exec-2] deleteRoom in Controller
+2019-10-21 22:03:42,700 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] Room removed with Id: 3
+2019-10-21 22:11:05,578 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7120 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-21 22:11:05,578 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-21 22:11:05,578 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-21 22:11:07,403 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.916 seconds (JVM running for 4919.128)
+2019-10-21 22:11:27,801 INFO com.cg.hotelmanagement.controller.AdminController [http-nio-9088-exec-2] deleteRoom in Controller
+2019-10-21 22:11:27,829 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] Room removed with Id: 2
+2019-10-21 22:13:40,188 INFO com.cg.hotelmanagement.controller.AdminController [http-nio-9088-exec-5] deleteRoom in Controller
+2019-10-21 22:13:55,668 INFO com.cg.hotelmanagement.controller.AdminController [http-nio-9088-exec-7] deleteRoom in Controller
+2019-10-21 22:13:55,673 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] Room removed with Id: 3
+2019-10-21 22:20:33,041 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] Hotel deleted with Id: 3
+2019-10-21 22:20:37,542 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-21 22:22:36,171 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-21 22:22:42,024 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-21 22:22:45,295 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-21 22:22:53,861 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-21 22:23:00,085 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] showCity method
+2019-10-21 22:23:03,217 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-21 22:23:11,298 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-21 22:23:15,739 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-21 22:23:19,960 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
+2019-10-21 22:23:33,828 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-21 22:23:38,318 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-21 22:24:01,504 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-21 22:24:14,321 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-21 22:24:14,349 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] Hotel added
+2019-10-21 22:24:27,425 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] Hotel deleted with Id: 6
+2019-10-21 22:24:56,326 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
+2019-10-21 22:24:58,353 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-21 22:25:02,231 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-21 22:25:12,487 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] Hotel added
+2019-10-21 22:25:12,509 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] showCity method
+2019-10-21 22:25:16,668 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] Hotel deleted with Id: 7
+2019-10-21 22:30:07,538 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] showCity method
+2019-10-21 22:30:41,642 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-21 22:30:42,724 ERROR com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-5] Hotel not found in removeHotel method
+2019-10-21 22:31:30,554 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-21 22:32:34,407 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-21 22:33:08,172 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] showCity method
+2019-10-21 22:33:12,891 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-10] showCity method
+2019-10-21 22:33:18,620 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] showCity method
+2019-10-21 22:33:20,965 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] City removed with Id: 8
+2019-10-21 22:33:26,492 ERROR com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] City not found in removeCity method
+2019-10-21 22:56:48,988 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-6] showCity method
+2019-10-21 22:56:53,391 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-7] showCity method
+2019-10-21 22:57:09,177 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-3] showCity method
+2019-10-21 23:27:06,057 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-8] showCity method
+2019-10-21 23:36:31,116 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7120 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-21 23:36:31,117 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-21 23:36:31,117 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-21 23:36:33,187 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 2.172 seconds (JVM running for 10044.911)
+2019-10-21 23:36:47,061 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7120 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-21 23:36:47,061 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-21 23:36:47,061 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-21 23:36:48,997 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.997 seconds (JVM running for 10060.722)
+2019-10-21 23:57:00,727 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] City addded
+2019-10-21 23:57:00,732 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-9] City addded
+2019-10-22 00:09:56,229 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 7120 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-22 00:09:56,229 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-22 00:09:56,229 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-22 00:09:57,865 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.701 seconds (JVM running for 12049.589)
+2019-10-22 01:38:57,893 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 8508 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-22 01:38:57,896 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-22 01:38:57,896 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-22 01:39:03,571 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 6.356 seconds (JVM running for 7.28)
+2019-10-22 02:16:05,445 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 8508 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-22 02:16:05,446 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-22 02:16:05,446 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-22 02:16:07,394 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 2.029 seconds (JVM running for 2231.102)
+2019-10-22 02:30:42,187 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-9088-exec-7] Duplicate entry 't' for key 'UK_djnk44fptegbsu6drhc9xvlfj'
+2019-10-22 02:35:13,462 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 8508 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-22 02:35:13,462 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-22 02:35:13,462 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-22 02:35:15,396 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 1.999 seconds (JVM running for 3379.105)
+2019-10-22 02:35:42,305 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] City addded
+2019-10-22 02:35:42,318 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-2] City addded
+2019-10-22 02:36:42,021 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] City addded
+2019-10-22 02:36:42,027 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-1] City addded
+2019-10-22 02:37:53,431 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] City addded
+2019-10-22 02:37:53,440 INFO com.cg.hotelmanagement.service.AdminService [http-nio-9088-exec-4] City addded
+2019-10-22 02:43:50,158 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Starting HotelManagementApplication on DESKTOP-44JBV6N with PID 8508 (C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement\target\classes started by Admin in C:\Users\Admin\git\Hotel-Management-System\Sprint6\REST\Sprint5_Restful\HotelManagement)
+2019-10-22 02:43:50,159 DEBUG com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Running with Spring Boot v2.1.9.RELEASE, Spring v5.1.10.RELEASE
+2019-10-22 02:43:50,159 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] The following profiles are active: production
+2019-10-22 02:43:52,339 INFO com.cg.hotelmanagement.HotelManagementApplication [restartedMain] Started HotelManagementApplication in 2.266 seconds (JVM running for 3896.047)

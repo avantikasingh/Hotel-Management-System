@@ -56,6 +56,7 @@ public class Hotel {
 	@JsonIgnore
 	private City city;
 	
+	
 	@OneToMany(cascade = CascadeType.ALL ,fetch = FetchType.EAGER)
 	@JoinColumn(name="hotel_id")
 	@JsonIgnore

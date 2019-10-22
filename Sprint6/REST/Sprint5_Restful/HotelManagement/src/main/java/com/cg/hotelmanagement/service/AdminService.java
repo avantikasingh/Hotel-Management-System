@@ -194,6 +194,24 @@ public class AdminService implements IAdminService {
 		logger.info("Hotel deleted with Id: "+hotelId);
 		return true;
 	}
+	/**
+	 * Deletes a room from the database based on the roomId
+	 */
+	public boolean removeRoom(Long roomId) {
+		//First check if room with given id exists
+		Room room = roomrepo.findById(roomId).orElse(null);
+		//If room not found
+//		if(room==null) {
+//			logger.error("Room not found in removeRoom method");
+//			throw new ResourceNotFoundException(roomNotFound+roomId);
+//		}
+		//delete room
+//		roomrepo.delete(room);
+		System.out.println(room);
+		roomrepo.delete(room);
+		logger.info("Room removed with Id: "+roomId);
+		return true;
+	}
 	
 	/**
 	 * Update hotel
@@ -250,22 +268,7 @@ public class AdminService implements IAdminService {
 		}
 	}
 
-	/**
-	 * Deletes a room from the database based on the roomId
-	 */
-	public boolean removeRoom(Long roomId) {
-		//First check if room with given id exists
-		Room room = roomrepo.findById(roomId).orElse(null);
-		//If room not found
-		if(room==null) {
-			logger.error("Room not found in removeRoom method");
-			throw new ResourceNotFoundException(roomNotFound+roomId);
-		}
-		//delete room
-		roomrepo.delete(room);
-		logger.info("Room removed with Id: "+roomId);
-		return true;
-	}
+
 	
 	/**
 	 * Returns a single room object based on the id supplied
