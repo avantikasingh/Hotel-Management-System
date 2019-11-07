@@ -1,0 +1,31 @@
+Docker Commands for Deployment in Docker Containers on AWS EC2:
+
+Spring Boot-
+wget <s3-URL>
+vi Dockerfile
+docker build -t frsjar .
+docker run -p 9088:9088 hmsjar
+
+Spring Boot Dockerfile-
+FROM java:8
+COPY HotelManagementSystem-0.0.1-SNAPSHOT.jar HotelManagementSystem-0.0.1-SNAPSHOT.jar
+CMD java -jar HotelManagementSystem-0.0.1-SNAPSHOT.jar
+
+
+=============================================================================
+
+Angular-
+wget <s3-URL>
+vi Dockerfile
+docker build -t frsui .
+docker run -p 4200:4200 frsui
+
+Angular Dockerfile-
+FROM node:10.16
+WORKDIR /usr/src/app
+COPY package.json package.json
+RUN npm install
+COPY . .
+RUN npm install ng2-password-strength-bar --save
+RUN npm install -g @angular/cli
+CMD ng serve --port 4200 --host 0.0.0.0 --publicHost 13.232.40.106
